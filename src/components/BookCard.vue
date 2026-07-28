@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowRight, Star } from '@lucide/vue'
+import { BookOpen, FileText } from '@lucide/vue'
 
 import type { Book } from '@/types/library'
 
@@ -13,39 +13,51 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <article class="card-lift group rounded-[20px] bg-white p-4 shadow-sm">
+  <article class="card-lift group overflow-hidden rounded-[22px] bg-white shadow-sm">
     <button
       type="button"
-      class="focus-ring block w-full rounded-[14px] text-left"
-      :aria-label="`Xem sách ${book.title}`"
+      class="focus-ring block w-full text-left"
+      :aria-label="`Đọc online sách ${book.title}`"
       @click="emit('select', book)"
     >
-      <span
-        class="relative grid aspect-[0.76] w-full place-items-center overflow-hidden rounded-[14px]"
-        :style="{ backgroundColor: book.color }"
-      >
+      <span class="relative block aspect-[0.708] w-full overflow-hidden bg-slate-100">
+        <img
+          :src="book.coverUrl"
+          :alt="`Bìa sách ${book.title}`"
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]"
+          loading="lazy"
+        />
         <span
-          class="grid size-21 place-items-center rounded-full bg-white text-2xl font-black shadow-lg transition duration-300 group-hover:scale-110"
-          :style="{ color: book.textColor }"
+          class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
+        />
+        <span
+          class="absolute left-3 top-3 rounded-full bg-white/92 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider shadow-sm backdrop-blur"
+          :style="{ color: book.accent }"
         >
-          {{ String(book.id).padStart(2, '0') }}
+          Lớp {{ book.grade }}
         </span>
         <span
-          class="absolute bottom-4 left-4 rounded-full bg-black/12 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white"
+          class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1.5 text-[10px] font-bold text-white backdrop-blur"
         >
-          {{ book.category }}
+          <FileText :size="12" />
+          {{ book.pageCount }} trang
         </span>
       </span>
-      <strong class="mt-5 block min-h-12 leading-6">{{ book.title }}</strong>
-      <span class="mt-2 block min-h-10 text-sm leading-5 text-slate-500">{{ book.subtitle }}</span>
-      <span class="mt-3 flex items-center gap-1 text-sun-300" aria-label="5 trên 5 sao">
-        <Star v-for="star in 5" :key="star" :size="13" fill="currentColor" />
-      </span>
-      <span
-        class="mt-4 flex items-center gap-1 text-xs font-bold text-red-500 opacity-0 transition group-hover:opacity-100"
-      >
-        Xem gợi ý
-        <ArrowRight :size="14" />
+      <span class="block p-4">
+        <span
+          class="text-[11px] font-extrabold uppercase tracking-[0.08em]"
+          :style="{ color: book.accent }"
+        >
+          {{ book.subject }}
+        </span>
+        <strong class="mt-2 block min-h-12 leading-6">{{ book.title }}</strong>
+        <span class="mt-2 line-clamp-2 min-h-10 text-sm leading-5 text-slate-500">
+          {{ book.description }}
+        </span>
+        <span class="mt-4 flex items-center gap-2 text-xs font-extrabold text-red-500">
+          <BookOpen :size="15" />
+          Đọc sách online
+        </span>
       </span>
     </button>
   </article>

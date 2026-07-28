@@ -5,43 +5,39 @@ import { computed } from 'vue'
 
 import BookCard from '@/components/BookCard.vue'
 import SectionHeading from '@/components/SectionHeading.vue'
-import { bookFilters, books } from '@/data/library'
+import { digitalLibraryCollection, searchDigitalBooks } from '@/data/digitalLibrary'
+import { bookFilters, books, gradeFilters } from '@/data/library'
 import { useAppStore } from '@/stores/app'
 import type { Book } from '@/types/library'
 
 const appStore = useAppStore()
-const { activeBookFilter, searchQuery } = storeToRefs(appStore)
-
-function normalize(value: string) {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLocaleLowerCase('vi')
-}
+const { activeBookFilter, activeGradeFilter, searchQuery } = storeToRefs(appStore)
 
 const visibleBooks = computed(() => {
-  const query = normalize(searchQuery.value)
+  const matchingBookIds = searchQuery.value
+    ? new Set(searchDigitalBooks(searchQuery.value).map((book) => book.id))
+    : null
   return books.filter((book) => {
     const matchesFilter =
-      activeBookFilter.value === 'Đề xuất' || book.filters.includes(activeBookFilter.value)
-    const haystack = normalize(`${book.title} ${book.subtitle} ${book.category}`)
-    const matchesQuery = !query || haystack.includes(query)
-    return matchesFilter && matchesQuery
+      activeBookFilter.value === 'Tất cả' || book.subject === activeBookFilter.value
+    const matchesGrade =
+      activeGradeFilter.value === 'Tất cả' || book.grade === activeGradeFilter.value
+    const matchesQuery = !matchingBookIds || matchingBookIds.has(book.id)
+    return matchesFilter && matchesGrade && matchesQuery
   })
 })
 
 function selectBook(book: Book) {
-  appStore.openChat()
-  appStore.searchBooks(book.title)
+  appStore.openReader(book.id)
 }
 </script>
 
 <template>
   <section id="featured-books" class="page-shell section-space scroll-mt-20">
     <SectionHeading
-      eyebrow="Được yêu thích"
-      title="Sách nổi bật tuần này"
-      description="Những cuốn sách đang được học sinh tìm đọc nhiều nhất."
+      eyebrow="Kho sách số tiểu học"
+      title="Chạm vào bìa để đọc sách online"
+      :description="`${digitalLibraryCollection.bookCount} sách giáo khoa lớp ${digitalLibraryCollection.grades.join(', lớp ')} đã được số hóa từ PDF với ${digitalLibraryCollection.totalPages.toLocaleString('vi-VN')} trang.`"
     />
 
     <div v-if="searchQuery" class="mt-6 flex items-center gap-3">
@@ -58,7 +54,24 @@ function selectBook(book: Book) {
       </button>
     </div>
 
-    <div class="mt-7 flex gap-2 overflow-x-auto pb-2">
+    <div class="mt-7 flex gap-2 overflow-x-auto pb-2" aria-label="Lọc theo lớp">
+      <button
+        v-for="grade in gradeFilters"
+        :key="grade"
+        type="button"
+        class="focus-ring shrink-0 rounded-xl px-5 py-3 text-xs font-bold transition"
+        :class="
+          activeGradeFilter === grade
+            ? 'bg-ink-950 text-white shadow-lg shadow-ink-950/15'
+            : 'bg-white text-slate-500 hover:text-ink-950'
+        "
+        @click="activeGradeFilter = grade"
+      >
+        {{ grade === 'Tất cả' ? 'Tất cả các lớp' : `Lớp ${grade}` }}
+      </button>
+    </div>
+
+    <div class="mt-3 flex gap-2 overflow-x-auto pb-2" aria-label="Lọc theo môn">
       <button
         v-for="filter in bookFilters"
         :key="filter"
@@ -77,7 +90,7 @@ function selectBook(book: Book) {
 
     <div
       v-if="visibleBooks.length"
-      class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 lg:gap-7"
+      class="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 lg:gap-7"
     >
       <BookCard v-for="book in visibleBooks" :key="book.id" :book="book" @select="selectBook" />
     </div>

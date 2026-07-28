@@ -1,11 +1,39 @@
 export interface Book {
-  id: number
+  id: string
   title: string
-  subtitle: string
-  category: string
-  color: string
-  textColor: string
-  filters: string[]
+  subject: string
+  description: string
+  grade: number
+  volume?: number
+  keywords: string[]
+  accent: string
+  sourceFolder: string
+  fileName: string
+  coverFileName: string
+  pageCount: number
+  fileSizeBytes: number
+  pageWidth: number
+  pageHeight: number
+  pdfUrl: string
+  coverUrl: string
+}
+
+export interface DigitalLibraryCollection {
+  id: string
+  title: string
+  description: string
+  grades: number[]
+  bookCount: number
+  totalPages: number
+}
+
+export interface DigitalLibraryGradeCollection {
+  id: string
+  title: string
+  description: string
+  grade: number
+  bookCount: number
+  totalPages: number
 }
 
 export interface LibraryTopic {

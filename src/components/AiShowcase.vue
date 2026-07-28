@@ -8,10 +8,10 @@ import { useAppStore } from '@/stores/app'
 const appStore = useAppStore()
 
 const prompts = [
-  'Gợi ý truyện lớp 2',
-  'Tìm sách về hệ Mặt Trời',
-  'Sách kỹ năng phòng cháy',
-  'Thí nghiệm STEM đơn giản',
+  'Mở sách Toán lớp 3 - Tập 1',
+  'Mở sách Tiếng Việt lớp 4 - Tập 2',
+  'Kho sách lớp 3 có những môn nào?',
+  'Mở sách Khoa học lớp 4',
 ]
 </script>
 
@@ -65,7 +65,7 @@ const prompts = [
             type="button"
             class="focus-ring flex items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-semibold transition hover:translate-x-1"
             :class="index % 2 === 0 ? 'bg-red-50 text-red-500' : 'bg-[#f1f5ff] text-[#3e6ff4]'"
-            @click="appStore.openChat"
+            @click="appStore.openChatWithPrompt(prompt)"
           >
             {{ prompt }}
             <Sparkles :size="15" />

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Menu, Search, X } from '@lucide/vue'
+import { Menu, MessagesSquare, ScanLine, Search, X } from '@lucide/vue'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
@@ -8,7 +8,7 @@ import logoUrl from '../../logo.jpg'
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
-const { menuOpen, searchQuery } = storeToRefs(appStore)
+const { menuOpen, searchQuery, smartLockOpen } = storeToRefs(appStore)
 const headerQuery = ref('')
 
 const navigation = [
@@ -28,7 +28,7 @@ function submitSearch() {
 
 <template>
   <header class="sticky top-0 z-40 border-b border-black/6 bg-white/92 backdrop-blur-xl">
-    <div class="page-shell flex h-20 items-center justify-between gap-6">
+    <div class="page-shell flex h-20 items-center justify-between gap-2 sm:gap-4 xl:gap-5">
       <RouterLink
         to="/"
         class="focus-ring flex shrink-0 items-center gap-3 rounded-xl"
@@ -43,7 +43,7 @@ function submitSearch() {
             class="h-full w-full object-contain"
           />
         </span>
-        <span class="leading-none">
+        <span class="hidden leading-none sm:block">
           <strong class="block text-[17px] tracking-[-0.02em]">THƯ VIỆN SỐ</strong>
           <small class="mt-1.5 block text-[10px] font-extrabold tracking-[0.08em] text-red-500">
             AI • STEM • SÁCH
@@ -51,7 +51,7 @@ function submitSearch() {
         </span>
       </RouterLink>
 
-      <nav class="hidden items-center gap-8 xl:flex" aria-label="Điều hướng chính">
+      <nav class="hidden items-center gap-5 xl:flex" aria-label="Điều hướng chính">
         <a
           v-for="(item, index) in navigation"
           :key="item.href"
@@ -64,7 +64,7 @@ function submitSearch() {
       </nav>
 
       <form
-        class="hidden h-12 w-53 items-center rounded-2xl bg-red-50 px-4 lg:flex"
+        class="hidden h-12 w-50 items-center rounded-2xl bg-red-50 px-4 lg:flex xl:hidden 2xl:flex"
         role="search"
         @submit.prevent="submitSearch"
       >
@@ -83,6 +83,43 @@ function submitSearch() {
           A
         </span>
       </form>
+
+      <button
+        type="button"
+        class="focus-ring group inline-flex h-11 shrink-0 items-center gap-2 overflow-hidden rounded-full border border-blue-100 bg-[linear-gradient(135deg,#eff5ff,#fff)] px-2.5 text-xs font-extrabold text-[#315fd7] shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/15 sm:px-3.5"
+        :aria-pressed="smartLockOpen"
+        aria-label="Hiển thị màn hình khoá thông minh"
+        title="Hiển thị màn hình khoá thông minh"
+        @click="appStore.openSmartLock"
+      >
+        <span
+          class="relative grid size-7 place-items-center rounded-full bg-[#315fd7] text-white shadow-md shadow-blue-500/20"
+        >
+          <ScanLine :size="15" />
+          <span
+            class="absolute -right-0.5 -top-0.5 size-2 animate-pulse rounded-full border-2 border-white bg-cyan-400"
+          />
+        </span>
+        <span class="hidden md:inline">Màn hình khoá</span>
+      </button>
+
+      <a
+        href="#contact"
+        class="focus-ring group relative inline-flex h-11 shrink-0 items-center gap-2.5 overflow-hidden rounded-full bg-ink-950 px-2.5 text-sm font-extrabold text-white shadow-lg shadow-ink-950/15 transition duration-300 hover:-translate-y-0.5 hover:bg-red-500 hover:shadow-red-500/25 sm:px-4"
+        aria-label="Liên hệ với nhà trường"
+        title="Liên hệ với nhà trường"
+        @click="appStore.closeMenu"
+      >
+        <span
+          class="relative grid size-7 place-items-center rounded-full bg-white/10 transition group-hover:bg-white/20"
+        >
+          <MessagesSquare :size="15" />
+          <span
+            class="absolute -right-0.5 -top-0.5 size-2 rounded-full border-2 border-ink-950 bg-emerald-400 transition group-hover:border-red-500"
+          />
+        </span>
+        <span class="relative hidden sm:inline">Liên hệ</span>
+      </a>
 
       <button
         type="button"

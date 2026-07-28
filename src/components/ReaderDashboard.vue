@@ -1,8 +1,20 @@
 <script setup lang="ts">
+import { digitalLibraryCollection } from '@/data/digitalLibrary'
+
 const stats = [
-  { value: '12', label: 'Sách đã đọc', background: '#fff0f2', color: '#df2133' },
-  { value: '5h 40m', label: 'Thời gian đọc', background: '#f1f5ff', color: '#3e6ff4' },
-  { value: '08', label: 'Huy hiệu', background: '#fff7dd', color: '#c58a00' },
+  {
+    value: String(digitalLibraryCollection.bookCount),
+    label: 'Sách đã số hóa',
+    background: '#fff0f2',
+    color: '#df2133',
+  },
+  {
+    value: digitalLibraryCollection.totalPages.toLocaleString('vi-VN'),
+    label: 'Trang tài liệu',
+    background: '#f1f5ff',
+    color: '#3e6ff4',
+  },
+  { value: 'PDF', label: 'Đọc trực tuyến', background: '#fff7dd', color: '#c58a00' },
 ]
 </script>
 
@@ -14,17 +26,20 @@ const stats = [
       <div>
         <p class="text-xs font-extrabold uppercase tracking-[0.12em] text-red-500">Góc của bạn</p>
         <h2 class="mt-4 max-w-2xl text-3xl font-black leading-tight tracking-[-0.04em] sm:text-4xl">
-          Chào Minh Anh,<br />tiếp tục hành trình đọc nhé!
+          Kho tri thức đầy đủ lớp 1 đến lớp 5,<br />mở sách và học ngay hôm nay!
         </h2>
         <div class="mt-9 max-w-md">
           <div class="flex items-center justify-between text-sm font-bold">
-            <span>Mục tiêu tuần này</span>
-            <span class="text-red-500">80%</span>
+            <span>Tiến độ số hóa kho SGK hiện có</span>
+            <span class="text-red-500">100%</span>
           </div>
           <div class="mt-3 h-3 overflow-hidden rounded-full bg-[#eeeae7]">
-            <div class="h-full w-4/5 rounded-full bg-red-500" />
+            <div class="h-full w-full rounded-full bg-red-500" />
           </div>
-          <p class="mt-3 text-sm text-slate-500">4/5 cuốn sách</p>
+          <p class="mt-3 text-sm text-slate-500">
+            {{ digitalLibraryCollection.bookCount }}/{{ digitalLibraryCollection.bookCount }} cuốn
+            sách
+          </p>
         </div>
       </div>
       <div class="mt-9 grid grid-cols-3 gap-3 lg:mt-0">
