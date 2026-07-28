@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk2-tieng-anh",
+    "title": "Tiếng Anh 2",
+    "subject": "Tiếng Anh",
+    "description": "Sách giáo khoa Tiếng Anh dành cho học sinh lớp 2.",
+    "keywords": ["tiếng anh", "english", "ngoại ngữ", "lớp 2"],
+    "accent": "#3e6ff4",
+    "grade": 2,
+    "sourceFolder": "SGK_2",
+    "fileName": "Tiếng Anh 2.pdf",
+    "coverFileName": "sgk2-tieng-anh.jpg",
+    "pageCount": 77,
+    "fileSizeBytes": 122926551,
+    "pageWidth": 841.92,
+    "pageHeight": 1189.92
+  }
+}

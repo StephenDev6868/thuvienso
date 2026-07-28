@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-my-thuat",
+    "title": "Mĩ thuật 3",
+    "subject": "Mỹ thuật",
+    "description": "Sách giáo khoa Mỹ thuật dành cho học sinh lớp 3.",
+    "keywords": ["mỹ thuật", "mĩ thuật", "vẽ", "màu sắc", "sáng tạo", "lớp 3"],
+    "accent": "#e84d8a",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Mĩ thuật 3 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-my-thuat.jpg",
+    "pageCount": 67,
+    "fileSizeBytes": 20457936,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

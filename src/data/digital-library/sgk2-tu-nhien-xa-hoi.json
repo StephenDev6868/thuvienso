@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk2-tu-nhien-xa-hoi",
+    "title": "Tự nhiên và Xã hội 2",
+    "subject": "Tự nhiên và Xã hội",
+    "description": "Sách giáo khoa Tự nhiên và Xã hội dành cho học sinh lớp 2.",
+    "keywords": ["tự nhiên", "xã hội", "khoa học", "gia đình", "lớp 2"],
+    "accent": "#2aa66c",
+    "grade": 2,
+    "sourceFolder": "SGK_2",
+    "fileName": "Tự nhiên và Xã hội 2.pdf",
+    "coverFileName": "sgk2-tu-nhien-xa-hoi.jpg",
+    "pageCount": 122,
+    "fileSizeBytes": 35424813,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

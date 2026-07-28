@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-giao-duc-the-chat",
+    "title": "Giáo dục Thể chất 3",
+    "subject": "Giáo dục thể chất",
+    "description": "Sách giáo khoa Giáo dục thể chất dành cho học sinh lớp 3.",
+    "keywords": ["thể chất", "thể dục", "vận động", "lớp 3"],
+    "accent": "#2aa66c",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Giáo dục Thể chất 3 Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-giao-duc-the-chat.jpg",
+    "pageCount": 98,
+    "fileSizeBytes": 24705220,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

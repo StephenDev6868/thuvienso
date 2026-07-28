@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk5-am-nhac",
+    "title": "Âm nhạc 5",
+    "subject": "Âm nhạc",
+    "description": "Sách giáo khoa Âm nhạc dành cho học sinh lớp 5.",
+    "keywords": ["âm nhạc", "bài hát", "nhịp điệu", "lớp 5"],
+    "accent": "#8757f2",
+    "grade": 5,
+    "sourceFolder": "SGK_5",
+    "fileName": "Âm nhạc 5.pdf",
+    "coverFileName": "sgk5-am-nhac.jpg",
+    "pageCount": 79,
+    "fileSizeBytes": 38845642,
+    "pageWidth": 600,
+    "pageHeight": 846
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk1-giao-duc-the-chat",
+    "title": "Giáo dục Thể chất 1",
+    "subject": "Giáo dục thể chất",
+    "description": "Sách giáo khoa Giáo dục thể chất dành cho học sinh lớp 1.",
+    "keywords": ["thể chất", "thể dục", "vận động", "lớp 1"],
+    "accent": "#2aa66c",
+    "grade": 1,
+    "sourceFolder": "SGK_1",
+    "fileName": "Giao duc The chat 1.pdf",
+    "coverFileName": "sgk1-giao-duc-the-chat.jpg",
+    "pageCount": 97,
+    "fileSizeBytes": 22764249,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

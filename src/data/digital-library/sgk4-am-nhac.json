@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-am-nhac",
+    "title": "Âm nhạc 4",
+    "subject": "Âm nhạc",
+    "description": "Sách giáo khoa Âm nhạc dành cho học sinh lớp 4.",
+    "keywords": ["âm nhạc", "bài hát", "nhịp điệu", "lớp 4"],
+    "accent": "#8757f2",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "Âm nhạc 4.pdf",
+    "coverFileName": "sgk4-am-nhac.jpg",
+    "pageCount": 76,
+    "fileSizeBytes": 11404119,
+    "pageWidth": 340.2,
+    "pageHeight": 453.6
+  }
+}

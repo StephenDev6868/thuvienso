@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-lich-su-dia-li",
+    "title": "Lịch sử và Địa lí 4",
+    "subject": "Lịch sử và Địa lí",
+    "description": "Sách giáo khoa Lịch sử và Địa lí dành cho học sinh lớp 4.",
+    "keywords": ["lịch sử", "địa lí", "việt nam", "thế giới", "lớp 4"],
+    "accent": "#b7791f",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "Lịch sử và Địa lí 4.pdf",
+    "coverFileName": "sgk4-lich-su-dia-li.jpg",
+    "pageCount": 127,
+    "fileSizeBytes": 14446868,
+    "pageWidth": 547.087,
+    "pageHeight": 768.189
+  }
+}

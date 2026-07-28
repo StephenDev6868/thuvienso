@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk1-tu-nhien-xa-hoi",
+    "title": "Tự nhiên và Xã hội 1",
+    "subject": "Tự nhiên và Xã hội",
+    "description": "Sách giáo khoa Tự nhiên và Xã hội dành cho học sinh lớp 1.",
+    "keywords": ["tự nhiên", "xã hội", "khoa học", "gia đình", "lớp 1"],
+    "accent": "#2aa66c",
+    "grade": 1,
+    "sourceFolder": "SGK_1",
+    "fileName": "Tu nhien va Xa hoi 1.pdf",
+    "coverFileName": "sgk1-tu-nhien-xa-hoi.jpg",
+    "pageCount": 125,
+    "fileSizeBytes": 38609544,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-tin-hoc",
+    "title": "Tin học 3",
+    "subject": "Tin học",
+    "description": "Sách giáo khoa Tin học dành cho học sinh lớp 3.",
+    "keywords": ["tin học", "máy tính", "công nghệ thông tin", "lớp 3"],
+    "accent": "#2563eb",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Tin học 3 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-tin-hoc.jpg",
+    "pageCount": 78,
+    "fileSizeBytes": 22187104,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk5-tin-hoc",
+    "title": "Tin học 5",
+    "subject": "Tin học",
+    "description": "Sách giáo khoa Tin học dành cho học sinh lớp 5.",
+    "keywords": ["tin học", "máy tính", "công nghệ thông tin", "lớp 5"],
+    "accent": "#2563eb",
+    "grade": 5,
+    "sourceFolder": "SGK_5",
+    "fileName": "Tin học 5.pdf",
+    "coverFileName": "sgk5-tin-hoc.jpg",
+    "pageCount": 85,
+    "fileSizeBytes": 40049170,
+    "pageWidth": 553.92,
+    "pageHeight": 768.96
+  }
+}

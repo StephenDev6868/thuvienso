@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk1-my-thuat",
+    "title": "Mỹ thuật 1",
+    "subject": "Mỹ thuật",
+    "description": "Sách giáo khoa Mỹ thuật dành cho học sinh lớp 1.",
+    "keywords": ["mỹ thuật", "mĩ thuật", "vẽ", "màu sắc", "sáng tạo", "lớp 1"],
+    "accent": "#e84d8a",
+    "grade": 1,
+    "sourceFolder": "SGK_1",
+    "fileName": "My thuat 1.pdf",
+    "coverFileName": "sgk1-my-thuat.jpg",
+    "pageCount": 73,
+    "fileSizeBytes": 13581319,
+    "pageWidth": 595.2,
+    "pageHeight": 837.6
+  }
+}

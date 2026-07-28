@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk2-am-nhac",
+    "title": "Âm nhạc 2",
+    "subject": "Âm nhạc",
+    "description": "Sách giáo khoa Âm nhạc dành cho học sinh lớp 2.",
+    "keywords": ["âm nhạc", "bài hát", "nhịp điệu", "lớp 2"],
+    "accent": "#8757f2",
+    "grade": 2,
+    "sourceFolder": "SGK_2",
+    "fileName": "Âm nhạc 2.pdf",
+    "coverFileName": "sgk2-am-nhac.jpg",
+    "pageCount": 63,
+    "fileSizeBytes": 18347073,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

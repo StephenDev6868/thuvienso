@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk5-tieng-anh-tap-2",
+    "title": "Tiếng Anh 5 - Tập 2",
+    "subject": "Tiếng Anh",
+    "volume": 2,
+    "description": "Sách giáo khoa Tiếng Anh dành cho học sinh lớp 5, tập 2.",
+    "keywords": ["tiếng anh", "english", "ngoại ngữ", "lớp 5", "tập 2"],
+    "accent": "#3e6ff4",
+    "grade": 5,
+    "sourceFolder": "SGK_5",
+    "fileName": "Tiếng Anh 5 tập 2.pdf",
+    "coverFileName": "sgk5-tieng-anh-tap-2.jpg",
+    "pageCount": 83,
+    "fileSizeBytes": 48020428,
+    "pageWidth": 600,
+    "pageHeight": 846.75
+  }
+}

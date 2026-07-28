@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-toan-tap-2",
+    "title": "Toán 3 - Tập 2",
+    "subject": "Toán",
+    "volume": 2,
+    "description": "Sách giáo khoa Toán dành cho học sinh lớp 3, tập 2.",
+    "keywords": ["toán", "số học", "hình học", "giải toán", "lớp 3", "tập 2"],
+    "accent": "#315fd7",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Toán 3 Tập 2 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-toan-tap-2.jpg",
+    "pageCount": 130,
+    "fileSizeBytes": 33833234,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

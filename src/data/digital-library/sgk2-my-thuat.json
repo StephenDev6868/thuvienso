@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk2-my-thuat",
+    "title": "Mĩ thuật 2",
+    "subject": "Mỹ thuật",
+    "description": "Sách giáo khoa Mỹ thuật dành cho học sinh lớp 2.",
+    "keywords": ["mỹ thuật", "mĩ thuật", "vẽ", "màu sắc", "sáng tạo", "lớp 2"],
+    "accent": "#e84d8a",
+    "grade": 2,
+    "sourceFolder": "SGK_2",
+    "fileName": "Mĩ thuật 2.pdf",
+    "coverFileName": "sgk2-my-thuat.jpg",
+    "pageCount": 67,
+    "fileSizeBytes": 20387506,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

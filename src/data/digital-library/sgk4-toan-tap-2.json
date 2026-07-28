@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-toan-tap-2",
+    "title": "Toán 4 - Tập 2",
+    "subject": "Toán",
+    "volume": 2,
+    "description": "Sách giáo khoa Toán dành cho học sinh lớp 4, tập 2.",
+    "keywords": ["toán", "số học", "hình học", "giải toán", "lớp 4", "tập 2"],
+    "accent": "#315fd7",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "Toán 4 tập 2.pdf",
+    "coverFileName": "sgk4-toan-tap-2.jpg",
+    "pageCount": 123,
+    "fileSizeBytes": 17963459,
+    "pageWidth": 340.2,
+    "pageHeight": 453.6
+  }
+}

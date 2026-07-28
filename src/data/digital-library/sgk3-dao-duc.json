@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-dao-duc",
+    "title": "Đạo đức 3",
+    "subject": "Đạo đức",
+    "description": "Sách giáo khoa Đạo đức dành cho học sinh lớp 3.",
+    "keywords": ["đạo đức", "kỹ năng sống", "ứng xử", "lớp 3"],
+    "accent": "#df2133",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Đạo đức 3 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-dao-duc.jpg",
+    "pageCount": 70,
+    "fileSizeBytes": 20066299,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-tin-hoc",
+    "title": "Tin học 4",
+    "subject": "Tin học",
+    "description": "Sách giáo khoa Tin học dành cho học sinh lớp 4.",
+    "keywords": ["tin học", "máy tính", "công nghệ thông tin", "lớp 4"],
+    "accent": "#2563eb",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "Tin học 4.pdf",
+    "coverFileName": "sgk4-tin-hoc.jpg",
+    "pageCount": 79,
+    "fileSizeBytes": 6992518,
+    "pageWidth": 547.087,
+    "pageHeight": 768.189
+  }
+}

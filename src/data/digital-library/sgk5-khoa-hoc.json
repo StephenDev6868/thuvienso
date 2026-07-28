@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk5-khoa-hoc",
+    "title": "Khoa học 5",
+    "subject": "Khoa học",
+    "description": "Sách giáo khoa Khoa học dành cho học sinh lớp 5.",
+    "keywords": ["khoa học", "thí nghiệm", "tự nhiên", "lớp 5"],
+    "accent": "#2aa66c",
+    "grade": 5,
+    "sourceFolder": "SGK_5",
+    "fileName": "Khoa học 5.pdf",
+    "coverFileName": "sgk5-khoa-hoc.jpg",
+    "pageCount": 112,
+    "fileSizeBytes": 43111713,
+    "pageWidth": 595,
+    "pageHeight": 842
+  }
+}

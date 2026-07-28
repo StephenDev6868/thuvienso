@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-tieng-anh-tap-1",
+    "title": "Tiếng Anh 3 - Tập 1",
+    "subject": "Tiếng Anh",
+    "volume": 1,
+    "description": "Sách giáo khoa Tiếng Anh dành cho học sinh lớp 3, tập 1.",
+    "keywords": ["tiếng anh", "english", "ngoại ngữ", "lớp 3", "tập 1"],
+    "accent": "#3e6ff4",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Tiếng Anh 3 Tập 1 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-tieng-anh-tap-1.jpg",
+    "pageCount": 82,
+    "fileSizeBytes": 21970752,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

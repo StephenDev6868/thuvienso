@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk1-am-nhac",
+    "title": "Âm nhạc 1",
+    "subject": "Âm nhạc",
+    "description": "Sách giáo khoa Âm nhạc dành cho học sinh lớp 1.",
+    "keywords": ["âm nhạc", "bài hát", "nhịp điệu", "lớp 1"],
+    "accent": "#8757f2",
+    "grade": 1,
+    "sourceFolder": "SGK_1",
+    "fileName": "Am nhac 1.pdf",
+    "coverFileName": "sgk1-am-nhac.jpg",
+    "pageCount": 57,
+    "fileSizeBytes": 16253180,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

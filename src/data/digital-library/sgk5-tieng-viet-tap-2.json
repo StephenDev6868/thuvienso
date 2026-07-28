@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk5-tieng-viet-tap-2",
+    "title": "Tiếng Việt 5 - Tập 2",
+    "subject": "Tiếng Việt",
+    "volume": 2,
+    "description": "Sách giáo khoa Tiếng Việt dành cho học sinh lớp 5, tập 2.",
+    "keywords": ["tiếng việt", "đọc", "viết", "ngữ văn", "lớp 5", "tập 2"],
+    "accent": "#df2133",
+    "grade": 5,
+    "sourceFolder": "SGK_5",
+    "fileName": "Tiếng Việt 5 tập 2.pdf",
+    "coverFileName": "sgk5-tieng-viet-tap-2.jpg",
+    "pageCount": 163,
+    "fileSizeBytes": 67028162,
+    "pageWidth": 599,
+    "pageHeight": 842
+  }
+}

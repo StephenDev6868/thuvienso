@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk5-lich-su-dia-li",
+    "title": "Lịch sử và địa lí 5",
+    "subject": "Lịch sử và Địa lí",
+    "description": "Sách giáo khoa Lịch sử và Địa lí dành cho học sinh lớp 5.",
+    "keywords": ["lịch sử", "địa lí", "việt nam", "thế giới", "lớp 5"],
+    "accent": "#b7791f",
+    "grade": 5,
+    "sourceFolder": "SGK_5",
+    "fileName": "Lịch sử và địa lí 5.pdf",
+    "coverFileName": "sgk5-lich-su-dia-li.jpg",
+    "pageCount": 123,
+    "fileSizeBytes": 77566969,
+    "pageWidth": 600,
+    "pageHeight": 839.25
+  }
+}

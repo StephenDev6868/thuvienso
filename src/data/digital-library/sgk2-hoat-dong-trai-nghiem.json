@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk2-hoat-dong-trai-nghiem",
+    "title": "Hoạt động trải nghiệm 2",
+    "subject": "Hoạt động trải nghiệm",
+    "description": "Sách giáo khoa Hoạt động trải nghiệm dành cho học sinh lớp 2.",
+    "keywords": ["trải nghiệm", "kỹ năng", "hoạt động", "lớp 2"],
+    "accent": "#ff7045",
+    "grade": 2,
+    "sourceFolder": "SGK_2",
+    "fileName": "Hoạt động trải nghiệm 2.pdf",
+    "coverFileName": "sgk2-hoat-dong-trai-nghiem.jpg",
+    "pageCount": 94,
+    "fileSizeBytes": 25343859,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

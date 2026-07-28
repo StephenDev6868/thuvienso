@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-cong-nghe",
+    "title": "Công nghệ 3",
+    "subject": "Công nghệ",
+    "description": "Sách giáo khoa Công nghệ dành cho học sinh lớp 3.",
+    "keywords": ["công nghệ", "kỹ thuật", "sáng tạo", "lớp 3"],
+    "accent": "#0f9f85",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Công nghệ 3 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-cong-nghe.jpg",
+    "pageCount": 66,
+    "fileSizeBytes": 17120878,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

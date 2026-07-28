@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk5-dao-duc",
+    "title": "Đạo đức 5",
+    "subject": "Đạo đức",
+    "description": "Sách giáo khoa Đạo đức dành cho học sinh lớp 5.",
+    "keywords": ["đạo đức", "kỹ năng sống", "ứng xử", "lớp 5"],
+    "accent": "#df2133",
+    "grade": 5,
+    "sourceFolder": "SGK_5",
+    "fileName": "Đạo đức 5.pdf",
+    "coverFileName": "sgk5-dao-duc.jpg",
+    "pageCount": 67,
+    "fileSizeBytes": 37246288,
+    "pageWidth": 600,
+    "pageHeight": 840.75
+  }
+}

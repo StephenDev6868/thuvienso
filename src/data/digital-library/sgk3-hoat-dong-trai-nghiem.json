@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-hoat-dong-trai-nghiem",
+    "title": "Hoạt động trải nghiệm 3",
+    "subject": "Hoạt động trải nghiệm",
+    "description": "Sách giáo khoa Hoạt động trải nghiệm dành cho học sinh lớp 3.",
+    "keywords": ["trải nghiệm", "kỹ năng", "hoạt động", "lớp 3"],
+    "accent": "#ff7045",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Hoạt động trải nghiệm 3 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-hoat-dong-trai-nghiem.jpg",
+    "pageCount": 110,
+    "fileSizeBytes": 31218014,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

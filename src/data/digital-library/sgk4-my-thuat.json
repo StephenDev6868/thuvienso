@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-my-thuat",
+    "title": "Mĩ thuật 4",
+    "subject": "Mỹ thuật",
+    "description": "Sách giáo khoa Mỹ thuật dành cho học sinh lớp 4.",
+    "keywords": ["mỹ thuật", "mĩ thuật", "vẽ", "màu sắc", "sáng tạo", "lớp 4"],
+    "accent": "#e84d8a",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "Mĩ thuật 4.pdf",
+    "coverFileName": "sgk4-my-thuat.jpg",
+    "pageCount": 66,
+    "fileSizeBytes": 13974228,
+    "pageWidth": 549.12,
+    "pageHeight": 770.88
+  }
+}

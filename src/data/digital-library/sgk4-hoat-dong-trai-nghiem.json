@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-hoat-dong-trai-nghiem",
+    "title": "Hoạt động trải nghiệm 4",
+    "subject": "Hoạt động trải nghiệm",
+    "description": "Sách giáo khoa Hoạt động trải nghiệm dành cho học sinh lớp 4.",
+    "keywords": ["trải nghiệm", "kỹ năng", "hoạt động", "lớp 4"],
+    "accent": "#ff7045",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "Hoạt động trải nghiệm 4.pdf",
+    "coverFileName": "sgk4-hoat-dong-trai-nghiem.jpg",
+    "pageCount": 95,
+    "fileSizeBytes": 17708999,
+    "pageWidth": 595,
+    "pageHeight": 842
+  }
+}

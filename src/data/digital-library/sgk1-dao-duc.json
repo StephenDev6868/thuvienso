@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk1-dao-duc",
+    "title": "Đạo đức 1",
+    "subject": "Đạo đức",
+    "description": "Sách giáo khoa Đạo đức dành cho học sinh lớp 1.",
+    "keywords": ["đạo đức", "kỹ năng sống", "ứng xử", "lớp 1"],
+    "accent": "#df2133",
+    "grade": 1,
+    "sourceFolder": "SGK_1",
+    "fileName": "Dao duc 1.pdf",
+    "coverFileName": "sgk1-dao-duc.jpg",
+    "pageCount": 73,
+    "fileSizeBytes": 20118424,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

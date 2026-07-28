@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk2-dao-duc",
+    "title": "Đạo đức 2",
+    "subject": "Đạo đức",
+    "description": "Sách giáo khoa Đạo đức dành cho học sinh lớp 2.",
+    "keywords": ["đạo đức", "kỹ năng sống", "ứng xử", "lớp 2"],
+    "accent": "#df2133",
+    "grade": 2,
+    "sourceFolder": "SGK_2",
+    "fileName": "Đạo đức 2.pdf",
+    "coverFileName": "sgk2-dao-duc.jpg",
+    "pageCount": 74,
+    "fileSizeBytes": 19948793,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

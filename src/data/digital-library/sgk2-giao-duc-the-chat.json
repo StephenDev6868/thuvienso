@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk2-giao-duc-the-chat",
+    "title": "Giáo dục Thể chất 2",
+    "subject": "Giáo dục thể chất",
+    "description": "Sách giáo khoa Giáo dục thể chất dành cho học sinh lớp 2.",
+    "keywords": ["thể chất", "thể dục", "vận động", "lớp 2"],
+    "accent": "#2aa66c",
+    "grade": 2,
+    "sourceFolder": "SGK_2",
+    "fileName": "Giáo dục Thể chất 2.pdf",
+    "coverFileName": "sgk2-giao-duc-the-chat.jpg",
+    "pageCount": 98,
+    "fileSizeBytes": 23703601,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

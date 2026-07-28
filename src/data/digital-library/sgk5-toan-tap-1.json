@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk5-toan-tap-1",
+    "title": "Toán 5 - Tập 1",
+    "subject": "Toán",
+    "volume": 1,
+    "description": "Sách giáo khoa Toán dành cho học sinh lớp 5, tập 1.",
+    "keywords": ["toán", "số học", "hình học", "giải toán", "lớp 5", "tập 1"],
+    "accent": "#315fd7",
+    "grade": 5,
+    "sourceFolder": "SGK_5",
+    "fileName": "Toán 5 tập 1.pdf",
+    "coverFileName": "sgk5-toan-tap-1.jpg",
+    "pageCount": 143,
+    "fileSizeBytes": 57772197,
+    "pageWidth": 600,
+    "pageHeight": 839.25
+  }
+}

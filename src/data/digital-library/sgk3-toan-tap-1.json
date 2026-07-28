@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-toan-tap-1",
+    "title": "Toán 3 - Tập 1",
+    "subject": "Toán",
+    "volume": 1,
+    "description": "Sách giáo khoa Toán dành cho học sinh lớp 3, tập 1.",
+    "keywords": ["toán", "số học", "hình học", "giải toán", "lớp 3", "tập 1"],
+    "accent": "#315fd7",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Toán 3 Tập 1 Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-toan-tap-1.jpg",
+    "pageCount": 126,
+    "fileSizeBytes": 30042358,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

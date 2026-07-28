@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-giao-duc-the-chat",
+    "title": "Giáo dục Thể chất 4",
+    "subject": "Giáo dục thể chất",
+    "description": "Sách giáo khoa Giáo dục thể chất dành cho học sinh lớp 4.",
+    "keywords": ["thể chất", "thể dục", "vận động", "lớp 4"],
+    "accent": "#2aa66c",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "GDTC 4.pdf",
+    "coverFileName": "sgk4-giao-duc-the-chat.jpg",
+    "pageCount": 95,
+    "fileSizeBytes": 14615536,
+    "pageWidth": 547.087,
+    "pageHeight": 768.189
+  }
+}

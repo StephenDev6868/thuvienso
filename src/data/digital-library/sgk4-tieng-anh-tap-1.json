@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-tieng-anh-tap-1",
+    "title": "Tiếng Anh 4 - Tập 1",
+    "subject": "Tiếng Anh",
+    "volume": 1,
+    "description": "Sách giáo khoa Tiếng Anh dành cho học sinh lớp 4, tập 1.",
+    "keywords": ["tiếng anh", "english", "ngoại ngữ", "lớp 4", "tập 1"],
+    "accent": "#3e6ff4",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "Tiếng Anh 4 tập 1.pdf",
+    "coverFileName": "sgk4-tieng-anh-tap-1.jpg",
+    "pageCount": 84,
+    "fileSizeBytes": 13213583,
+    "pageWidth": 340.2,
+    "pageHeight": 453.6
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk1-tieng-anh",
+    "title": "Tiếng Anh 1",
+    "subject": "Tiếng Anh",
+    "description": "Sách giáo khoa Tiếng Anh dành cho học sinh lớp 1.",
+    "keywords": ["tiếng anh", "english", "ngoại ngữ", "lớp 1"],
+    "accent": "#3e6ff4",
+    "grade": 1,
+    "sourceFolder": "SGK_1",
+    "fileName": "Tieng Anh 1.pdf",
+    "coverFileName": "sgk1-tieng-anh.jpg",
+    "pageCount": 77,
+    "fileSizeBytes": 22120529,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

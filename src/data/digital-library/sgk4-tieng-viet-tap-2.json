@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk4-tieng-viet-tap-2",
+    "title": "Tiếng Việt 4 - Tập 2",
+    "subject": "Tiếng Việt",
+    "volume": 2,
+    "description": "Sách giáo khoa Tiếng Việt dành cho học sinh lớp 4, tập 2.",
+    "keywords": ["tiếng việt", "đọc", "viết", "ngữ văn", "lớp 4", "tập 2"],
+    "accent": "#df2133",
+    "grade": 4,
+    "sourceFolder": "SGK_4",
+    "fileName": "Tiếng Việt 4 tập 2.pdf",
+    "coverFileName": "sgk4-tieng-viet-tap-2.jpg",
+    "pageCount": 147,
+    "fileSizeBytes": 32521538,
+    "pageWidth": 547.087,
+    "pageHeight": 768.189
+  }
+}

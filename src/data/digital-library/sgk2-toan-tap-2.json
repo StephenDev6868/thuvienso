@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk2-toan-tap-2",
+    "title": "Toán 2 - Tập 2",
+    "subject": "Toán",
+    "volume": 2,
+    "description": "Sách giáo khoa Toán dành cho học sinh lớp 2, tập 2.",
+    "keywords": ["toán", "số học", "hình học", "giải toán", "lớp 2", "tập 2"],
+    "accent": "#315fd7",
+    "grade": 2,
+    "sourceFolder": "SGK_2",
+    "fileName": "Toán 2 tập 2.pdf",
+    "coverFileName": "sgk2-toan-tap-2.jpg",
+    "pageCount": 142,
+    "fileSizeBytes": 35545169,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

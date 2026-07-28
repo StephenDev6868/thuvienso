@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-tu-nhien-xa-hoi",
+    "title": "Tự nhiên và Xã hội 3",
+    "subject": "Tự nhiên và Xã hội",
+    "description": "Sách giáo khoa Tự nhiên và Xã hội dành cho học sinh lớp 3.",
+    "keywords": ["tự nhiên", "xã hội", "khoa học", "gia đình", "lớp 3"],
+    "accent": "#2aa66c",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Tự nhiên và xã hội 3 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-tu-nhien-xa-hoi.jpg",
+    "pageCount": 126,
+    "fileSizeBytes": 37766732,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

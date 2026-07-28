@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "sgk3-am-nhac",
+    "title": "Âm nhạc 3",
+    "subject": "Âm nhạc",
+    "description": "Sách giáo khoa Âm nhạc dành cho học sinh lớp 3.",
+    "keywords": ["âm nhạc", "bài hát", "nhịp điệu", "lớp 3"],
+    "accent": "#8757f2",
+    "grade": 3,
+    "sourceFolder": "SGK_3",
+    "fileName": "Âm nhạc 3 - Kết nối tri thức với cuộc sống.pdf",
+    "coverFileName": "sgk3-am-nhac.jpg",
+    "pageCount": 66,
+    "fileSizeBytes": 18643523,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}
