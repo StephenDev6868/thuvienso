@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 708 1000" role="img" aria-labelledby="title description">
+  <title id="title">Bìa sách giáo viên</title>
+  <desc id="description">Bìa minh họa dùng cho bộ sách giáo viên trực tuyến</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17233d"/>
+      <stop offset="0.52" stop-color="#315fd7"/>
+      <stop offset="1" stop-color="#df2133"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.22" r="0.8">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="708" height="1000" rx="36" fill="url(#background)"/>
+  <rect width="708" height="1000" rx="36" fill="url(#glow)"/>
+  <circle cx="614" cy="112" r="148" fill="#ffffff" opacity="0.08"/>
+  <circle cx="70" cy="872" r="210" fill="#ffffff" opacity="0.06"/>
+  <rect x="74" y="82" width="214" height="48" rx="24" fill="#ffffff" opacity="0.16"/>
+  <text x="181" y="114" fill="#ffffff" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle" letter-spacing="2">THƯ VIỆN SỐ</text>
+  <text x="354" y="250" fill="#ffffff" font-family="Arial, sans-serif" font-size="31" font-weight="700" text-anchor="middle" letter-spacing="5">BỘ SÁCH</text>
+  <text x="354" y="325" fill="#ffffff" font-family="Arial, sans-serif" font-size="58" font-weight="900" text-anchor="middle">GIÁO VIÊN</text>
+  <g transform="translate(154 420)">
+    <path d="M200 58C143 18 80 5 16 25v310c64-20 127-7 184 33V58Z" fill="#ffffff" opacity="0.95"/>
+    <path d="M200 58c57-40 120-53 184-33v310c-64-20-127-7-184 33V58Z" fill="#ffffff" opacity="0.84"/>
+    <path d="M200 58v310" fill="none" stroke="#315fd7" stroke-width="8" opacity="0.45"/>
+    <path d="M54 88h102M54 132h112M54 176h88M244 88h102M244 132h112M244 176h88" stroke="#315fd7" stroke-linecap="round" stroke-width="10" opacity="0.36"/>
+  </g>
+  <rect x="102" y="850" width="504" height="2" fill="#ffffff" opacity="0.32"/>
+  <text x="354" y="907" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle">ĐỌC TRỰC TUYẾN • NXBGD</text>
+</svg>

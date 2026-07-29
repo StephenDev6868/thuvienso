@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "ky-nang-song-giao-duc-gioi-tinh-giao-duc-gioi-tinh-cho-tre",
+    "title": "Giáo dục giới tính cho trẻ",
+    "subject": "Giáo dục giới tính",
+    "description": "Tài liệu giáo dục giới tính dành cho học sinh và gia đình.",
+    "keywords": [
+      "kỹ năng sống",
+      "giáo dục giới tính",
+      "pdf",
+      "giáo",
+      "dục",
+      "giới",
+      "tính",
+      "cho",
+      "trẻ"
+    ],
+    "accent": "#ff7045",
+    "kind": "life-skill",
+    "collectionId": "ky-nang-song",
+    "collectionTitle": "Kỹ năng sống",
+    "format": "pdf",
+    "sourceFolder": "KỸ NĂNG SỐNG",
+    "relativePath": "Giáo dục giới tính/GIAO-DUC-GIOI-TINH-CHO-TRE.pdf",
+    "fileName": "GIAO-DUC-GIOI-TINH-CHO-TRE.pdf",
+    "coverFileName": "ky-nang-song-giao-duc-gioi-tinh-giao-duc-gioi-tinh-cho-tre.jpg",
+    "fileSizeBytes": 288550,
+    "viewerType": "pdf",
+    "pageCount": 1,
+    "pageWidth": 900,
+    "pageHeight": 4855.92
+  }
+}

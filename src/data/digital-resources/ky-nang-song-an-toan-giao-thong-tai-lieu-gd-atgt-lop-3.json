@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "ky-nang-song-an-toan-giao-thong-tai-lieu-gd-atgt-lop-3",
+    "title": "Tài liệu giáo dục an toàn giao thông lớp 3",
+    "subject": "An toàn giao thông",
+    "description": "Tài liệu an toàn giao thông dành cho học sinh và gia đình.",
+    "grade": 3,
+    "keywords": [
+      "kỹ năng sống",
+      "an toàn giao thông",
+      "pdf",
+      "tài",
+      "liệu",
+      "giáo",
+      "dục",
+      "an",
+      "toàn",
+      "giao",
+      "thông",
+      "lớp",
+      "lớp 3"
+    ],
+    "accent": "#ff7045",
+    "kind": "life-skill",
+    "collectionId": "ky-nang-song",
+    "collectionTitle": "Kỹ năng sống",
+    "format": "pdf",
+    "sourceFolder": "KỸ NĂNG SỐNG",
+    "relativePath": "An toàn giao thông/tai-lieu-gd-atgt-lop-3.pdf",
+    "fileName": "tai-lieu-gd-atgt-lop-3.pdf",
+    "coverFileName": "ky-nang-song-an-toan-giao-thong-tai-lieu-gd-atgt-lop-3.jpg",
+    "fileSizeBytes": 5844211,
+    "viewerType": "pdf",
+    "pageCount": 24,
+    "pageWidth": 595,
+    "pageHeight": 842
+  }
+}

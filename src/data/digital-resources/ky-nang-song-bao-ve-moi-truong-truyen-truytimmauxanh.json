@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "ky-nang-song-bao-ve-moi-truong-truyen-truytimmauxanh",
+    "title": "Truyện Truy tìm màu xanh",
+    "subject": "Bảo vệ môi trường",
+    "description": "Tài liệu bảo vệ môi trường dành cho học sinh và gia đình.",
+    "keywords": [
+      "kỹ năng sống",
+      "bảo vệ môi trường",
+      "pdf",
+      "truyện",
+      "truy",
+      "tìm",
+      "màu",
+      "xanh"
+    ],
+    "accent": "#ff7045",
+    "kind": "life-skill",
+    "collectionId": "ky-nang-song",
+    "collectionTitle": "Kỹ năng sống",
+    "format": "pdf",
+    "sourceFolder": "KỸ NĂNG SỐNG",
+    "relativePath": "Bảo vệ môi trường/Truyện truytimmauxanh.pdf",
+    "fileName": "Truyện truytimmauxanh.pdf",
+    "coverFileName": "ky-nang-song-bao-ve-moi-truong-truyen-truytimmauxanh.jpg",
+    "fileSizeBytes": 25729949,
+    "viewerType": "pdf",
+    "pageCount": 72,
+    "pageWidth": 538.583,
+    "pageHeight": 737.008
+  }
+}

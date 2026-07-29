@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "ky-nang-song-ky-nang-tu-phuc-vu-day-tre-lam-viec-nha",
+    "title": "DẠY TRẺ LÀM VIỆC NHÀ",
+    "subject": "Kỹ năng tự phục vụ",
+    "description": "Tài liệu kỹ năng tự phục vụ dành cho học sinh và gia đình.",
+    "keywords": ["kỹ năng sống", "kỹ năng tự phục vụ", "pdf", "dạy", "trẻ", "làm", "việc", "nhà"],
+    "accent": "#ff7045",
+    "kind": "life-skill",
+    "collectionId": "ky-nang-song",
+    "collectionTitle": "Kỹ năng sống",
+    "format": "pdf",
+    "sourceFolder": "KỸ NĂNG SỐNG",
+    "relativePath": "Kỹ năng tự phục vụ/DẠY TRẺ LÀM VIỆC NHÀ.pdf",
+    "fileName": "DẠY TRẺ LÀM VIỆC NHÀ.pdf",
+    "coverFileName": "ky-nang-song-ky-nang-tu-phuc-vu-day-tre-lam-viec-nha.jpg",
+    "fileSizeBytes": 11880541,
+    "viewerType": "pdf",
+    "pageCount": 177,
+    "pageWidth": 259.5,
+    "pageHeight": 337.9
+  }
+}

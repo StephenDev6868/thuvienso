@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "collection": {
+    "id": "sach-giao-vien",
+    "title": "Sách giáo viên",
+    "description": "Sách giáo viên lớp 3, 4 và 5 đọc trực tuyến từ hệ thống tập huấn NXBGD.",
+    "bookCount": 36,
+    "grades": [3, 4, 5]
+  },
+  "books": [
+    {
+      "id": "sgv3-cong-nghe",
+      "title": "Sách giáo viên Công nghệ 3",
+      "subject": "Công nghệ",
+      "grade": 3,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-cong-nghe-3.4913313866#page=0"
+    },
+    {
+      "id": "sgv3-tin-hoc",
+      "title": "Sách giáo viên Tin học 3",
+      "subject": "Tin học",
+      "grade": 3,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tin-hoc-3.4913389523#page=0"
+    },
+    {
+      "id": "sgv3-hoat-dong-trai-nghiem",
+      "title": "Sách giáo viên Hoạt động trải nghiệm 3",
+      "subject": "Hoạt động trải nghiệm",
+      "grade": 3,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-hoat-dong-trai-nghiem-3.4913320170#page=0"
+    },
+    {
+      "id": "sgv3-giao-duc-the-chat",
+      "title": "Sách giáo viên Giáo dục Thể chất 3",
+      "subject": "Giáo dục thể chất",
+      "grade": 3,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-giao-duc-the-chat-3.4913315512#page=0"
+    },
+    {
+      "id": "sgv3-tieng-anh-tap-1",
+      "title": "Sách giáo viên Tiếng Anh 3 - Tập 1",
+      "subject": "Tiếng Anh",
+      "grade": 3,
+      "volume": 1,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-anh-3-global-success.4914826734#page=0"
+    },
+    {
+      "id": "sgv3-tieng-anh-tap-2",
+      "title": "Sách giáo viên Tiếng Anh 3 - Tập 2",
+      "subject": "Tiếng Anh",
+      "grade": 3,
+      "volume": 2,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-anh-3-global-success.4914830181#page=0"
+    },
+    {
+      "id": "sgv4-tieng-viet-tap-1",
+      "title": "Sách giáo viên Tiếng Việt 4 - Tập 1",
+      "subject": "Tiếng Việt",
+      "grade": 4,
+      "volume": 1,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-viet-4-tap-mot.4915428237#page=0"
+    },
+    {
+      "id": "sgv4-tieng-viet-tap-2",
+      "title": "Sách giáo viên Tiếng Việt 4 - Tập 2",
+      "subject": "Tiếng Việt",
+      "grade": 4,
+      "volume": 2,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-viet-4-tap-hai.4915429576#page=0"
+    },
+    {
+      "id": "sgv4-toan-tap-1",
+      "title": "Sách giáo viên Toán 4 - Tập 1",
+      "subject": "Toán",
+      "grade": 4,
+      "volume": 1,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-toan-4.4915432412#page=0"
+    },
+    {
+      "id": "sgv4-toan-tap-2",
+      "title": "Sách giáo viên Toán 4 - Tập 2",
+      "subject": "Toán",
+      "grade": 4,
+      "volume": 2,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-toan-4.4915435263#page=0"
+    },
+    {
+      "id": "sgv4-khoa-hoc",
+      "title": "Sách giáo viên Khoa học 4",
+      "subject": "Khoa học",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-khoa-hoc-4.4915415703#page=0"
+    },
+    {
+      "id": "sgv4-dao-duc",
+      "title": "Sách giáo viên Đạo đức 4",
+      "subject": "Đạo đức",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-dao-duc-4.4915405134#page=0"
+    },
+    {
+      "id": "sgv4-am-nhac",
+      "title": "Sách giáo viên Âm nhạc 4",
+      "subject": "Âm nhạc",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-am-nhac-4.4915399165#page=0"
+    },
+    {
+      "id": "sgv4-mi-thuat",
+      "title": "Sách giáo viên Mĩ thuật 4",
+      "subject": "Mỹ thuật",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-mi-thuat-4.4915418804#page=0"
+    },
+    {
+      "id": "sgv4-cong-nghe",
+      "title": "Sách giáo viên Công nghệ 4",
+      "subject": "Công nghệ",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-cong-nghe-4.4915403363#page=0"
+    },
+    {
+      "id": "sgv4-lich-su-dia-li",
+      "title": "Sách giáo viên Lịch sử và Địa lí 4",
+      "subject": "Lịch sử và Địa lí",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-lich-su-va-dia-li-4.4932818586#page=0"
+    },
+    {
+      "id": "sgv4-tin-hoc",
+      "title": "Sách giáo viên Tin học 4",
+      "subject": "Tin học",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tin-hoc-4.4915430514#page=0"
+    },
+    {
+      "id": "sgv4-hoat-dong-trai-nghiem",
+      "title": "Sách giáo viên Hoạt động trải nghiệm 4",
+      "subject": "Hoạt động trải nghiệm",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-hoat-dong-trai-nghiem-4.4915414617#page=0"
+    },
+    {
+      "id": "sgv4-giao-duc-the-chat",
+      "title": "Sách giáo viên Giáo dục Thể chất 4",
+      "subject": "Giáo dục thể chất",
+      "grade": 4,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-giao-duc-the-chat-4.4915409816#page=0"
+    },
+    {
+      "id": "sgv4-tieng-anh-tap-1",
+      "title": "Sách giáo viên Tiếng Anh 4 - Tập 1",
+      "subject": "Tiếng Anh",
+      "grade": 4,
+      "volume": 1,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-anh-4-global-success.4915421999#page=0"
+    },
+    {
+      "id": "sgv4-tieng-anh-tap-2",
+      "title": "Sách giáo viên Tiếng Anh 4 - Tập 2",
+      "subject": "Tiếng Anh",
+      "grade": 4,
+      "volume": 2,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-anh-4-global-success.4915427781#page=0"
+    },
+    {
+      "id": "sgv5-tieng-viet-tap-1",
+      "title": "Sách giáo viên Tiếng Việt 5 - Tập 1",
+      "subject": "Tiếng Việt",
+      "grade": 5,
+      "volume": 1,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-viet-5-tap-1.4915606794#page=0"
+    },
+    {
+      "id": "sgv5-tieng-viet-tap-2",
+      "title": "Sách giáo viên Tiếng Việt 5 - Tập 2",
+      "subject": "Tiếng Việt",
+      "grade": 5,
+      "volume": 2,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-viet-5-tap-hai.4915613577#page=0"
+    },
+    {
+      "id": "sgv5-toan-tap-1",
+      "title": "Sách giáo viên Toán 5 - Tập 1",
+      "subject": "Toán",
+      "grade": 5,
+      "volume": 1,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-toan-5.4915621383#page=0"
+    },
+    {
+      "id": "sgv5-toan-tap-2",
+      "title": "Sách giáo viên Toán 5 - Tập 2",
+      "subject": "Toán",
+      "grade": 5,
+      "volume": 2,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-toan-5.4915629681#page=0"
+    },
+    {
+      "id": "sgv5-khoa-hoc",
+      "title": "Sách giáo viên Khoa học 5",
+      "subject": "Khoa học",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-khoa-hoc-5.4915593158#page=0"
+    },
+    {
+      "id": "sgv5-dao-duc",
+      "title": "Sách giáo viên Đạo đức 5",
+      "subject": "Đạo đức",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-dao-duc-5.4915587476#page=0"
+    },
+    {
+      "id": "sgv5-am-nhac",
+      "title": "Sách giáo viên Âm nhạc 5",
+      "subject": "Âm nhạc",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-am-nhac-5.4915564449#page=0"
+    },
+    {
+      "id": "sgv5-mi-thuat",
+      "title": "Sách giáo viên Mĩ thuật 5",
+      "subject": "Mỹ thuật",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-mi-thuat-5.4915597929#page=0"
+    },
+    {
+      "id": "sgv5-cong-nghe",
+      "title": "Sách giáo viên Công nghệ 5",
+      "subject": "Công nghệ",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-cong-nghe-5.4915586682#page=0"
+    },
+    {
+      "id": "sgv5-lich-su-dia-li",
+      "title": "Sách giáo viên Lịch sử và Địa lí 5",
+      "subject": "Lịch sử và Địa lí",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-lich-su-va-dia-li-5.4931425219#page=0"
+    },
+    {
+      "id": "sgv5-tin-hoc",
+      "title": "Sách giáo viên Tin học 5",
+      "subject": "Tin học",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tin-hoc-5.4915618483#page=0"
+    },
+    {
+      "id": "sgv5-hoat-dong-trai-nghiem",
+      "title": "Sách giáo viên Hoạt động trải nghiệm 5",
+      "subject": "Hoạt động trải nghiệm",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-hoat-dong-trai-nghiem-5.4915591780#page=0"
+    },
+    {
+      "id": "sgv5-giao-duc-the-chat",
+      "title": "Sách giáo viên Giáo dục Thể chất 5",
+      "subject": "Giáo dục thể chất",
+      "grade": 5,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-giao-duc-the-chat-5.4915589166#page=0"
+    },
+    {
+      "id": "sgv5-tieng-anh-tap-1",
+      "title": "Sách giáo viên Tiếng Anh 5 - Tập 1",
+      "subject": "Tiếng Anh",
+      "grade": 5,
+      "volume": 1,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-anh-5-global-success.4915599987#page=0"
+    },
+    {
+      "id": "sgv5-tieng-anh-tap-2",
+      "title": "Sách giáo viên Tiếng Anh 5 - Tập 2",
+      "subject": "Tiếng Anh",
+      "grade": 5,
+      "volume": 2,
+      "url": "https://taphuan.nxbgd.vn/tap-huan/doc-sach/sgv-tieng-anh-5-global-success.4915599987#page=0"
+    }
+  ]
+}
