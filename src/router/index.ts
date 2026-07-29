@@ -2,7 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior: () => ({ top: 0 }),
+  scrollBehavior: (to) => {
+    if (to.hash) return { el: to.hash, behavior: 'smooth' }
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',
@@ -13,6 +16,12 @@ const router = createRouter({
           name: 'home',
           component: () => import('@/views/HomeView.vue'),
           meta: { title: 'Thư viện số AI • STEM' },
+        },
+        {
+          path: 'tu-sach-3d',
+          name: 'three-d-library',
+          component: () => import('@/views/ThreeDLibraryView.vue'),
+          meta: { title: 'Tủ sách 3D' },
         },
       ],
     },

@@ -5,8 +5,16 @@ export const books: Book[] = digitalBooks
 
 export const gradeFilters: Array<number | 'Tất cả'> = [
   'Tất cả',
-  ...Array.from(new Set(digitalBooks.map((book) => book.grade))).sort(),
+  ...Array.from(new Set(digitalBooks.flatMap((book) => (book.grade ? [book.grade] : [])))).sort(),
 ]
+
+export const collectionFilters = [
+  'Tất cả',
+  'Sách giáo khoa',
+  'Sách giáo viên',
+  'Kỹ năng sống',
+  'Tài liệu cho giáo viên',
+] as const
 
 export const bookFilters = [
   'Tất cả',

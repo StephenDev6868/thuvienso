@@ -14,6 +14,7 @@ export const useAppStore = defineStore('app', () => {
   const searchQuery = ref('')
   const activeGradeFilter = ref<number | 'Tất cả'>('Tất cả')
   const activeBookFilter = ref('Tất cả')
+  const activeCollectionFilter = ref('Tất cả')
   const selectedBook = computed(() =>
     selectedBookId.value ? (findDigitalBook(selectedBookId.value) ?? null) : null,
   )
@@ -89,6 +90,7 @@ export const useAppStore = defineStore('app', () => {
     searchQuery,
     activeGradeFilter,
     activeBookFilter,
+    activeCollectionFilter,
     toggleMenu,
     closeMenu,
     openChat,

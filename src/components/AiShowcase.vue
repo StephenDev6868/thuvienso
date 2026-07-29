@@ -9,9 +9,9 @@ const appStore = useAppStore()
 
 const prompts = [
   'Mở sách Toán lớp 3 - Tập 1',
-  'Mở sách Tiếng Việt lớp 4 - Tập 2',
-  'Kho sách lớp 3 có những môn nào?',
-  'Mở sách Khoa học lớp 4',
+  'Mở sách giáo viên Toán lớp 4 tập 1',
+  'Mở KHBD Toán lớp 3 tuần 19',
+  'Kho sách giáo viên lớp 5 có gì?',
 ]
 </script>
 
@@ -27,7 +27,7 @@ const prompts = [
         <SectionHeading
           eyebrow="Trợ lý AI Thư viện"
           title="Không biết nên đọc gì? Hãy hỏi AI."
-          description="AI gợi ý sách theo độ tuổi, sở thích, môn học và mục tiêu đọc của từng học sinh."
+          description="AI tìm và mở sách, tài liệu kỹ năng sống, kế hoạch bài dạy và bài trình chiếu theo yêu cầu."
           light
         />
         <button
@@ -50,7 +50,7 @@ const prompts = [
             />
           </span>
           <div>
-            <p class="font-black">AI Library Assistant</p>
+            <p class="font-black">Thủ thư AI</p>
             <p class="mt-1 flex items-center gap-1.5 text-xs text-emerald-600">
               <span class="size-2 rounded-full bg-emerald-500" />
               Sẵn sàng hỗ trợ

@@ -6,16 +6,19 @@ import {
   Bot,
   FlaskConical,
   Headphones,
+  LibraryBig,
   Play,
   Sparkles,
 } from '@lucide/vue'
 import type { Component } from 'vue'
+import { useRouter } from 'vue-router'
 
 import SectionHeading from '@/components/SectionHeading.vue'
-import { digitalLibraryCollection } from '@/data/digitalLibrary'
+import { digitalBooks } from '@/data/digitalLibrary'
 import { useAppStore } from '@/stores/app'
 
-type QuickAction = 'scroll-books' | 'audio' | 'video' | 'chat' | 'stem' | 'register'
+type QuickAction =
+  'scroll-books' | 'three-d-library' | 'audio' | 'video' | 'chat' | 'stem' | 'register'
 
 interface QuickLink {
   title: string
@@ -28,16 +31,26 @@ interface QuickLink {
 }
 
 const appStore = useAppStore()
+const router = useRouter()
 
 const links: QuickLink[] = [
   {
     title: 'Đọc sách',
-    description: 'Lật trang và đọc PDF trực tuyến',
+    description: 'Xem PDF, Word và PowerPoint trực tuyến',
     badge: 'Kho sách số',
-    metric: `${digitalLibraryCollection.bookCount} cuốn`,
+    metric: `${digitalBooks.length} tài liệu`,
     color: '#df2133',
     icon: BookOpen,
     action: 'scroll-books',
+  },
+  {
+    title: 'Tủ sách 3D',
+    description: 'Khám phá từng tủ, từng kệ sách tương tác',
+    badge: 'Không gian 3D',
+    metric: `${digitalBooks.length} tài liệu`,
+    color: '#159b84',
+    icon: LibraryBig,
+    action: 'three-d-library',
   },
   {
     title: 'Sách nói',
@@ -91,6 +104,7 @@ function scrollTo(id: string) {
 }
 
 function runAction(action: QuickAction) {
+  if (action === 'three-d-library') return router.push({ name: 'three-d-library' })
   if (action === 'chat') return appStore.openChat()
   if (action === 'register') return appStore.openRegistration()
   if (action === 'video' || action === 'stem') return scrollTo('#stem-videos')
@@ -131,7 +145,7 @@ function getCardStyle(link: QuickLink, index: number) {
         <SectionHeading
           eyebrow="Truy cập nhanh"
           title="Học theo cách bạn thích"
-          description="Sáu trải nghiệm học tập, chỉ một chạm để bắt đầu."
+          description="Bảy trải nghiệm học tập, chỉ một chạm để bắt đầu."
           light
         />
         <div
@@ -140,11 +154,13 @@ function getCardStyle(link: QuickLink, index: number) {
           <span class="grid size-7 place-items-center rounded-full bg-red-500 text-white">
             <Sparkles :size="14" />
           </span>
-          6 lối vào kho tri thức
+          7 lối vào kho tri thức
         </div>
       </div>
 
-      <div class="relative mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6">
+      <div
+        class="relative mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7"
+      >
         <button
           v-for="(link, index) in links"
           :key="link.title"

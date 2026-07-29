@@ -1,29 +1,31 @@
 <script setup lang="ts">
 import { ArrowUpRight, Globe2, MessagesSquare } from '@lucide/vue'
+import { RouterLink } from 'vue-router'
 
 const groups = [
   {
     title: 'Khám phá',
     links: [
-      { label: 'Kho sách', href: '#featured-books' },
-      { label: 'Sách nói', href: '#quick-access' },
-      { label: 'Học liệu STEM', href: '#stem-videos' },
+      { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' } },
+      { label: 'Tủ sách 3D', to: { name: 'three-d-library' } },
+      { label: 'Sách nói', to: { name: 'home', hash: '#quick-access' } },
+      { label: 'Học liệu STEM', to: { name: 'home', hash: '#stem-videos' } },
     ],
   },
   {
     title: 'Tài nguyên',
     links: [
-      { label: 'Hướng dẫn', href: '#top' },
-      { label: 'Chính sách', href: '#top' },
-      { label: 'Hỗ trợ', href: '#ai-assistant' },
+      { label: 'Hướng dẫn', to: { name: 'home', hash: '#top' } },
+      { label: 'Chính sách', to: { name: 'home', hash: '#top' } },
+      { label: 'Hỗ trợ', to: { name: 'home', hash: '#ai-assistant' } },
     ],
   },
   {
     title: 'Nhà trường',
     links: [
-      { label: 'Giáo viên', href: '#community' },
-      { label: 'Phụ huynh', href: '#community' },
-      { label: 'Hoạt động', href: '#community' },
+      { label: 'Giáo viên', to: { name: 'home', hash: '#community' } },
+      { label: 'Phụ huynh', to: { name: 'home', hash: '#community' } },
+      { label: 'Hoạt động', to: { name: 'home', hash: '#community' } },
     ],
   },
 ]
@@ -57,14 +59,14 @@ const contactLinks = [
         <div v-for="group in groups" :key="group.title">
           <p class="font-bold">{{ group.title }}</p>
           <div class="mt-5 grid gap-4">
-            <a
+            <RouterLink
               v-for="link in group.links"
               :key="link.label"
-              :href="link.href"
+              :to="link.to"
               class="focus-ring w-fit rounded text-sm text-slate-400 transition hover:text-white"
             >
               {{ link.label }}
-            </a>
+            </RouterLink>
           </div>
         </div>
       </div>

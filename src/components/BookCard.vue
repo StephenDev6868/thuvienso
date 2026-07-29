@@ -31,16 +31,22 @@ const emit = defineEmits<{
           class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
         />
         <span
-          class="absolute left-3 top-3 rounded-full bg-white/92 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider shadow-sm backdrop-blur"
+          class="absolute left-3 top-3 max-w-[calc(100%-1.5rem)] truncate rounded-full bg-white/92 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider shadow-sm backdrop-blur"
           :style="{ color: book.accent }"
         >
-          Lớp {{ book.grade }}
+          {{ book.collectionTitle }}{{ book.grade ? ` • Lớp ${book.grade}` : '' }}
         </span>
         <span
           class="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-black/55 px-3 py-1.5 text-[10px] font-bold text-white backdrop-blur"
         >
           <FileText :size="12" />
-          {{ book.pageCount }} trang
+          {{
+            book.pageCount
+              ? `${book.pageCount} trang`
+              : book.viewerType === 'external'
+                ? 'NXBGD'
+                : book.format.toUpperCase()
+          }}
         </span>
       </span>
       <span class="block p-4">
@@ -56,7 +62,11 @@ const emit = defineEmits<{
         </span>
         <span class="mt-4 flex items-center gap-2 text-xs font-extrabold text-red-500">
           <BookOpen :size="15" />
-          Đọc sách online
+          {{
+            book.viewerType === 'external'
+              ? 'Đọc sách trực tuyến'
+              : `Xem ${book.format.toUpperCase()} online`
+          }}
         </span>
       </span>
     </button>

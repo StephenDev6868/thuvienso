@@ -2,6 +2,7 @@
 import { Bot, Mic, Send, Sparkles, Volume2, VolumeX, X } from '@lucide/vue'
 import { storeToRefs } from 'pinia'
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 import avatarBotUrl from '../../avatar_bot.gif'
 import { getLibraryAssistantReply } from '@/services/libraryAssistant'
@@ -44,6 +45,7 @@ interface SpeechRecognitionLike {
 type SpeechRecognitionConstructor = new () => SpeechRecognitionLike
 
 const appStore = useAppStore()
+const route = useRoute()
 const { chatOpen, pendingChatPrompt } = storeToRefs(appStore)
 const input = ref('')
 const typing = ref(false)
@@ -56,18 +58,19 @@ const speechError = ref('')
 const messagesContainer = ref<HTMLElement | null>(null)
 
 const suggestions = [
-  'Kho sách lớp 3 có những môn nào?',
-  'Mở sách Toán lớp 4 - Tập 1',
-  'Mở sách Tự nhiên và Xã hội lớp 3',
-  'Mở sách Khoa học lớp 4',
+  'Kho sách giáo viên lớp 4 có gì?',
+  'Mở sách giáo viên Toán lớp 4 tập 1',
+  'Mở KHBD Toán lớp 3 tuần 19',
+  'Kho Kỹ năng sống có tài liệu gì?',
 ]
+
+const greeting = 'Xin chào! Tôi có thể giúp được gì cho bạn?'
 
 const messages = ref<ChatMessage[]>([
   {
     id: 1,
     role: 'assistant',
-    content:
-      'Xin chào! Mình là trợ lý AI Thư viện. Mình có thể giúp bạn tìm sách, học liệu STEM hoặc hướng dẫn sử dụng thư viện.',
+    content: greeting,
   },
 ])
 
@@ -136,7 +139,7 @@ function toggleSound() {
   if (!soundEnabled.value && 'speechSynthesis' in globalThis) {
     globalThis.speechSynthesis.cancel()
   } else {
-    speak('Xin chào! Tôi có thể giúp được gì cho bạn?')
+    speak(greeting)
   }
 }
 
@@ -252,6 +255,15 @@ watch(pendingChatPrompt, (prompt) => {
   void nextTick(() => sendMessage(prompt))
 })
 
+watch(
+  () => route.name,
+  (routeName, previousRouteName) => {
+    if (routeName === 'three-d-library') launcherMinimized.value = true
+    else if (previousRouteName === 'three-d-library') launcherMinimized.value = false
+  },
+  { immediate: true },
+)
+
 onMounted(() => {
   setupSpeechRecognition()
 
@@ -260,7 +272,7 @@ onMounted(() => {
   }, 350)
 
   introTimer = globalThis.setTimeout(() => {
-    speak('Xin chào! Tôi có thể giúp được gì cho bạn?')
+    speak(greeting)
   }, 1100)
 })
 
@@ -315,7 +327,7 @@ onBeforeUnmount(() => {
 
       <div
         v-else-if="launcherVisible && !chatOpen"
-        class="relative flex h-[330px] w-[min(390px,calc(100vw-2rem))] items-end justify-end rounded-[32px]"
+        class="relative flex h-[238px] w-[min(390px,calc(100vw-2rem))] items-end justify-end rounded-[32px] sm:h-[330px]"
       >
         <button
           type="button"
@@ -324,16 +336,16 @@ onBeforeUnmount(() => {
           @click="appStore.openChat"
         >
           <span
-            class="animate-greeting absolute left-0 top-7 z-10 w-37 rounded-2xl rounded-br-sm bg-ink-950 px-4 py-3 text-left text-white shadow-xl sm:w-42"
+            class="animate-greeting absolute left-0 top-5 z-10 w-36 rounded-2xl rounded-br-sm bg-ink-950 px-3 py-3 text-left text-white shadow-xl sm:top-7 sm:w-42 sm:px-4"
           >
-            <strong class="block text-base">Xin chào! 👋</strong>
-            <small class="mt-1 block leading-5 text-white/70"
-              >Chạm vào mình để hỏi về sách nhé!</small
-            >
+            <strong class="block text-sm sm:text-base">{{ greeting }}</strong>
+            <small class="mt-1 block leading-5 text-white/70">
+              Chạm vào mình để hỏi về sách nhé!
+            </small>
             <span class="absolute -bottom-2 right-0 size-4 rotate-45 bg-ink-950" />
           </span>
           <span
-            class="animate-bot-intro relative grid h-[318px] w-[318px] max-w-full place-items-end bg-transparent transition duration-300 group-hover:-translate-y-1"
+            class="animate-bot-intro relative grid h-[230px] w-[230px] max-w-full place-items-end bg-transparent transition duration-300 group-hover:-translate-y-1 sm:h-[318px] sm:w-[318px]"
           >
             <img
               :src="avatarBotUrl"
@@ -386,7 +398,7 @@ onBeforeUnmount(() => {
             </div>
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2">
-                <h2 class="truncate font-extrabold">AI Library Assistant</h2>
+                <h2 class="truncate font-extrabold">Thủ thư AI</h2>
                 <span class="size-2 rounded-full bg-emerald-400" aria-label="Đang trực tuyến" />
               </div>
               <p class="mt-1 text-xs text-white/55">Trợ lý thư viện số • phản hồi tức thì</p>
@@ -414,7 +426,7 @@ onBeforeUnmount(() => {
         <div ref="messagesContainer" class="flex-1 overflow-y-auto bg-[#fffaf6] px-4 py-5">
           <div class="mb-5 flex items-center gap-2 text-xs font-bold text-red-500">
             <Sparkles :size="15" />
-            Xin chào, hôm nay mình giúp gì cho bạn?
+            {{ greeting }}
           </div>
           <div class="grid gap-3">
             <div

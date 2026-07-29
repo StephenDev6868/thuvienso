@@ -5,6 +5,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import slide4Url from '@/assets/images/slide4.gif'
 import slide5Url from '@/assets/images/slide5.gif'
 import slide6Url from '@/assets/images/slide6.gif'
+import slide7Url from '@/assets/images/slide7.gif'
 import { useAppStore } from '@/stores/app'
 
 type HeroAction = 'audio' | 'chat' | 'library'
@@ -23,7 +24,7 @@ interface HeroSlide {
 const AUTOPLAY_DELAY = 6500
 
 const slides: HeroSlide[] = [
-   {
+  {
     image: slide6Url,
     alt: 'Thư viện số thông minh - khám phá kho tri thức dành cho em',
     eyebrow: 'Thư viện thông minh',
@@ -38,10 +39,10 @@ const slides: HeroSlide[] = [
       height: '18%',
     },
   },
-    {
+  {
     image: slide5Url,
     alt: 'Trợ lý AI thư viện - hỏi nhanh, tìm đúng, học vui',
-    eyebrow: 'AI Library Assistant',
+    eyebrow: 'Thủ thư AI',
     buttonLabel: 'Trò chuyện với trợ lý AI',
     action: 'chat',
     position: 'center',
@@ -66,6 +67,21 @@ const slides: HeroSlide[] = [
       top: '69%',
       width: '21%',
       height: '14%',
+    },
+  },
+  {
+    image: slide7Url,
+    alt: 'Giáo viên đồng hành, mở cánh cửa tri thức cùng em',
+    eyebrow: 'Giáo viên đồng hành',
+    buttonLabel: 'Xem hướng dẫn',
+    action: 'library',
+    position: 'center',
+    accent: '#f56624',
+    ctaStyle: {
+      left: '12%',
+      top: '59%',
+      width: '24%',
+      height: '17%',
     },
   },
 ]

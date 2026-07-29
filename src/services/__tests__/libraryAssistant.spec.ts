@@ -38,4 +38,51 @@ describe('local library assistant', () => {
     expect(reply.content).toContain('Tiếng Việt')
     expect(reply.content).toContain('Khoa học')
   })
+
+  it('opens a digitized life-skill PDF', () => {
+    const reply = getLibraryAssistantReply('Mở tài liệu kỹ năng quản trị cảm xúc')
+
+    expect(reply.openBookId).toBe('ky-nang-song-quan-ly-cam-xuc-ki-nang-quan-tri-cam-xuc')
+    expect(reply.content).toContain('PDF')
+  })
+
+  it('opens a digitized Word lesson plan', () => {
+    const reply = getLibraryAssistantReply('Mở KHBD Toán lớp 3 tuần 19')
+
+    expect(reply.openBookId).toBe(
+      'tai-lieu-giao-vien-khbd-minh-hoa-khoi-1-5-khbd-tvs-lop-3-khbd-lop-3-toan-tuan-19',
+    )
+    expect(reply.content).toContain('DOCX')
+  })
+
+  it('describes the teacher resource catalog', () => {
+    const reply = getLibraryAssistantReply('Danh sách tài liệu giáo viên')
+
+    expect(reply.content).toContain('36 tài liệu')
+    expect(reply.content).toContain('DOCX')
+    expect(reply.content).toContain('PPTX')
+  })
+
+  it('opens an embedded teacher book link', () => {
+    const reply = getLibraryAssistantReply('Mở sách giáo viên Toán lớp 4 tập 1')
+
+    expect(reply.openBookId).toBe('sgv4-toan-tap-1')
+    expect(reply.content).toContain('NXBGD')
+  })
+
+  it('asks for a volume when a teacher book has two volumes', () => {
+    const reply = getLibraryAssistantReply('Mở sách giáo viên Tiếng Việt lớp 5')
+
+    expect(reply.openBookId).toBeUndefined()
+    expect(reply.content).toContain('Tập 1')
+    expect(reply.content).toContain('Tập 2')
+  })
+
+  it('describes the teacher-book catalog by grade', () => {
+    const reply = getLibraryAssistantReply('Kho sách giáo viên lớp 4 có gì?')
+
+    expect(reply.content).toContain('15 cuốn')
+    expect(reply.content).toContain('Toán')
+    expect(reply.content).toContain('Tiếng Việt')
+  })
 })

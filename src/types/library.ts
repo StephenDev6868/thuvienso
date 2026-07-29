@@ -1,22 +1,49 @@
-export interface Book {
+export type LibraryItemKind = 'textbook' | 'life-skill' | 'teacher-resource' | 'teacher-book'
+export type LibraryItemFormat = 'pdf' | 'docx' | 'ppt' | 'pptx' | 'link'
+
+interface LibraryItemBase {
   id: string
   title: string
   subject: string
   description: string
-  grade: number
+  grade?: number
   volume?: number
   keywords: string[]
   accent: string
+  kind: LibraryItemKind
+  collectionId: string
+  collectionTitle: string
+  format: LibraryItemFormat
   sourceFolder: string
+  relativePath: string
   fileName: string
   coverFileName: string
-  pageCount: number
   fileSizeBytes: number
+  coverUrl: string
+  originalUrl: string
+  pageCount?: number
+}
+
+export interface PdfLibraryItem extends LibraryItemBase {
+  viewerType: 'pdf'
+  pageCount: number
   pageWidth: number
   pageHeight: number
   pdfUrl: string
-  coverUrl: string
 }
+
+export interface OfficeLibraryItem extends LibraryItemBase {
+  viewerType: 'office'
+  previewPath: string
+  previewUrl: string
+}
+
+export interface ExternalLibraryItem extends LibraryItemBase {
+  viewerType: 'external'
+  externalUrl: string
+}
+
+export type Book = PdfLibraryItem | OfficeLibraryItem | ExternalLibraryItem
 
 export interface DigitalLibraryCollection {
   id: string
@@ -25,6 +52,23 @@ export interface DigitalLibraryCollection {
   grades: number[]
   bookCount: number
   totalPages: number
+}
+
+export interface DigitalResourceCollection {
+  id: string
+  title: string
+  description: string
+  documentCount: number
+  totalPages: number
+  formats: LibraryItemFormat[]
+}
+
+export interface TeacherBookCollection {
+  id: string
+  title: string
+  description: string
+  bookCount: number
+  grades: number[]
 }
 
 export interface DigitalLibraryGradeCollection {

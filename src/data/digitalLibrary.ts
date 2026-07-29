@@ -1,34 +1,196 @@
 import catalog from '@/data/digital-library.json'
-import type { Book, DigitalLibraryCollection, DigitalLibraryGradeCollection } from '@/types/library'
+import resourceCatalog from '@/data/digital-resources.json'
+import teacherBookCatalog from '@/data/teacher-books.json'
+import teacherBookCoverUrl from '@/assets/teacher-book-cover.svg'
+import type {
+  Book,
+  DigitalLibraryCollection,
+  DigitalLibraryGradeCollection,
+  DigitalResourceCollection,
+  LibraryItemFormat,
+  LibraryItemKind,
+  TeacherBookCollection,
+} from '@/types/library'
 
-type CatalogBook = Omit<Book, 'pdfUrl' | 'coverUrl'>
+interface CatalogBook {
+  id: string
+  title: string
+  subject: string
+  description: string
+  grade?: number
+  volume?: number
+  keywords: string[]
+  accent: string
+  sourceFolder: string
+  fileName: string
+  coverFileName: string
+  pageCount: number
+  fileSizeBytes: number
+  pageWidth: number
+  pageHeight: number
+}
 
-const pdfAssets = import.meta.glob('./SGK_*/*.pdf', {
+interface CatalogResource {
+  id: string
+  title: string
+  subject: string
+  description: string
+  grade?: number
+  keywords: string[]
+  accent: string
+  kind: LibraryItemKind
+  collectionId: string
+  collectionTitle: string
+  format: LibraryItemFormat
+  sourceFolder: string
+  relativePath: string
+  fileName: string
+  coverFileName: string
+  fileSizeBytes: number
+  viewerType: 'pdf' | 'office'
+  pageCount?: number
+  pageWidth?: number
+  pageHeight?: number
+  previewPath?: string
+}
+
+interface CatalogTeacherBook {
+  id: string
+  title: string
+  subject: string
+  grade: number
+  volume?: number
+  url: string
+}
+
+const subjectAccents: Record<string, string> = {
+  'Âm nhạc': '#8757f2',
+  'Công nghệ': '#0f9f85',
+  'Giáo dục thể chất': '#2aa66c',
+  'Hoạt động trải nghiệm': '#ff7045',
+  'Khoa học': '#2aa66c',
+  'Lịch sử và Địa lí': '#b7791f',
+  'Mỹ thuật': '#e84d8a',
+  'Tin học': '#2563eb',
+  'Tiếng Anh': '#3e6ff4',
+  'Tiếng Việt': '#df2133',
+  Toán: '#315fd7',
+  'Đạo đức': '#df2133',
+}
+
+const libraryAssets = import.meta.glob(['./**/*.pdf', './**/*.docx', './**/*.ppt', './**/*.pptx'], {
   eager: true,
   import: 'default',
   query: '?url',
 }) as Record<string, string>
 
-const coverAssets = import.meta.glob('../assets/book-covers/*.jpg', {
+const coverAssets = import.meta.glob('../assets/{book-covers,resource-covers}/*.{jpg,png}', {
   eager: true,
   import: 'default',
   query: '?url',
 }) as Record<string, string>
 
 function requireAsset(assets: Record<string, string>, key: string) {
-  const asset = assets[key]
+  const asset =
+    assets[key] ??
+    Object.entries(assets).find(
+      ([assetKey]) => assetKey.normalize('NFC') === key.normalize('NFC'),
+    )?.[1]
   if (!asset) throw new Error(`Không tìm thấy tài nguyên thư viện: ${key}`)
   return asset
 }
 
 export const digitalLibraryCollection = catalog.collection as DigitalLibraryCollection
 export const digitalLibraryGradeCollections = catalog.collections as DigitalLibraryGradeCollection[]
+export const digitalResourceCollection = resourceCatalog.collection as DigitalResourceCollection
+export const teacherBookCollection = teacherBookCatalog.collection as TeacherBookCollection
 
-export const digitalBooks: Book[] = (catalog.books as CatalogBook[]).map((book) => ({
+export const digitalTextbooks: Book[] = (catalog.books as CatalogBook[]).map((book) => ({
   ...book,
-  pdfUrl: requireAsset(pdfAssets, `./${book.sourceFolder}/${book.fileName}`),
+  kind: 'textbook',
+  collectionId: `sgk-lop-${book.grade}`,
+  collectionTitle: 'Sách giáo khoa',
+  format: 'pdf',
+  viewerType: 'pdf',
+  relativePath: book.fileName,
+  pdfUrl: requireAsset(libraryAssets, `./${book.sourceFolder}/${book.fileName}`),
+  originalUrl: requireAsset(libraryAssets, `./${book.sourceFolder}/${book.fileName}`),
   coverUrl: requireAsset(coverAssets, `../assets/book-covers/${book.coverFileName}`),
 }))
+
+export const digitalResources: Book[] = (resourceCatalog.documents as CatalogResource[]).map(
+  (document) => {
+    const originalUrl = requireAsset(
+      libraryAssets,
+      `./${document.sourceFolder}/${document.relativePath}`,
+    )
+    const common = {
+      ...document,
+      originalUrl,
+      coverUrl: requireAsset(coverAssets, `../assets/resource-covers/${document.coverFileName}`),
+    }
+
+    if (document.viewerType === 'office') {
+      if (!document.previewPath) {
+        throw new Error(`Tài liệu Office chưa có bản xem trước: ${document.id}`)
+      }
+      return {
+        ...common,
+        viewerType: 'office' as const,
+        previewPath: document.previewPath,
+        previewUrl: document.previewPath,
+      }
+    }
+
+    return {
+      ...common,
+      viewerType: 'pdf' as const,
+      pageCount: document.pageCount ?? 0,
+      pageWidth: document.pageWidth ?? 595,
+      pageHeight: document.pageHeight ?? 842,
+      pdfUrl: originalUrl,
+    }
+  },
+)
+
+export const digitalTeacherBooks: Book[] = (teacherBookCatalog.books as CatalogTeacherBook[]).map(
+  (book) => ({
+    id: book.id,
+    title: book.title,
+    subject: book.subject,
+    description: `Sách giáo viên ${book.subject} lớp ${book.grade}${book.volume ? `, tập ${book.volume}` : ''}, đọc trực tuyến trên hệ thống tập huấn NXBGD.`,
+    grade: book.grade,
+    ...(book.volume ? { volume: book.volume } : {}),
+    keywords: [
+      'sách giáo viên',
+      'sgv',
+      book.subject.toLowerCase(),
+      `lớp ${book.grade}`,
+      ...(book.volume ? [`tập ${book.volume}`] : []),
+      'nxbgd',
+    ],
+    accent: subjectAccents[book.subject] ?? '#315fd7',
+    kind: 'teacher-book',
+    collectionId: 'sach-giao-vien',
+    collectionTitle: 'Sách giáo viên',
+    format: 'link',
+    viewerType: 'external',
+    sourceFolder: 'NXBGD',
+    relativePath: book.url,
+    fileName: '',
+    coverFileName: 'teacher-book-cover.svg',
+    fileSizeBytes: 0,
+    coverUrl: teacherBookCoverUrl,
+    originalUrl: book.url,
+    externalUrl: book.url,
+  }),
+)
+
+export const digitalBooks: Book[] = [
+  ...digitalTextbooks,
+  ...digitalResources,
+  ...digitalTeacherBooks,
+]
 
 export function normalizeBookText(value: string) {
   return value
@@ -55,6 +217,8 @@ const ignoredQueryWords = new Set([
   'nay',
   'nhe',
   'sach',
+  'tai',
+  'lieu',
   'toi',
   'xem',
 ])
@@ -75,6 +239,23 @@ function scoreBook(book: Book, rawQuery: string) {
   if (query.includes(title)) score += 100
   if (title.includes(query) && query.length > 2) score += 80
   if (query.includes(subject)) score += 55
+  if (query.includes('khbd') || query.includes('ke hoach bai day')) {
+    score += book.kind === 'teacher-resource' ? 130 : -150
+  }
+  if (query.includes('tuan') && title.includes('tuan')) {
+    score += book.kind === 'teacher-resource' ? 80 : 0
+  }
+  if (query.includes('ky nang song')) {
+    score += book.kind === 'life-skill' ? 100 : -60
+  }
+  if (query.includes('giao vien') || query.includes('tap huan')) {
+    score += book.kind === 'teacher-resource' ? 80 : -40
+  }
+  if (query.includes('sach giao vien') || query.split(' ').includes('sgv')) {
+    score += book.kind === 'teacher-book' ? 180 : -150
+  } else if (query.split(' ').includes('sach')) {
+    score += book.kind === 'textbook' ? 40 : book.kind === 'teacher-book' ? -80 : 0
+  }
 
   const requestedGrade = extractRequestedGrade(rawQuery)
   if (requestedGrade) {

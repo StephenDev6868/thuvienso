@@ -2,27 +2,30 @@
 import { Menu, MessagesSquare, ScanLine, Search, X } from '@lucide/vue'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 
 import logoUrl from '../../logo.jpg'
 import { useAppStore } from '@/stores/app'
 
 const appStore = useAppStore()
+const route = useRoute()
+const router = useRouter()
 const { menuOpen, searchQuery, smartLockOpen } = storeToRefs(appStore)
 const headerQuery = ref('')
 
 const navigation = [
-  { label: 'Trang chủ', href: '#top' },
-  { label: 'Kho sách', href: '#featured-books' },
-  { label: 'Sách nói', href: '#quick-access' },
-  { label: 'Học liệu', href: '#stem-videos' },
-  { label: 'STEM', href: '#topics' },
-  { label: 'Hoạt động', href: '#community' },
+  { label: 'Trang chủ', to: { name: 'home', hash: '#top' }, activeRoute: 'home' },
+  { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' } },
+  { label: 'Tủ sách 3D', to: { name: 'three-d-library' }, activeRoute: 'three-d-library' },
+  { label: 'Sách nói', to: { name: 'home', hash: '#quick-access' } },
+  { label: 'Học liệu', to: { name: 'home', hash: '#stem-videos' } },
+  { label: 'STEM', to: { name: 'home', hash: '#topics' } },
+  { label: 'Hoạt động', to: { name: 'home', hash: '#community' } },
 ]
 
 function submitSearch() {
   appStore.searchBooks(headerQuery.value)
-  globalThis.document.querySelector('#featured-books')?.scrollIntoView({ behavior: 'smooth' })
+  void router.push({ name: 'home', hash: '#featured-books' })
 }
 </script>
 
@@ -52,15 +55,15 @@ function submitSearch() {
       </RouterLink>
 
       <nav class="hidden items-center gap-5 xl:flex" aria-label="Điều hướng chính">
-        <a
-          v-for="(item, index) in navigation"
-          :key="item.href"
-          :href="item.href"
+        <RouterLink
+          v-for="item in navigation"
+          :key="item.label"
+          :to="item.to"
           class="focus-ring rounded-lg py-2 text-sm font-semibold transition hover:text-red-500"
-          :class="index === 0 ? 'text-red-500' : 'text-ink-950'"
+          :class="route.name === item.activeRoute ? 'text-red-500' : 'text-ink-950'"
         >
           {{ item.label }}
-        </a>
+        </RouterLink>
       </nav>
 
       <form
@@ -103,8 +106,8 @@ function submitSearch() {
         <span class="hidden md:inline">Màn hình khoá</span>
       </button>
 
-      <a
-        href="#contact"
+      <RouterLink
+        :to="{ name: 'home', hash: '#contact' }"
         class="focus-ring group relative inline-flex h-11 shrink-0 items-center gap-2.5 overflow-hidden rounded-full bg-ink-950 px-2.5 text-sm font-extrabold text-white shadow-lg shadow-ink-950/15 transition duration-300 hover:-translate-y-0.5 hover:bg-red-500 hover:shadow-red-500/25 sm:px-4"
         aria-label="Liên hệ với nhà trường"
         title="Liên hệ với nhà trường"
@@ -119,7 +122,7 @@ function submitSearch() {
           />
         </span>
         <span class="relative hidden sm:inline">Liên hệ</span>
-      </a>
+      </RouterLink>
 
       <button
         type="button"
@@ -153,15 +156,16 @@ function submitSearch() {
           />
         </form>
         <nav class="grid gap-1" aria-label="Điều hướng mobile">
-          <a
+          <RouterLink
             v-for="item in navigation"
-            :key="item.href"
-            :href="item.href"
+            :key="item.label"
+            :to="item.to"
             class="focus-ring rounded-xl px-4 py-3 text-sm font-bold hover:bg-red-50 hover:text-red-500"
+            :class="{ 'bg-red-50 text-red-500': route.name === item.activeRoute }"
             @click="appStore.closeMenu"
           >
             {{ item.label }}
-          </a>
+          </RouterLink>
         </nav>
       </div>
     </Transition>

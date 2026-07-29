@@ -21,7 +21,7 @@ import {
 import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
-import type { Book } from '@/types/library'
+import type { PdfLibraryItem } from '@/types/library'
 
 GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
@@ -29,7 +29,7 @@ const PDF_RANGE_CHUNK_SIZE = 512 * 1024
 const PAGE_PRELOAD_AHEAD = 2
 
 const props = defineProps<{
-  book: Book
+  book: PdfLibraryItem
 }>()
 
 const emit = defineEmits<{

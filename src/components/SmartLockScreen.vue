@@ -4,6 +4,7 @@ import QRCode from 'qrcode'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import logoUrl from '../../logo.jpg'
+import { digitalBooks } from '@/data/digitalLibrary'
 
 const emit = defineEmits<{
   close: []
@@ -268,7 +269,7 @@ onBeforeUnmount(() => {
               class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.055] px-4 py-3 text-xs font-bold text-white/65 backdrop-blur-xl"
             >
               <LibraryBig :size="16" class="text-red-300" />
-              63 sách đã số hoá
+              {{ digitalBooks.length }} tài liệu đã số hoá
             </span>
             <span
               class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.055] px-4 py-3 text-xs font-bold text-white/65 backdrop-blur-xl"

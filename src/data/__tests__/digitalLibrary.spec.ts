@@ -4,12 +4,18 @@ import {
   digitalBooks,
   digitalLibraryCollection,
   digitalLibraryGradeCollections,
+  digitalResources,
+  digitalTeacherBooks,
+  digitalTextbooks,
   searchDigitalBooks,
 } from '@/data/digitalLibrary'
 
 describe('digital library catalog', () => {
   it('contains every digitized textbook from grade one through five', () => {
-    expect(digitalBooks).toHaveLength(63)
+    expect(digitalTextbooks).toHaveLength(63)
+    expect(digitalResources).toHaveLength(53)
+    expect(digitalTeacherBooks).toHaveLength(36)
+    expect(digitalBooks).toHaveLength(152)
     expect(digitalLibraryCollection.bookCount).toBe(63)
     expect(digitalLibraryCollection.totalPages).toBe(6642)
     expect(digitalLibraryCollection.grades).toEqual([1, 2, 3, 4, 5])
@@ -20,7 +26,23 @@ describe('digital library catalog', () => {
       expect.objectContaining({ grade: 4, bookCount: 15, totalPages: 1519 }),
       expect.objectContaining({ grade: 5, bookCount: 12, totalPages: 1298 }),
     ])
-    expect(digitalBooks.every((book) => book.pdfUrl && book.coverUrl)).toBe(true)
+    expect(
+      digitalTextbooks.every((book) => book.viewerType === 'pdf' && book.pdfUrl && book.coverUrl),
+    ).toBe(true)
+    expect(
+      digitalResources.every(
+        (document) =>
+          document.coverUrl &&
+          (document.viewerType === 'pdf' ? document.pdfUrl : document.previewUrl),
+      ),
+    ).toBe(true)
+    expect(
+      digitalTeacherBooks.every(
+        (book) =>
+          book.viewerType === 'external' &&
+          book.externalUrl.startsWith('https://taphuan.nxbgd.vn/'),
+      ),
+    ).toBe(true)
   })
 
   it('finds books from natural Vietnamese chat requests', () => {
@@ -30,5 +52,6 @@ describe('digital library catalog', () => {
     expect(searchDigitalBooks('đọc khoa học lớp 4')[0]?.id).toBe('sgk4-khoa-hoc')
     expect(searchDigitalBooks('xem sách khoa học lớp 5')[0]?.id).toBe('sgk5-khoa-hoc')
     expect(searchDigitalBooks('mở lịch sử địa lí 5')[0]?.id).toBe('sgk5-lich-su-dia-li')
+    expect(searchDigitalBooks('mở sách giáo viên toán lớp 4 tập 1')[0]?.id).toBe('sgv4-toan-tap-1')
   })
 })
