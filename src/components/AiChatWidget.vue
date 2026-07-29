@@ -136,7 +136,7 @@ function toggleSound() {
   if (!soundEnabled.value && 'speechSynthesis' in globalThis) {
     globalThis.speechSynthesis.cancel()
   } else {
-    speak('Xin chào')
+    speak('Xin chào! Tôi có thể giúp được gì cho bạn?')
   }
 }
 
@@ -260,7 +260,7 @@ onMounted(() => {
   }, 350)
 
   introTimer = globalThis.setTimeout(() => {
-    speak('Xin chào')
+    speak('Xin chào! Tôi có thể giúp được gì cho bạn?')
   }, 1100)
 })
 

@@ -23,22 +23,22 @@ interface HeroSlide {
 const AUTOPLAY_DELAY = 6500
 
 const slides: HeroSlide[] = [
-  {
-    image: slide4Url,
-    alt: 'Tri thức trong từng âm thanh - nghe sách ngay',
-    eyebrow: 'Sách nói',
-    buttonLabel: 'Nghe sách ngay',
-    action: 'audio',
+   {
+    image: slide6Url,
+    alt: 'Thư viện số thông minh - khám phá kho tri thức dành cho em',
+    eyebrow: 'Thư viện thông minh',
+    buttonLabel: 'Khám phá ngay',
+    action: 'library',
     position: 'center',
-    accent: '#315fd7',
+    accent: '#15a878',
     ctaStyle: {
-      left: '18%',
-      top: '69%',
-      width: '21%',
-      height: '14%',
+      left: '6%',
+      top: '54%',
+      width: '36%',
+      height: '18%',
     },
   },
-  {
+    {
     image: slide5Url,
     alt: 'Trợ lý AI thư viện - hỏi nhanh, tìm đúng, học vui',
     eyebrow: 'AI Library Assistant',
@@ -54,18 +54,18 @@ const slides: HeroSlide[] = [
     },
   },
   {
-    image: slide6Url,
-    alt: 'Thư viện số thông minh - khám phá kho tri thức dành cho em',
-    eyebrow: 'Thư viện thông minh',
-    buttonLabel: 'Khám phá ngay',
-    action: 'library',
+    image: slide4Url,
+    alt: 'Tri thức trong từng âm thanh - nghe sách ngay',
+    eyebrow: 'Sách nói',
+    buttonLabel: 'Nghe sách ngay',
+    action: 'audio',
     position: 'center',
-    accent: '#15a878',
+    accent: '#315fd7',
     ctaStyle: {
-      left: '6%',
-      top: '54%',
-      width: '36%',
-      height: '18%',
+      left: '18%',
+      top: '69%',
+      width: '21%',
+      height: '14%',
     },
   },
 ]

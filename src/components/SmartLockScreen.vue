@@ -333,7 +333,7 @@ onBeforeUnmount(() => {
       <footer
         class="relative z-20 flex items-center justify-between border-t border-white/8 px-5 py-3 text-[9px] font-bold uppercase tracking-[0.16em] text-white/30 sm:px-8 lg:px-12"
       >
-        <span>AI • STEM • SÁCH</span>
+        <span>TRƯỜNG TH BÙI THỊ XUÂN</span>
         <span class="hidden sm:inline">ESC để quay lại thư viện</span>
       </footer>
     </section>

@@ -46,7 +46,7 @@ function submitSearch() {
         <span class="hidden leading-none sm:block">
           <strong class="block text-[17px] tracking-[-0.02em]">THƯ VIỆN SỐ</strong>
           <small class="mt-1.5 block text-[10px] font-extrabold tracking-[0.08em] text-red-500">
-            AI • STEM • SÁCH
+            TRƯỜNG TH BÙI THỊ XUÂN
           </small>
         </span>
       </RouterLink>
