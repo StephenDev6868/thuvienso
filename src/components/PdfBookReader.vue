@@ -25,6 +25,9 @@ import type { Book } from '@/types/library'
 
 GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
+const PDF_RANGE_CHUNK_SIZE = 512 * 1024
+const PAGE_PRELOAD_AHEAD = 2
+
 const props = defineProps<{
   book: Book
 }>()
@@ -116,9 +119,13 @@ async function renderPage(pageNumber: number) {
 }
 
 function renderAround(pageIndex: number) {
-  const start = Math.max(1, pageIndex)
-  const end = Math.min(props.book.pageCount, pageIndex + 5)
-  for (let pageNumber = start; pageNumber <= end; pageNumber += 1) {
+  const currentPageNumber = Math.max(1, pageIndex + 1)
+  const lastPageNumber = Math.min(
+    pdfDocument?.numPages ?? props.book.pageCount,
+    currentPageNumber + PAGE_PRELOAD_AHEAD,
+  )
+
+  for (let pageNumber = currentPageNumber; pageNumber <= lastPageNumber; pageNumber += 1) {
     void renderPage(pageNumber)
   }
 }
@@ -253,7 +260,10 @@ async function loadBook() {
     loadingTask = getDocument({
       url: props.book.pdfUrl,
       cMapPacked: true,
+      disableAutoFetch: true,
+      disableStream: true,
       enableXfa: false,
+      rangeChunkSize: PDF_RANGE_CHUNK_SIZE,
     })
     loadingTask.onProgress = ({ loaded, total }: OnProgressParameters) => {
       loadPercent.value = total ? Math.round((loaded / total) * 100) : 0
@@ -300,8 +310,9 @@ async function loadBook() {
       renderAround(data)
     })
 
-    renderAround(0)
+    await renderPage(1)
     loading.value = false
+    renderAround(0)
     await nextTick()
     readerDialog.value?.focus()
   } catch (error) {
