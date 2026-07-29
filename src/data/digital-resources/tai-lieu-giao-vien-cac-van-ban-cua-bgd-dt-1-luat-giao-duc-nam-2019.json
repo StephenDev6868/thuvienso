@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "tai-lieu-giao-vien-cac-van-ban-cua-bgd-dt-1-luat-giao-duc-nam-2019",
+    "title": "Luật Giáo dục năm 2019",
+    "subject": "Văn bản BGD&ĐT",
+    "description": "Tài liệu văn bản bgd&đt dành cho giáo viên.",
+    "keywords": [
+      "tài liệu cho giáo viên",
+      "văn bản bgd&đt",
+      "pdf",
+      "các văn bản của bgd&đt",
+      "luật",
+      "giáo",
+      "dục",
+      "năm",
+      "2019"
+    ],
+    "accent": "#315fd7",
+    "kind": "teacher-resource",
+    "collectionId": "tai-lieu-giao-vien",
+    "collectionTitle": "Tài liệu cho giáo viên",
+    "format": "pdf",
+    "sourceFolder": "TÀI LIỆU CHO GIÁO VIÊN",
+    "relativePath": "Các văn bản của BGD&ĐT/1. Luật Giáo dục năm 2019.pdf",
+    "fileName": "1. Luật Giáo dục năm 2019.pdf",
+    "coverFileName": "tai-lieu-giao-vien-cac-van-ban-cua-bgd-dt-1-luat-giao-duc-nam-2019.jpg",
+    "fileSizeBytes": 2798225,
+    "viewerType": "pdf",
+    "pageCount": 45,
+    "pageWidth": 597,
+    "pageHeight": 842
+  }
+}

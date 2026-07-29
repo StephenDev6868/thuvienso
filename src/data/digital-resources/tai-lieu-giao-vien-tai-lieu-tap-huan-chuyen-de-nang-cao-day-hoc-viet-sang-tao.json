@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "tai-lieu-giao-vien-tai-lieu-tap-huan-chuyen-de-nang-cao-day-hoc-viet-sang-tao",
+    "title": "Chuyên đề nâng cao dạy học viết sáng tạo",
+    "subject": "Tài liệu tập huấn",
+    "description": "Tài liệu tài liệu tập huấn dành cho giáo viên.",
+    "keywords": [
+      "tài liệu cho giáo viên",
+      "tài liệu tập huấn",
+      "ppt",
+      "chuyên",
+      "đề",
+      "nâng",
+      "cao",
+      "dạy",
+      "học",
+      "viết",
+      "sáng",
+      "tạo",
+      "powerpoint",
+      "bài trình chiếu",
+      "slide"
+    ],
+    "accent": "#315fd7",
+    "kind": "teacher-resource",
+    "collectionId": "tai-lieu-giao-vien",
+    "collectionTitle": "Tài liệu cho giáo viên",
+    "format": "ppt",
+    "sourceFolder": "TÀI LIỆU CHO GIÁO VIÊN",
+    "relativePath": "Tài liệu tập huấn/CHUYEN DE NANG CAO DAY HOC VIET SANG TAO.ppt",
+    "fileName": "CHUYEN DE NANG CAO DAY HOC VIET SANG TAO.ppt",
+    "coverFileName": "tai-lieu-giao-vien-tai-lieu-tap-huan-chuyen-de-nang-cao-day-hoc-viet-sang-tao.png",
+    "fileSizeBytes": 579072,
+    "viewerType": "office",
+    "previewPath": "/office-previews/tai-lieu-giao-vien-tai-lieu-tap-huan-chuyen-de-nang-cao-day-hoc-viet-sang-tao/Preview.html",
+    "pageCount": 18
+  }
+}

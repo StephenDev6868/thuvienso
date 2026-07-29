@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "tai-lieu-giao-vien-tai-lieu-tap-huan-tai-lieu-tap-huan-truong-hoc-xanh-sach-khoe",
+    "title": "Tài liệu tập huấn Trương học Xanh - sạch - khoẻ",
+    "subject": "Tài liệu tập huấn",
+    "description": "Tài liệu tài liệu tập huấn dành cho giáo viên.",
+    "keywords": [
+      "tài liệu cho giáo viên",
+      "tài liệu tập huấn",
+      "pdf",
+      "tài",
+      "liệu",
+      "tập",
+      "huấn",
+      "trương",
+      "học",
+      "xanh",
+      "sạch",
+      "khoẻ"
+    ],
+    "accent": "#315fd7",
+    "kind": "teacher-resource",
+    "collectionId": "tai-lieu-giao-vien",
+    "collectionTitle": "Tài liệu cho giáo viên",
+    "format": "pdf",
+    "sourceFolder": "TÀI LIỆU CHO GIÁO VIÊN",
+    "relativePath": "Tài liệu tập huấn/Tài liệu tập huấn Trương học Xanh - sạch - khoẻ.pdf",
+    "fileName": "Tài liệu tập huấn Trương học Xanh - sạch - khoẻ.pdf",
+    "coverFileName": "tai-lieu-giao-vien-tai-lieu-tap-huan-tai-lieu-tap-huan-truong-hoc-xanh-sach-khoe.jpg",
+    "fileSizeBytes": 2023492,
+    "viewerType": "pdf",
+    "pageCount": 67,
+    "pageWidth": 595.32,
+    "pageHeight": 842.04
+  }
+}

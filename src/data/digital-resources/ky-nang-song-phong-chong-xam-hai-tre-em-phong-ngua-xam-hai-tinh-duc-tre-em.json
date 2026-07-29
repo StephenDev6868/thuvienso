@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "ky-nang-song-phong-chong-xam-hai-tre-em-phong-ngua-xam-hai-tinh-duc-tre-em",
+    "title": "PHÒNG NGỪA XÂM HẠI TÌNH DỤC TRẺ EM",
+    "subject": "Phòng chống xâm hại trẻ em",
+    "description": "Tài liệu phòng chống xâm hại trẻ em dành cho học sinh và gia đình.",
+    "keywords": [
+      "kỹ năng sống",
+      "phòng chống xâm hại trẻ em",
+      "pdf",
+      "phòng",
+      "ngừa",
+      "xâm",
+      "hại",
+      "tình",
+      "dục",
+      "trẻ",
+      "em"
+    ],
+    "accent": "#ff7045",
+    "kind": "life-skill",
+    "collectionId": "ky-nang-song",
+    "collectionTitle": "Kỹ năng sống",
+    "format": "pdf",
+    "sourceFolder": "KỸ NĂNG SỐNG",
+    "relativePath": "Phòng chống xâm hại trẻ em/PHÒNG NGỪA XÂM HẠI TÌNH DỤC TRẺ EM.pdf",
+    "fileName": "PHÒNG NGỪA XÂM HẠI TÌNH DỤC TRẺ EM.pdf",
+    "coverFileName": "ky-nang-song-phong-chong-xam-hai-tre-em-phong-ngua-xam-hai-tinh-duc-tre-em.jpg",
+    "fileSizeBytes": 2327633,
+    "viewerType": "pdf",
+    "pageCount": 43,
+    "pageWidth": 595.276,
+    "pageHeight": 765.354
+  }
+}

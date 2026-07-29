@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "ky-nang-song-quan-ly-cam-xuc-ki-nang-quan-tri-cam-xuc",
+    "title": "KĨ NĂNG QUẢN TRỊ CẢM XÚC",
+    "subject": "Quản lý cảm xúc",
+    "description": "Tài liệu quản lý cảm xúc dành cho học sinh và gia đình.",
+    "keywords": [
+      "kỹ năng sống",
+      "quản lý cảm xúc",
+      "pdf",
+      "kĩ",
+      "năng",
+      "quản",
+      "trị",
+      "cảm",
+      "xúc"
+    ],
+    "accent": "#ff7045",
+    "kind": "life-skill",
+    "collectionId": "ky-nang-song",
+    "collectionTitle": "Kỹ năng sống",
+    "format": "pdf",
+    "sourceFolder": "KỸ NĂNG SỐNG",
+    "relativePath": "Quản lý cảm xúc/KĨ NĂNG QUẢN TRỊ CẢM XÚC.pdf",
+    "fileName": "KĨ NĂNG QUẢN TRỊ CẢM XÚC.pdf",
+    "coverFileName": "ky-nang-song-quan-ly-cam-xuc-ki-nang-quan-tri-cam-xuc.jpg",
+    "fileSizeBytes": 1542013,
+    "viewerType": "pdf",
+    "pageCount": 63,
+    "pageWidth": 594.96,
+    "pageHeight": 841.92
+  }
+}

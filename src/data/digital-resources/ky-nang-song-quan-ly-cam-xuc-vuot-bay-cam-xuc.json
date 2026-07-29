@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "ky-nang-song-quan-ly-cam-xuc-vuot-bay-cam-xuc",
+    "title": "VƯỢT BẪY CẢM XÚC",
+    "subject": "Quản lý cảm xúc",
+    "description": "Tài liệu quản lý cảm xúc dành cho học sinh và gia đình.",
+    "keywords": ["kỹ năng sống", "quản lý cảm xúc", "pdf", "vượt", "bẫy", "cảm", "xúc"],
+    "accent": "#ff7045",
+    "kind": "life-skill",
+    "collectionId": "ky-nang-song",
+    "collectionTitle": "Kỹ năng sống",
+    "format": "pdf",
+    "sourceFolder": "KỸ NĂNG SỐNG",
+    "relativePath": "Quản lý cảm xúc/VƯỢT BẪY CẢM XÚC.pdf",
+    "fileName": "VƯỢT BẪY CẢM XÚC.pdf",
+    "coverFileName": "ky-nang-song-quan-ly-cam-xuc-vuot-bay-cam-xuc.jpg",
+    "fileSizeBytes": 2316132,
+    "viewerType": "pdf",
+    "pageCount": 266,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

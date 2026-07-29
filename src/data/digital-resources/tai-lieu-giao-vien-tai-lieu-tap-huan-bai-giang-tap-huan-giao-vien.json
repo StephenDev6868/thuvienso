@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "document": {
+    "id": "tai-lieu-giao-vien-tai-lieu-tap-huan-bai-giang-tap-huan-giao-vien",
+    "title": "Bài giảng tập huấn giáo viên",
+    "subject": "Tài liệu tập huấn",
+    "description": "Tài liệu tài liệu tập huấn dành cho giáo viên.",
+    "keywords": [
+      "tài liệu cho giáo viên",
+      "tài liệu tập huấn",
+      "pptx",
+      "bài",
+      "giảng",
+      "tập",
+      "huấn",
+      "giáo",
+      "viên",
+      "powerpoint",
+      "bài trình chiếu",
+      "slide"
+    ],
+    "accent": "#315fd7",
+    "kind": "teacher-resource",
+    "collectionId": "tai-lieu-giao-vien",
+    "collectionTitle": "Tài liệu cho giáo viên",
+    "format": "pptx",
+    "sourceFolder": "TÀI LIỆU CHO GIÁO VIÊN",
+    "relativePath": "Tài liệu tập huấn/Bài giảng_tập huấn giáo viên.pptx",
+    "fileName": "Bài giảng_tập huấn giáo viên.pptx",
+    "coverFileName": "tai-lieu-giao-vien-tai-lieu-tap-huan-bai-giang-tap-huan-giao-vien.png",
+    "fileSizeBytes": 5978281,
+    "viewerType": "office",
+    "previewPath": "/office-previews/tai-lieu-giao-vien-tai-lieu-tap-huan-bai-giang-tap-huan-giao-vien/Preview.html",
+    "pageCount": 56
+  }
+}
