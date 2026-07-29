@@ -13,19 +13,30 @@ const emit = defineEmits<{
 }>()
 
 const loading = ref(true)
+const connectionSlow = ref(false)
 let previousBodyOverflow = ''
+let connectionTimeout: ReturnType<typeof setTimeout> | undefined
 
 function handleKeydown(event: KeyboardEvent) {
   if (event.key === 'Escape') emit('close')
+}
+
+function handleExternalLoaded() {
+  globalThis.clearTimeout(connectionTimeout)
+  loading.value = false
 }
 
 onMounted(() => {
   previousBodyOverflow = globalThis.document.body.style.overflow
   globalThis.document.body.style.overflow = 'hidden'
   globalThis.addEventListener('keydown', handleKeydown)
+  connectionTimeout = globalThis.setTimeout(() => {
+    connectionSlow.value = true
+  }, 10_000)
 })
 
 onBeforeUnmount(() => {
+  globalThis.clearTimeout(connectionTimeout)
   globalThis.document.body.style.overflow = previousBodyOverflow
   globalThis.removeEventListener('keydown', handleKeydown)
 })
@@ -75,11 +86,29 @@ onBeforeUnmount(() => {
         aria-live="polite"
       >
         <div class="max-w-sm px-6 text-center">
-          <LoaderCircle :size="42" class="mx-auto animate-spin text-red-400" />
-          <p class="mt-5 font-bold">Đang kết nối kho sách NXBGD</p>
-          <p class="mt-2 text-xs leading-5 text-white/45">
-            Nội dung sách được tải trực tiếp từ taphuan.nxbgd.vn.
-          </p>
+          <template v-if="connectionSlow">
+            <ExternalLink :size="44" class="mx-auto text-red-400" />
+            <p class="mt-5 font-bold">Trình duyệt đang chặn nội dung nhúng</p>
+            <p class="mt-2 text-xs leading-5 text-white/45">
+              Hãy mở sách trực tiếp trên trang NXBGD để tiếp tục đọc.
+            </p>
+            <a
+              :href="book.externalUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="focus-ring mt-5 inline-flex items-center gap-2 rounded-xl bg-red-500 px-5 py-3 text-sm font-bold text-white"
+            >
+              <ExternalLink :size="17" />
+              Mở sách ngay
+            </a>
+          </template>
+          <template v-else>
+            <LoaderCircle :size="42" class="mx-auto animate-spin text-red-400" />
+            <p class="mt-5 font-bold">Đang kết nối kho sách NXBGD</p>
+            <p class="mt-2 text-xs leading-5 text-white/45">
+              Nội dung sách được tải trực tiếp từ taphuan.nxbgd.vn.
+            </p>
+          </template>
         </div>
       </div>
 
@@ -90,7 +119,7 @@ onBeforeUnmount(() => {
         allow="fullscreen"
         referrerpolicy="strict-origin-when-cross-origin"
         sandbox="allow-downloads allow-forms allow-popups allow-same-origin allow-scripts"
-        @load="loading = false"
+        @load="handleExternalLoaded"
       />
     </div>
   </section>

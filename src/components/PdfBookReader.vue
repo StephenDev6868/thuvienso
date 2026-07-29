@@ -4,6 +4,7 @@ import {
   ArrowRight,
   BookOpen,
   Download,
+  ExternalLink,
   LoaderCircle,
   Maximize2,
   Volume2,
@@ -27,6 +28,8 @@ GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
 const PDF_RANGE_CHUNK_SIZE = 512 * 1024
 const PAGE_PRELOAD_AHEAD = 2
+const PDF_LOAD_TIMEOUT = 45_000
+const NATIVE_VIEWER_HINT_TIMEOUT = 10_000
 
 const props = defineProps<{
   book: PdfLibraryItem
@@ -45,6 +48,9 @@ const jumpPage = ref('1')
 const errorMessage = ref('')
 const fullscreen = ref(false)
 const soundEnabled = ref(true)
+const useNativePdfViewer = ref(false)
+const nativeViewerLoading = ref(false)
+const nativeViewerSlow = ref(false)
 
 const pageNumbers = computed(() =>
   Array.from({ length: props.book.pageCount }, (_, index) => index + 1),
@@ -59,11 +65,41 @@ let paperNoiseBuffer: AudioBuffer | undefined
 let pendingTurnSound = false
 let pendingTurnSoundTimer: ReturnType<typeof setTimeout> | undefined
 let lastSoundTime = Number.NEGATIVE_INFINITY
+let pdfLoadTimeout: ReturnType<typeof setTimeout> | undefined
+let nativeViewerHintTimeout: ReturnType<typeof setTimeout> | undefined
 const renderedPages = new Set<number>()
 const renderingPages = new Map<number, Promise<void>>()
 
 function formatBytes(bytes: number) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`
+}
+
+function shouldUseNativeViewer() {
+  const navigator = globalThis.navigator
+  const userAgent = navigator.userAgent
+  const isAppleMobile =
+    /iPad|iPhone|iPod/i.test(userAgent) ||
+    (/Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1)
+  const isTouchDevice =
+    navigator.maxTouchPoints > 0 || globalThis.matchMedia?.('(pointer: coarse)').matches
+  const isTabletOrSmaller = globalThis.innerWidth <= 1_180
+
+  return isAppleMobile || (isTouchDevice && isTabletOrSmaller)
+}
+
+function startNativeViewer() {
+  useNativePdfViewer.value = true
+  nativeViewerLoading.value = true
+  loading.value = false
+  nativeViewerHintTimeout = globalThis.setTimeout(() => {
+    nativeViewerSlow.value = true
+  }, NATIVE_VIEWER_HINT_TIMEOUT)
+}
+
+function handleNativeViewerLoaded() {
+  globalThis.clearTimeout(nativeViewerHintTimeout)
+  nativeViewerLoading.value = false
+  nativeViewerSlow.value = false
 }
 
 function getPageCanvas(pageNumber: number) {
@@ -256,12 +292,21 @@ function togglePageTurnSound() {
 }
 
 async function loadBook() {
+  pdfLoadTimeout = globalThis.setTimeout(() => {
+    if (!loading.value) return
+
+    errorMessage.value =
+      'Trình đọc tương tác mất quá nhiều thời gian để tải. Bạn có thể mở PDF bằng trình đọc của thiết bị.'
+    loading.value = false
+    void loadingTask?.destroy()
+  }, PDF_LOAD_TIMEOUT)
+
   try {
     loadingTask = getDocument({
       url: props.book.pdfUrl,
       cMapPacked: true,
-      disableAutoFetch: true,
-      disableStream: true,
+      disableAutoFetch: false,
+      disableStream: false,
       enableXfa: false,
       rangeChunkSize: PDF_RANGE_CHUNK_SIZE,
     })
@@ -311,13 +356,17 @@ async function loadBook() {
     })
 
     await renderPage(1)
+    globalThis.clearTimeout(pdfLoadTimeout)
     loading.value = false
     renderAround(0)
     await nextTick()
     readerDialog.value?.focus()
   } catch (error) {
     console.error(error)
-    errorMessage.value = 'Không thể tải tệp PDF này. Vui lòng thử lại.'
+    if (!errorMessage.value) {
+      errorMessage.value = 'Không thể tải tệp PDF này. Vui lòng thử lại.'
+    }
+    globalThis.clearTimeout(pdfLoadTimeout)
     loading.value = false
   }
 }
@@ -375,7 +424,12 @@ onMounted(() => {
   globalThis.document.body.style.overflow = 'hidden'
   globalThis.addEventListener('keydown', handleKeydown)
   globalThis.document.addEventListener('fullscreenchange', handleFullscreenChange)
-  void loadBook()
+  if (shouldUseNativeViewer()) {
+    startNativeViewer()
+    void nextTick(() => readerDialog.value?.focus())
+  } else {
+    void loadBook()
+  }
 })
 
 onBeforeUnmount(() => {
@@ -384,6 +438,8 @@ onBeforeUnmount(() => {
   globalThis.document.removeEventListener('fullscreenchange', handleFullscreenChange)
   pageFlip?.off('flip')
   pageFlip?.destroy()
+  globalThis.clearTimeout(pdfLoadTimeout)
+  globalThis.clearTimeout(nativeViewerHintTimeout)
   if (pendingTurnSoundTimer) globalThis.clearTimeout(pendingTurnSoundTimer)
   void audioContext?.close()
   audioContext = undefined
@@ -414,6 +470,18 @@ onBeforeUnmount(() => {
           </p>
         </div>
         <a
+          v-if="useNativePdfViewer"
+          :href="book.pdfUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="focus-ring grid size-10 place-items-center rounded-xl bg-red-500 text-white transition hover:bg-red-600"
+          aria-label="Mở PDF bằng trình đọc của thiết bị"
+          title="Mở PDF bằng trình đọc của thiết bị"
+        >
+          <ExternalLink :size="18" />
+        </a>
+        <a
+          v-else
           :href="book.pdfUrl"
           :download="book.fileName"
           class="focus-ring hidden size-10 place-items-center rounded-xl bg-white/8 text-white/75 transition hover:bg-white/15 hover:text-white sm:grid"
@@ -422,6 +490,7 @@ onBeforeUnmount(() => {
           <Download :size="18" />
         </a>
         <button
+          v-if="!useNativePdfViewer"
           type="button"
           class="focus-ring grid size-10 place-items-center rounded-xl bg-white/8 text-white/75 transition hover:bg-white/15 hover:text-white"
           :class="{ 'bg-red-500/20 text-red-300': soundEnabled }"
@@ -434,6 +503,7 @@ onBeforeUnmount(() => {
           <VolumeX v-else :size="18" />
         </button>
         <button
+          v-if="!useNativePdfViewer"
           type="button"
           class="focus-ring grid size-10 place-items-center rounded-xl bg-white/8 text-white/75 transition hover:bg-white/15 hover:text-white"
           :aria-label="fullscreen ? 'Thoát toàn màn hình' : 'Xem toàn màn hình'"
@@ -485,15 +555,51 @@ onBeforeUnmount(() => {
             <a
               :href="book.pdfUrl"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               class="focus-ring mt-5 inline-flex rounded-xl bg-red-500 px-5 py-3 text-sm font-bold"
             >
-              Mở PDF gốc
+              Mở bằng trình đọc của thiết bị
             </a>
           </div>
         </div>
 
-        <div class="reader-stage absolute inset-0 flex items-center justify-center p-2 sm:p-5">
+        <div v-if="useNativePdfViewer" class="absolute inset-0 bg-slate-100">
+          <iframe
+            :src="`${book.pdfUrl}#page=1&view=FitH`"
+            :title="`Đọc ${book.title}`"
+            class="native-pdf-frame h-full w-full border-0 bg-white"
+            @load="handleNativeViewerLoaded"
+          />
+
+          <div
+            v-if="nativeViewerLoading"
+            class="absolute inset-0 z-20 grid place-items-center bg-[#111827] p-6 text-center"
+            aria-live="polite"
+          >
+            <div>
+              <LoaderCircle :size="42" class="mx-auto animate-spin text-red-400" />
+              <p class="mt-5 font-bold">Đang mở bằng trình đọc của thiết bị</p>
+              <p class="mt-2 text-xs leading-5 text-white/45">
+                Chế độ tương thích dành cho điện thoại và iPad.
+              </p>
+              <a
+                v-if="nativeViewerSlow"
+                :href="book.pdfUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="focus-ring mt-5 inline-flex items-center gap-2 rounded-xl bg-red-500 px-5 py-3 text-sm font-bold text-white"
+              >
+                <ExternalLink :size="17" />
+                Mở sách ngay
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          v-else
+          class="reader-stage absolute inset-0 flex items-center justify-center p-2 sm:p-5"
+        >
           <div ref="flipHost" class="pdf-flip-host" @pointerdown="primePageTurnAudio">
             <div
               v-for="pageNumber in pageNumbers"
@@ -513,6 +619,25 @@ onBeforeUnmount(() => {
       </div>
 
       <footer
+        v-if="useNativePdfViewer"
+        class="relative z-30 flex min-h-16 items-center justify-center gap-3 border-t border-white/10 bg-[#111827]/96 px-3"
+      >
+        <span class="hidden text-xs text-white/50 sm:inline">
+          Trình đọc tương thích mobile và iPad
+        </span>
+        <a
+          :href="book.pdfUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="focus-ring inline-flex items-center gap-2 rounded-xl bg-red-500 px-4 py-2.5 text-xs font-bold text-white"
+        >
+          <ExternalLink :size="16" />
+          Mở toàn màn hình
+        </a>
+      </footer>
+
+      <footer
+        v-else
         class="relative z-30 flex min-h-18 items-center justify-center gap-2 border-t border-white/10 bg-[#111827]/96 px-3 sm:gap-4"
       >
         <button

@@ -13,7 +13,9 @@ const emit = defineEmits<{
 }>()
 
 const loading = ref(true)
+const previewSlow = ref(false)
 let previousBodyOverflow = ''
+let previewTimeout: ReturnType<typeof setTimeout> | undefined
 
 function formatBytes(bytes: number) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`
@@ -23,13 +25,22 @@ function handleKeydown(event: KeyboardEvent) {
   if (event.key === 'Escape') emit('close')
 }
 
+function handlePreviewLoaded() {
+  globalThis.clearTimeout(previewTimeout)
+  loading.value = false
+}
+
 onMounted(() => {
   previousBodyOverflow = globalThis.document.body.style.overflow
   globalThis.document.body.style.overflow = 'hidden'
   globalThis.addEventListener('keydown', handleKeydown)
+  previewTimeout = globalThis.setTimeout(() => {
+    previewSlow.value = true
+  }, 10_000)
 })
 
 onBeforeUnmount(() => {
+  globalThis.clearTimeout(previewTimeout)
   globalThis.document.body.style.overflow = previousBodyOverflow
   globalThis.removeEventListener('keydown', handleKeydown)
 })
@@ -91,11 +102,28 @@ onBeforeUnmount(() => {
         aria-live="polite"
       >
         <div class="text-center">
-          <LoaderCircle :size="42" class="mx-auto animate-spin text-red-400" />
-          <p class="mt-5 font-bold">Đang mở {{ document.title }}</p>
-          <p class="mt-2 text-xs text-white/45">
-            Đang tải bản xem trước {{ document.format.toUpperCase() }}...
-          </p>
+          <template v-if="previewSlow">
+            <FileText :size="44" class="mx-auto text-red-400" />
+            <p class="mt-5 font-bold">Bản xem trước chưa phản hồi</p>
+            <p class="mt-2 text-xs leading-5 text-white/45">
+              Thiết bị của bạn có thể mở tài liệu bằng ứng dụng phù hợp.
+            </p>
+            <a
+              :href="document.originalUrl"
+              :download="document.fileName"
+              class="focus-ring mt-5 inline-flex items-center gap-2 rounded-xl bg-red-500 px-5 py-3 text-sm font-bold text-white"
+            >
+              <Download :size="17" />
+              Mở tài liệu
+            </a>
+          </template>
+          <template v-else>
+            <LoaderCircle :size="42" class="mx-auto animate-spin text-red-400" />
+            <p class="mt-5 font-bold">Đang mở {{ document.title }}</p>
+            <p class="mt-2 text-xs text-white/45">
+              Đang tải bản xem trước {{ document.format.toUpperCase() }}...
+            </p>
+          </template>
         </div>
       </div>
 
@@ -104,7 +132,7 @@ onBeforeUnmount(() => {
         :title="`Bản xem trước ${document.title}`"
         class="h-full w-full border-0 bg-white"
         sandbox="allow-same-origin allow-scripts"
-        @load="loading = false"
+        @load="handlePreviewLoaded"
       />
     </div>
   </section>
