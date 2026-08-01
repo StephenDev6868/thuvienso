@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-dong-bang-song-hong-vung-dat-con-nguoi",
+    "title": "ĐỒNG BẰNG SÔNG HỒNG VÙNG ĐẤT CON NGƯỜI",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “ĐỒNG BẰNG SÔNG HỒNG VÙNG ĐẤT CON NGƯỜI” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": [
+      "ĐỒNG BẰNG SÔNG HỒNG VÙNG ĐẤT CON NGƯỜI",
+      "Văn hóa vùng miền",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#6254c7",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/ĐỒNG BẰNG SÔNG HỒNG VÙNG ĐẤT CON NGƯỜI.mp3",
+    "fileName": "ĐỒNG BẰNG SÔNG HỒNG VÙNG ĐẤT CON NGƯỜI.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-dong-bang-song-hong-vung-dat-con-nguoi.svg",
+    "fileSizeBytes": 25982469,
+    "durationSeconds": 5196,
+    "duration": "01:26:36"
+  }
+}

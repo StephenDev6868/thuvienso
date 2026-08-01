@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-stem-steam-sach-dien-tu-bai-hoc-stem-lop-4",
+    "title": "Bài học STEM lớp 4",
+    "category": "Khoa học - STEM",
+    "subcategory": "STEM-STEAM",
+    "description": "Sách điện tử “Bài học STEM lớp 4” thuộc chủ đề STEM-STEAM.",
+    "grade": 4,
+    "keywords": ["Bài học STEM lớp 4", "Khoa học - STEM", "STEM-STEAM", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/STEM-STEAM/Sách điện tử Bài học STEM lớp 4.pdf",
+    "fileName": "Sách điện tử Bài học STEM lớp 4.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-stem-steam-sach-dien-tu-bai-hoc-stem-lop-4.jpg",
+    "fileSizeBytes": 4320844,
+    "pageCount": 7,
+    "pageWidth": 547.087,
+    "pageHeight": 754.016
+  }
+}

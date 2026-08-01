@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-stem-steam-sach-dien-tu-ban-co-biet-rang-voi-khong-the-nhay",
+    "title": "Bạn có biết rằng voi không thể nhảy",
+    "category": "Khoa học - STEM",
+    "subcategory": "STEM-STEAM",
+    "description": "Sách điện tử “Bạn có biết rằng voi không thể nhảy” thuộc chủ đề STEM-STEAM.",
+    "keywords": [
+      "Bạn có biết rằng voi không thể nhảy",
+      "Khoa học - STEM",
+      "STEM-STEAM",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/STEM-STEAM/Sách điện tử Bạn có biết rằng voi không thể nhảy.pdf",
+    "fileName": "Sách điện tử Bạn có biết rằng voi không thể nhảy.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-stem-steam-sach-dien-tu-ban-co-biet-rang-voi-khong-the-nhay.jpg",
+    "fileSizeBytes": 16815473,
+    "pageCount": 60,
+    "pageWidth": 510.236,
+    "pageHeight": 737.008
+  }
+}

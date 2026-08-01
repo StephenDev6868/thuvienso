@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-co-tich-the-gioi-nang-bach-tuyet-va-bay-chu-lun",
+    "title": "Nàng Bạch Tuyết và bảy chú lùn",
+    "category": "Truyện cổ tích thế giới",
+    "description": "Sách nói “Nàng Bạch Tuyết và bảy chú lùn” thuộc chủ đề Truyện cổ tích thế giới.",
+    "keywords": [
+      "Nàng Bạch Tuyết và bảy chú lùn",
+      "Truyện cổ tích thế giới",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện cổ tích thế giới/Nàng Bạch Tuyết và bảy chú lùn.mp3",
+    "fileName": "Nàng Bạch Tuyết và bảy chú lùn.mp3",
+    "coverFileName": "audio-truyen-co-tich-the-gioi-nang-bach-tuyet-va-bay-chu-lun.svg",
+    "fileSizeBytes": 18718873,
+    "durationSeconds": 1161,
+    "duration": "19:21"
+  }
+}

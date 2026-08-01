@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-dinh-mieu-va-le-hoi-dan-gian-mien-nam",
+    "title": "ĐÌNH MIẾU VÀ LỄ HỘI DÂN GIAN MIỀN NAM",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “ĐÌNH MIẾU VÀ LỄ HỘI DÂN GIAN MIỀN NAM” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": [
+      "ĐÌNH MIẾU VÀ LỄ HỘI DÂN GIAN MIỀN NAM",
+      "Văn hóa vùng miền",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#216bb2",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/ĐÌNH MIẾU VÀ LỄ HỘI DÂN GIAN MIỀN NAM.mp3",
+    "fileName": "ĐÌNH MIẾU VÀ LỄ HỘI DÂN GIAN MIỀN NAM.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-dinh-mieu-va-le-hoi-dan-gian-mien-nam.svg",
+    "fileSizeBytes": 41864141,
+    "durationSeconds": 8373,
+    "duration": "02:19:33"
+  }
+}

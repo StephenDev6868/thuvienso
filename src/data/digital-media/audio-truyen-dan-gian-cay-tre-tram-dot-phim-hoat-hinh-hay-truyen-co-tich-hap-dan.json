@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-dan-gian-cay-tre-tram-dot-phim-hoat-hinh-hay-truyen-co-tich-hap-dan",
+    "title": "Cây tre trăm đốt Phim hoạt hình hay Truyện cổ tích hấp dẫn",
+    "category": "Truyện dân gian",
+    "description": "Sách nói “Cây tre trăm đốt Phim hoạt hình hay Truyện cổ tích hấp dẫn” thuộc chủ đề Truyện dân gian.",
+    "keywords": [
+      "Cây tre trăm đốt Phim hoạt hình hay Truyện cổ tích hấp dẫn",
+      "Truyện dân gian",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#77509a",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện dân gian/Cây-tre-trăm-đốt-Phim-hoạt-hình-hay-Truyện-cổ-tích-hấp-dẫn.mp3",
+    "fileName": "Cây-tre-trăm-đốt-Phim-hoạt-hình-hay-Truyện-cổ-tích-hấp-dẫn.mp3",
+    "coverFileName": "audio-truyen-dan-gian-cay-tre-tram-dot-phim-hoat-hinh-hay-truyen-co-tich-hap-dan.svg",
+    "fileSizeBytes": 10730134,
+    "durationSeconds": 1341,
+    "duration": "22:21"
+  }
+}

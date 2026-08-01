@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-thi-nghiem-vui-ebook-cac-thi-nghiem-vui-cho-tre-tai-nha",
+    "title": "ebook cac thi nghiem vui cho tre tai nha",
+    "category": "Khoa học - STEM",
+    "subcategory": "Thí nghiệm vui",
+    "description": "Sách điện tử “ebook cac thi nghiem vui cho tre tai nha” thuộc chủ đề Thí nghiệm vui.",
+    "keywords": [
+      "ebook cac thi nghiem vui cho tre tai nha",
+      "Khoa học - STEM",
+      "Thí nghiệm vui",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Thí nghiệm vui/ebook-cac-thi-nghiem-vui-cho-tre-tai-nha.pdf",
+    "fileName": "ebook-cac-thi-nghiem-vui-cho-tre-tai-nha.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-thi-nghiem-vui-ebook-cac-thi-nghiem-vui-cho-tre-tai-nha.jpg",
+    "fileSizeBytes": 1327636,
+    "pageCount": 23,
+    "pageWidth": 419.528,
+    "pageHeight": 595.276
+  }
+}

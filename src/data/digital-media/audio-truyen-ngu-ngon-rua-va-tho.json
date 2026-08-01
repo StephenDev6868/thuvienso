@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-ngu-ngon-rua-va-tho",
+    "title": "Rùa và Thỏ",
+    "category": "Truyện ngụ ngôn",
+    "description": "Sách nói “Rùa và Thỏ” thuộc chủ đề Truyện ngụ ngôn.",
+    "keywords": ["Rùa và Thỏ", "Truyện ngụ ngôn", "sách nói", "audio", "nghe"],
+    "accent": "#216bb2",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện ngụ ngôn/Rùa và Thỏ.mp3",
+    "fileName": "Rùa và Thỏ.mp3",
+    "coverFileName": "audio-truyen-ngu-ngon-rua-va-tho.svg",
+    "fileSizeBytes": 1383199,
+    "durationSeconds": 141,
+    "duration": "02:21"
+  }
+}

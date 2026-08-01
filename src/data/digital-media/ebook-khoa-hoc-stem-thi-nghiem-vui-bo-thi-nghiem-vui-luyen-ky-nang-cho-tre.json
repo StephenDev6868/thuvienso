@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-thi-nghiem-vui-bo-thi-nghiem-vui-luyen-ky-nang-cho-tre",
+    "title": "Bộ thí nghiệm vui, luyện kỹ năng cho trẻ",
+    "category": "Khoa học - STEM",
+    "subcategory": "Thí nghiệm vui",
+    "description": "Sách điện tử “Bộ thí nghiệm vui, luyện kỹ năng cho trẻ” thuộc chủ đề Thí nghiệm vui.",
+    "keywords": [
+      "Bộ thí nghiệm vui, luyện kỹ năng cho trẻ",
+      "Khoa học - STEM",
+      "Thí nghiệm vui",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Thí nghiệm vui/Bộ thí nghiệm vui, luyện kỹ năng cho trẻ.pdf",
+    "fileName": "Bộ thí nghiệm vui, luyện kỹ năng cho trẻ.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-thi-nghiem-vui-bo-thi-nghiem-vui-luyen-ky-nang-cho-tre.jpg",
+    "fileSizeBytes": 1483991,
+    "pageCount": 15,
+    "pageWidth": 419.528,
+    "pageHeight": 595.276
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-co-tich-the-gioi-1-pdf-cong-chua-ngu-trong-rung",
+    "title": "Công chúa ngủ trong rừng",
+    "category": "Truyện cổ tích thế giới",
+    "description": "Sách điện tử “Công chúa ngủ trong rừng” thuộc chủ đề Truyện cổ tích thế giới.",
+    "keywords": ["Công chúa ngủ trong rừng", "Truyện cổ tích thế giới", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện cổ tích thế giới/1. PDF - Công chúa ngủ trong rừng.pdf",
+    "fileName": "1. PDF - Công chúa ngủ trong rừng.pdf",
+    "coverFileName": "ebook-truyen-co-tich-the-gioi-1-pdf-cong-chua-ngu-trong-rung.jpg",
+    "fileSizeBytes": 37810010,
+    "pageCount": 31,
+    "pageWidth": 2000,
+    "pageHeight": 2900
+  }
+}

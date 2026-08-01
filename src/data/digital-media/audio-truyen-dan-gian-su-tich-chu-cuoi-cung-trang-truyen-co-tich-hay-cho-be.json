@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-dan-gian-su-tich-chu-cuoi-cung-trang-truyen-co-tich-hay-cho-be",
+    "title": "Sự Tích Chú Cuội Cung Trăng Truyện Cổ Tích Hay Cho Bé",
+    "category": "Truyện dân gian",
+    "description": "Sách nói “Sự Tích Chú Cuội Cung Trăng Truyện Cổ Tích Hay Cho Bé” thuộc chủ đề Truyện dân gian.",
+    "keywords": [
+      "Sự Tích Chú Cuội Cung Trăng Truyện Cổ Tích Hay Cho Bé",
+      "Truyện dân gian",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện dân gian/Sự Tích Chú Cuội Cung Trăng - Truyện Cổ Tích Hay Cho Bé.mp3",
+    "fileName": "Sự Tích Chú Cuội Cung Trăng - Truyện Cổ Tích Hay Cho Bé.mp3",
+    "coverFileName": "audio-truyen-dan-gian-su-tich-chu-cuoi-cung-trang-truyen-co-tich-hay-cho-be.svg",
+    "fileSizeBytes": 7406152,
+    "durationSeconds": 926,
+    "duration": "15:26"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-anh-hung-dan-toc-danh-tuong-viet-nam",
+    "title": "DANH TƯỚNG VIỆT NAM",
+    "category": "ANH HÙNG DÂN TỘC",
+    "description": "Sách nói “DANH TƯỚNG VIỆT NAM” thuộc chủ đề ANH HÙNG DÂN TỘC.",
+    "keywords": ["DANH TƯỚNG VIỆT NAM", "ANH HÙNG DÂN TỘC", "sách nói", "audio", "nghe"],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "ANH HÙNG DÂN TỘC/DANH TƯỚNG VIỆT NAM.mp3",
+    "fileName": "DANH TƯỚNG VIỆT NAM.mp3",
+    "coverFileName": "audio-anh-hung-dan-toc-danh-tuong-viet-nam.svg",
+    "fileSizeBytes": 44521597,
+    "durationSeconds": 8904,
+    "duration": "02:28:24"
+  }
+}

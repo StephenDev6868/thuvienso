@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-dong-bang-song-cuu-long",
+    "title": "ĐỒNG BẰNG SÔNG CỬU LONG",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “ĐỒNG BẰNG SÔNG CỬU LONG” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": ["ĐỒNG BẰNG SÔNG CỬU LONG", "Văn hóa vùng miền", "sách nói", "audio", "nghe"],
+    "accent": "#77509a",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/ĐỒNG BẰNG SÔNG CỬU LONG.mp3",
+    "fileName": "ĐỒNG BẰNG SÔNG CỬU LONG.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-dong-bang-song-cuu-long.svg",
+    "fileSizeBytes": 42551711,
+    "durationSeconds": 8510,
+    "duration": "02:21:50"
+  }
+}

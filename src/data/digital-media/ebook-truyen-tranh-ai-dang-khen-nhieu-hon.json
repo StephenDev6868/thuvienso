@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-tranh-ai-dang-khen-nhieu-hon",
+    "title": "Ai đáng khen nhiều hơn",
+    "category": "Truyện tranh",
+    "description": "Sách điện tử “Ai đáng khen nhiều hơn” thuộc chủ đề Truyện tranh.",
+    "keywords": ["Ai đáng khen nhiều hơn", "Truyện tranh", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện tranh/Ai đáng khen nhiều hơn.pdf",
+    "fileName": "Ai đáng khen nhiều hơn.pdf",
+    "coverFileName": "ebook-truyen-tranh-ai-dang-khen-nhieu-hon.jpg",
+    "fileSizeBytes": 182890,
+    "pageCount": 3,
+    "pageWidth": 595.32,
+    "pageHeight": 842.04
+  }
+}

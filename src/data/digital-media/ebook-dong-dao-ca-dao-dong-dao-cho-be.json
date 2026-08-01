@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-dong-dao-ca-dao-dong-dao-cho-be",
+    "title": "dong dao cho be",
+    "category": "Đồng dao-Ca dao",
+    "description": "Sách điện tử “dong dao cho be” thuộc chủ đề Đồng dao-Ca dao.",
+    "keywords": ["dong dao cho be", "Đồng dao-Ca dao", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Đồng dao-Ca dao/dong dao cho be.pdf",
+    "fileName": "dong dao cho be.pdf",
+    "coverFileName": "ebook-dong-dao-ca-dao-dong-dao-cho-be.jpg",
+    "fileSizeBytes": 474217,
+    "pageCount": 10,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

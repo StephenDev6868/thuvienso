@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-cau-chuyen-bac-ho-voi-thieu-nhi-ho-chi-minh-voi-thieu-nhi-duc",
+    "title": "HỒ CHÍ MINH VỚI THIẾU NHI ĐỨC",
+    "category": "CÂU CHUYỆN BÁC HỒ VỚI THIẾU NHI",
+    "description": "Sách nói “HỒ CHÍ MINH VỚI THIẾU NHI ĐỨC” thuộc chủ đề CÂU CHUYỆN BÁC HỒ VỚI THIẾU NHI.",
+    "keywords": [
+      "HỒ CHÍ MINH VỚI THIẾU NHI ĐỨC",
+      "CÂU CHUYỆN BÁC HỒ VỚI THIẾU NHI",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "CÂU CHUYỆN BÁC HỒ VỚI THIẾU NHI/HỒ CHÍ MINH VỚI THIẾU NHI ĐỨC .mp3",
+    "fileName": "HỒ CHÍ MINH VỚI THIẾU NHI ĐỨC .mp3",
+    "coverFileName": "audio-cau-chuyen-bac-ho-voi-thieu-nhi-ho-chi-minh-voi-thieu-nhi-duc.svg",
+    "fileSizeBytes": 1796849,
+    "durationSeconds": 112,
+    "duration": "01:52"
+  }
+}

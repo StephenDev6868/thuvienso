@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-co-tich-the-gioi-1-pdf-nang-bach-tuyet-va-bay-chu-lun",
+    "title": "Nàng Bạch Tuyết và bảy chú lùn",
+    "category": "Truyện cổ tích thế giới",
+    "description": "Sách điện tử “Nàng Bạch Tuyết và bảy chú lùn” thuộc chủ đề Truyện cổ tích thế giới.",
+    "keywords": [
+      "Nàng Bạch Tuyết và bảy chú lùn",
+      "Truyện cổ tích thế giới",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện cổ tích thế giới/1. PDF - Nàng Bạch Tuyết và bảy chú lùn.pdf",
+    "fileName": "1. PDF - Nàng Bạch Tuyết và bảy chú lùn.pdf",
+    "coverFileName": "ebook-truyen-co-tich-the-gioi-1-pdf-nang-bach-tuyet-va-bay-chu-lun.jpg",
+    "fileSizeBytes": 7269068,
+    "pageCount": 22,
+    "pageWidth": 595,
+    "pageHeight": 842
+  }
+}

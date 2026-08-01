@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-tranh-qua-tao-cua-ai",
+    "title": "Quả táo của ai",
+    "category": "Truyện tranh",
+    "description": "Sách điện tử “Quả táo của ai” thuộc chủ đề Truyện tranh.",
+    "keywords": ["Quả táo của ai", "Truyện tranh", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện tranh/Quả táo của ai.pdf",
+    "fileName": "Quả táo của ai.pdf",
+    "coverFileName": "ebook-truyen-tranh-qua-tao-cua-ai.jpg",
+    "fileSizeBytes": 4768795,
+    "pageCount": 2,
+    "pageWidth": 595.276,
+    "pageHeight": 841.89
+  }
+}

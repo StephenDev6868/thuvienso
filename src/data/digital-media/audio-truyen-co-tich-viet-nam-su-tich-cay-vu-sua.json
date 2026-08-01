@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-co-tich-viet-nam-su-tich-cay-vu-sua",
+    "title": "Sự Tích Cây Vú Sữa",
+    "category": "Truyện cổ tích Việt Nam",
+    "description": "Sách nói “Sự Tích Cây Vú Sữa” thuộc chủ đề Truyện cổ tích Việt Nam.",
+    "keywords": ["Sự Tích Cây Vú Sữa", "Truyện cổ tích Việt Nam", "sách nói", "audio", "nghe"],
+    "accent": "#216bb2",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện cổ tích Việt Nam/Sự Tích Cây Vú Sữa.mp3",
+    "fileName": "Sự Tích Cây Vú Sữa.mp3",
+    "coverFileName": "audio-truyen-co-tich-viet-nam-su-tich-cay-vu-sua.svg",
+    "fileSizeBytes": 6342819,
+    "durationSeconds": 772,
+    "duration": "12:52"
+  }
+}

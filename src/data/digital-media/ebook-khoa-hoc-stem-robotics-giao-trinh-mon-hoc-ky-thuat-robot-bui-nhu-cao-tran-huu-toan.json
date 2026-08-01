@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-robotics-giao-trinh-mon-hoc-ky-thuat-robot-bui-nhu-cao-tran-huu-toan",
+    "title": "giao trinh mon hoc ky thuat robot bui nhu cao tran huu toan",
+    "category": "Khoa học - STEM",
+    "subcategory": "ROBOTICS",
+    "description": "Sách điện tử “giao trinh mon hoc ky thuat robot bui nhu cao tran huu toan” thuộc chủ đề ROBOTICS.",
+    "keywords": [
+      "giao trinh mon hoc ky thuat robot bui nhu cao tran huu toan",
+      "Khoa học - STEM",
+      "ROBOTICS",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/ROBOTICS/giao-trinh-mon-hoc-ky-thuat-robot-bui-nhu-cao-tran-huu-toan.pdf",
+    "fileName": "giao-trinh-mon-hoc-ky-thuat-robot-bui-nhu-cao-tran-huu-toan.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-robotics-giao-trinh-mon-hoc-ky-thuat-robot-bui-nhu-cao-tran-huu-toan.jpg",
+    "fileSizeBytes": 5145559,
+    "pageCount": 108,
+    "pageWidth": 595.32,
+    "pageHeight": 842.04
+  }
+}

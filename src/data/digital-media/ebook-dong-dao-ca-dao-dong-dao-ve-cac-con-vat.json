@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-dong-dao-ca-dao-dong-dao-ve-cac-con-vat",
+    "title": "Đồng dao về các con vật",
+    "category": "Đồng dao-Ca dao",
+    "description": "Sách điện tử “Đồng dao về các con vật” thuộc chủ đề Đồng dao-Ca dao.",
+    "keywords": ["Đồng dao về các con vật", "Đồng dao-Ca dao", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Đồng dao-Ca dao/Đồng dao về các con vật.pdf",
+    "fileName": "Đồng dao về các con vật.pdf",
+    "coverFileName": "ebook-dong-dao-ca-dao-dong-dao-ve-cac-con-vat.jpg",
+    "fileSizeBytes": 671962,
+    "pageCount": 8,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

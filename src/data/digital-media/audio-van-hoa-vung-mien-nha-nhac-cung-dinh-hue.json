@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-nha-nhac-cung-dinh-hue",
+    "title": "Nhã nhạc cung đình Huế",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “Nhã nhạc cung đình Huế” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": ["Nhã nhạc cung đình Huế", "Văn hóa vùng miền", "sách nói", "audio", "nghe"],
+    "accent": "#77509a",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/Nhã nhạc cung đình Huế.mp3",
+    "fileName": "Nhã nhạc cung đình Huế.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-nha-nhac-cung-dinh-hue.svg",
+    "fileSizeBytes": 2515739,
+    "durationSeconds": 157,
+    "duration": "02:37"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-robotics-scratch-lap-trinh-voi-scratch",
+    "title": "Lập trình với Scratch",
+    "category": "Khoa học - STEM",
+    "subcategory": "ROBOTICS / SCRATCH",
+    "description": "Sách điện tử “Lập trình với Scratch” thuộc chủ đề ROBOTICS / SCRATCH.",
+    "keywords": [
+      "Lập trình với Scratch",
+      "Khoa học - STEM",
+      "ROBOTICS / SCRATCH",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/ROBOTICS/SCRATCH/Lập trình với Scratch.pdf",
+    "fileName": "Lập trình với Scratch.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-robotics-scratch-lap-trinh-voi-scratch.jpg",
+    "fileSizeBytes": 86392955,
+    "pageCount": 190,
+    "pageWidth": 558,
+    "pageHeight": 773.88
+  }
+}

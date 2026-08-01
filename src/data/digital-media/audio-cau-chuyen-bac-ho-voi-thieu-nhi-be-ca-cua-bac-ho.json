@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-cau-chuyen-bac-ho-voi-thieu-nhi-be-ca-cua-bac-ho",
+    "title": "Bể Cá Của Bác Hồ",
+    "category": "CÂU CHUYỆN BÁC HỒ VỚI THIẾU NHI",
+    "description": "Sách nói “Bể Cá Của Bác Hồ” thuộc chủ đề CÂU CHUYỆN BÁC HỒ VỚI THIẾU NHI.",
+    "keywords": [
+      "Bể Cá Của Bác Hồ",
+      "CÂU CHUYỆN BÁC HỒ VỚI THIẾU NHI",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "CÂU CHUYỆN BÁC HỒ VỚI THIẾU NHI/Bể Cá Của Bác Hồ .mp3",
+    "fileName": "Bể Cá Của Bác Hồ .mp3",
+    "coverFileName": "audio-cau-chuyen-bac-ho-voi-thieu-nhi-be-ca-cua-bac-ho.svg",
+    "fileSizeBytes": 1480454,
+    "durationSeconds": 93,
+    "duration": "01:33"
+  }
+}

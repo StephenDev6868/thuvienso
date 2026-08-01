@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-co-tich-the-gioi-1-pdf-co-be-quang-khan-do",
+    "title": "Cô bé quàng khăn đỏ",
+    "category": "Truyện cổ tích thế giới",
+    "description": "Sách điện tử “Cô bé quàng khăn đỏ” thuộc chủ đề Truyện cổ tích thế giới.",
+    "keywords": ["Cô bé quàng khăn đỏ", "Truyện cổ tích thế giới", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện cổ tích thế giới/1. PDF - Cô bé quàng khăn đỏ.pdf",
+    "fileName": "1. PDF - Cô bé quàng khăn đỏ.pdf",
+    "coverFileName": "ebook-truyen-co-tich-the-gioi-1-pdf-co-be-quang-khan-do.jpg",
+    "fileSizeBytes": 3304183,
+    "pageCount": 22,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-danh-nhan-nhan-vat-lich-su-ke-chuyen-danh-nhan-nguyen-trai-va-cuoc-chia-ly-voi-nguoi-cha-noi-bien-gioi",
+    "title": "Kể chuyện danh nhân Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới",
+    "category": "Danh nhân, nhân vật lịch sử",
+    "description": "Sách nói “Kể chuyện danh nhân Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới” thuộc chủ đề Danh nhân, nhân vật lịch sử.",
+    "keywords": [
+      "Kể chuyện danh nhân Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới",
+      "Danh nhân, nhân vật lịch sử",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Danh nhân, nhân vật lịch sử/Kể chuyện danh nhân_ Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới.mp3",
+    "fileName": "Kể chuyện danh nhân_ Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới.mp3",
+    "coverFileName": "audio-danh-nhan-nhan-vat-lich-su-ke-chuyen-danh-nhan-nguyen-trai-va-cuoc-chia-ly-voi-nguoi-cha-noi-bien-gioi.svg",
+    "fileSizeBytes": 3216608,
+    "durationSeconds": 198,
+    "duration": "03:18"
+  }
+}

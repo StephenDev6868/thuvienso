@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-ngu-ngon-thay-boi-xem-voi",
+    "title": "Thầy Bói Xem Voi",
+    "category": "Truyện ngụ ngôn",
+    "description": "Sách nói “Thầy Bói Xem Voi” thuộc chủ đề Truyện ngụ ngôn.",
+    "keywords": ["Thầy Bói Xem Voi", "Truyện ngụ ngôn", "sách nói", "audio", "nghe"],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện ngụ ngôn/Thầy Bói Xem Voi.mp3",
+    "fileName": "Thầy Bói Xem Voi.mp3",
+    "coverFileName": "audio-truyen-ngu-ngon-thay-boi-xem-voi.svg",
+    "fileSizeBytes": 1612844,
+    "durationSeconds": 169,
+    "duration": "02:49"
+  }
+}

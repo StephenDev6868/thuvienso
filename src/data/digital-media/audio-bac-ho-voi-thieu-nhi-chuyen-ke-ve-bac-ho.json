@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-bac-ho-voi-thieu-nhi-chuyen-ke-ve-bac-ho",
+    "title": "CHUYỆN KỂ VỀ BÁC HỒ",
+    "category": "Bác Hồ với thiếu nhi",
+    "description": "Sách nói “CHUYỆN KỂ VỀ BÁC HỒ” thuộc chủ đề Bác Hồ với thiếu nhi.",
+    "keywords": ["CHUYỆN KỂ VỀ BÁC HỒ", "Bác Hồ với thiếu nhi", "sách nói", "audio", "nghe"],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Bác Hồ với thiếu nhi/CHUYỆN KỂ VỀ BÁC HỒ.mp3",
+    "fileName": "CHUYỆN KỂ VỀ BÁC HỒ.mp3",
+    "coverFileName": "audio-bac-ho-voi-thieu-nhi-chuyen-ke-ve-bac-ho.svg",
+    "fileSizeBytes": 20869066,
+    "durationSeconds": 4174,
+    "duration": "01:09:34"
+  }
+}

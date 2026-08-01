@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-ngu-ngon-ech-ngoi-day-gieng",
+    "title": "Ếch ngồi đáy giếng",
+    "category": "Truyện ngụ ngôn",
+    "description": "Sách điện tử “Ếch ngồi đáy giếng” thuộc chủ đề Truyện ngụ ngôn.",
+    "keywords": ["Ếch ngồi đáy giếng", "Truyện ngụ ngôn", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện ngụ ngôn/Ếch ngồi đáy giếng.pdf",
+    "fileName": "Ếch ngồi đáy giếng.pdf",
+    "coverFileName": "ebook-truyen-ngu-ngon-ech-ngoi-day-gieng.jpg",
+    "fileSizeBytes": 1201788,
+    "pageCount": 8,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

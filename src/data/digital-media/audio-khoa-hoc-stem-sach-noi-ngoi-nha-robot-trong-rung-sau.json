@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-khoa-hoc-stem-sach-noi-ngoi-nha-robot-trong-rung-sau",
+    "title": "Ngôi nhà Robot trong rừng sâu",
+    "category": "KHOA HỌC - STEM",
+    "description": "Sách nói “Ngôi nhà Robot trong rừng sâu” thuộc chủ đề KHOA HỌC - STEM.",
+    "keywords": ["Ngôi nhà Robot trong rừng sâu", "KHOA HỌC - STEM", "sách nói", "audio", "nghe"],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "KHOA HỌC - STEM/Sách nói Ngôi nhà Robot trong rừng sâu.mp3",
+    "fileName": "Sách nói Ngôi nhà Robot trong rừng sâu.mp3",
+    "coverFileName": "audio-khoa-hoc-stem-sach-noi-ngoi-nha-robot-trong-rung-sau.svg",
+    "fileSizeBytes": 49177221,
+    "durationSeconds": 3063,
+    "duration": "51:03"
+  }
+}

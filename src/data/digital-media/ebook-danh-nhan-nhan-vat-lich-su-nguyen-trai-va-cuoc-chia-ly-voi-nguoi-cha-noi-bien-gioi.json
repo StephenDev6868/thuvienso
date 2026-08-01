@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-danh-nhan-nhan-vat-lich-su-nguyen-trai-va-cuoc-chia-ly-voi-nguoi-cha-noi-bien-gioi",
+    "title": "Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới",
+    "category": "Danh nhân, nhân vật lịch sử",
+    "description": "Sách điện tử “Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới” thuộc chủ đề Danh nhân, nhân vật lịch sử.",
+    "keywords": [
+      "Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới",
+      "Danh nhân, nhân vật lịch sử",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Danh nhân, nhân vật lịch sử/Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới.pdf",
+    "fileName": "Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới.pdf",
+    "coverFileName": "ebook-danh-nhan-nhan-vat-lich-su-nguyen-trai-va-cuoc-chia-ly-voi-nguoi-cha-noi-bien-gioi.jpg",
+    "fileSizeBytes": 207981,
+    "pageCount": 2,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

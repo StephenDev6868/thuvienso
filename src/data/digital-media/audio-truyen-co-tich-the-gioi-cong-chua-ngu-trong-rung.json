@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-co-tich-the-gioi-cong-chua-ngu-trong-rung",
+    "title": "Công chúa ngủ trong rừng",
+    "category": "Truyện cổ tích thế giới",
+    "description": "Sách nói “Công chúa ngủ trong rừng” thuộc chủ đề Truyện cổ tích thế giới.",
+    "keywords": [
+      "Công chúa ngủ trong rừng",
+      "Truyện cổ tích thế giới",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#6254c7",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện cổ tích thế giới/Công chúa ngủ trong rừng.mp3",
+    "fileName": "Công chúa ngủ trong rừng.mp3",
+    "coverFileName": "audio-truyen-co-tich-the-gioi-cong-chua-ngu-trong-rung.svg",
+    "fileSizeBytes": 10796441,
+    "durationSeconds": 445,
+    "duration": "07:25"
+  }
+}

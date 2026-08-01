@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-danh-nhan-nhan-vat-lich-su-chu-tich-ho-chi-minh",
+    "title": "Chủ tịch Hồ Chí Minh",
+    "category": "Danh nhân, nhân vật lịch sử",
+    "description": "Sách điện tử “Chủ tịch Hồ Chí Minh” thuộc chủ đề Danh nhân, nhân vật lịch sử.",
+    "keywords": ["Chủ tịch Hồ Chí Minh", "Danh nhân, nhân vật lịch sử", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Danh nhân, nhân vật lịch sử/Chủ tịch Hồ Chí Minh.pdf",
+    "fileName": "Chủ tịch Hồ Chí Minh.pdf",
+    "coverFileName": "ebook-danh-nhan-nhan-vat-lich-su-chu-tich-ho-chi-minh.jpg",
+    "fileSizeBytes": 136248,
+    "pageCount": 1,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

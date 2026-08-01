@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-kham-pha-khoa-hoc-sach-dien-tu-danh-nhan-the-gioi-mari-quyri",
+    "title": "Danh nhân thế giới Mari Quyri",
+    "category": "Khoa học - STEM",
+    "subcategory": "Khám phá khoa học",
+    "description": "Sách điện tử “Danh nhân thế giới Mari Quyri” thuộc chủ đề Khám phá khoa học.",
+    "keywords": [
+      "Danh nhân thế giới Mari Quyri",
+      "Khoa học - STEM",
+      "Khám phá khoa học",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Khám phá khoa học/Sách điện tử Danh nhân thế giới Mari Quyri.pdf",
+    "fileName": "Sách điện tử Danh nhân thế giới Mari Quyri.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-kham-pha-khoa-hoc-sach-dien-tu-danh-nhan-the-gioi-mari-quyri.jpg",
+    "fileSizeBytes": 47488922,
+    "pageCount": 162,
+    "pageWidth": 594.75,
+    "pageHeight": 841.5
+  }
+}

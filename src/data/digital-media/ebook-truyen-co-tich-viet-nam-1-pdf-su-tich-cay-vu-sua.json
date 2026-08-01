@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-co-tich-viet-nam-1-pdf-su-tich-cay-vu-sua",
+    "title": "Su tich cay vu sua",
+    "category": "Truyện cổ tích Việt Nam",
+    "description": "Sách điện tử “Su tich cay vu sua” thuộc chủ đề Truyện cổ tích Việt Nam.",
+    "keywords": ["Su tich cay vu sua", "Truyện cổ tích Việt Nam", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện cổ tích Việt Nam/1. pdf Su-tich-cay-vu-sua.pdf",
+    "fileName": "1. pdf Su-tich-cay-vu-sua.pdf",
+    "coverFileName": "ebook-truyen-co-tich-viet-nam-1-pdf-su-tich-cay-vu-sua.jpg",
+    "fileSizeBytes": 3220164,
+    "pageCount": 13,
+    "pageWidth": 595,
+    "pageHeight": 842
+  }
+}

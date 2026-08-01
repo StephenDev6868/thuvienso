@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-co-tich-viet-nam-1-pdf-an-khe-tra-vang",
+    "title": "Ăn khe tra vang",
+    "category": "Truyện cổ tích Việt Nam",
+    "description": "Sách điện tử “Ăn khe tra vang” thuộc chủ đề Truyện cổ tích Việt Nam.",
+    "keywords": ["Ăn khe tra vang", "Truyện cổ tích Việt Nam", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện cổ tích Việt Nam/1.pdf Ăn-khe-tra-vang.pdf",
+    "fileName": "1.pdf Ăn-khe-tra-vang.pdf",
+    "coverFileName": "ebook-truyen-co-tich-viet-nam-1-pdf-an-khe-tra-vang.jpg",
+    "fileSizeBytes": 2851835,
+    "pageCount": 18,
+    "pageWidth": 720,
+    "pageHeight": 405
+  }
+}

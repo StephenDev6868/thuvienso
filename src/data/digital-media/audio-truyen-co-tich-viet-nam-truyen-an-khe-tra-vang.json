@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-co-tich-viet-nam-truyen-an-khe-tra-vang",
+    "title": "Truyện Ăn Khế trả Vàng",
+    "category": "Truyện cổ tích Việt Nam",
+    "description": "Sách nói “Truyện Ăn Khế trả Vàng” thuộc chủ đề Truyện cổ tích Việt Nam.",
+    "keywords": ["Truyện Ăn Khế trả Vàng", "Truyện cổ tích Việt Nam", "sách nói", "audio", "nghe"],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện cổ tích Việt Nam/Truyện Ăn Khế trả Vàng.mp3",
+    "fileName": "Truyện Ăn Khế trả Vàng.mp3",
+    "coverFileName": "audio-truyen-co-tich-viet-nam-truyen-an-khe-tra-vang.svg",
+    "fileSizeBytes": 5489239,
+    "durationSeconds": 657,
+    "duration": "10:57"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-co-tich-the-gioi-co-be-quang-khan-do",
+    "title": "Cô bé quàng khăn đỏ",
+    "category": "Truyện cổ tích thế giới",
+    "description": "Sách nói “Cô bé quàng khăn đỏ” thuộc chủ đề Truyện cổ tích thế giới.",
+    "keywords": ["Cô bé quàng khăn đỏ", "Truyện cổ tích thế giới", "sách nói", "audio", "nghe"],
+    "accent": "#77509a",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện cổ tích thế giới/Cô bé quàng khăn đỏ.mp3",
+    "fileName": "Cô bé quàng khăn đỏ.mp3",
+    "coverFileName": "audio-truyen-co-tich-the-gioi-co-be-quang-khan-do.svg",
+    "fileSizeBytes": 10723801,
+    "durationSeconds": 377,
+    "duration": "06:17"
+  }
+}

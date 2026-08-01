@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-tranh-ai-dang-khen-nhieu-hon",
+    "title": "Ai đáng khen nhiều hơn",
+    "category": "Truyện tranh",
+    "description": "Sách nói “Ai đáng khen nhiều hơn” thuộc chủ đề Truyện tranh.",
+    "keywords": ["Ai đáng khen nhiều hơn", "Truyện tranh", "sách nói", "audio", "nghe"],
+    "accent": "#77509a",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện tranh/Ai đáng khen nhiều hơn.mp3",
+    "fileName": "Ai đáng khen nhiều hơn.mp3",
+    "coverFileName": "audio-truyen-tranh-ai-dang-khen-nhieu-hon.svg",
+    "fileSizeBytes": 3836273,
+    "durationSeconds": 480,
+    "duration": "08:00"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-dan-gian-chu-cuoi-cung-trang",
+    "title": "Chú Cuội cung trăng",
+    "category": "Truyện dân gian",
+    "description": "Sách điện tử “Chú Cuội cung trăng” thuộc chủ đề Truyện dân gian.",
+    "keywords": ["Chú Cuội cung trăng", "Truyện dân gian", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện dân gian/Chú Cuội cung trăng.pdf",
+    "fileName": "Chú Cuội cung trăng.pdf",
+    "coverFileName": "ebook-truyen-dan-gian-chu-cuoi-cung-trang.jpg",
+    "fileSizeBytes": 3148995,
+    "pageCount": 13,
+    "pageWidth": 595,
+    "pageHeight": 842
+  }
+}

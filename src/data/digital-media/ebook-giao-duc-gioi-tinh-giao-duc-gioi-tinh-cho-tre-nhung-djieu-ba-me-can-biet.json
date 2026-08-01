@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-giao-duc-gioi-tinh-giao-duc-gioi-tinh-cho-tre-nhung-djieu-ba-me-can-biet",
+    "title": "Giao Duc Gioi Tinh Cho Tre Nhung DJieu Ba Me Can Biet",
+    "category": "Giáo dục giới tính",
+    "description": "Sách điện tử “Giao Duc Gioi Tinh Cho Tre Nhung DJieu Ba Me Can Biet” thuộc chủ đề Giáo dục giới tính.",
+    "keywords": [
+      "Giao Duc Gioi Tinh Cho Tre Nhung DJieu Ba Me Can Biet",
+      "Giáo dục giới tính",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Giáo dục giới tính/Giao-Duc-Gioi-Tinh-Cho-Tre-Nhung-DJieu-Ba-Me-Can-Biet.pdf",
+    "fileName": "Giao-Duc-Gioi-Tinh-Cho-Tre-Nhung-DJieu-Ba-Me-Can-Biet.pdf",
+    "coverFileName": "ebook-giao-duc-gioi-tinh-giao-duc-gioi-tinh-cho-tre-nhung-djieu-ba-me-can-biet.jpg",
+    "fileSizeBytes": 23190869,
+    "pageCount": 11,
+    "pageWidth": 900,
+    "pageHeight": 507.12
+  }
+}

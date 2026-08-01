@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-bac-trung-bo-vung-dat-con-nguoi",
+    "title": "BẮC TRUNG BỘ VÙNG ĐẤT CON NGƯỜI",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “BẮC TRUNG BỘ VÙNG ĐẤT CON NGƯỜI” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": [
+      "BẮC TRUNG BỘ VÙNG ĐẤT CON NGƯỜI",
+      "Văn hóa vùng miền",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/BẮC TRUNG BỘ VÙNG ĐẤT CON NGƯỜI.mp3",
+    "fileName": "BẮC TRUNG BỘ VÙNG ĐẤT CON NGƯỜI.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-bac-trung-bo-vung-dat-con-nguoi.svg",
+    "fileSizeBytes": 28511299,
+    "durationSeconds": 5702,
+    "duration": "01:35:02"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-gioi-thieu-le-hoi-cong-chieng-tay-nguyen",
+    "title": "GIỚI THIỆU LỄ HỘI CỒNG CHIÊNG TÂY NGUYÊN",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “GIỚI THIỆU LỄ HỘI CỒNG CHIÊNG TÂY NGUYÊN” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": [
+      "GIỚI THIỆU LỄ HỘI CỒNG CHIÊNG TÂY NGUYÊN",
+      "Văn hóa vùng miền",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/GIỚI THIỆU LỄ HỘI CỒNG CHIÊNG TÂY NGUYÊN.mp3",
+    "fileName": "GIỚI THIỆU LỄ HỘI CỒNG CHIÊNG TÂY NGUYÊN.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-gioi-thieu-le-hoi-cong-chieng-tay-nguyen.svg",
+    "fileSizeBytes": 2259948,
+    "durationSeconds": 141,
+    "duration": "02:21"
+  }
+}

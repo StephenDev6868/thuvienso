@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-sang-tao-cung-ai-sach-dien-tu-ai-for-everyone-ebook",
+    "title": "AI for everyone ebook",
+    "category": "Khoa học - STEM",
+    "subcategory": "Sáng tạo cùng AI",
+    "description": "Sách điện tử “AI for everyone ebook” thuộc chủ đề Sáng tạo cùng AI.",
+    "keywords": [
+      "AI for everyone ebook",
+      "Khoa học - STEM",
+      "Sáng tạo cùng AI",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Sáng tạo cùng AI/Sách điện tử AI-for-everyone-ebook.pdf",
+    "fileName": "Sách điện tử AI-for-everyone-ebook.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-sang-tao-cung-ai-sach-dien-tu-ai-for-everyone-ebook.jpg",
+    "fileSizeBytes": 718329,
+    "pageCount": 33,
+    "pageWidth": 595.3,
+    "pageHeight": 841.9
+  }
+}

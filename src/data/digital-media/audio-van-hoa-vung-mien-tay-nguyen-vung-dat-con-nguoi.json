@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-tay-nguyen-vung-dat-con-nguoi",
+    "title": "TÂY NGUYÊN VÙNG ĐẤT CON NGƯỜI",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “TÂY NGUYÊN VÙNG ĐẤT CON NGƯỜI” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": ["TÂY NGUYÊN VÙNG ĐẤT CON NGƯỜI", "Văn hóa vùng miền", "sách nói", "audio", "nghe"],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/TÂY NGUYÊN VÙNG ĐẤT CON NGƯỜI.mp3",
+    "fileName": "TÂY NGUYÊN VÙNG ĐẤT CON NGƯỜI.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-tay-nguyen-vung-dat-con-nguoi.svg",
+    "fileSizeBytes": 23936688,
+    "durationSeconds": 4787,
+    "duration": "01:19:47"
+  }
+}

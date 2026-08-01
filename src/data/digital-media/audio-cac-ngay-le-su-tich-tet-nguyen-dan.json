@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-cac-ngay-le-su-tich-tet-nguyen-dan",
+    "title": "SỰ TÍCH TẾT NGUYÊN ĐÁN.",
+    "category": "CÁC NGÀY LỄ",
+    "description": "Sách nói “SỰ TÍCH TẾT NGUYÊN ĐÁN.” thuộc chủ đề CÁC NGÀY LỄ.",
+    "keywords": ["SỰ TÍCH TẾT NGUYÊN ĐÁN.", "CÁC NGÀY LỄ", "sách nói", "audio", "nghe"],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "CÁC NGÀY LỄ/SỰ TÍCH TẾT NGUYÊN ĐÁN..mp3",
+    "fileName": "SỰ TÍCH TẾT NGUYÊN ĐÁN..mp3",
+    "coverFileName": "audio-cac-ngay-le-su-tich-tet-nguyen-dan.svg",
+    "fileSizeBytes": 3809323,
+    "durationSeconds": 238,
+    "duration": "03:58"
+  }
+}

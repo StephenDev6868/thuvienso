@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-giao-duc-gioi-tinh-co-the-em-la-duy-nhat",
+    "title": "Cơ thể em là duy nhất",
+    "category": "Giáo dục giới tính",
+    "description": "Sách điện tử “Cơ thể em là duy nhất” thuộc chủ đề Giáo dục giới tính.",
+    "keywords": ["Cơ thể em là duy nhất", "Giáo dục giới tính", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Giáo dục giới tính/Cơ thể em là duy nhất.pdf",
+    "fileName": "Cơ thể em là duy nhất.pdf",
+    "coverFileName": "ebook-giao-duc-gioi-tinh-co-the-em-la-duy-nhat.jpg",
+    "fileSizeBytes": 3360883,
+    "pageCount": 9,
+    "pageWidth": 900,
+    "pageHeight": 507.12
+  }
+}

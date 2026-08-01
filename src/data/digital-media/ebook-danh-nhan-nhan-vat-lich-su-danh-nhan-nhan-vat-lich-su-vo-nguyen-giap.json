@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-danh-nhan-nhan-vat-lich-su-danh-nhan-nhan-vat-lich-su-vo-nguyen-giap",
+    "title": "Danh nhân, nhân vật lịch sử Võ Nguyên Giáp",
+    "category": "Danh nhân, nhân vật lịch sử",
+    "description": "Sách điện tử “Danh nhân, nhân vật lịch sử Võ Nguyên Giáp” thuộc chủ đề Danh nhân, nhân vật lịch sử.",
+    "keywords": [
+      "Danh nhân, nhân vật lịch sử Võ Nguyên Giáp",
+      "Danh nhân, nhân vật lịch sử",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Danh nhân, nhân vật lịch sử/Danh nhân, nhân vật lịch sử Võ Nguyên Giáp.pdf",
+    "fileName": "Danh nhân, nhân vật lịch sử Võ Nguyên Giáp.pdf",
+    "coverFileName": "ebook-danh-nhan-nhan-vat-lich-su-danh-nhan-nhan-vat-lich-su-vo-nguyen-giap.jpg",
+    "fileSizeBytes": 258810,
+    "pageCount": 5,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

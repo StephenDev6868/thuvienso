@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-anh-hung-dan-toc-hung-dao-vuong",
+    "title": "HƯNG ĐẠO VƯƠNG",
+    "category": "ANH HÙNG DÂN TỘC",
+    "description": "Sách nói “HƯNG ĐẠO VƯƠNG” thuộc chủ đề ANH HÙNG DÂN TỘC.",
+    "keywords": ["HƯNG ĐẠO VƯƠNG", "ANH HÙNG DÂN TỘC", "sách nói", "audio", "nghe"],
+    "accent": "#216bb2",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "ANH HÙNG DÂN TỘC/HƯNG ĐẠO VƯƠNG.mp3",
+    "fileName": "HƯNG ĐẠO VƯƠNG.mp3",
+    "coverFileName": "audio-anh-hung-dan-toc-hung-dao-vuong.svg",
+    "fileSizeBytes": 16256308,
+    "durationSeconds": 3251,
+    "duration": "54:11"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-sang-tao-cung-ai-sach-dien-tu-nhap-mon-tri-tue-nhan-tao-2015",
+    "title": "Nhập môn trí tuệ nhân tạo 2015",
+    "category": "Khoa học - STEM",
+    "subcategory": "Sáng tạo cùng AI",
+    "description": "Sách điện tử “Nhập môn trí tuệ nhân tạo 2015” thuộc chủ đề Sáng tạo cùng AI.",
+    "keywords": [
+      "Nhập môn trí tuệ nhân tạo 2015",
+      "Khoa học - STEM",
+      "Sáng tạo cùng AI",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Sáng tạo cùng AI/Sách điện tử Nhập môn trí tuệ nhân tạo - 2015.pdf",
+    "fileName": "Sách điện tử Nhập môn trí tuệ nhân tạo - 2015.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-sang-tao-cung-ai-sach-dien-tu-nhap-mon-tri-tue-nhan-tao-2015.jpg",
+    "fileSizeBytes": 10732079,
+    "pageCount": 207,
+    "pageWidth": 595,
+    "pageHeight": 842
+  }
+}

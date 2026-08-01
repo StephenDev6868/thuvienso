@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-sang-tao-cung-ai-sach-dien-tu-can-ban-cua-ai",
+    "title": "Căn bản của AI",
+    "category": "Khoa học - STEM",
+    "subcategory": "Sáng tạo cùng AI",
+    "description": "Sách điện tử “Căn bản của AI” thuộc chủ đề Sáng tạo cùng AI.",
+    "keywords": ["Căn bản của AI", "Khoa học - STEM", "Sáng tạo cùng AI", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Sáng tạo cùng AI/Sách điện tử Căn bản của AI.pdf",
+    "fileName": "Sách điện tử Căn bản của AI.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-sang-tao-cung-ai-sach-dien-tu-can-ban-cua-ai.jpg",
+    "fileSizeBytes": 9409597,
+    "pageCount": 33,
+    "pageWidth": 842,
+    "pageHeight": 595
+  }
+}

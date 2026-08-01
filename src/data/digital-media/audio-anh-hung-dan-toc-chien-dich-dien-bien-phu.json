@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-anh-hung-dan-toc-chien-dich-dien-bien-phu",
+    "title": "CHIẾN DỊCH ĐIỆN BIÊN PHỦ",
+    "category": "ANH HÙNG DÂN TỘC",
+    "description": "Sách nói “CHIẾN DỊCH ĐIỆN BIÊN PHỦ” thuộc chủ đề ANH HÙNG DÂN TỘC.",
+    "keywords": ["CHIẾN DỊCH ĐIỆN BIÊN PHỦ", "ANH HÙNG DÂN TỘC", "sách nói", "audio", "nghe"],
+    "accent": "#6254c7",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "ANH HÙNG DÂN TỘC/CHIẾN DỊCH ĐIỆN BIÊN PHỦ.mp3",
+    "fileName": "CHIẾN DỊCH ĐIỆN BIÊN PHỦ.mp3",
+    "coverFileName": "audio-anh-hung-dan-toc-chien-dich-dien-bien-phu.svg",
+    "fileSizeBytes": 60588851,
+    "durationSeconds": 12117,
+    "duration": "03:21:57"
+  }
+}

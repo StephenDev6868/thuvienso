@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-tranh-bac-gau-den-va-hai-chu-tho",
+    "title": "Bác Gấu Đen và hai chú thỏ",
+    "category": "Truyện tranh",
+    "description": "Sách nói “Bác Gấu Đen và hai chú thỏ” thuộc chủ đề Truyện tranh.",
+    "keywords": ["Bác Gấu Đen và hai chú thỏ", "Truyện tranh", "sách nói", "audio", "nghe"],
+    "accent": "#6254c7",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện tranh/Bác Gấu Đen và hai chú thỏ.mp3",
+    "fileName": "Bác Gấu Đen và hai chú thỏ.mp3",
+    "coverFileName": "audio-truyen-tranh-bac-gau-den-va-hai-chu-tho.svg",
+    "fileSizeBytes": 5019456,
+    "durationSeconds": 627,
+    "duration": "10:27"
+  }
+}

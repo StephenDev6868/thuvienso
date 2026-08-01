@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-dan-gian-son-tinh-thuy-tinh-truyen-co-tich-viet-nam-truyen-thuyet-viet-nam",
+    "title": "Sơn Tinh Thuỷ Tinh Truyện Cổ Tích Việt Nam Truyền thuyết Việt Nam",
+    "category": "Truyện dân gian",
+    "description": "Sách nói “Sơn Tinh Thuỷ Tinh Truyện Cổ Tích Việt Nam Truyền thuyết Việt Nam” thuộc chủ đề Truyện dân gian.",
+    "keywords": [
+      "Sơn Tinh Thuỷ Tinh Truyện Cổ Tích Việt Nam Truyền thuyết Việt Nam",
+      "Truyện dân gian",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#6254c7",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện dân gian/Sơn Tinh Thuỷ Tinh _ Truyện Cổ Tích Việt Nam _ Truyền thuyết Việt Nam.mp3",
+    "fileName": "Sơn Tinh Thuỷ Tinh _ Truyện Cổ Tích Việt Nam _ Truyền thuyết Việt Nam.mp3",
+    "coverFileName": "audio-truyen-dan-gian-son-tinh-thuy-tinh-truyen-co-tich-viet-nam-truyen-thuyet-viet-nam.svg",
+    "fileSizeBytes": 5919304,
+    "durationSeconds": 740,
+    "duration": "12:20"
+  }
+}

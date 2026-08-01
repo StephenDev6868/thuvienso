@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-dong-dao-ca-dao-dong-dao-ve-cac-con-vat",
+    "title": "Đồng dao về các con vật",
+    "category": "Đồng dao-Ca dao",
+    "description": "Sách nói “Đồng dao về các con vật” thuộc chủ đề Đồng dao-Ca dao.",
+    "keywords": ["Đồng dao về các con vật", "Đồng dao-Ca dao", "sách nói", "audio", "nghe"],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Đồng dao-Ca dao/Đồng dao về các con vật.mp3",
+    "fileName": "Đồng dao về các con vật.mp3",
+    "coverFileName": "audio-dong-dao-ca-dao-dong-dao-ve-cac-con-vat.svg",
+    "fileSizeBytes": 5966112,
+    "durationSeconds": 716,
+    "duration": "11:56"
+  }
+}

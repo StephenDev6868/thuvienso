@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-khoa-hoc-stem-cac-nha-khoa-hoc-va-nhung-phat-minh",
+    "title": "cac nha khoa hoc va nhung phat minh",
+    "category": "KHOA HỌC - STEM",
+    "description": "Sách nói “cac nha khoa hoc va nhung phat minh” thuộc chủ đề KHOA HỌC - STEM.",
+    "keywords": [
+      "cac nha khoa hoc va nhung phat minh",
+      "KHOA HỌC - STEM",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "KHOA HỌC - STEM/cac-nha-khoa-hoc-va-nhung-phat-minh.mp3",
+    "fileName": "cac-nha-khoa-hoc-va-nhung-phat-minh.mp3",
+    "coverFileName": "audio-khoa-hoc-stem-cac-nha-khoa-hoc-va-nhung-phat-minh.svg",
+    "fileSizeBytes": 3864532,
+    "durationSeconds": 235,
+    "duration": "03:55"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-anh-hung-dan-toc-ke-chuyen-hai-ba-trung",
+    "title": "Kể chuyện Hai bà Trưng",
+    "category": "ANH HÙNG DÂN TỘC",
+    "description": "Sách nói “Kể chuyện Hai bà Trưng” thuộc chủ đề ANH HÙNG DÂN TỘC.",
+    "keywords": ["Kể chuyện Hai bà Trưng", "ANH HÙNG DÂN TỘC", "sách nói", "audio", "nghe"],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "ANH HÙNG DÂN TỘC/Kể chuyện- Hai bà Trưng.mp3",
+    "fileName": "Kể chuyện- Hai bà Trưng.mp3",
+    "coverFileName": "audio-anh-hung-dan-toc-ke-chuyen-hai-ba-trung.svg",
+    "fileSizeBytes": 1965287,
+    "durationSeconds": 123,
+    "duration": "02:03"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-tho-thieu-nhi-bai-tho-co-giao-cua-con",
+    "title": "bài thơ cô giáo của con",
+    "category": "Thơ thiếu nhi",
+    "description": "Sách nói “bài thơ cô giáo của con” thuộc chủ đề Thơ thiếu nhi.",
+    "keywords": ["bài thơ cô giáo của con", "Thơ thiếu nhi", "sách nói", "audio", "nghe"],
+    "accent": "#77509a",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Thơ thiếu nhi/bài thơ cô giáo của con.mp3",
+    "fileName": "bài thơ cô giáo của con.mp3",
+    "coverFileName": "audio-tho-thieu-nhi-bai-tho-co-giao-cua-con.svg",
+    "fileSizeBytes": 1780585,
+    "durationSeconds": 42,
+    "duration": "00:42"
+  }
+}

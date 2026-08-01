@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-danh-nhan-nhan-vat-lich-su-chu-tich-ho-chi-minh-vi-lanh-tu-thien-tai",
+    "title": "Chủ tịch Hồ Chí Minh, vị lãnh tụ thiên tài",
+    "category": "Danh nhân, nhân vật lịch sử",
+    "description": "Sách nói “Chủ tịch Hồ Chí Minh, vị lãnh tụ thiên tài” thuộc chủ đề Danh nhân, nhân vật lịch sử.",
+    "keywords": [
+      "Chủ tịch Hồ Chí Minh, vị lãnh tụ thiên tài",
+      "Danh nhân, nhân vật lịch sử",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#77509a",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Danh nhân, nhân vật lịch sử/Chủ tịch Hồ Chí Minh, vị lãnh tụ thiên tài.mp3",
+    "fileName": "Chủ tịch Hồ Chí Minh, vị lãnh tụ thiên tài.mp3",
+    "coverFileName": "audio-danh-nhan-nhan-vat-lich-su-chu-tich-ho-chi-minh-vi-lanh-tu-thien-tai.svg",
+    "fileSizeBytes": 748375,
+    "durationSeconds": 42,
+    "duration": "00:42"
+  }
+}

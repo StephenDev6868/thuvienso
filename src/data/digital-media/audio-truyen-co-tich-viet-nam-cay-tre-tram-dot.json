@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-co-tich-viet-nam-cay-tre-tram-dot",
+    "title": "Cây Tre Trăm Đốt",
+    "category": "Truyện cổ tích Việt Nam",
+    "description": "Sách nói “Cây Tre Trăm Đốt” thuộc chủ đề Truyện cổ tích Việt Nam.",
+    "keywords": ["Cây Tre Trăm Đốt", "Truyện cổ tích Việt Nam", "sách nói", "audio", "nghe"],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện cổ tích Việt Nam/Cây Tre Trăm Đốt.mp3",
+    "fileName": "Cây Tre Trăm Đốt.mp3",
+    "coverFileName": "audio-truyen-co-tich-viet-nam-cay-tre-tram-dot.svg",
+    "fileSizeBytes": 3714176,
+    "durationSeconds": 435,
+    "duration": "07:15"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-sang-tao-cung-ai-tai-lieu-tap-huan-boi-duong-giao-vien-bo-sach-tri-tue-nhan-tao-cap-tieu-hoc",
+    "title": "Tài liệu tập huấn, bồi dưỡng giáo viên bộ sách Trí tuệ nhân tạo cấp Tiểu học",
+    "category": "Khoa học - STEM",
+    "subcategory": "Sáng tạo cùng AI",
+    "description": "Sách điện tử “Tài liệu tập huấn, bồi dưỡng giáo viên bộ sách Trí tuệ nhân tạo cấp Tiểu học” thuộc chủ đề Sáng tạo cùng AI.",
+    "keywords": [
+      "Tài liệu tập huấn, bồi dưỡng giáo viên bộ sách Trí tuệ nhân tạo cấp Tiểu học",
+      "Khoa học - STEM",
+      "Sáng tạo cùng AI",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Sáng tạo cùng AI/Tài liệu tập huấn, bồi dưỡng giáo viên bộ sách Trí tuệ nhân tạo cấp Tiểu học.pdf",
+    "fileName": "Tài liệu tập huấn, bồi dưỡng giáo viên bộ sách Trí tuệ nhân tạo cấp Tiểu học.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-sang-tao-cung-ai-tai-lieu-tap-huan-boi-duong-giao-vien-bo-sach-tri-tue-nhan-tao-cap-tieu-hoc.jpg",
+    "fileSizeBytes": 450235,
+    "pageCount": 32,
+    "pageWidth": 538.58,
+    "pageHeight": 751.18
+  }
+}

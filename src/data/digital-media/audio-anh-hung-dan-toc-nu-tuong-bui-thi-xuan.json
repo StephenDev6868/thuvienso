@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-anh-hung-dan-toc-nu-tuong-bui-thi-xuan",
+    "title": "Nữ tướng Bùi Thị Xuân",
+    "category": "ANH HÙNG DÂN TỘC",
+    "description": "Sách nói “Nữ tướng Bùi Thị Xuân” thuộc chủ đề ANH HÙNG DÂN TỘC.",
+    "keywords": ["Nữ tướng Bùi Thị Xuân", "ANH HÙNG DÂN TỘC", "sách nói", "audio", "nghe"],
+    "accent": "#77509a",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "ANH HÙNG DÂN TỘC/Nữ tướng Bùi Thị Xuân.mp3",
+    "fileName": "Nữ tướng Bùi Thị Xuân.mp3",
+    "coverFileName": "audio-anh-hung-dan-toc-nu-tuong-bui-thi-xuan.svg",
+    "fileSizeBytes": 3345388,
+    "durationSeconds": 209,
+    "duration": "03:29"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-bac-ho-voi-thieu-nhi-bac-ho-giua-trai-tim-tre-tho",
+    "title": "BÁC HỒ GIỮA TRÁI TIM TRẺ THƠ",
+    "category": "Bác Hồ với thiếu nhi",
+    "description": "Sách nói “BÁC HỒ GIỮA TRÁI TIM TRẺ THƠ” thuộc chủ đề Bác Hồ với thiếu nhi.",
+    "keywords": [
+      "BÁC HỒ GIỮA TRÁI TIM TRẺ THƠ",
+      "Bác Hồ với thiếu nhi",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Bác Hồ với thiếu nhi/BÁC HỒ GIỮA TRÁI TIM TRẺ THƠ.mp3",
+    "fileName": "BÁC HỒ GIỮA TRÁI TIM TRẺ THƠ.mp3",
+    "coverFileName": "audio-bac-ho-voi-thieu-nhi-bac-ho-giua-trai-tim-tre-tho.svg",
+    "fileSizeBytes": 7915155,
+    "durationSeconds": 1583,
+    "duration": "26:23"
+  }
+}

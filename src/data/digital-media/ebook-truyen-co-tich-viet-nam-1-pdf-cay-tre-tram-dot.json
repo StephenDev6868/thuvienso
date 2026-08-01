@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-co-tich-viet-nam-1-pdf-cay-tre-tram-dot",
+    "title": "cay tre tram dot",
+    "category": "Truyện cổ tích Việt Nam",
+    "description": "Sách điện tử “cay tre tram dot” thuộc chủ đề Truyện cổ tích Việt Nam.",
+    "keywords": ["cay tre tram dot", "Truyện cổ tích Việt Nam", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện cổ tích Việt Nam/1.pdf-cay-tre-tram-dot.pdf",
+    "fileName": "1.pdf-cay-tre-tram-dot.pdf",
+    "coverFileName": "ebook-truyen-co-tich-viet-nam-1-pdf-cay-tre-tram-dot.jpg",
+    "fileSizeBytes": 7816429,
+    "pageCount": 33,
+    "pageWidth": 682.5,
+    "pageHeight": 955.5
+  }
+}

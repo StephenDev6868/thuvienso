@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-dong-dao-ca-dao-ng-dao-cho-b",
+    "title": "ng dao cho b",
+    "category": "Đồng dao-Ca dao",
+    "description": "Sách nói “ng dao cho b” thuộc chủ đề Đồng dao-Ca dao.",
+    "keywords": ["ng dao cho b", "Đồng dao-Ca dao", "sách nói", "audio", "nghe"],
+    "accent": "#216bb2",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Đồng dao-Ca dao/ng-dao-cho-b.mp3",
+    "fileName": "ng-dao-cho-b.mp3",
+    "coverFileName": "audio-dong-dao-ca-dao-ng-dao-cho-b.svg",
+    "fileSizeBytes": 25985008,
+    "durationSeconds": 1601,
+    "duration": "26:41"
+  }
+}

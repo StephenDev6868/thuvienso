@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-anh-hung-dan-toc-vua-ham-nghi",
+    "title": "VUA HÀM NGHI",
+    "category": "ANH HÙNG DÂN TỘC",
+    "description": "Sách nói “VUA HÀM NGHI” thuộc chủ đề ANH HÙNG DÂN TỘC.",
+    "keywords": ["VUA HÀM NGHI", "ANH HÙNG DÂN TỘC", "sách nói", "audio", "nghe"],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "ANH HÙNG DÂN TỘC/VUA HÀM NGHI.mp3",
+    "fileName": "VUA HÀM NGHI.mp3",
+    "coverFileName": "audio-anh-hung-dan-toc-vua-ham-nghi.svg",
+    "fileSizeBytes": 16853250,
+    "durationSeconds": 3371,
+    "duration": "56:11"
+  }
+}

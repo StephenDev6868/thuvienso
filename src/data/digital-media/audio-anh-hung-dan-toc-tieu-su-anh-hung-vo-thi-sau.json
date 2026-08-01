@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-anh-hung-dan-toc-tieu-su-anh-hung-vo-thi-sau",
+    "title": "Tiểu Sử Anh Hùng Võ Thị Sáu",
+    "category": "ANH HÙNG DÂN TỘC",
+    "description": "Sách nói “Tiểu Sử Anh Hùng Võ Thị Sáu” thuộc chủ đề ANH HÙNG DÂN TỘC.",
+    "keywords": ["Tiểu Sử Anh Hùng Võ Thị Sáu", "ANH HÙNG DÂN TỘC", "sách nói", "audio", "nghe"],
+    "accent": "#6254c7",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "ANH HÙNG DÂN TỘC/Tiểu Sử Anh Hùng Võ Thị Sáu-.mp3",
+    "fileName": "Tiểu Sử Anh Hùng Võ Thị Sáu-.mp3",
+    "coverFileName": "audio-anh-hung-dan-toc-tieu-su-anh-hung-vo-thi-sau.svg",
+    "fileSizeBytes": 1604588,
+    "durationSeconds": 100,
+    "duration": "01:40"
+  }
+}

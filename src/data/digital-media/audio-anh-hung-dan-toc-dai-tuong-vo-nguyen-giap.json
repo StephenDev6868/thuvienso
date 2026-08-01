@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-anh-hung-dan-toc-dai-tuong-vo-nguyen-giap",
+    "title": "ĐẠI TƯỚNG VÕ NGUYÊN GIÁP",
+    "category": "ANH HÙNG DÂN TỘC",
+    "description": "Sách nói “ĐẠI TƯỚNG VÕ NGUYÊN GIÁP” thuộc chủ đề ANH HÙNG DÂN TỘC.",
+    "keywords": ["ĐẠI TƯỚNG VÕ NGUYÊN GIÁP", "ANH HÙNG DÂN TỘC", "sách nói", "audio", "nghe"],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "ANH HÙNG DÂN TỘC/ĐẠI TƯỚNG VÕ NGUYÊN GIÁP.mp3",
+    "fileName": "ĐẠI TƯỚNG VÕ NGUYÊN GIÁP.mp3",
+    "coverFileName": "audio-anh-hung-dan-toc-dai-tuong-vo-nguyen-giap.svg",
+    "fileSizeBytes": 17808968,
+    "durationSeconds": 3562,
+    "duration": "59:22"
+  }
+}

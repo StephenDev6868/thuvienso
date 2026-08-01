@@ -1,5 +1,6 @@
 import {
   digitalBooks,
+  digitalEbooks,
   digitalResources,
   digitalTeacherBooks,
   digitalTextbooks,
@@ -7,10 +8,18 @@ import {
   normalizeBookText,
   searchDigitalBooks,
 } from '@/data/digitalLibrary'
+import {
+  allDigitalVideos,
+  digitalAudiobooks,
+  searchAudiobooks,
+  searchVideos,
+} from '@/data/mediaLibrary'
 
 export interface LibraryAssistantReply {
   content: string
   openBookId?: string
+  routeName?: 'audiobooks' | 'video-lessons'
+  playMediaId?: string
 }
 
 const availableLibraryGrades = Array.from(
@@ -21,8 +30,20 @@ const availableLibraryGradeLabel = availableLibraryGrades.join(', ')
 export function getLibraryAssistantReply(message: string): LibraryAssistantReply {
   const normalized = normalizeBookText(message)
   const matches = searchDigitalBooks(message)
-  const openIntent = /\b(doc|mo|xem)\b/.test(normalized)
+  const audiobookMatches = searchAudiobooks(message)
+  const videoMatches = searchVideos(message)
+  const openIntent = /\b(doc|mo|xem|nghe|phat)\b/.test(normalized)
   const requestedGrade = extractRequestedGrade(message)
+  const asksForAudiobooks =
+    normalized.includes('sach noi') ||
+    normalized.includes('audio') ||
+    normalized.includes('nghe truyen') ||
+    normalized.includes('nghe sach')
+  const asksForVideos =
+    normalized.includes('video') ||
+    normalized.includes('bai giang') ||
+    normalized.includes('phim hoc tap')
+  const asksForEbooks = normalized.includes('sach dien tu') || normalized.includes('ebook')
   const asksForLifeSkills =
     normalized.includes('ky nang song') ||
     normalized.includes('an toan giao thong') ||
@@ -38,11 +59,36 @@ export function getLibraryAssistantReply(message: string): LibraryAssistantReply
   const catalogIntent =
     !openIntent &&
     (normalized.includes('kho sach') ||
+      normalized.includes('kho video') ||
+      normalized.includes('kho bai giang') ||
       normalized.includes('kho tai lieu') ||
       normalized.includes('danh sach') ||
       normalized.includes('nhung mon nao') ||
       normalized.includes('sach gi') ||
       normalized.includes('tai lieu gi'))
+
+  if (catalogIntent && asksForAudiobooks) {
+    const topics = Array.from(new Set(digitalAudiobooks.map((item) => item.category)))
+    return {
+      content: `Kho Sách nói hiện có ${digitalAudiobooks.length} nội dung thuộc ${topics.length} chủ đề: ${topics.join(', ')}. Bạn có thể nói “Nghe…” kèm tên câu chuyện hoặc nhân vật.`,
+    }
+  }
+
+  if (catalogIntent && asksForVideos) {
+    const grades = Array.from(
+      new Set(allDigitalVideos.flatMap((item) => (item.grade ? [item.grade] : []))),
+    ).sort()
+    return {
+      content: `Kho Video bài giảng hiện có ${allDigitalVideos.length} video học tập, gồm ${allDigitalVideos.filter((item) => item.format === 'youtube').length} video YouTube, cho lớp ${grades.join(', lớp ')} và các chủ đề mở rộng. Bạn có thể nói “Mở video…” kèm tên bài học.`,
+    }
+  }
+
+  if (catalogIntent && asksForEbooks) {
+    const topics = Array.from(new Set(digitalEbooks.map((book) => book.subject)))
+    return {
+      content: `Kho Sách điện tử hiện có ${digitalEbooks.length} cuốn thuộc các chủ đề: ${topics.join(', ')}. Bạn có thể yêu cầu mở sách theo tên hoặc chủ đề.`,
+    }
+  }
 
   if (catalogIntent && asksForLifeSkills) {
     const resources = digitalResources.filter((book) => book.kind === 'life-skill')
@@ -86,6 +132,33 @@ export function getLibraryAssistantReply(message: string): LibraryAssistantReply
   }
 
   if (openIntent) {
+    if (asksForAudiobooks) {
+      const bestMatch = audiobookMatches[0]
+      if (!bestMatch) {
+        return {
+          content:
+            'Mình chưa tìm thấy sách nói đó. Bạn hãy thử nói tên ngắn hơn hoặc hỏi “Kho sách nói có gì?”.',
+        }
+      }
+      return {
+        content: `Mình đã tìm thấy sách nói “${bestMatch.title}” (${bestMatch.duration}). Đang mở trình nghe cho bạn...`,
+        routeName: 'audiobooks',
+        playMediaId: bestMatch.id,
+      }
+    }
+
+    if (asksForVideos) {
+      const bestMatch = videoMatches[0]
+      if (!bestMatch) {
+        return { content: 'Mình chưa tìm thấy video đó. Bạn hãy thử nói tên bài, lớp hoặc số bài.' }
+      }
+      return {
+        content: `Mình đã tìm thấy video “${bestMatch.title}” (${bestMatch.duration}). Đang mở bài học cho bạn...`,
+        routeName: 'video-lessons',
+        playMediaId: bestMatch.id,
+      }
+    }
+
     if (!matches.length) {
       return {
         content: `Mình chưa tìm thấy tài liệu đó trong kho. Bạn có thể hỏi “Kho sách có những môn nào?”, “Kho Kỹ năng sống có gì?” hoặc “Danh sách tài liệu giáo viên”.`,
@@ -186,6 +259,6 @@ export function getLibraryAssistantReply(message: string): LibraryAssistantReply
   }
 
   return {
-    content: `Mình có thể tìm và mở trực tiếp ${digitalTextbooks.length} cuốn SGK, ${digitalTeacherBooks.length} sách giáo viên lớp 3–5 cùng ${digitalResources.length} tài liệu Kỹ năng sống và tài liệu chuyên môn. Ví dụ: “Mở sách giáo viên Toán lớp 4 tập 1”, “Mở kỹ năng quản trị cảm xúc” hoặc “Mở KHBD Toán lớp 3 tuần 19”.`,
+    content: `Mình có thể tìm và mở ${digitalTextbooks.length} cuốn SGK, ${digitalEbooks.length} sách điện tử, ${digitalAudiobooks.length} sách nói, ${allDigitalVideos.length} video học tập cùng ${digitalResources.length} tài liệu mở rộng. Ví dụ: “Mở sách điện tử Ếch ngồi đáy giếng”, “Nghe sách nói Rùa và Thỏ” hoặc “Mở video Cậu bé ham học lớp 2”.`,
   }
 }

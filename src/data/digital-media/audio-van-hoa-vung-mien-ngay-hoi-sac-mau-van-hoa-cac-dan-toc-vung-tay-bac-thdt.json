@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-ngay-hoi-sac-mau-van-hoa-cac-dan-toc-vung-tay-bac-thdt",
+    "title": "Ngày hội Sắc màu văn hóa các dân tộc vùng Tây Bắc THDT",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “Ngày hội Sắc màu văn hóa các dân tộc vùng Tây Bắc THDT” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": [
+      "Ngày hội Sắc màu văn hóa các dân tộc vùng Tây Bắc THDT",
+      "Văn hóa vùng miền",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/Ngày hội -Sắc màu văn hóa các dân tộc vùng Tây Bắc- - THDT.mp3",
+    "fileName": "Ngày hội -Sắc màu văn hóa các dân tộc vùng Tây Bắc- - THDT.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-ngay-hoi-sac-mau-van-hoa-cac-dan-toc-vung-tay-bac-thdt.svg",
+    "fileSizeBytes": 1116830,
+    "durationSeconds": 70,
+    "duration": "01:10"
+  }
+}

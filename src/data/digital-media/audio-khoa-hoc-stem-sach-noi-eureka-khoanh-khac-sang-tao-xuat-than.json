@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-khoa-hoc-stem-sach-noi-eureka-khoanh-khac-sang-tao-xuat-than",
+    "title": "Eureka Khoảnh khắc sáng tạo xuất thần",
+    "category": "KHOA HỌC - STEM",
+    "description": "Sách nói “Eureka Khoảnh khắc sáng tạo xuất thần” thuộc chủ đề KHOA HỌC - STEM.",
+    "keywords": [
+      "Eureka Khoảnh khắc sáng tạo xuất thần",
+      "KHOA HỌC - STEM",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "KHOA HỌC - STEM/Sách nói Eureka Khoảnh khắc sáng tạo xuất thần.mp3",
+    "fileName": "Sách nói Eureka Khoảnh khắc sáng tạo xuất thần.mp3",
+    "coverFileName": "audio-khoa-hoc-stem-sach-noi-eureka-khoanh-khac-sang-tao-xuat-than.svg",
+    "fileSizeBytes": 34996548,
+    "durationSeconds": 2142,
+    "duration": "35:42"
+  }
+}

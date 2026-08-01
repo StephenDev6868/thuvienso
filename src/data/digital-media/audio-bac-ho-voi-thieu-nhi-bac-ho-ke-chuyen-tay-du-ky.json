@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-bac-ho-voi-thieu-nhi-bac-ho-ke-chuyen-tay-du-ky",
+    "title": "BÁC HỒ KỂ CHUYỆN TÂY DU KÝ",
+    "category": "Bác Hồ với thiếu nhi",
+    "description": "Sách nói “BÁC HỒ KỂ CHUYỆN TÂY DU KÝ” thuộc chủ đề Bác Hồ với thiếu nhi.",
+    "keywords": ["BÁC HỒ KỂ CHUYỆN TÂY DU KÝ", "Bác Hồ với thiếu nhi", "sách nói", "audio", "nghe"],
+    "accent": "#216bb2",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Bác Hồ với thiếu nhi/BÁC HỒ KỂ CHUYỆN TÂY DU KÝ.mp3",
+    "fileName": "BÁC HỒ KỂ CHUYỆN TÂY DU KÝ.mp3",
+    "coverFileName": "audio-bac-ho-voi-thieu-nhi-bac-ho-ke-chuyen-tay-du-ky.svg",
+    "fileSizeBytes": 6150345,
+    "durationSeconds": 1230,
+    "duration": "20:30"
+  }
+}

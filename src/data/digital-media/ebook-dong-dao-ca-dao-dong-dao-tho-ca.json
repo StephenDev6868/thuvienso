@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-dong-dao-ca-dao-dong-dao-tho-ca",
+    "title": "Đồng dao thơ ca",
+    "category": "Đồng dao-Ca dao",
+    "description": "Sách điện tử “Đồng dao thơ ca” thuộc chủ đề Đồng dao-Ca dao.",
+    "keywords": ["Đồng dao thơ ca", "Đồng dao-Ca dao", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Đồng dao-Ca dao/Đồng dao thơ ca.pdf",
+    "fileName": "Đồng dao thơ ca.pdf",
+    "coverFileName": "ebook-dong-dao-ca-dao-dong-dao-tho-ca.jpg",
+    "fileSizeBytes": 553621,
+    "pageCount": 8,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

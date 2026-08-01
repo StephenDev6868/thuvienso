@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-giao-duc-gioi-tinh-giao-duc-gioi-tinh-cho-tre",
+    "title": "GIAO DUC GIOI TINH CHO TRE",
+    "category": "Giáo dục giới tính",
+    "description": "Sách điện tử “GIAO DUC GIOI TINH CHO TRE” thuộc chủ đề Giáo dục giới tính.",
+    "keywords": ["GIAO DUC GIOI TINH CHO TRE", "Giáo dục giới tính", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Giáo dục giới tính/GIAO-DUC-GIOI-TINH-CHO-TRE.pdf",
+    "fileName": "GIAO-DUC-GIOI-TINH-CHO-TRE.pdf",
+    "coverFileName": "ebook-giao-duc-gioi-tinh-giao-duc-gioi-tinh-cho-tre.jpg",
+    "fileSizeBytes": 288550,
+    "pageCount": 1,
+    "pageWidth": 900,
+    "pageHeight": 4855.92
+  }
+}

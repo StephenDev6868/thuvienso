@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-kham-pha-khoa-hoc-sach-dien-tu-365-ngay-phat-trien-iq",
+    "title": "365 ngày phát triển IQ",
+    "category": "Khoa học - STEM",
+    "subcategory": "Khám phá khoa học",
+    "description": "Sách điện tử “365 ngày phát triển IQ” thuộc chủ đề Khám phá khoa học.",
+    "keywords": [
+      "365 ngày phát triển IQ",
+      "Khoa học - STEM",
+      "Khám phá khoa học",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Khám phá khoa học/Sách điện tử 365 ngày phát triển IQ .pdf",
+    "fileName": "Sách điện tử 365 ngày phát triển IQ .pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-kham-pha-khoa-hoc-sach-dien-tu-365-ngay-phat-trien-iq.jpg",
+    "fileSizeBytes": 27164338,
+    "pageCount": 73,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}

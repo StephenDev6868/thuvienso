@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-dong-dao-ca-dao-ng-dao-th-ca",
+    "title": "ng dao th ca",
+    "category": "Đồng dao-Ca dao",
+    "description": "Sách nói “ng dao th ca” thuộc chủ đề Đồng dao-Ca dao.",
+    "keywords": ["ng dao th ca", "Đồng dao-Ca dao", "sách nói", "audio", "nghe"],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Đồng dao-Ca dao/ng-dao-th-ca.mp3",
+    "fileName": "ng-dao-th-ca.mp3",
+    "coverFileName": "audio-dong-dao-ca-dao-ng-dao-th-ca.svg",
+    "fileSizeBytes": 7938246,
+    "durationSeconds": 472,
+    "duration": "07:52"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-van-hoa-vung-mien-dong-bac-vung-dat-con-nguoi",
+    "title": "ĐÔNG BẮC VÙNG ĐẤT CON NGƯỜI",
+    "category": "Văn hóa vùng miền",
+    "description": "Sách nói “ĐÔNG BẮC VÙNG ĐẤT CON NGƯỜI” thuộc chủ đề Văn hóa vùng miền.",
+    "keywords": ["ĐÔNG BẮC VÙNG ĐẤT CON NGƯỜI", "Văn hóa vùng miền", "sách nói", "audio", "nghe"],
+    "accent": "#bd7117",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Văn hóa vùng miền/ĐÔNG BẮC VÙNG ĐẤT CON NGƯỜI.mp3",
+    "fileName": "ĐÔNG BẮC VÙNG ĐẤT CON NGƯỜI.mp3",
+    "coverFileName": "audio-van-hoa-vung-mien-dong-bac-vung-dat-con-nguoi.svg",
+    "fileSizeBytes": 26808237,
+    "durationSeconds": 5362,
+    "duration": "01:29:22"
+  }
+}

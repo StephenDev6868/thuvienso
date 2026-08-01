@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-tho-thieu-nhi-bai-tho-doi-mat-cua-em",
+    "title": "bài thơ Đôi mắt của em",
+    "category": "Thơ thiếu nhi",
+    "description": "Sách nói “bài thơ Đôi mắt của em” thuộc chủ đề Thơ thiếu nhi.",
+    "keywords": ["bài thơ Đôi mắt của em", "Thơ thiếu nhi", "sách nói", "audio", "nghe"],
+    "accent": "#6254c7",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Thơ thiếu nhi/bài thơ Đôi mắt của em.mp3",
+    "fileName": "bài thơ Đôi mắt của em.mp3",
+    "coverFileName": "audio-tho-thieu-nhi-bai-tho-doi-mat-cua-em.svg",
+    "fileSizeBytes": 1632870,
+    "durationSeconds": 32,
+    "duration": "00:32"
+  }
+}

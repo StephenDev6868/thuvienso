@@ -1,4 +1,5 @@
-export type LibraryItemKind = 'textbook' | 'life-skill' | 'teacher-resource' | 'teacher-book'
+export type LibraryItemKind =
+  'textbook' | 'ebook' | 'life-skill' | 'teacher-resource' | 'teacher-book'
 export type LibraryItemFormat = 'pdf' | 'docx' | 'ppt' | 'pptx' | 'link'
 
 interface LibraryItemBase {

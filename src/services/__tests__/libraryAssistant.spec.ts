@@ -85,4 +85,41 @@ describe('local library assistant', () => {
     expect(reply.content).toContain('Toán')
     expect(reply.content).toContain('Tiếng Việt')
   })
+
+  it('opens a digitized electronic book', () => {
+    const reply = getLibraryAssistantReply('Mở sách điện tử Ếch ngồi đáy giếng')
+
+    expect(reply.openBookId).toBe('ebook-truyen-ngu-ngon-ech-ngoi-day-gieng')
+    expect(reply.content).toContain('PDF')
+  })
+
+  it('opens a digitized audiobook', () => {
+    const reply = getLibraryAssistantReply('Nghe sách nói Rùa và Thỏ')
+
+    expect(reply.routeName).toBe('audiobooks')
+    expect(reply.playMediaId).toBe('audio-truyen-ngu-ngon-rua-va-tho')
+  })
+
+  it('opens a digitized learning video', () => {
+    const reply = getLibraryAssistantReply('Mở video Cậu bé ham học lớp 2')
+
+    expect(reply.routeName).toBe('video-lessons')
+    expect(reply.playMediaId).toContain('cau-be-ham-hoc')
+  })
+
+  it('describes all three newly digitized catalogs', () => {
+    expect(getLibraryAssistantReply('Kho sách điện tử có gì?').content).toContain('42 cuốn')
+    expect(getLibraryAssistantReply('Kho sách nói có gì?').content).toContain('63 nội dung')
+    expect(getLibraryAssistantReply('Kho video bài giảng có gì?').content).toContain('58 video')
+    expect(getLibraryAssistantReply('Kho video bài giảng có gì?').content).toContain(
+      '49 video YouTube',
+    )
+  })
+
+  it('opens an embedded YouTube lesson by title', () => {
+    const reply = getLibraryAssistantReply('Mở video Nữ tướng Bùi Thị Xuân')
+
+    expect(reply.routeName).toBe('video-lessons')
+    expect(reply.playMediaId).toBe('youtube-nu-tuong-bui-thi-xuan')
+  })
 })

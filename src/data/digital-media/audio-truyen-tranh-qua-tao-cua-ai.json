@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-tranh-qua-tao-cua-ai",
+    "title": "Quả táo của ai",
+    "category": "Truyện tranh",
+    "description": "Sách nói “Quả táo của ai” thuộc chủ đề Truyện tranh.",
+    "keywords": ["Quả táo của ai", "Truyện tranh", "sách nói", "audio", "nghe"],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện tranh/Quả táo của ai.mp3",
+    "fileName": "Quả táo của ai.mp3",
+    "coverFileName": "audio-truyen-tranh-qua-tao-cua-ai.svg",
+    "fileSizeBytes": 2368536,
+    "durationSeconds": 296,
+    "duration": "04:56"
+  }
+}

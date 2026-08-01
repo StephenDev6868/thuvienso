@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-truyen-tranh-bac-gau-den-va-hai-chu-tho",
+    "title": "Bác Gấu Đen và hai chú thỏ",
+    "category": "Truyện tranh",
+    "description": "Sách điện tử “Bác Gấu Đen và hai chú thỏ” thuộc chủ đề Truyện tranh.",
+    "keywords": ["Bác Gấu Đen và hai chú thỏ", "Truyện tranh", "sách điện tử", "ebook"],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Truyện tranh/Bác Gấu Đen và hai chú thỏ.pdf",
+    "fileName": "Bác Gấu Đen và hai chú thỏ.pdf",
+    "coverFileName": "ebook-truyen-tranh-bac-gau-den-va-hai-chu-tho.jpg",
+    "fileSizeBytes": 4348098,
+    "pageCount": 3,
+    "pageWidth": 595.276,
+    "pageHeight": 841.89
+  }
+}

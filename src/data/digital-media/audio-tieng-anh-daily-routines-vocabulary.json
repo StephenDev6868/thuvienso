@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-tieng-anh-daily-routines-vocabulary",
+    "title": "Daily Routines Vocabulary",
+    "category": "Tiếng Anh",
+    "description": "Sách nói “Daily Routines Vocabulary” thuộc chủ đề Tiếng Anh.",
+    "keywords": ["Daily Routines Vocabulary", "Tiếng Anh", "sách nói", "audio", "nghe"],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Tiếng Anh/Daily Routines Vocabulary.mp3",
+    "fileName": "Daily Routines Vocabulary.mp3",
+    "coverFileName": "audio-tieng-anh-daily-routines-vocabulary.svg",
+    "fileSizeBytes": 6065778,
+    "durationSeconds": 268,
+    "duration": "04:28"
+  }
+}

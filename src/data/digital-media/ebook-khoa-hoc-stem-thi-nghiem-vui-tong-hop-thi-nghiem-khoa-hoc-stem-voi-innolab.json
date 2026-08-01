@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-thi-nghiem-vui-tong-hop-thi-nghiem-khoa-hoc-stem-voi-innolab",
+    "title": "Tổng hợp thí nghiệm khoa học STEM với InnoLab",
+    "category": "Khoa học - STEM",
+    "subcategory": "Thí nghiệm vui",
+    "description": "Sách điện tử “Tổng hợp thí nghiệm khoa học STEM với InnoLab” thuộc chủ đề Thí nghiệm vui.",
+    "keywords": [
+      "Tổng hợp thí nghiệm khoa học STEM với InnoLab",
+      "Khoa học - STEM",
+      "Thí nghiệm vui",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Thí nghiệm vui/Tổng hợp thí nghiệm khoa học STEM với InnoLab.pdf",
+    "fileName": "Tổng hợp thí nghiệm khoa học STEM với InnoLab.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-thi-nghiem-vui-tong-hop-thi-nghiem-khoa-hoc-stem-voi-innolab.jpg",
+    "fileSizeBytes": 60052039,
+    "pageCount": 131,
+    "pageWidth": 596,
+    "pageHeight": 842
+  }
+}

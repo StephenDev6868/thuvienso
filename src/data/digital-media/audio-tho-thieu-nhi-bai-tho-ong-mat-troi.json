@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-tho-thieu-nhi-bai-tho-ong-mat-troi",
+    "title": "Bài thơ Ông mặt trời",
+    "category": "Thơ thiếu nhi",
+    "description": "Sách nói “Bài thơ Ông mặt trời” thuộc chủ đề Thơ thiếu nhi.",
+    "keywords": ["Bài thơ Ông mặt trời", "Thơ thiếu nhi", "sách nói", "audio", "nghe"],
+    "accent": "#db526b",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Thơ thiếu nhi/Bài thơ Ông mặt trời.mp3",
+    "fileName": "Bài thơ Ông mặt trời.mp3",
+    "coverFileName": "audio-tho-thieu-nhi-bai-tho-ong-mat-troi.svg",
+    "fileSizeBytes": 644870,
+    "durationSeconds": 35,
+    "duration": "00:35"
+  }
+}

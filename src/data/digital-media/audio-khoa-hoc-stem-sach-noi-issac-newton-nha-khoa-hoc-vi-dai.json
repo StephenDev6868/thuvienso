@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-khoa-hoc-stem-sach-noi-issac-newton-nha-khoa-hoc-vi-dai",
+    "title": "Issac Newton Nhà khoa học vĩ đại",
+    "category": "KHOA HỌC - STEM",
+    "description": "Sách nói “Issac Newton Nhà khoa học vĩ đại” thuộc chủ đề KHOA HỌC - STEM.",
+    "keywords": [
+      "Issac Newton Nhà khoa học vĩ đại",
+      "KHOA HỌC - STEM",
+      "sách nói",
+      "audio",
+      "nghe"
+    ],
+    "accent": "#216bb2",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "KHOA HỌC - STEM/Sách nói Issac Newton - Nhà khoa học vĩ đại.mp3",
+    "fileName": "Sách nói Issac Newton - Nhà khoa học vĩ đại.mp3",
+    "coverFileName": "audio-khoa-hoc-stem-sach-noi-issac-newton-nha-khoa-hoc-vi-dai.svg",
+    "fileSizeBytes": 10596546,
+    "durationSeconds": 626,
+    "duration": "10:26"
+  }
+}

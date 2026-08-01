@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-robotics-scratch-tu-hoc-lap-trinh-scratch",
+    "title": "Tu hoc lap trinh Scratch",
+    "category": "Khoa học - STEM",
+    "subcategory": "ROBOTICS / SCRATCH",
+    "description": "Sách điện tử “Tu hoc lap trinh Scratch” thuộc chủ đề ROBOTICS / SCRATCH.",
+    "keywords": [
+      "Tu hoc lap trinh Scratch",
+      "Khoa học - STEM",
+      "ROBOTICS / SCRATCH",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/ROBOTICS/SCRATCH/Tu hoc lap trinh Scratch.pdf",
+    "fileName": "Tu hoc lap trinh Scratch.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-robotics-scratch-tu-hoc-lap-trinh-scratch.jpg",
+    "fileSizeBytes": 11515634,
+    "pageCount": 209,
+    "pageWidth": 595.32,
+    "pageHeight": 842.04
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "audio-truyen-ngu-ngon-ech-ngoi-day-gieng",
+    "title": "Ếch ngồi đáy giếng",
+    "category": "Truyện ngụ ngôn",
+    "description": "Sách nói “Ếch ngồi đáy giếng” thuộc chủ đề Truyện ngụ ngôn.",
+    "keywords": ["Ếch ngồi đáy giếng", "Truyện ngụ ngôn", "sách nói", "audio", "nghe"],
+    "accent": "#148c83",
+    "format": "mp3",
+    "sourceFolder": "Sách nói",
+    "relativePath": "Truyện ngụ ngôn/Ếch ngồi đáy giếng.mp3",
+    "fileName": "Ếch ngồi đáy giếng.mp3",
+    "coverFileName": "audio-truyen-ngu-ngon-ech-ngoi-day-gieng.svg",
+    "fileSizeBytes": 1064354,
+    "durationSeconds": 106,
+    "duration": "01:46"
+  }
+}

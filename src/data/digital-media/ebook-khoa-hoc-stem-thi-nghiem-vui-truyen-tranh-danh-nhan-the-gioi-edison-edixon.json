@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "ebook-khoa-hoc-stem-thi-nghiem-vui-truyen-tranh-danh-nhan-the-gioi-edison-edixon",
+    "title": "truyen tranh danh nhan the gioi edison edixon",
+    "category": "Khoa học - STEM",
+    "subcategory": "Thí nghiệm vui",
+    "description": "Sách điện tử “truyen tranh danh nhan the gioi edison edixon” thuộc chủ đề Thí nghiệm vui.",
+    "keywords": [
+      "truyen tranh danh nhan the gioi edison edixon",
+      "Khoa học - STEM",
+      "Thí nghiệm vui",
+      "sách điện tử",
+      "ebook"
+    ],
+    "accent": "#0f8f83",
+    "kind": "ebook",
+    "format": "pdf",
+    "viewerType": "pdf",
+    "sourceFolder": "Sách điện tử",
+    "relativePath": "Khoa học - STEM/Thí nghiệm vui/truyen-tranh-danh-nhan-the-gioi-edison-edixon.pdf",
+    "fileName": "truyen-tranh-danh-nhan-the-gioi-edison-edixon.pdf",
+    "coverFileName": "ebook-khoa-hoc-stem-thi-nghiem-vui-truyen-tranh-danh-nhan-the-gioi-edison-edixon.jpg",
+    "fileSizeBytes": 98164332,
+    "pageCount": 162,
+    "pageWidth": 612,
+    "pageHeight": 792
+  }
+}
