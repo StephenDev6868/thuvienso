@@ -10,10 +10,10 @@ describe('3D book cabinets', () => {
   it('distributes every digitized item into exactly one cabinet', () => {
     const bookIds = threeDBookCabinets.flatMap((cabinet) => cabinet.books.map((book) => book.id))
 
-    expect(threeDBookCabinets).toHaveLength(4)
-    expect(threeDLibraryBookCount).toBe(152)
-    expect(bookIds).toHaveLength(152)
-    expect(new Set(bookIds).size).toBe(152)
+    expect(threeDBookCabinets).toHaveLength(5)
+    expect(threeDLibraryBookCount).toBe(194)
+    expect(bookIds).toHaveLength(194)
+    expect(new Set(bookIds).size).toBe(194)
   })
 
   it('packs books densely into no more than 18 items per shelf', () => {

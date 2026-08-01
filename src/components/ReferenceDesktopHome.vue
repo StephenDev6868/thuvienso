@@ -62,9 +62,9 @@ const visibleShelves = computed(() => {
 const stats = [
   { label: 'Đầu sách', value: '1.250+', icon: BookOpen, color: '#f5a623' },
   {
-    label: 'Học liệu',
+    label: 'Video bài giảng',
     value: `${digitalResourceCollection.documentCount}+`,
-    icon: GraduationCap,
+    icon: GraduationCap,  
     color: '#315fd7',
   },
   { label: 'Video', value: '50+', icon: Play, color: '#ef4444' },
@@ -127,7 +127,7 @@ const navItems: NavItem[] = [
   { label: 'Kho sách', icon: BookOpen, action: () => goBooks() },
   { label: 'Tủ sách 3D', icon: Shield, action: goThreeD },
   { label: 'Sách nói', icon: Headphones, action: () => goBooks('truyện') },
-  { label: 'Học liệu', icon: GraduationCap, action: () => goBooks('học liệu') },
+  { label: 'Video', icon: GraduationCap, action: () => goBooks('học liệu') },
   { label: 'STEM', icon: Grid2X2, action: () => goBooks('stem') },
   { label: 'Hoạt động', icon: Trophy, action: goThreeD },
 ]

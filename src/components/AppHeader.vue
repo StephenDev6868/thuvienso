@@ -39,7 +39,7 @@ const navigation: NavigationItem[] = [
   { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' }, icon: BookOpen },
   { label: 'Tủ sách 3D', to: { name: 'three-d-library' }, icon: GraduationCap, activeRoute: 'three-d-library' },
   { label: 'Sách nói', to: { name: 'audiobooks' }, icon: Headphones, activeRoute: 'audiobooks' },
-  { label: 'Học liệu', to: { name: 'video-lessons' }, icon: GraduationCap, activeRoute: 'video-lessons' },
+  { label: 'Video Bài giảng', to: { name: 'video-lessons' }, icon: GraduationCap, activeRoute: 'video-lessons' },
   { label: 'STEM', to: { name: 'home', hash: '#home-3d-library' }, icon: Trophy },
   { label: 'Hoạt động', to: { name: 'home', hash: '#home-3d-library' }, icon: Trophy },
 ]

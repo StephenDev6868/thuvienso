@@ -1,4 +1,9 @@
-import { digitalResources, digitalTeacherBooks, digitalTextbooks } from '@/data/digitalLibrary'
+import {
+  digitalEbooks,
+  digitalResources,
+  digitalTeacherBooks,
+  digitalTextbooks,
+} from '@/data/digitalLibrary'
 import type { Book } from '@/types/library'
 
 export type CabinetDecoration = 'early-learning' | 'exploration' | 'life-skills' | 'teacher'
@@ -134,6 +139,20 @@ const definitions: CabinetDefinition[] = [
     accentColor: '#df2133',
     books: digitalTextbooks,
     groupByExactGrade: true,
+  },
+  {
+    id: 'sach-dien-tu',
+    title: 'Kho sách điện tử',
+    shortTitle: 'Sách điện tử',
+    eyebrow: 'Khám phá • Đọc • Sáng tạo',
+    description: 'Truyện, danh nhân, kỹ năng và sách khoa học STEM được số hóa để đọc trực tiếp.',
+    decoration: 'early-learning',
+    frameColor: '#238f82',
+    frameDarkColor: '#125047',
+    innerColor: '#eaf8f3',
+    glowColor: '#7ed9bd',
+    accentColor: '#148c83',
+    books: digitalEbooks,
   },
   {
     id: 'ky-nang-song',

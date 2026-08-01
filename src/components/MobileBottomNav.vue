@@ -6,9 +6,9 @@ const route = useRoute()
 
 const items = [
   { label: 'Trang chủ', to: { name: 'home', hash: '#top' }, icon: Home, active: 'home' },
-  { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' }, icon: BookOpen },
+  { label: 'Sách nói', to: { name: 'audiobooks' }, icon: BookOpen, active: 'audiobooks' },
   { label: 'Tủ sách 3D', to: { name: 'three-d-library' }, icon: LibraryBig, active: 'three-d-library' },
-  { label: 'Yêu thích', to: { name: 'home', hash: '#featured-books' }, icon: Heart },
+  { label: 'Video bài giảng', to: { name: 'video-lessons' }, icon: Heart, active: 'video-lessons' },
   { label: 'Cá nhân', to: { name: 'home', hash: '#featured-books' }, icon: UserRound },
 ]
 </script>
@@ -41,7 +41,7 @@ const items = [
         <span v-else class="grid size-7 place-items-center rounded-xl transition group-hover:bg-red-50">
           <component :is="item.icon" :size="20" />
         </span>
-        <span>{{ item.label }}</span>
+        <span class="whitespace-nowrap">{{ item.label }}</span>
       </RouterLink>
     </div>
   </nav>

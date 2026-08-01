@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import {
   digitalBooks,
+  digitalEbooks,
   digitalLibraryCollection,
   digitalLibraryGradeCollections,
   digitalResources,
@@ -13,9 +14,10 @@ import {
 describe('digital library catalog', () => {
   it('contains every digitized textbook from grade one through five', () => {
     expect(digitalTextbooks).toHaveLength(63)
+    expect(digitalEbooks).toHaveLength(42)
     expect(digitalResources).toHaveLength(53)
     expect(digitalTeacherBooks).toHaveLength(36)
-    expect(digitalBooks).toHaveLength(152)
+    expect(digitalBooks).toHaveLength(194)
     expect(digitalLibraryCollection.bookCount).toBe(63)
     expect(digitalLibraryCollection.totalPages).toBe(6642)
     expect(digitalLibraryCollection.grades).toEqual([1, 2, 3, 4, 5])
@@ -35,6 +37,9 @@ describe('digital library catalog', () => {
           document.coverUrl &&
           (document.viewerType === 'pdf' ? document.pdfUrl : document.previewUrl),
       ),
+    ).toBe(true)
+    expect(
+      digitalEbooks.every((book) => book.viewerType === 'pdf' && book.pdfUrl && book.coverUrl),
     ).toBe(true)
     expect(
       digitalTeacherBooks.every(

@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "collection": {
+    "id": "youtube-video-bai-giang",
+    "title": "Video YouTube học tập",
+    "itemCount": 49
+  },
+  "items": [
+    {
+      "id": "youtube-do-vui-dia-danh-viet-nam",
+      "title": "Câu đố địa danh nổi tiếng của Việt Nam",
+      "category": "Đố vui",
+      "youtubeId": "s8szyqxDlgs"
+    },
+    {
+      "id": "youtube-do-vui-anh-hung-dan-toc",
+      "title": "Câu đố về các anh hùng dân tộc Việt Nam",
+      "category": "Đố vui",
+      "youtubeId": "n2NLHKPVkJc"
+    },
+    {
+      "id": "youtube-do-vui-cau-do-meo",
+      "title": "Câu đố mẹo",
+      "category": "Đố vui",
+      "youtubeId": "Iv_UnIu09m8"
+    },
+
+    {
+      "id": "youtube-bac-ho-doi-thu-dang-yeu",
+      "title": "Câu chuyện: Đối thủ đáng yêu",
+      "category": "Bác Hồ",
+      "youtubeId": "5YyYNHwG65Y"
+    },
+    {
+      "id": "youtube-bac-ho-tham-vuon-hoa-nghin-viec-tot",
+      "title": "Bác Hồ thăm vườn hoa nghìn việc tốt",
+      "category": "Bác Hồ",
+      "youtubeId": "kRhuX4LFniU"
+    },
+    {
+      "id": "youtube-bac-ho-giu-chu-tin",
+      "title": "Bác Hồ giữ chữ tín",
+      "category": "Bác Hồ",
+      "youtubeId": "LITvUFvGx7o"
+    },
+
+    {
+      "id": "youtube-van-hoa-dan-toc-tay-bac",
+      "title": "Văn hóa dân tộc Tây Bắc",
+      "category": "Văn hóa vùng miền",
+      "youtubeId": "8Jmo56Z4qFY",
+      "startSeconds": 33
+    },
+    {
+      "id": "youtube-cong-chieng-tay-nguyen",
+      "title": "Cồng chiêng Tây Nguyên",
+      "category": "Văn hóa vùng miền",
+      "youtubeId": "YMQAG-HCQoY"
+    },
+    {
+      "id": "youtube-nha-nhac-cung-dinh-hue",
+      "title": "Nhã nhạc cung đình Huế",
+      "category": "Văn hóa vùng miền",
+      "youtubeId": "IRGupC5hEn4"
+    },
+
+    {
+      "id": "youtube-tong-hop-cac-ngay-le",
+      "title": "Tổng hợp các ngày lễ trong năm",
+      "category": "Các ngày lễ trong năm",
+      "youtubeId": "bi_d_Xidxs0"
+    },
+    {
+      "id": "youtube-tet-nguyen-dan",
+      "title": "Tết Nguyên đán",
+      "category": "Các ngày lễ trong năm",
+      "youtubeId": "HSUe54kmBEE"
+    },
+    {
+      "id": "youtube-y-nghia-tet-trung-thu",
+      "title": "Ý nghĩa Tết Trung thu",
+      "category": "Các ngày lễ trong năm",
+      "youtubeId": "_obVzuUoZuQ"
+    },
+
+    {
+      "id": "youtube-anh-hung-vo-thi-sau",
+      "title": "Anh hùng Võ Thị Sáu",
+      "category": "Các anh hùng dân tộc",
+      "youtubeId": "mw4iUcxCWcE"
+    },
+    {
+      "id": "youtube-hai-ba-trung",
+      "title": "Hai Bà Trưng",
+      "category": "Các anh hùng dân tộc",
+      "youtubeId": "vqvXYvF4Yes",
+      "startSeconds": 23
+    },
+    {
+      "id": "youtube-nu-tuong-bui-thi-xuan",
+      "title": "Nữ tướng Bùi Thị Xuân",
+      "category": "Các anh hùng dân tộc",
+      "youtubeId": "JH9JQTVv5pg",
+      "startSeconds": 246
+    },
+
+    {
+      "id": "youtube-sgk-chu-be-chan-cuu-lop-1",
+      "title": "Bài 4 - Chú bé chăn cừu – Lớp 1 Tập 2",
+      "category": "Câu chuyện trong SGK",
+      "youtubeId": "30eKGzxP21s",
+      "grade": 1,
+      "subject": "Tiếng Việt"
+    },
+    {
+      "id": "youtube-sgk-chuyen-bon-mua-lop-2",
+      "title": "Bài 1 - Chuyện bốn mùa – Lớp 2 Tập 2",
+      "category": "Câu chuyện trong SGK",
+      "youtubeId": "tFGgOprtFtE",
+      "grade": 2,
+      "subject": "Tiếng Việt"
+    },
+    {
+      "id": "youtube-sgk-su-tich-cay-thi-la-lop-2",
+      "title": "Bài 11 - Sự tích cây thì là – Lớp 2 Tập 2",
+      "category": "Câu chuyện trong SGK",
+      "youtubeId": "NXdyXrp5TtY",
+      "grade": 2,
+      "subject": "Tiếng Việt"
+    },
+    {
+      "id": "youtube-sgk-cam-on-anh-ha-ma-lop-2",
+      "title": "Bài 19 - Cảm ơn anh hà mã – Lớp 2 Tập 2",
+      "category": "Câu chuyện trong SGK",
+      "youtubeId": "Mh-7f4vq37g",
+      "grade": 2,
+      "subject": "Tiếng Việt"
+    },
+
+    {
+      "id": "youtube-giao-duc-gioi-tinh",
+      "title": "Giáo dục giới tính",
+      "category": "Giáo dục giới tính",
+      "youtubeId": "H5WwnUjRWs4"
+    },
+
+    {
+      "id": "youtube-stem-thi-nghiem-vui-playlist",
+      "title": "Thí nghiệm vui",
+      "category": "Khoa học - STEM",
+      "playlistId": "PLgpfteFKZcYc3wCoZ_2dk0aYA1T3DAmkZ"
+    },
+    {
+      "id": "youtube-stem-marie-curie",
+      "title": "Câu chuyện Marie Curie: Tỏa sáng với khoa học",
+      "category": "Khoa học - STEM",
+      "youtubeId": "snWZU3EOLAw"
+    },
+    {
+      "id": "youtube-stem-can-lo-xo-mini",
+      "title": "Dự án STEM: Chế tạo cân lò xo mini",
+      "category": "Khoa học - STEM",
+      "youtubeId": "Pyq-hTiYEN4"
+    },
+    {
+      "id": "youtube-stem-ai-van-hanh",
+      "title": "Trí tuệ nhân tạo vận hành như thế nào?",
+      "category": "Khoa học - STEM",
+      "youtubeId": "XZuJcCGqL9I"
+    },
+    {
+      "id": "youtube-stem-gioi-thieu-robosim-2024",
+      "title": "Giới thiệu phần mềm Robosim 2024 và cách cài đặt",
+      "category": "Khoa học - STEM",
+      "youtubeId": "IdEZjxXmKr8"
+    },
+    {
+      "id": "youtube-stem-robosim-den-led-da-sac",
+      "title": "Hướng dẫn thắp sáng đèn LED đa sắc trong Robosim",
+      "category": "Khoa học - STEM",
+      "youtubeId": "DdSRcTZ-FzA"
+    },
+    {
+      "id": "youtube-tin-hoc-5-nano-lam-toan",
+      "title": "Thực hành tạo chương trình Nano làm toán - Tin học 5",
+      "category": "Khoa học - STEM",
+      "youtubeId": "o43HNKgbrSY",
+      "grade": 5,
+      "subject": "Tin học"
+    },
+    {
+      "id": "youtube-tin-hoc-5-ve-hinh-vuong",
+      "title": "Thực hành tạo chương trình vẽ hình vuông - Tin học 5",
+      "category": "Khoa học - STEM",
+      "youtubeId": "nl8g47vU1Po",
+      "grade": 5,
+      "subject": "Tin học"
+    },
+
+    {
+      "id": "youtube-van-hoc-chu-tich-ho-chi-minh",
+      "title": "Chủ tịch Hồ Chí Minh, vị lãnh tụ thiên tài của Cách mạng Việt Nam",
+      "category": "Truyện văn học - Đọc mở rộng",
+      "youtubeId": "-234M2tlpKQ"
+    },
+    {
+      "id": "youtube-van-hoc-nguyen-trai",
+      "title": "Kể chuyện danh nhân: Nguyễn Trãi và cuộc chia ly với người cha nơi biên giới",
+      "category": "Truyện văn học - Đọc mở rộng",
+      "youtubeId": "oApHLPeoTOc"
+    },
+    {
+      "id": "youtube-van-hoc-vo-nguyen-giap",
+      "title": "Cuộc đời Đại tướng Võ Nguyên Giáp - Từ thầy giáo đến vị tướng huyền thoại",
+      "category": "Truyện văn học - Đọc mở rộng",
+      "youtubeId": "dApbjrqFu1M"
+    },
+    {
+      "id": "youtube-tho-dong-dao-con-vat",
+      "title": "Thơ và đồng dao về con vật",
+      "category": "Thơ và Đồng dao",
+      "youtubeId": "8-q2NoWPBP8"
+    },
+    {
+      "id": "youtube-tuyen-tap-dong-dao",
+      "title": "Tuyển tập đồng dao cho bé",
+      "category": "Thơ và Đồng dao",
+      "youtubeId": "CrCneVk2Sn4"
+    },
+    {
+      "id": "youtube-doc-tho-dong-dao-ru-be",
+      "title": "Đọc thơ đồng dao ru bé ngủ ngon",
+      "category": "Thơ và Đồng dao",
+      "youtubeId": "EP7lV5AJUxw"
+    },
+    {
+      "id": "youtube-bai-tho-co-giao-cua-em",
+      "title": "Bài thơ: Cô giáo của em",
+      "category": "Thơ và Đồng dao",
+      "youtubeId": "RzEtGGCNDPc"
+    },
+    {
+      "id": "youtube-bai-tho-doi-mat",
+      "title": "Bài thơ Đôi mắt",
+      "category": "Thơ và Đồng dao",
+      "youtubeId": "C1cpJMfDujg"
+    },
+    {
+      "id": "youtube-bai-tho-ong-mat-troi",
+      "title": "Bài thơ Ông mặt trời",
+      "category": "Thơ và Đồng dao",
+      "youtubeId": "_CvcNMI0HWU",
+      "isShort": true
+    },
+    {
+      "id": "youtube-nang-bach-tuyet",
+      "title": "Nàng Bạch Tuyết và Bảy Chú Lùn",
+      "category": "Truyện cổ tích thế giới",
+      "youtubeId": "zWzlZs2_w08"
+    },
+    {
+      "id": "youtube-co-be-quang-khan-do",
+      "title": "Cô Bé Quàng Khăn Đỏ",
+      "category": "Truyện cổ tích thế giới",
+      "youtubeId": "4q9xCKAm27g"
+    },
+    {
+      "id": "youtube-cong-chua-ngu-trong-rung",
+      "title": "Nàng Công Chúa Ngủ Trong Rừng",
+      "category": "Truyện cổ tích thế giới",
+      "youtubeId": "1bebyzPHbXw"
+    },
+    {
+      "id": "youtube-an-khe-tra-vang",
+      "title": "Ăn khế trả vàng",
+      "category": "Truyện cổ tích Việt Nam",
+      "youtubeId": "dqwAtL18oOg"
+    },
+    {
+      "id": "youtube-cay-tre-tram-dot",
+      "title": "Cây tre trăm đốt",
+      "category": "Truyện cổ tích Việt Nam",
+      "youtubeId": "eiS_xdEvtGQ"
+    },
+    {
+      "id": "youtube-su-tich-cay-vu-sua",
+      "title": "Sự tích cây vú sữa",
+      "category": "Truyện cổ tích Việt Nam",
+      "youtubeId": "8j9QZ_x1whM"
+    },
+    {
+      "id": "youtube-tri-khon-cua-ta-day",
+      "title": "Trí khôn của ta đây",
+      "category": "Truyện dân gian",
+      "youtubeId": "wUMg3fLfrcg"
+    },
+    {
+      "id": "youtube-son-tinh-thuy-tinh",
+      "title": "Sơn Tinh Thuỷ Tinh",
+      "category": "Truyện dân gian",
+      "youtubeId": "6b_ftItlmuQ"
+    },
+    {
+      "id": "youtube-ech-ngoi-day-gieng",
+      "title": "Ếch ngồi đáy giếng",
+      "category": "Truyện ngụ ngôn",
+      "youtubeId": "4z8753FDc2c"
+    },
+    {
+      "id": "youtube-ai-dang-khen-nhieu-hon",
+      "title": "Ai đáng khen nhiều hơn?",
+      "category": "Truyện tranh",
+      "youtubeId": "Zvs_GroZ_g0"
+    },
+    {
+      "id": "youtube-bac-gau-den-hai-chu-tho",
+      "title": "Bác Gấu Đen và hai chú thỏ",
+      "category": "Truyện tranh",
+      "youtubeId": "apblmqpqM8c"
+    },
+    {
+      "id": "youtube-qua-tao-cua-ai",
+      "title": "Quả táo của ai?",
+      "category": "Truyện tranh",
+      "youtubeId": "806oPUM-Ec0"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import catalog from '@/data/digital-library.json'
+import ebookCatalog from '@/data/digital-ebooks.json'
 import resourceCatalog from '@/data/digital-resources.json'
 import teacherBookCatalog from '@/data/teacher-books.json'
 import teacherBookCoverUrl from '@/assets/teacher-book-cover.svg'
@@ -54,6 +55,25 @@ interface CatalogResource {
   previewPath?: string
 }
 
+interface CatalogEbook {
+  id: string
+  title: string
+  category: string
+  subcategory?: string
+  description: string
+  grade?: number
+  keywords: string[]
+  accent: string
+  sourceFolder: string
+  relativePath: string
+  fileName: string
+  coverFileName: string
+  fileSizeBytes: number
+  pageCount: number
+  pageWidth: number
+  pageHeight: number
+}
+
 interface CatalogTeacherBook {
   id: string
   title: string
@@ -84,11 +104,14 @@ const libraryAssets = import.meta.glob(['./**/*.pdf', './**/*.docx', './**/*.ppt
   query: '?url',
 }) as Record<string, string>
 
-const coverAssets = import.meta.glob('../assets/{book-covers,resource-covers}/*.{jpg,png}', {
-  eager: true,
-  import: 'default',
-  query: '?url',
-}) as Record<string, string>
+const coverAssets = import.meta.glob(
+  '../assets/{book-covers,ebook-covers,resource-covers}/*.{jpg,png}',
+  {
+    eager: true,
+    import: 'default',
+    query: '?url',
+  },
+) as Record<string, string>
 
 function requireAsset(assets: Record<string, string>, key: string) {
   const asset =
@@ -117,6 +140,25 @@ export const digitalTextbooks: Book[] = (catalog.books as CatalogBook[]).map((bo
   originalUrl: requireAsset(libraryAssets, `./${book.sourceFolder}/${book.fileName}`),
   coverUrl: requireAsset(coverAssets, `../assets/book-covers/${book.coverFileName}`),
 }))
+
+export const digitalEbooks: Book[] = (ebookCatalog.items as CatalogEbook[]).map((book) => {
+  const originalUrl = requireAsset(libraryAssets, `./${book.sourceFolder}/${book.relativePath}`)
+  return {
+    ...book,
+    subject: book.subcategory || book.category,
+    kind: 'ebook',
+    collectionId: 'sach-dien-tu',
+    collectionTitle: 'Sách điện tử',
+    format: 'pdf',
+    viewerType: 'pdf',
+    pageCount: book.pageCount,
+    pageWidth: book.pageWidth,
+    pageHeight: book.pageHeight,
+    pdfUrl: originalUrl,
+    originalUrl,
+    coverUrl: requireAsset(coverAssets, `../assets/ebook-covers/${book.coverFileName}`),
+  }
+})
 
 export const digitalResources: Book[] = (resourceCatalog.documents as CatalogResource[]).map(
   (document) => {
@@ -188,6 +230,7 @@ export const digitalTeacherBooks: Book[] = (teacherBookCatalog.books as CatalogT
 
 export const digitalBooks: Book[] = [
   ...digitalTextbooks,
+  ...digitalEbooks,
   ...digitalResources,
   ...digitalTeacherBooks,
 ]
@@ -255,6 +298,9 @@ function scoreBook(book: Book, rawQuery: string) {
     score += book.kind === 'teacher-book' ? 180 : -150
   } else if (query.split(' ').includes('sach')) {
     score += book.kind === 'textbook' ? 40 : book.kind === 'teacher-book' ? -80 : 0
+  }
+  if (query.includes('sach dien tu') || query.includes('ebook')) {
+    score += book.kind === 'ebook' ? 180 : -100
   }
 
   const requestedGrade = extractRequestedGrade(rawQuery)

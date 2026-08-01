@@ -2,7 +2,7 @@
 import { Bot, Mic, Send, Sparkles, Volume2, VolumeX, X } from '@lucide/vue'
 import { storeToRefs } from 'pinia'
 import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 import avatarBotUrl from '../../avatar_bot.gif'
 import { getLibraryAssistantReply } from '@/services/libraryAssistant'
@@ -46,6 +46,7 @@ type SpeechRecognitionConstructor = new () => SpeechRecognitionLike
 
 const appStore = useAppStore()
 const route = useRoute()
+const router = useRouter()
 const { chatOpen, pendingChatPrompt } = storeToRefs(appStore)
 const input = ref('')
 const typing = ref(false)
@@ -58,10 +59,10 @@ const speechError = ref('')
 const messagesContainer = ref<HTMLElement | null>(null)
 
 const suggestions = [
-  'Kho sách giáo viên lớp 4 có gì?',
-  'Mở sách giáo viên Toán lớp 4 tập 1',
-  'Mở KHBD Toán lớp 3 tuần 19',
-  'Kho Kỹ năng sống có tài liệu gì?',
+  'Kho sách điện tử có gì?',
+  'Nghe sách nói Rùa và Thỏ',
+  'Mở video Cậu bé ham học lớp 2',
+  'Mở sách điện tử Ếch ngồi đáy giếng',
 ]
 
 const greeting = 'Xin chào! Tôi có thể giúp được gì cho bạn?'
@@ -129,6 +130,14 @@ function sendMessage(content = input.value) {
     if (reply.openBookId) {
       openBookTimer = globalThis.setTimeout(() => {
         appStore.openReader(reply.openBookId!)
+      }, 650)
+    } else if (reply.routeName) {
+      openBookTimer = globalThis.setTimeout(() => {
+        void router.push({
+          name: reply.routeName,
+          query: reply.playMediaId ? { play: reply.playMediaId } : undefined,
+        })
+        appStore.closeChat()
       }, 650)
     }
   }, 720)
@@ -289,7 +298,10 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <aside class="ai-chat-shell fixed bottom-24 right-4 z-[70] md:bottom-6 sm:right-6" aria-live="polite">
+  <aside
+    class="ai-chat-shell fixed bottom-24 right-4 z-[70] md:bottom-6 sm:right-6"
+    aria-live="polite"
+  >
     <Transition
       enter-active-class="transition duration-300"
       enter-from-class="translate-y-4 scale-90 opacity-0"
