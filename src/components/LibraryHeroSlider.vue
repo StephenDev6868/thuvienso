@@ -173,14 +173,14 @@ onBeforeUnmount(clearAutoplay)
         />
         <div class="hero-slide__wash" />
 
-        <button
+        <!-- <button
           type="button"
           class="hero-slide__cta"
           @click="runSlideAction(activeSlide.action)"
         >
           {{ activeSlide.buttonLabel }}
           <ArrowRight :size="17" />
-        </button>
+        </button> -->
       </article>
     </Transition>
 

@@ -23,6 +23,18 @@ const router = createRouter({
           component: () => import('@/views/ThreeDLibraryView.vue'),
           meta: { title: 'Tủ sách 3D' },
         },
+        {
+          path: 'sach-noi',
+          name: 'audiobooks',
+          component: () => import('@/views/MediaLibraryView.vue'),
+          meta: { title: 'Sách nói' },
+        },
+        {
+          path: 'video-bai-giang',
+          name: 'video-lessons',
+          component: () => import('@/views/MediaLibraryView.vue'),
+          meta: { title: 'Video bài giảng' },
+        },
       ],
     },
     {

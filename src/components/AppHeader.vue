@@ -38,8 +38,8 @@ const navigation: NavigationItem[] = [
   { label: 'Trang chủ', to: { name: 'home', hash: '#top' }, icon: Home, activeRoute: 'home' },
   { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' }, icon: BookOpen },
   { label: 'Tủ sách 3D', to: { name: 'three-d-library' }, icon: GraduationCap, activeRoute: 'three-d-library' },
-  { label: 'Sách nói', to: { name: 'home', hash: '#featured-books' }, icon: Headphones },
-  { label: 'Học liệu', to: { name: 'home', hash: '#featured-books' }, icon: GraduationCap },
+  { label: 'Sách nói', to: { name: 'audiobooks' }, icon: Headphones, activeRoute: 'audiobooks' },
+  { label: 'Học liệu', to: { name: 'video-lessons' }, icon: GraduationCap, activeRoute: 'video-lessons' },
   { label: 'STEM', to: { name: 'home', hash: '#home-3d-library' }, icon: Trophy },
   { label: 'Hoạt động', to: { name: 'home', hash: '#home-3d-library' }, icon: Trophy },
 ]
