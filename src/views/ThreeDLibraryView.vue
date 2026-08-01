@@ -380,52 +380,46 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <main class="three-d-library min-h-screen overflow-hidden bg-[#101827] text-white">
-    <section class="relative isolate overflow-hidden pb-12 pt-12 sm:pb-16 sm:pt-16">
+  <main class="three-d-library min-h-screen overflow-hidden text-ink-950">
+    <section class="relative isolate overflow-hidden pb-5 pt-4 sm:pb-7 sm:pt-6">
       <div class="library-grid pointer-events-none absolute inset-0 opacity-30" />
-      <div
-        class="pointer-events-none absolute -left-32 top-0 size-120 rounded-full bg-red-500/12 blur-3xl"
-      />
-      <div
-        class="pointer-events-none absolute -right-36 top-30 size-125 rounded-full bg-blue-500/12 blur-3xl"
-      />
 
       <div class="page-shell relative">
         <RouterLink
           to="/"
-          class="focus-ring inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.07] px-4 py-2 text-xs font-bold text-white/75 backdrop-blur-xl transition hover:bg-white hover:text-ink-950"
+          class="focus-ring inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold text-ink-950 shadow-sm transition hover:text-red-500 md:hidden"
         >
           <ArrowLeft :size="15" />
-          Về thư viện chính
+          Tủ sách 3D
         </RouterLink>
 
-        <div class="mt-10 grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
+        <div class="mt-5 grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div class="hidden md:block">
             <p
-              class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-red-300"
+              class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-red-500"
             >
               <Sparkles :size="16" />
               Không gian đọc tương tác
             </p>
             <p
               v-if="incomingSearchQuery"
-              class="search-arrival mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.07] px-4 py-2 text-xs font-bold text-white/80"
+              class="search-arrival mt-4 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 text-xs font-bold text-slate-500 shadow-sm"
             >
-              <Search :size="14" class="text-red-300" />
+              <Search :size="14" class="text-red-500" />
               Tiếp tục tìm “{{ incomingSearchQuery }}”
             </p>
             <h1
-              class="mt-4 text-5xl font-black leading-none tracking-[-0.065em] sm:text-7xl lg:text-[88px]"
+              class="mt-3 text-4xl font-black leading-none text-[#7a431b] sm:text-5xl lg:text-6xl"
             >
               Tủ sách <span class="three-d-title">3D</span>
             </h1>
-            <p class="mt-6 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base sm:leading-8">
+            <p class="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
               {{ threeDLibraryBookCount }} tài liệu đã được sắp vào từng tủ, từng kệ theo lớp học và
               mục đích sử dụng. Chọn một tủ, chạm vào gáy sách và bắt đầu đọc ngay.
             </p>
           </div>
 
-          <div class="grid grid-cols-3 gap-2 sm:gap-3">
+          <div class="hidden grid-cols-3 gap-2 sm:gap-3 md:grid">
             <div class="hero-stat">
               <strong>{{ threeDBookCabinets.length }}</strong>
               <span>Tủ sách</span>
@@ -441,18 +435,18 @@ onBeforeUnmount(() => {
           </div>
         </div>
 
-        <div class="mt-10 flex gap-3 overflow-x-auto pb-3" role="tablist" aria-label="Chọn tủ sách">
+        <div class="mt-4 flex gap-2 overflow-x-auto pb-2 md:mt-7 md:gap-3" role="tablist" aria-label="Chọn tủ sách">
           <button
             v-for="(cabinet, index) in threeDBookCabinets"
             :key="cabinet.id"
             type="button"
             role="tab"
             :aria-selected="activeCabinetIndex === index"
-            class="focus-ring cabinet-tab group min-w-42 shrink-0 rounded-2xl border p-3 text-left transition duration-300 sm:min-w-48"
+            class="focus-ring cabinet-tab group min-w-28 shrink-0 rounded-full border px-4 py-2 text-left transition duration-300 sm:min-w-44 sm:rounded-2xl sm:p-3"
             :class="
               activeCabinetIndex === index
-                ? 'border-white/30 bg-white text-ink-950 shadow-2xl'
-                : 'border-white/10 bg-white/[0.055] text-white hover:-translate-y-1 hover:bg-white/[0.1]'
+                ? 'border-red-200 bg-red-500 text-white shadow-lg shadow-red-500/18'
+                : 'border-red-100 bg-white text-ink-950 hover:-translate-y-0.5 hover:text-red-500'
             "
             @click="selectCabinet(index)"
           >
@@ -467,7 +461,7 @@ onBeforeUnmount(() => {
                 <strong class="block truncate text-xs">{{ cabinet.shortTitle }}</strong>
                 <small
                   class="mt-1 block text-[10px]"
-                  :class="activeCabinetIndex === index ? 'text-slate-500' : 'text-white/45'"
+                  :class="activeCabinetIndex === index ? 'text-white/75' : 'text-slate-500'"
                 >
                   {{ cabinet.books.length }} tài liệu
                 </small>
@@ -478,15 +472,15 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <section class="page-shell relative pb-24">
+    <section class="page-shell relative pb-28 md:pb-24">
       <div
-        class="stage-toolbar relative z-20 mb-5 flex flex-col gap-4 rounded-[24px] border border-white/10 bg-white/[0.065] p-4 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between"
+        class="stage-toolbar relative z-20 mb-4 flex flex-col gap-3 rounded-[18px] border border-red-100 bg-white/88 p-3 shadow-sm backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between md:rounded-[22px] md:p-4"
       >
         <div class="min-w-0">
-          <p class="text-[10px] font-black uppercase tracking-[0.16em] text-white/40">
+          <p class="text-[10px] font-black uppercase tracking-[0.12em] text-red-500">
             Đang khám phá
           </p>
-          <h2 class="mt-1 truncate text-xl font-black sm:text-2xl">
+          <h2 class="mt-1 truncate text-lg font-black sm:text-2xl">
             {{ activeCabinet.title }}
           </h2>
         </div>
@@ -496,18 +490,18 @@ onBeforeUnmount(() => {
             <span class="sr-only">Tìm trong tủ sách hiện tại</span>
             <Search
               :size="16"
-              class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-white/40"
+              class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"
             />
             <input
               v-model="shelfQuery"
               type="search"
-              class="focus-ring h-11 w-full rounded-xl border border-white/10 bg-black/15 pl-10 pr-4 text-sm text-white outline-none placeholder:text-white/35"
+              class="focus-ring h-11 w-full rounded-xl border border-red-100 bg-white pl-10 pr-4 text-sm text-ink-950 outline-none placeholder:text-slate-400"
               placeholder="Tìm trong tủ này..."
             />
           </label>
           <button
             type="button"
-            class="focus-ring grid size-11 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.07] transition hover:bg-white hover:text-ink-950"
+            class="focus-ring grid size-11 shrink-0 place-items-center rounded-xl border border-red-100 bg-white text-ink-950 transition hover:text-red-500"
             aria-label="Tủ sách trước"
             @click="previousCabinet"
           >
@@ -515,7 +509,7 @@ onBeforeUnmount(() => {
           </button>
           <button
             type="button"
-            class="focus-ring grid size-11 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.07] transition hover:bg-white hover:text-ink-950"
+            class="focus-ring grid size-11 shrink-0 place-items-center rounded-xl border border-red-100 bg-white text-ink-950 transition hover:text-red-500"
             aria-label="Tủ sách tiếp theo"
             @click="nextCabinet"
           >
@@ -653,16 +647,16 @@ onBeforeUnmount(() => {
 
       <div class="mt-8 grid gap-4 lg:grid-cols-[1.3fr_0.7fr]">
         <div
-          class="rounded-[24px] border border-white/10 bg-white/[0.055] p-6 backdrop-blur-xl sm:p-7"
+          class="rounded-[20px] border border-red-100 bg-white/88 p-6 shadow-sm backdrop-blur-xl sm:p-7"
         >
-          <p class="text-xs font-black uppercase tracking-[0.14em] text-red-300">Cách sắp xếp</p>
-          <p class="mt-3 text-sm leading-7 text-slate-300">
+          <p class="text-xs font-black uppercase tracking-[0.12em] text-red-500">Cách sắp xếp</p>
+          <p class="mt-3 text-sm leading-7 text-slate-600">
             {{ activeCabinet.description }} Sách cùng môn và cùng tập được đặt gần nhau; tài liệu
             giáo viên ưu tiên theo nghiệp vụ, còn sách giáo viên được xếp liền mạch theo thứ tự lớp.
           </p>
         </div>
         <div
-          class="flex items-center gap-4 rounded-[24px] border border-white/10 bg-white/[0.055] p-6 backdrop-blur-xl sm:p-7"
+          class="flex items-center gap-4 rounded-[20px] border border-red-100 bg-white/88 p-6 shadow-sm backdrop-blur-xl sm:p-7"
         >
           <span
             class="grid size-13 shrink-0 place-items-center rounded-2xl bg-red-500 text-white shadow-lg shadow-red-500/20"
@@ -718,22 +712,20 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .three-d-library {
-  background:
-    radial-gradient(circle at 50% 18%, rgb(40 57 89 / 0.72), transparent 34%),
-    linear-gradient(180deg, #101827 0%, #131d30 45%, #0c1320 100%);
+  background: transparent;
 }
 
 .library-grid {
   background-image:
-    linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    linear-gradient(rgb(255 255 255 / 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.28) 1px, transparent 1px);
   background-size: 38px 38px;
   mask-image: linear-gradient(to bottom, black, transparent 86%);
 }
 
 .three-d-title {
   color: transparent;
-  background: linear-gradient(135deg, #ff5262 10%, #ffc94a 52%, #67d8ff);
+  background: linear-gradient(135deg, #ff5262 10%, #ffc94a 52%, #2f8ee9);
   background-clip: text;
   filter: drop-shadow(0 16px 30px rgb(223 33 51 / 0.2));
 }
@@ -758,11 +750,11 @@ onBeforeUnmount(() => {
   min-width: 92px;
   min-height: 86px;
   place-items: center;
-  border: 1px solid rgb(255 255 255 / 0.1);
+  border: 1px solid rgb(255 225 225);
   border-radius: 18px;
-  background: rgb(255 255 255 / 0.065);
+  background: rgb(255 255 255 / 0.88);
   text-align: center;
-  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 32px -24px rgb(24 32 51 / 0.45);
 }
 
 .hero-stat strong {
@@ -775,11 +767,11 @@ onBeforeUnmount(() => {
 .hero-stat span {
   display: block;
   margin-top: 8px;
-  color: rgb(255 255 255 / 0.45);
+  color: rgb(100 116 139);
   font-size: 0.63rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .cabinet-tab {
@@ -787,7 +779,7 @@ onBeforeUnmount(() => {
 }
 
 .cabinet-stage {
-  padding: 28px 62px 54px;
+  padding: 16px 44px 38px;
   perspective: 1700px;
   perspective-origin: 50% 42%;
 }
@@ -797,7 +789,7 @@ onBeforeUnmount(() => {
   border-radius: 22px 22px 13px 13px;
   background: var(--cabinet-frame);
   box-shadow:
-    0 48px 80px -28px rgb(0 0 0 / 0.72),
+    0 42px 72px -38px rgb(126 76 28 / 0.88),
     0 12px 24px -8px color-mix(in srgb, var(--cabinet-frame-dark), transparent 28%),
     inset 0 2px rgb(255 255 255 / 0.24);
   transform: rotateX(var(--cabinet-tilt-x)) rotateY(var(--cabinet-tilt-y));
@@ -880,7 +872,7 @@ onBeforeUnmount(() => {
   font-size: 0.56rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.1em;
   opacity: 0.66;
 }
 
@@ -977,7 +969,7 @@ onBeforeUnmount(() => {
   font-weight: 800;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
 }
 
@@ -1238,7 +1230,7 @@ onBeforeUnmount(() => {
   font-size: 0.62rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   transform: translateZ(10px);
 }
 
@@ -1250,18 +1242,18 @@ onBeforeUnmount(() => {
   width: 46px;
   height: 46px;
   place-items: center;
-  border: 1px solid rgb(255 255 255 / 0.13);
+  border: 1px solid rgb(255 225 225);
   border-radius: 50%;
-  color: white;
-  background: rgb(16 24 39 / 0.72);
-  box-shadow: 0 15px 28px -12px rgb(0 0 0 / 0.55);
+  color: #df2133;
+  background: rgb(255 255 255 / 0.94);
+  box-shadow: 0 15px 28px -18px rgb(24 32 51 / 0.5);
   backdrop-filter: blur(12px);
   transition: 180ms ease;
 }
 
 .stage-arrow:hover {
-  color: #182033;
-  background: white;
+  color: white;
+  background: #df2133;
   transform: scale(1.06);
 }
 
@@ -1278,9 +1270,9 @@ onBeforeUnmount(() => {
   padding: 9px 14px 9px 9px;
   border: 1px solid rgb(255 255 255 / 0.18);
   border-radius: 18px;
-  color: white;
-  background: rgb(16 24 39 / 0.94);
-  box-shadow: 0 20px 44px -18px rgb(0 0 0 / 0.7);
+  color: #182033;
+  background: rgb(255 255 255 / 0.96);
+  box-shadow: 0 20px 44px -24px rgb(24 32 51 / 0.55);
   pointer-events: none;
   transform: translateX(-50%);
   backdrop-filter: blur(16px);
@@ -1306,11 +1298,11 @@ onBeforeUnmount(() => {
 }
 
 .opening-status small {
-  color: #ff9aa4;
+  color: #df2133;
   font-size: 0.57rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.11em;
+  letter-spacing: 0.07em;
 }
 
 .opening-status strong {
@@ -1586,7 +1578,7 @@ onBeforeUnmount(() => {
 
 @media (min-width: 768px) and (max-width: 1100px) {
   .cabinet-stage {
-    padding: 28px 18px 54px;
+    padding: 18px 18px 42px;
   }
 
   .shelf-book {
@@ -1615,11 +1607,11 @@ onBeforeUnmount(() => {
   }
 
   .cabinet-stage {
-    padding: 18px 7px 42px;
+    padding: 10px 0 30px;
   }
 
   .bookcase {
-    width: calc(100% - 12px);
+    width: 100%;
   }
 
   .bookcase::before,
@@ -1628,18 +1620,18 @@ onBeforeUnmount(() => {
   }
 
   .bookcase-crown {
-    min-height: 106px;
+    min-height: 84px;
     border-bottom-width: 8px;
   }
 
   .cabinet-sign {
-    width: 78%;
-    padding: 12px 15px;
+    width: 74%;
+    padding: 10px 12px;
   }
 
   .cabinet-sign small {
     font-size: 0.47rem;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.06em;
   }
 
   .cabinet-sign span {
@@ -1665,14 +1657,14 @@ onBeforeUnmount(() => {
   }
 
   .bookcase-body {
-    padding: 10px 8px 3px;
+    padding: 9px 7px 3px;
     border-right-width: 8px;
     border-left-width: 8px;
   }
 
   .cabinet-shelf {
-    min-height: 128px;
-    padding: 11px 8px 13px;
+    min-height: 118px;
+    padding: 10px 7px 12px;
     border-bottom-width: 12px;
   }
 
@@ -1696,7 +1688,7 @@ onBeforeUnmount(() => {
   .bookcase-base {
     padding: 0 12px;
     font-size: 0.5rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
   }
 }
 </style>

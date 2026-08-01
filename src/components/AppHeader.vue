@@ -1,11 +1,32 @@
 <script setup lang="ts">
-import { Menu, MessagesSquare, ScanLine, Search, X } from '@lucide/vue'
+import {
+  Bell,
+  BookOpen,
+  GraduationCap,
+  Headphones,
+  Home,
+  LockKeyhole,
+  Menu,
+  MessagesSquare,
+  Search,
+  Trophy,
+  UserRound,
+  X,
+} from '@lucide/vue'
 import { storeToRefs } from 'pinia'
+import type { Component } from 'vue'
 import { ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 
 import logoUrl from '../../logo.jpg'
 import { useAppStore } from '@/stores/app'
+
+interface NavigationItem {
+  label: string
+  to: { name: string; hash?: string }
+  icon: Component
+  activeRoute?: string
+}
 
 const appStore = useAppStore()
 const route = useRoute()
@@ -13,14 +34,14 @@ const router = useRouter()
 const { menuOpen, searchQuery, smartLockOpen } = storeToRefs(appStore)
 const headerQuery = ref('')
 
-const navigation = [
-  { label: 'Trang chủ', to: { name: 'home', hash: '#top' }, activeRoute: 'home' },
-  { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' } },
-  { label: 'Tủ sách 3D', to: { name: 'three-d-library' }, activeRoute: 'three-d-library' },
-  { label: 'Sách nói', to: { name: 'home', hash: '#quick-access' } },
-  { label: 'Học liệu', to: { name: 'home', hash: '#stem-videos' } },
-  { label: 'STEM', to: { name: 'home', hash: '#topics' } },
-  { label: 'Hoạt động', to: { name: 'home', hash: '#community' } },
+const navigation: NavigationItem[] = [
+  { label: 'Trang chủ', to: { name: 'home', hash: '#top' }, icon: Home, activeRoute: 'home' },
+  { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' }, icon: BookOpen },
+  { label: 'Tủ sách 3D', to: { name: 'three-d-library' }, icon: GraduationCap, activeRoute: 'three-d-library' },
+  { label: 'Sách nói', to: { name: 'home', hash: '#featured-books' }, icon: Headphones },
+  { label: 'Học liệu', to: { name: 'home', hash: '#featured-books' }, icon: GraduationCap },
+  { label: 'STEM', to: { name: 'home', hash: '#home-3d-library' }, icon: Trophy },
+  { label: 'Hoạt động', to: { name: 'home', hash: '#home-3d-library' }, icon: Trophy },
 ]
 
 function submitSearch() {
@@ -30,15 +51,17 @@ function submitSearch() {
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 border-b border-black/6 bg-white/92 backdrop-blur-xl">
-    <div class="page-shell flex h-20 items-center justify-between gap-2 sm:gap-4 xl:gap-5">
+  <header class="sticky top-0 z-40 px-3 py-3 backdrop-blur md:px-5">
+    <div
+      class="mx-auto flex h-18 max-w-[1480px] items-center justify-between gap-3 rounded-[26px] bg-white/94 px-3 shadow-[0_18px_55px_-34px_rgba(24,32,51,.55)] md:h-20 md:px-5"
+    >
       <RouterLink
         to="/"
         class="focus-ring flex shrink-0 items-center gap-3 rounded-xl"
         aria-label="Trang chủ Thư viện số"
       >
         <span
-          class="grid size-14 shrink-0 place-items-center overflow-hidden rounded-full border-2 border-red-100 bg-white shadow-sm"
+          class="grid size-12 shrink-0 place-items-center overflow-hidden rounded-full border-2 border-red-100 bg-white shadow-sm md:size-14"
         >
           <img
             :src="logoUrl"
@@ -46,94 +69,97 @@ function submitSearch() {
             class="h-full w-full object-contain"
           />
         </span>
-        <span class="hidden leading-none sm:block">
-          <strong class="block text-[17px] tracking-[-0.02em]">THƯ VIỆN SỐ</strong>
-          <small class="mt-1.5 block text-[10px] font-extrabold tracking-[0.08em] text-red-500">
-            TRƯỜNG TH BÙI THỊ XUÂN
+        <span class="leading-none">
+          <strong class="block text-[15px] tracking-[-0.02em] text-ink-950 md:text-[18px]">
+            THƯ VIỆN SỐ
+          </strong>
+          <small class="mt-1.5 block text-[8px] font-extrabold tracking-[0.06em] text-red-500 md:text-[10px]">
+            TRƯỜNG TIỂU HỌC BÙI THỊ XUÂN
           </small>
         </span>
       </RouterLink>
 
-      <nav class="hidden items-center gap-5 xl:flex" aria-label="Điều hướng chính">
+      <nav class="hidden items-center gap-1 xl:flex" aria-label="Điều hướng chính">
         <RouterLink
           v-for="item in navigation"
           :key="item.label"
           :to="item.to"
-          class="focus-ring rounded-lg py-2 text-sm font-semibold transition hover:text-red-500"
-          :class="route.name === item.activeRoute ? 'text-red-500' : 'text-ink-950'"
+          class="focus-ring grid min-w-15 place-items-center gap-1 rounded-2xl px-2 py-2 text-[10px] font-black transition hover:bg-red-50 hover:text-red-500 2xl:min-w-21 2xl:px-3 2xl:text-[11px]"
+          :class="route.name === item.activeRoute ? 'bg-red-50 text-red-500 shadow-sm' : 'text-ink-950'"
         >
+          <component :is="item.icon" :size="22" />
           {{ item.label }}
         </RouterLink>
       </nav>
 
       <form
-        class="hidden h-12 w-50 items-center rounded-2xl bg-red-50 px-4 lg:flex xl:hidden 2xl:flex"
+        class="hidden h-12 min-w-44 max-w-76 flex-1 items-center rounded-full bg-[#fff1f1] px-3 xl:flex 2xl:min-w-58 2xl:max-w-82 2xl:px-4"
         role="search"
         @submit.prevent="submitSearch"
       >
-        <Search :size="16" class="shrink-0 text-slate-500" />
+        <Search :size="18" class="shrink-0 text-slate-500" />
         <label for="header-search" class="sr-only">Tìm kiếm sách</label>
         <input
           id="header-search"
           v-model="headerQuery"
           type="search"
           class="min-w-0 flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-slate-500"
-          :placeholder="searchQuery || 'Tìm kiếm'"
+          :placeholder="searchQuery || 'Tìm kiếm sách, chủ đề...'"
         />
-        <span
-          class="grid size-8 shrink-0 place-items-center rounded-full bg-red-500 text-xs font-bold text-white"
+        <button
+          type="submit"
+          class="focus-ring grid size-9 shrink-0 place-items-center rounded-full bg-red-500 text-white shadow-lg shadow-red-500/20"
+          aria-label="Tìm kiếm"
         >
-          A
-        </span>
+          <Search :size="16" />
+        </button>
       </form>
 
-      <button
-        type="button"
-        class="focus-ring group inline-flex h-11 shrink-0 items-center gap-2 overflow-hidden rounded-full border border-blue-100 bg-[linear-gradient(135deg,#eff5ff,#fff)] px-2.5 text-xs font-extrabold text-[#315fd7] shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/15 sm:px-3.5"
-        :aria-pressed="smartLockOpen"
-        aria-label="Hiển thị màn hình khoá thông minh"
-        title="Hiển thị màn hình khoá thông minh"
-        @click="appStore.openSmartLock"
-      >
-        <span
-          class="relative grid size-7 place-items-center rounded-full bg-[#315fd7] text-white shadow-md shadow-blue-500/20"
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          class="focus-ring hidden h-11 shrink-0 items-center gap-2 rounded-full bg-red-500 px-3 text-xs font-black text-white shadow-lg shadow-red-500/20 transition hover:-translate-y-0.5 md:inline-flex 2xl:px-4"
+          :aria-pressed="smartLockOpen"
+          aria-label="Hiển thị màn hình khóa"
+          @click="appStore.openSmartLock"
         >
-          <ScanLine :size="15" />
-          <span
-            class="absolute -right-0.5 -top-0.5 size-2 animate-pulse rounded-full border-2 border-white bg-cyan-400"
-          />
-        </span>
-        <span class="hidden md:inline">Màn hình khoá</span>
-      </button>
+          <LockKeyhole :size="16" />
+          <span class="hidden 2xl:inline">Màn hình khóa</span>
+        </button>
 
-      <RouterLink
-        :to="{ name: 'home', hash: '#contact' }"
-        class="focus-ring group relative inline-flex h-11 shrink-0 items-center gap-2.5 overflow-hidden rounded-full bg-ink-950 px-2.5 text-sm font-extrabold text-white shadow-lg shadow-ink-950/15 transition duration-300 hover:-translate-y-0.5 hover:bg-red-500 hover:shadow-red-500/25 sm:px-4"
-        aria-label="Liên hệ với nhà trường"
-        title="Liên hệ với nhà trường"
-        @click="appStore.closeMenu"
-      >
-        <span
-          class="relative grid size-7 place-items-center rounded-full bg-white/10 transition group-hover:bg-white/20"
+        <RouterLink
+          :to="{ name: 'home', hash: '#featured-books' }"
+          class="focus-ring hidden h-11 shrink-0 items-center gap-2 rounded-full bg-[#3f8fe5] px-3 text-xs font-black text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 md:inline-flex 2xl:px-4"
+          aria-label="Liên hệ với nhà trường"
+          @click="appStore.closeMenu"
         >
-          <MessagesSquare :size="15" />
-          <span
-            class="absolute -right-0.5 -top-0.5 size-2 rounded-full border-2 border-ink-950 bg-emerald-400 transition group-hover:border-red-500"
-          />
-        </span>
-        <span class="relative hidden sm:inline">Liên hệ</span>
-      </RouterLink>
+          <MessagesSquare :size="16" />
+          <span class="hidden 2xl:inline">Liên hệ</span>
+        </RouterLink>
 
-      <button
-        type="button"
-        class="focus-ring grid size-11 shrink-0 place-items-center rounded-xl bg-red-50 text-red-500 xl:hidden"
-        :aria-label="menuOpen ? 'Đóng menu' : 'Mở menu'"
-        :aria-expanded="menuOpen"
-        @click="appStore.toggleMenu"
-      >
-        <X v-if="menuOpen" :size="22" />
-        <Menu v-else :size="22" />
-      </button>
+        <button
+          type="button"
+          class="focus-ring grid size-10 place-items-center rounded-full bg-red-50 text-ink-950 md:hidden"
+          aria-label="Thông báo"
+        >
+          <Bell :size="20" />
+        </button>
+
+        <span class="hidden size-11 place-items-center rounded-full bg-[#fff2e8] text-ink-950 md:grid">
+          <UserRound :size="21" />
+        </span>
+
+        <button
+          type="button"
+          class="focus-ring grid size-10 shrink-0 place-items-center rounded-xl bg-red-50 text-red-500 xl:hidden"
+          :aria-label="menuOpen ? 'Đóng menu' : 'Mở menu'"
+          :aria-expanded="menuOpen"
+          @click="appStore.toggleMenu"
+        >
+          <X v-if="menuOpen" :size="22" />
+          <Menu v-else :size="22" />
+        </button>
+      </div>
     </div>
 
     <Transition
@@ -142,11 +168,11 @@ function submitSearch() {
       leave-active-class="transition duration-150"
       leave-to-class="-translate-y-2 opacity-0"
     >
-      <div v-if="menuOpen" class="border-t border-black/5 bg-white px-5 py-5 xl:hidden">
-        <form
-          class="mb-4 flex h-12 items-center rounded-xl bg-red-50 px-4 lg:hidden"
-          @submit.prevent="submitSearch"
-        >
+      <div
+        v-if="menuOpen"
+        class="mx-3 mt-3 rounded-[24px] border border-red-100 bg-white p-4 shadow-card xl:hidden"
+      >
+        <form class="mb-4 flex h-12 items-center rounded-xl bg-red-50 px-4" @submit.prevent="submitSearch">
           <Search :size="17" class="text-red-500" />
           <input
             v-model="headerQuery"
@@ -155,15 +181,16 @@ function submitSearch() {
             placeholder="Tìm tên sách..."
           />
         </form>
-        <nav class="grid gap-1" aria-label="Điều hướng mobile">
+        <nav class="grid grid-cols-2 gap-2" aria-label="Điều hướng mobile">
           <RouterLink
             v-for="item in navigation"
             :key="item.label"
             :to="item.to"
-            class="focus-ring rounded-xl px-4 py-3 text-sm font-bold hover:bg-red-50 hover:text-red-500"
+            class="focus-ring flex items-center gap-2 rounded-xl px-3 py-3 text-sm font-bold hover:bg-red-50 hover:text-red-500"
             :class="{ 'bg-red-50 text-red-500': route.name === item.activeRoute }"
             @click="appStore.closeMenu"
           >
+            <component :is="item.icon" :size="18" />
             {{ item.label }}
           </RouterLink>
         </nav>

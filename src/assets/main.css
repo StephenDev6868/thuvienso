@@ -25,12 +25,23 @@
   }
 
   body {
-    @apply min-w-80 bg-cream-50 font-sans text-ink-950 antialiased;
+    @apply min-w-80 bg-sky-300 font-sans text-ink-950 antialiased;
+    background:
+      url('./images/backgrounds/bg-mobile.png') center top / cover fixed no-repeat,
+      linear-gradient(180deg, #48bff4 0%, #c8f1ff 42%, #ddf6a1 100%);
   }
 
   button,
   a {
     -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    background:
+      url('./images/backgrounds/bg-desktop-clean.png') center top / cover fixed no-repeat,
+      linear-gradient(180deg, #48bff4 0%, #c8f1ff 42%, #ddf6a1 100%);
   }
 }
 
@@ -49,6 +60,10 @@
 
   .card-lift {
     @apply transition duration-300 hover:-translate-y-1 hover:shadow-card;
+  }
+
+  .home-page {
+    @apply pt-0;
   }
 }
 

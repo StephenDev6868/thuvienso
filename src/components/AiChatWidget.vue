@@ -289,7 +289,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <aside class="fixed bottom-4 right-4 z-50 sm:bottom-6 sm:right-6" aria-live="polite">
+  <aside class="ai-chat-shell fixed bottom-24 right-4 z-[70] md:bottom-6 sm:right-6" aria-live="polite">
     <Transition
       enter-active-class="transition duration-300"
       enter-from-class="translate-y-4 scale-90 opacity-0"
@@ -557,3 +557,14 @@ onBeforeUnmount(() => {
     </Transition>
   </aside>
 </template>
+
+<style scoped>
+@media (min-width: 1280px) {
+  .ai-chat-shell {
+    right: 0.5rem;
+    bottom: 0.25rem;
+    transform: scale(0.78);
+    transform-origin: right bottom;
+  }
+}
+</style>

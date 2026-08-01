@@ -1,27 +1,26 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
-import { RouterView } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router'
 
 import AiChatWidget from '@/components/AiChatWidget.vue'
-import AppFooter from '@/components/AppFooter.vue'
 import AppHeader from '@/components/AppHeader.vue'
 import ExternalBookReader from '@/components/ExternalBookReader.vue'
+import MobileBottomNav from '@/components/MobileBottomNav.vue'
 import OfficeDocumentReader from '@/components/OfficeDocumentReader.vue'
 import PdfBookReader from '@/components/PdfBookReader.vue'
-import RegistrationModal from '@/components/RegistrationModal.vue'
 import { useAppStore } from '@/stores/app'
 
 const SmartLockScreen = defineAsyncComponent(() => import('@/components/SmartLockScreen.vue'))
 const appStore = useAppStore()
+const route = useRoute()
 </script>
 
 <template>
-  <div class="min-h-screen">
-    <AppHeader />
+  <div class="min-h-screen pb-24 md:pb-0">
+    <AppHeader :class="{ 'xl:hidden': route.name === 'home' }" />
     <RouterView />
-    <AppFooter />
     <AiChatWidget />
-    <RegistrationModal />
+    <MobileBottomNav />
     <SmartLockScreen v-if="appStore.smartLockOpen" @close="appStore.closeSmartLock" />
     <PdfBookReader
       v-if="

@@ -1,23 +1,19 @@
 <script setup lang="ts">
-import AiShowcase from '@/components/AiShowcase.vue'
 import FeaturedBooks from '@/components/FeaturedBooks.vue'
 import HeroSection from '@/components/HeroSection.vue'
+import HomeThreeDLibrary from '@/components/HomeThreeDLibrary.vue'
 import QuickAccessGrid from '@/components/QuickAccessGrid.vue'
-import ReaderDashboard from '@/components/ReaderDashboard.vue'
-import SchoolCommunity from '@/components/SchoolCommunity.vue'
-import StemVideoGrid from '@/components/StemVideoGrid.vue'
-import TopicLibrary from '@/components/TopicLibrary.vue'
+import ReferenceDesktopHome from '@/components/ReferenceDesktopHome.vue'
 </script>
 
 <template>
-  <main>
-    <HeroSection />
-    <QuickAccessGrid />
-    <FeaturedBooks />
-    <AiShowcase />
-    <TopicLibrary />
-    <StemVideoGrid />
-    <ReaderDashboard />
-    <SchoolCommunity />
+  <main id="top" class="home-page scroll-mt-20">
+    <ReferenceDesktopHome class="hidden xl:block" />
+    <div class="xl:hidden">
+      <HeroSection />
+      <QuickAccessGrid />
+      <HomeThreeDLibrary />
+      <FeaturedBooks />
+    </div>
   </main>
 </template>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="72" viewBox="0 0 300 72">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffdfa"/><stop offset="1" stop-color="#fff0e4"/></linearGradient><filter id="s" x="-20%" y="-30%" width="140%" height="180%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#8b4a22" flood-opacity=".26"/></filter></defs>
+  <rect x="7" y="5" width="286" height="56" rx="28" fill="url(#bg)" stroke="#efcfb5" stroke-width="2" filter="url(#s)"/>
+  <text x="135" y="41" text-anchor="middle" fill="#f13d52" font-family="Nunito,Arial,sans-serif" font-size="23" font-weight="900">Xem tất cả lớp</text>
+  <path d="M244 33h18m-7-7 7 7-7 7" fill="none" stroke="#f13d52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
