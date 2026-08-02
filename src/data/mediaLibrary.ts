@@ -1,6 +1,7 @@
 import audiobookCatalog from '@/data/digital-audiobooks.json'
 import videoCatalog from '@/data/digital-videos.json'
 import youtubeCatalog from '@/data/youtube-videos.json'
+import { getLibraryAssetUrl } from '@/data/libraryAssetUrl'
 
 export interface DigitalMediaItem {
   id: string
@@ -60,12 +61,6 @@ interface CatalogYouTubeItem {
 
 type CatalogMediaItem = Omit<DigitalMediaItem, 'mediaUrl' | 'coverUrl'>
 
-const mediaAssets = import.meta.glob(['./**/*.mp3', './**/*.mp4'], {
-  eager: true,
-  import: 'default',
-  query: '?url',
-}) as Record<string, string>
-
 const audioCoverAssets = import.meta.glob('../assets/audio-covers/*.svg', {
   eager: true,
   import: 'default',
@@ -95,7 +90,7 @@ function hydrateMedia(
 ): DigitalMediaItem {
   return {
     ...item,
-    mediaUrl: requireNormalizedAsset(mediaAssets, `./${item.sourceFolder}/${item.relativePath}`),
+    mediaUrl: getLibraryAssetUrl(item.sourceFolder, item.relativePath),
     coverUrl: requireNormalizedAsset(
       coverAssets,
       `../assets/${coverDirectory}/${item.coverFileName}`,
