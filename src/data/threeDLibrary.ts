@@ -184,7 +184,7 @@ const definitions: CabinetDefinition[] = [
   },
   {
     id: 'sach-giao-vien',
-    title: 'Sách giáo viên lớp 3–5',
+    title: 'Sách giáo viên lớp 1–5',
     shortTitle: 'Sách giáo viên',
     eyebrow: 'Đồng hành cùng thầy cô',
     description: 'Bộ sách giáo viên được sắp theo lớp và đọc trực tuyến từ NXBGD.',

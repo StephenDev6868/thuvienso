@@ -268,6 +268,7 @@ function scoreBook(book: Book, rawQuery: string) {
   const searchable = normalizeBookText(
     [book.title, book.subject, book.description, ...book.keywords].join(' '),
   )
+  const isTeacherBookQuery = query.includes('sach giao vien') || query.split(' ').includes('sgv')
 
   let score = 0
   if (query === title) score += 120
@@ -284,12 +285,14 @@ function scoreBook(book: Book, rawQuery: string) {
     score += book.kind === 'life-skill' ? 100 : -60
   }
   if (query.includes('giao vien') || query.includes('tap huan')) {
-    score += book.kind === 'teacher-resource' ? 80 : -40
+    score += book.kind === 'teacher-resource' ? 80 : book.kind === 'teacher-book' ? 40 : -40
   }
-  if (query.includes('sach giao vien') || query.split(' ').includes('sgv')) {
+  if (isTeacherBookQuery) {
     score += book.kind === 'teacher-book' ? 180 : -150
   } else if (query.split(' ').includes('sach')) {
     score += book.kind === 'textbook' ? 40 : book.kind === 'teacher-book' ? -80 : 0
+  } else {
+    score += book.kind === 'teacher-book' ? -70 : 0
   }
   if (query.includes('sach dien tu') || query.includes('ebook')) {
     score += book.kind === 'ebook' ? 180 : -100

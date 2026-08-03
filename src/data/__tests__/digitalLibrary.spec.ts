@@ -16,8 +16,8 @@ describe('digital library catalog', () => {
     expect(digitalTextbooks).toHaveLength(63)
     expect(digitalEbooks).toHaveLength(42)
     expect(digitalResources).toHaveLength(53)
-    expect(digitalTeacherBooks).toHaveLength(36)
-    expect(digitalBooks).toHaveLength(194)
+    expect(digitalTeacherBooks).toHaveLength(58)
+    expect(digitalBooks).toHaveLength(216)
     expect(digitalLibraryCollection.bookCount).toBe(63)
     expect(digitalLibraryCollection.totalPages).toBe(6642)
     expect(digitalLibraryCollection.grades).toEqual([1, 2, 3, 4, 5])
@@ -57,6 +57,12 @@ describe('digital library catalog', () => {
     expect(searchDigitalBooks('đọc khoa học lớp 4')[0]?.id).toBe('sgk4-khoa-hoc')
     expect(searchDigitalBooks('xem sách khoa học lớp 5')[0]?.id).toBe('sgk5-khoa-hoc')
     expect(searchDigitalBooks('mở lịch sử địa lí 5')[0]?.id).toBe('sgk5-lich-su-dia-li')
+    expect(searchDigitalBooks('mở sách giáo viên toán lớp 1 tập 2')[0]?.id).toBe(
+      'sgv1-toan-tap-2',
+    )
+    expect(searchDigitalBooks('mở sách giáo viên tiếng việt lớp 2 tập 1')[0]?.id).toBe(
+      'sgv2-tieng-viet-tap-1',
+    )
     expect(searchDigitalBooks('mở sách giáo viên toán lớp 4 tập 1')[0]?.id).toBe('sgv4-toan-tap-1')
   })
 })

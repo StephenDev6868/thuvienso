@@ -70,6 +70,15 @@ describe('local library assistant', () => {
     expect(reply.content).toContain('NXBGD')
   })
 
+  it('opens newly added grade one and two teacher books', () => {
+    expect(getLibraryAssistantReply('Mở sách giáo viên Toán lớp 1 tập 2').openBookId).toBe(
+      'sgv1-toan-tap-2',
+    )
+    expect(getLibraryAssistantReply('Mở SGV Tiếng Việt lớp 2 tập 1').openBookId).toBe(
+      'sgv2-tieng-viet-tap-1',
+    )
+  })
+
   it('asks for a volume when a teacher book has two volumes', () => {
     const reply = getLibraryAssistantReply('Mở sách giáo viên Tiếng Việt lớp 5')
 

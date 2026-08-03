@@ -11,9 +11,9 @@ describe('3D book cabinets', () => {
     const bookIds = threeDBookCabinets.flatMap((cabinet) => cabinet.books.map((book) => book.id))
 
     expect(threeDBookCabinets).toHaveLength(5)
-    expect(threeDLibraryBookCount).toBe(194)
-    expect(bookIds).toHaveLength(194)
-    expect(new Set(bookIds).size).toBe(194)
+    expect(threeDLibraryBookCount).toBe(216)
+    expect(bookIds).toHaveLength(216)
+    expect(new Set(bookIds).size).toBe(216)
   })
 
   it('packs books densely into no more than 18 items per shelf', () => {
@@ -43,8 +43,13 @@ describe('3D book cabinets', () => {
   it('keeps teacher-book grade ranges visible after dense packing', () => {
     const teacherCabinet = threeDBookCabinets.find((cabinet) => cabinet.id === 'sach-giao-vien')!
 
-    expect(teacherCabinet.shelves.map((shelf) => shelf.label)).toEqual(['Lớp 3–4', 'Lớp 4–5'])
-    expect(teacherCabinet.shelves.map((shelf) => shelf.books.length)).toEqual([18, 18])
+    expect(teacherCabinet.shelves.map((shelf) => shelf.label)).toEqual([
+      'Lớp 1–2',
+      'Lớp 2–4',
+      'Lớp 4–5',
+      'Lớp 5',
+    ])
+    expect(teacherCabinet.shelves.map((shelf) => shelf.books.length)).toEqual([15, 15, 14, 14])
   })
 
   it('adds balanced overflow shelves when a tablet has less horizontal capacity', () => {
