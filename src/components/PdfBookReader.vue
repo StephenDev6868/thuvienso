@@ -7,6 +7,7 @@ import {
   ExternalLink,
   LoaderCircle,
   Maximize2,
+  RefreshCw,
   Volume2,
   VolumeX,
   X,
@@ -29,7 +30,7 @@ GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
 const PDF_RANGE_CHUNK_SIZE = 512 * 1024
 const PAGE_PRELOAD_AHEAD = 2
-const PDF_LOAD_TIMEOUT = 45_000
+const PDF_STALL_TIMEOUT = 20_000
 const NATIVE_VIEWER_HINT_TIMEOUT = 10_000
 
 const props = defineProps<{
@@ -44,6 +45,7 @@ const readerDialog = ref<HTMLElement | null>(null)
 const flipHost = ref<HTMLElement | null>(null)
 const loading = ref(true)
 const loadPercent = ref(0)
+const loadedBytes = ref(0)
 const currentPage = ref(1)
 const jumpPage = ref('1')
 const errorMessage = ref('')
@@ -68,6 +70,7 @@ let pendingTurnSoundTimer: ReturnType<typeof setTimeout> | undefined
 let lastSoundTime = Number.NEGATIVE_INFINITY
 let pdfLoadTimeout: ReturnType<typeof setTimeout> | undefined
 let nativeViewerHintTimeout: ReturnType<typeof setTimeout> | undefined
+let loadAttempt = 0
 const renderedPages = new Set<number>()
 const renderingPages = new Map<number, Promise<void>>()
 
@@ -292,30 +295,46 @@ function togglePageTurnSound() {
   }
 }
 
-async function loadBook() {
+function armPdfStallTimeout(attempt: number) {
+  globalThis.clearTimeout(pdfLoadTimeout)
   pdfLoadTimeout = globalThis.setTimeout(() => {
-    if (!loading.value) return
+    if (!loading.value || attempt !== loadAttempt) return
 
     errorMessage.value =
-      'Trình đọc tương tác mất quá nhiều thời gian để tải. Bạn có thể mở PDF bằng trình đọc của thiết bị.'
+      'Kết nối tới kho sách đã dừng phản hồi. Vui lòng thử tải lại.'
     loading.value = false
     void loadingTask?.destroy()
-  }, PDF_LOAD_TIMEOUT)
+  }, PDF_STALL_TIMEOUT)
+}
+
+async function loadBook() {
+  const attempt = ++loadAttempt
+  errorMessage.value = ''
+  loading.value = true
+  loadPercent.value = 0
+  loadedBytes.value = 0
+  armPdfStallTimeout(attempt)
 
   try {
     loadingTask = getDocument({
       url: props.book.pdfUrl,
       cMapPacked: true,
-      disableAutoFetch: false,
-      disableStream: false,
+      // GitHub LFS files can be very large. Streaming with auto-fetch enabled makes
+      // PDF.js download the whole book before showing page one on slow mobile links.
+      disableAutoFetch: true,
+      disableStream: true,
       enableXfa: false,
       rangeChunkSize: PDF_RANGE_CHUNK_SIZE,
     })
     loadingTask.onProgress = ({ loaded, total }: OnProgressParameters) => {
+      if (attempt !== loadAttempt) return
+      loadedBytes.value = loaded
       loadPercent.value = total ? Math.round((loaded / total) * 100) : 0
+      armPdfStallTimeout(attempt)
     }
 
     pdfDocument = await loadingTask.promise
+    if (attempt !== loadAttempt) return
     await nextTick()
 
     if (!flipHost.value) return
@@ -357,6 +376,7 @@ async function loadBook() {
     })
 
     await renderPage(1)
+    if (attempt !== loadAttempt) return
     globalThis.clearTimeout(pdfLoadTimeout)
     loading.value = false
     renderAround(0)
@@ -364,12 +384,23 @@ async function loadBook() {
     readerDialog.value?.focus()
   } catch (error) {
     console.error(error)
+    if (attempt !== loadAttempt) return
     if (!errorMessage.value) {
       errorMessage.value = 'Không thể tải tệp PDF này. Vui lòng thử lại.'
     }
     globalThis.clearTimeout(pdfLoadTimeout)
     loading.value = false
   }
+}
+
+function retryLoading() {
+  void loadingTask?.destroy()
+  void pdfDocument?.destroy()
+  loadingTask = undefined
+  pdfDocument = undefined
+  renderedPages.clear()
+  renderingPages.clear()
+  void loadBook()
 }
 
 function previousPage() {
@@ -531,7 +562,8 @@ onBeforeUnmount(() => {
           aria-live="polite"
         >
           <div class="text-center">
-            <LoaderCircle :size="42" class="mx-auto animate-spin text-red-400" />
+            <img :src="book.coverUrl" alt="" class="mx-auto h-32 w-24 rounded-lg object-cover shadow-2xl" />
+            <LoaderCircle :size="30" class="mx-auto mt-5 animate-spin text-red-400" />
             <p class="mt-5 font-bold">Đang mở {{ book.title }}</p>
             <div class="mx-auto mt-4 h-1.5 w-52 overflow-hidden rounded-full bg-white/10">
               <div
@@ -540,7 +572,11 @@ onBeforeUnmount(() => {
               />
             </div>
             <p class="mt-2 text-xs text-white/45">
-              {{ loadPercent ? `${loadPercent}%` : 'Đang tải dữ liệu PDF...' }}
+              {{
+                loadedBytes
+                  ? `${formatBytes(loadedBytes)} / ${formatBytes(book.fileSizeBytes)} (${loadPercent}%)`
+                  : 'Đang kết nối tới kho sách...'
+              }}
             </p>
           </div>
         </div>
@@ -550,17 +586,17 @@ onBeforeUnmount(() => {
           class="absolute inset-0 z-20 grid place-items-center p-6 text-center"
           role="alert"
         >
-          <div>
+          <div class="max-w-md">
             <BookOpen :size="46" class="mx-auto text-red-400" />
             <p class="mt-4 font-bold">{{ errorMessage }}</p>
-            <a
-              :href="book.pdfUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="focus-ring mt-5 inline-flex rounded-xl bg-red-500 px-5 py-3 text-sm font-bold"
-            >
-              Mở bằng trình đọc của thiết bị
-            </a>
+            <div class="mt-5 flex flex-wrap justify-center gap-3">
+              <button type="button" class="focus-ring inline-flex items-center gap-2 rounded-xl bg-red-500 px-5 py-3 text-sm font-bold" @click="retryLoading">
+                <RefreshCw :size="17" /> Thử tải lại
+              </button>
+              <a :href="book.pdfUrl" target="_blank" rel="noopener noreferrer" class="focus-ring inline-flex rounded-xl bg-white/10 px-5 py-3 text-sm font-bold">
+                Mở bằng trình đọc của thiết bị
+              </a>
+            </div>
           </div>
         </div>
 
