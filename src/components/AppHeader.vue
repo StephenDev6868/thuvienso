@@ -127,15 +127,15 @@ function submitSearch() {
           <span class="hidden 2xl:inline">Màn hình khóa</span>
         </button>
 
-        <RouterLink
-          :to="{ name: 'home', hash: '#featured-books' }"
+        <button
+          type="button"
           class="focus-ring hidden h-11 shrink-0 items-center gap-2 rounded-full bg-[#3f8fe5] px-3 text-xs font-black text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 md:inline-flex 2xl:px-4"
           aria-label="Liên hệ với nhà trường"
-          @click="appStore.closeMenu"
+          @click="appStore.openUtilityModal('contact')"
         >
           <MessagesSquare :size="16" />
           <span class="hidden 2xl:inline">Liên hệ</span>
-        </RouterLink>
+        </button>
 
         <button
           type="button"

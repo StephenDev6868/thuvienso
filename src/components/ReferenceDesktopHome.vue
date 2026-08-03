@@ -11,6 +11,7 @@ import {
   LockKeyhole,
   MessagesSquare,
   Play,
+  QrCode,
   Search,
   Shield,
   Trophy,
@@ -161,6 +162,13 @@ const quickItems: QuickItem[] = [
     color: '#3f8fe5',
     action: goThreeD,
   },
+  {
+    title: 'Đơn xin nghỉ phép',
+    subtitle: 'Quét QR để điền đơn',
+    icon: QrCode,
+    color: '#10a37f',
+    action: () => appStore.openUtilityModal('leave'),
+  },
 ]
 
 const bottomItems: QuickItem[] = [
@@ -240,7 +248,7 @@ const bottomItems: QuickItem[] = [
           <LockKeyhole :size="17" />
           Màn hình khóa
         </button>
-        <button type="button" class="pill-action contact" @click="goBooks()">
+        <button type="button" class="pill-action contact" @click="appStore.openUtilityModal('contact')">
           <MessagesSquare :size="17" />
           Liên hệ
         </button>
@@ -1056,7 +1064,7 @@ button {
 
 .quick-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   width: calc(100% - 496px);
   margin-top: 16px;

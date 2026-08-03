@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import FeaturedBooks from '@/components/FeaturedBooks.vue'
+import AppFooter from '@/components/AppFooter.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import HomeThreeDLibrary from '@/components/HomeThreeDLibrary.vue'
 import QuickAccessGrid from '@/components/QuickAccessGrid.vue'
@@ -16,4 +17,5 @@ import ReferenceDesktopHome from '@/components/ReferenceDesktopHome.vue'
       <FeaturedBooks />
     </div>
   </main>
+  <AppFooter />
 </template>

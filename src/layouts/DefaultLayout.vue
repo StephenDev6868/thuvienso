@@ -11,6 +11,7 @@ import PdfBookReader from '@/components/PdfBookReader.vue'
 import { useAppStore } from '@/stores/app'
 
 const SmartLockScreen = defineAsyncComponent(() => import('@/components/SmartLockScreen.vue'))
+const UtilityQrModal = defineAsyncComponent(() => import('@/components/UtilityQrModal.vue'))
 const appStore = useAppStore()
 const route = useRoute()
 </script>
@@ -22,6 +23,12 @@ const route = useRoute()
     <AiChatWidget />
     <MobileBottomNav />
     <SmartLockScreen v-if="appStore.smartLockOpen" @close="appStore.closeSmartLock" />
+    <UtilityQrModal
+      v-if="appStore.utilityModal"
+      :key="appStore.utilityModal"
+      :kind="appStore.utilityModal"
+      @close="appStore.closeUtilityModal"
+    />
     <PdfBookReader
       v-if="
         appStore.readerOpen && appStore.selectedBook && appStore.selectedBook.viewerType === 'pdf'

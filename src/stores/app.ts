@@ -9,6 +9,7 @@ export const useAppStore = defineStore('app', () => {
   const registrationOpen = ref(false)
   const readerOpen = ref(false)
   const smartLockOpen = ref(false)
+  const utilityModal = ref<'leave' | 'contact' | null>(null)
   const selectedBookId = ref<string | null>(null)
   const pendingChatPrompt = ref('')
   const searchQuery = ref('')
@@ -74,6 +75,15 @@ export const useAppStore = defineStore('app', () => {
     smartLockOpen.value = false
   }
 
+  function openUtilityModal(kind: 'leave' | 'contact') {
+    menuOpen.value = false
+    utilityModal.value = kind
+  }
+
+  function closeUtilityModal() {
+    utilityModal.value = null
+  }
+
   function searchBooks(query: string) {
     searchQuery.value = query.trim()
   }
@@ -84,6 +94,7 @@ export const useAppStore = defineStore('app', () => {
     registrationOpen,
     readerOpen,
     smartLockOpen,
+    utilityModal,
     selectedBookId,
     selectedBook,
     pendingChatPrompt,
@@ -103,6 +114,8 @@ export const useAppStore = defineStore('app', () => {
     closeRegistration,
     openSmartLock,
     closeSmartLock,
+    openUtilityModal,
+    closeUtilityModal,
     searchBooks,
   }
 })

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ArrowUpRight, Globe2, MessagesSquare } from '@lucide/vue'
 import { RouterLink } from 'vue-router'
+import { useAppStore } from '@/stores/app'
+
+const appStore = useAppStore()
 
 const groups = [
   {
@@ -99,14 +102,13 @@ const contactLinks = [
         </div>
 
         <div class="relative mt-7 grid gap-3 sm:grid-cols-2 lg:mt-0">
-          <a
+          <button
             v-for="contact in contactLinks"
             :key="contact.href"
-            :href="contact.href"
-            target="_blank"
-            rel="noopener noreferrer"
+            type="button"
             class="focus-ring group flex min-h-24 items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.07] p-4 transition duration-300 hover:-translate-y-0.5 hover:border-red-400/40 hover:bg-white/[0.11]"
-            :aria-label="`${contact.label} (mở trong tab mới)`"
+            :aria-label="`Xem mã QR ${contact.label}`"
+            @click="appStore.openUtilityModal('contact')"
           >
             <span
               class="grid size-11 shrink-0 place-items-center rounded-xl bg-red-500/15 text-red-300 transition group-hover:bg-red-500 group-hover:text-white"
@@ -123,7 +125,7 @@ const contactLinks = [
               :size="18"
               class="shrink-0 text-slate-500 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-red-300"
             />
-          </a>
+          </button>
         </div>
       </section>
 

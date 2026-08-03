@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Flower2, Grid2X2, Heart, Star } from '@lucide/vue'
+import { Flower2, Grid2X2, Heart, QrCode, Star } from '@lucide/vue'
 import type { Component } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -7,7 +7,7 @@ import { digitalBooks } from '@/data/digitalLibrary'
 import { bookFilters } from '@/data/library'
 import { useAppStore } from '@/stores/app'
 
-type QuickAction = 'new' | 'popular' | 'favorite' | 'category'
+type QuickAction = 'new' | 'popular' | 'favorite' | 'category' | 'leave'
 
 interface QuickLink {
   title: string
@@ -49,6 +49,13 @@ const links: QuickLink[] = [
     color: '#4a90e2',
     action: 'category',
   },
+  {
+    title: 'Đơn xin nghỉ phép',
+    description: 'Quét QR để điền đơn',
+    icon: QrCode,
+    color: '#10a37f',
+    action: 'leave',
+  },
 ]
 
 function scrollToBooks() {
@@ -56,6 +63,7 @@ function scrollToBooks() {
 }
 
 function runAction(action: QuickAction) {
+  if (action === 'leave') return appStore.openUtilityModal('leave')
   if (action === 'category') return router.push({ name: 'three-d-library' })
   if (action === 'favorite') appStore.searchBooks('')
   scrollToBooks()
@@ -94,7 +102,7 @@ function runAction(action: QuickAction) {
 <style scoped>
 .quick-access-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: clamp(8px, 1vw, 16px);
 }
 
@@ -160,6 +168,10 @@ function runAction(action: QuickAction) {
 }
 
 @media (max-width: 1023px) {
+  .quick-access-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .quick-access-card {
     grid-template-columns: 36px minmax(0, 1fr);
     gap: 5px;
