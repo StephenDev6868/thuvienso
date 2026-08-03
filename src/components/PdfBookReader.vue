@@ -23,6 +23,7 @@ import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import type { PdfLibraryItem } from '@/types/library'
+import { shouldUseNativePdfViewer } from '@/utils/pdfViewer'
 
 GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
@@ -76,15 +77,15 @@ function formatBytes(bytes: number) {
 
 function shouldUseNativeViewer() {
   const navigator = globalThis.navigator
-  const userAgent = navigator.userAgent
-  const isAppleMobile =
-    /iPad|iPhone|iPod/i.test(userAgent) ||
-    (/Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1)
-  const isTouchDevice =
-    navigator.maxTouchPoints > 0 || globalThis.matchMedia?.('(pointer: coarse)').matches
-  const isTabletOrSmaller = globalThis.innerWidth <= 1_180
 
-  return isAppleMobile || (isTouchDevice && isTabletOrSmaller)
+  return shouldUseNativePdfViewer({
+    pdfUrl: props.book.pdfUrl,
+    appUrl: globalThis.location.href,
+    userAgent: navigator.userAgent,
+    maxTouchPoints: navigator.maxTouchPoints,
+    pointerCoarse: globalThis.matchMedia?.('(pointer: coarse)').matches ?? false,
+    viewportWidth: globalThis.innerWidth,
+  })
 }
 
 function startNativeViewer() {
