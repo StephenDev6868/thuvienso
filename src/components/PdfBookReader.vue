@@ -24,7 +24,7 @@ import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import type { PdfLibraryItem } from '@/types/library'
-import { shouldUseNativePdfViewer } from '@/utils/pdfViewer'
+import { getEmbeddedPdfViewerUrl, shouldUseNativePdfViewer } from '@/utils/pdfViewer'
 
 GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
@@ -54,6 +54,9 @@ const soundEnabled = ref(true)
 const useNativePdfViewer = ref(false)
 const nativeViewerLoading = ref(false)
 const nativeViewerSlow = ref(false)
+const embeddedPdfViewerUrl = computed(() =>
+  getEmbeddedPdfViewerUrl(props.book.pdfUrl, globalThis.location.href),
+)
 
 const pageNumbers = computed(() =>
   Array.from({ length: props.book.pageCount }, (_, index) => index + 1),
@@ -503,12 +506,12 @@ onBeforeUnmount(() => {
         </div>
         <a
           v-if="useNativePdfViewer"
-          :href="book.pdfUrl"
+          :href="embeddedPdfViewerUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="focus-ring grid size-10 place-items-center rounded-xl bg-red-500 text-white transition hover:bg-red-600"
-          aria-label="Mở PDF bằng trình đọc của thiết bị"
-          title="Mở PDF bằng trình đọc của thiết bị"
+          aria-label="Mở trình xem PDF toàn màn hình"
+          title="Mở trình xem PDF toàn màn hình"
         >
           <ExternalLink :size="18" />
         </a>
@@ -602,7 +605,7 @@ onBeforeUnmount(() => {
 
         <div v-if="useNativePdfViewer" class="absolute inset-0 bg-slate-100">
           <iframe
-            :src="`${book.pdfUrl}#page=1&view=FitH`"
+            :src="embeddedPdfViewerUrl"
             :title="`Đọc ${book.title}`"
             class="native-pdf-frame h-full w-full border-0 bg-white"
             @load="handleNativeViewerLoaded"
@@ -615,19 +618,19 @@ onBeforeUnmount(() => {
           >
             <div>
               <LoaderCircle :size="42" class="mx-auto animate-spin text-red-400" />
-              <p class="mt-5 font-bold">Đang mở bằng trình đọc của thiết bị</p>
+              <p class="mt-5 font-bold">Đang mở trình xem PDF</p>
               <p class="mt-2 text-xs leading-5 text-white/45">
-                Chế độ tương thích dành cho điện thoại và iPad.
+                Chế độ đọc cơ bản dành cho điện thoại và iPad.
               </p>
               <a
                 v-if="nativeViewerSlow"
-                :href="book.pdfUrl"
+                :href="embeddedPdfViewerUrl"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="focus-ring mt-5 inline-flex items-center gap-2 rounded-xl bg-red-500 px-5 py-3 text-sm font-bold text-white"
               >
                 <ExternalLink :size="17" />
-                Mở sách ngay
+                Mở trình xem toàn màn hình
               </a>
             </div>
           </div>
@@ -660,10 +663,10 @@ onBeforeUnmount(() => {
         class="relative z-30 flex min-h-16 items-center justify-center gap-3 border-t border-white/10 bg-[#111827]/96 px-3"
       >
         <span class="hidden text-xs text-white/50 sm:inline">
-          Trình đọc tương thích mobile và iPad
+          Trình xem PDF cơ bản dành cho mobile và iPad
         </span>
         <a
-          :href="book.pdfUrl"
+          :href="embeddedPdfViewerUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="focus-ring inline-flex items-center gap-2 rounded-xl bg-red-500 px-4 py-2.5 text-xs font-bold text-white"

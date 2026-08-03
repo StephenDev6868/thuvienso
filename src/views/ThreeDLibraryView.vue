@@ -171,13 +171,6 @@ function resetTilt() {
 function openBook(book: Book) {
   if (openingBook.value) return
 
-  // Opening the original file must happen during the tap event on mobile. Waiting
-  // for the shelf animation can make the browser block or cancel the navigation.
-  if (appStore.shouldOpenBookExternally(book.id)) {
-    appStore.openReader(book.id)
-    return
-  }
-
   hoveredBook.value = null
   openingBook.value = book
   const prefersReducedMotion = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches
