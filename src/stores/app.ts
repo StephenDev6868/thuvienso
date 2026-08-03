@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
 import { findDigitalBook } from '@/data/digitalLibrary'
+import { shouldOpenOriginalPdfOnMobile } from '@/utils/pdfViewer'
 
 export const useAppStore = defineStore('app', () => {
   const menuOpen = ref(false)
@@ -45,8 +46,29 @@ export const useAppStore = defineStore('app', () => {
     pendingChatPrompt.value = ''
   }
 
+  function shouldOpenBookExternally(bookId: string) {
+    const book = findDigitalBook(bookId)
+    if (!book || book.viewerType !== 'pdf' || typeof globalThis.navigator === 'undefined') {
+      return false
+    }
+
+    return shouldOpenOriginalPdfOnMobile({
+      userAgent: globalThis.navigator.userAgent,
+      maxTouchPoints: globalThis.navigator.maxTouchPoints ?? 0,
+      pointerCoarse: globalThis.matchMedia?.('(pointer: coarse)').matches ?? false,
+      viewportWidth: globalThis.innerWidth ?? 1440,
+    })
+  }
+
   function openReader(bookId: string) {
-    if (!findDigitalBook(bookId)) return
+    const book = findDigitalBook(bookId)
+    if (!book) return
+    if (book.viewerType === 'pdf' && shouldOpenBookExternally(bookId)) {
+      readerOpen.value = false
+      selectedBookId.value = null
+      globalThis.location.assign(book.originalUrl)
+      return
+    }
     selectedBookId.value = bookId
     readerOpen.value = true
     chatOpen.value = false
@@ -109,6 +131,7 @@ export const useAppStore = defineStore('app', () => {
     closeChat,
     clearPendingChatPrompt,
     openReader,
+    shouldOpenBookExternally,
     closeReader,
     openRegistration,
     closeRegistration,

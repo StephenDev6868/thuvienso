@@ -7,6 +7,18 @@ interface NativePdfViewerContext {
   viewportWidth: number
 }
 
+type MobileDeviceContext = Pick<
+  NativePdfViewerContext,
+  'userAgent' | 'maxTouchPoints' | 'pointerCoarse' | 'viewportWidth'
+>
+
+export function shouldOpenOriginalPdfOnMobile(context: MobileDeviceContext) {
+  const isMobileUserAgent = /Android|iPad|iPhone|iPod|Mobile/i.test(context.userAgent)
+  const isTouchDevice = context.maxTouchPoints > 0 || context.pointerCoarse
+
+  return isMobileUserAgent || (isTouchDevice && context.viewportWidth <= 1_180)
+}
+
 export function shouldUseNativePdfViewer(context: NativePdfViewerContext) {
   let pdfUrl: URL
   let appUrl: URL
