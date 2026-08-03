@@ -1064,9 +1064,9 @@ button {
 
 .quick-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
-  width: calc(100% - 496px);
+  width: 100%;
   margin-top: 16px;
 }
 
@@ -1098,6 +1098,12 @@ button {
   display: block;
   font-weight: 900;
   white-space: nowrap;
+}
+
+.quick-card strong,
+.quick-card small {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .quick-card small,
@@ -1811,9 +1817,12 @@ button {
     gap: 18px;
   }
 
-  .quick-row,
   .bottom-row {
     width: calc(100% - 424px);
+  }
+
+  .quick-row {
+    gap: 10px;
   }
 
   .quick-card {
