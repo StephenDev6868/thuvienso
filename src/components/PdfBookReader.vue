@@ -24,14 +24,14 @@ import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import type { PdfLibraryItem } from '@/types/library'
-import { getOriginalPdfUrl, shouldUseNativePdfViewer } from '@/utils/pdfViewer'
+import { getInlinePdfUrl, shouldUseEmbeddedPdfViewer } from '@/utils/pdfViewer'
 
 GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
 const PDF_RANGE_CHUNK_SIZE = 512 * 1024
 const PAGE_PRELOAD_AHEAD = 2
 const PDF_STALL_TIMEOUT = 20_000
-const NATIVE_VIEWER_HINT_TIMEOUT = 10_000
+const EMBEDDED_VIEWER_HINT_TIMEOUT = 10_000
 
 const props = defineProps<{
   book: PdfLibraryItem
@@ -51,11 +51,11 @@ const jumpPage = ref('1')
 const errorMessage = ref('')
 const fullscreen = ref(false)
 const soundEnabled = ref(true)
-const useNativePdfViewer = ref(false)
-const nativeViewerLoading = ref(false)
-const nativeViewerSlow = ref(false)
-const originalPdfUrl = computed(() =>
-  getOriginalPdfUrl(props.book.pdfUrl, globalThis.location.href),
+const useEmbeddedPdfViewer = ref(false)
+const embeddedViewerLoading = ref(false)
+const embeddedViewerSlow = ref(false)
+const inlinePdfUrl = computed(() =>
+  getInlinePdfUrl(props.book.pdfUrl, globalThis.location.href),
 )
 
 const pageNumbers = computed(() =>
@@ -72,7 +72,7 @@ let pendingTurnSound = false
 let pendingTurnSoundTimer: ReturnType<typeof setTimeout> | undefined
 let lastSoundTime = Number.NEGATIVE_INFINITY
 let pdfLoadTimeout: ReturnType<typeof setTimeout> | undefined
-let nativeViewerHintTimeout: ReturnType<typeof setTimeout> | undefined
+let embeddedViewerHintTimeout: ReturnType<typeof setTimeout> | undefined
 let loadAttempt = 0
 const renderedPages = new Set<number>()
 const renderingPages = new Map<number, Promise<void>>()
@@ -81,10 +81,10 @@ function formatBytes(bytes: number) {
   return `${(bytes / 1024 / 1024).toFixed(1)} MB`
 }
 
-function shouldUseNativeViewer() {
+function shouldUseEmbeddedViewer() {
   const navigator = globalThis.navigator
 
-  return shouldUseNativePdfViewer({
+  return shouldUseEmbeddedPdfViewer({
     pdfUrl: props.book.pdfUrl,
     appUrl: globalThis.location.href,
     userAgent: navigator.userAgent,
@@ -94,19 +94,19 @@ function shouldUseNativeViewer() {
   })
 }
 
-function startNativeViewer() {
-  useNativePdfViewer.value = true
-  nativeViewerLoading.value = true
+function startEmbeddedViewer() {
+  useEmbeddedPdfViewer.value = true
+  embeddedViewerLoading.value = true
   loading.value = false
-  nativeViewerHintTimeout = globalThis.setTimeout(() => {
-    nativeViewerSlow.value = true
-  }, NATIVE_VIEWER_HINT_TIMEOUT)
+  embeddedViewerHintTimeout = globalThis.setTimeout(() => {
+    embeddedViewerSlow.value = true
+  }, EMBEDDED_VIEWER_HINT_TIMEOUT)
 }
 
-function handleNativeViewerLoaded() {
-  globalThis.clearTimeout(nativeViewerHintTimeout)
-  nativeViewerLoading.value = false
-  nativeViewerSlow.value = false
+function handleEmbeddedViewerLoaded() {
+  globalThis.clearTimeout(embeddedViewerHintTimeout)
+  embeddedViewerLoading.value = false
+  embeddedViewerSlow.value = false
 }
 
 function getPageCanvas(pageNumber: number) {
@@ -459,8 +459,8 @@ onMounted(() => {
   globalThis.document.body.style.overflow = 'hidden'
   globalThis.addEventListener('keydown', handleKeydown)
   globalThis.document.addEventListener('fullscreenchange', handleFullscreenChange)
-  if (shouldUseNativeViewer()) {
-    startNativeViewer()
+  if (shouldUseEmbeddedViewer()) {
+    startEmbeddedViewer()
     void nextTick(() => readerDialog.value?.focus())
   } else {
     void loadBook()
@@ -474,7 +474,7 @@ onBeforeUnmount(() => {
   pageFlip?.off('flip')
   pageFlip?.destroy()
   globalThis.clearTimeout(pdfLoadTimeout)
-  globalThis.clearTimeout(nativeViewerHintTimeout)
+  globalThis.clearTimeout(embeddedViewerHintTimeout)
   if (pendingTurnSoundTimer) globalThis.clearTimeout(pendingTurnSoundTimer)
   void audioContext?.close()
   audioContext = undefined
@@ -505,13 +505,13 @@ onBeforeUnmount(() => {
           </p>
         </div>
         <a
-          v-if="useNativePdfViewer"
-          :href="originalPdfUrl"
+          v-if="useEmbeddedPdfViewer"
+          :href="inlinePdfUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="focus-ring grid size-10 place-items-center rounded-xl bg-red-500 text-white transition hover:bg-red-600"
-          aria-label="Mở file PDF gốc"
-          title="Mở file PDF gốc"
+          aria-label="Mở trình xem sách toàn màn hình"
+          title="Mở trình xem sách toàn màn hình"
         >
           <ExternalLink :size="18" />
         </a>
@@ -525,7 +525,7 @@ onBeforeUnmount(() => {
           <Download :size="18" />
         </a>
         <button
-          v-if="!useNativePdfViewer"
+          v-if="!useEmbeddedPdfViewer"
           type="button"
           class="focus-ring grid size-10 place-items-center rounded-xl bg-white/8 text-white/75 transition hover:bg-white/15 hover:text-white"
           :class="{ 'bg-red-500/20 text-red-300': soundEnabled }"
@@ -538,7 +538,7 @@ onBeforeUnmount(() => {
           <VolumeX v-else :size="18" />
         </button>
         <button
-          v-if="!useNativePdfViewer"
+          v-if="!useEmbeddedPdfViewer"
           type="button"
           class="focus-ring grid size-10 place-items-center rounded-xl bg-white/8 text-white/75 transition hover:bg-white/15 hover:text-white"
           :aria-label="fullscreen ? 'Thoát toàn màn hình' : 'Xem toàn màn hình'"
@@ -603,16 +603,18 @@ onBeforeUnmount(() => {
           </div>
         </div>
 
-        <div v-if="useNativePdfViewer" class="absolute inset-0 bg-slate-100">
+        <div v-if="useEmbeddedPdfViewer" class="absolute inset-0 bg-white">
           <iframe
-            :src="originalPdfUrl"
+            :src="inlinePdfUrl"
             :title="`Đọc ${book.title}`"
-            class="native-pdf-frame h-full w-full border-0 bg-white"
-            @load="handleNativeViewerLoaded"
+            class="h-full w-full border-0 bg-white"
+            allow="fullscreen"
+            referrerpolicy="no-referrer"
+            @load="handleEmbeddedViewerLoaded"
           />
 
           <div
-            v-if="nativeViewerLoading"
+            v-if="embeddedViewerLoading"
             class="absolute inset-0 z-20 grid place-items-center bg-[radial-gradient(circle_at_50%_25%,#334155_0%,#111827_68%)] p-6 text-center"
             aria-live="polite"
           >
@@ -623,19 +625,19 @@ onBeforeUnmount(() => {
                 class="mx-auto h-56 w-40 rounded-xl object-cover shadow-2xl ring-1 ring-white/15"
               />
               <LoaderCircle :size="34" class="mx-auto mt-6 animate-spin text-red-400" />
-              <p class="mt-5 font-bold">Đang mở file PDF gốc</p>
+              <p class="mt-5 font-bold">Đang mở sách trên trình duyệt</p>
               <p class="mt-2 text-xs leading-5 text-white/45">
-                Hiển thị bìa trong lúc trình đọc PDF của thiết bị khởi tạo.
+                Chế độ xem tương thích dành cho điện thoại và iPad.
               </p>
               <a
-                v-if="nativeViewerSlow"
-                :href="originalPdfUrl"
+                v-if="embeddedViewerSlow"
+                :href="inlinePdfUrl"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="focus-ring mt-5 inline-flex items-center gap-2 rounded-xl bg-red-500 px-5 py-3 text-sm font-bold text-white"
               >
                 <ExternalLink :size="17" />
-                Mở file gốc
+                Mở sách toàn màn hình
               </a>
             </div>
           </div>
@@ -664,20 +666,20 @@ onBeforeUnmount(() => {
       </div>
 
       <footer
-        v-if="useNativePdfViewer"
+        v-if="useEmbeddedPdfViewer"
         class="relative z-30 flex min-h-16 items-center justify-center gap-3 border-t border-white/10 bg-[#111827]/96 px-3"
       >
         <span class="hidden text-xs text-white/50 sm:inline">
-          Đang đọc bằng trình xem PDF gốc của thiết bị
+          Chế độ đọc trên trình duyệt dành cho mobile và iPad
         </span>
         <a
-          :href="originalPdfUrl"
+          :href="inlinePdfUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="focus-ring inline-flex items-center gap-2 rounded-xl bg-red-500 px-4 py-2.5 text-xs font-bold text-white"
         >
           <ExternalLink :size="16" />
-          Mở file gốc
+          Mở toàn màn hình
         </a>
       </footer>
 

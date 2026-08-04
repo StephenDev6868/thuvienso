@@ -46,6 +46,11 @@ npm run digitize:library
 hiệu ứng lật trang. Trợ lý thư viện đọc cùng catalog JSON nên có thể mở sách bằng
 câu lệnh như “Mở sách Toán lớp 4 - Tập 1”.
 
+Trên production Vercel, đường dẫn `/books/*` được reverse proxy tới kho Git LFS
+theo cấu hình `vercel.json`. Proxy giữ URL trên domain của ứng dụng, hỗ trợ byte
+range và trả PDF ở chế độ `inline` để Safari trên điện thoại/iPad có thể hiển thị
+trực tiếp thay vì tải tệp xuống.
+
 ## Kiểm tra chất lượng
 
 ```bash

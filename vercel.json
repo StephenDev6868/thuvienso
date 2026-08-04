@@ -1,0 +1,44 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/books/:path*",
+      "destination": "https://media.githubusercontent.com/media/StephenDev6868/thuvienso/main/src/data/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/books/:path*",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "inline"
+        },
+        {
+          "key": "Accept-Ranges",
+          "value": "bytes"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "x-vercel-enable-rewrite-caching",
+          "value": "1"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ]
+}

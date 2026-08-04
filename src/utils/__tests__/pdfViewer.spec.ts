@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { getOriginalPdfUrl, shouldUseNativePdfViewer } from '@/utils/pdfViewer'
+import { getInlinePdfUrl, shouldUseEmbeddedPdfViewer } from '@/utils/pdfViewer'
 
 const mobileSafari = {
   appUrl: 'https://thuvienso.example/tu-sach-3d',
@@ -13,7 +13,7 @@ const mobileSafari = {
 describe('PDF viewer selection', () => {
   it('keeps PDF.js on desktop', () => {
     expect(
-      shouldUseNativePdfViewer({
+      shouldUseEmbeddedPdfViewer({
         appUrl: 'https://thuvienso.example/tu-sach-3d',
         pdfUrl: 'https://media.example/book.pdf',
         userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
@@ -24,9 +24,9 @@ describe('PDF viewer selection', () => {
     ).toBe(false)
   })
 
-  it('uses the basic in-app viewer for cross-origin files on mobile', () => {
+  it('uses the embedded web viewer for cross-origin files on mobile', () => {
     expect(
-      shouldUseNativePdfViewer({
+      shouldUseEmbeddedPdfViewer({
         ...mobileSafari,
         pdfUrl:
           'https://media.githubusercontent.com/media/owner/repository/main/src/data/book.pdf',
@@ -34,21 +34,23 @@ describe('PDF viewer selection', () => {
     ).toBe(true)
   })
 
-  it('keeps the native mobile viewer for same-origin PDF files', () => {
+  it('uses the embedded web viewer for same-origin PDF files on mobile', () => {
     expect(
-      shouldUseNativePdfViewer({
+      shouldUseEmbeddedPdfViewer({
         ...mobileSafari,
         pdfUrl: '/library-assets/book.pdf',
       }),
     ).toBe(true)
   })
 
-  it('resolves the original PDF URL without moving it through a third-party viewer', () => {
-    const viewerUrl = getOriginalPdfUrl(
-      'https://media.example/S%C3%A1ch%20l%E1%BB%9Bp%201.pdf',
+  it('builds a same-origin inline PDF URL without a third-party viewer', () => {
+    const viewerUrl = getInlinePdfUrl(
+      '/books/SGK_1/S%C3%A1ch%20l%E1%BB%9Bp%201.pdf',
       'https://thuvienso.example/tu-sach-3d',
     )
 
-    expect(viewerUrl).toBe('https://media.example/S%C3%A1ch%20l%E1%BB%9Bp%201.pdf')
+    expect(viewerUrl).toBe(
+      'https://thuvienso.example/books/SGK_1/S%C3%A1ch%20l%E1%BB%9Bp%201.pdf#page=1&view=FitH',
+    )
   })
 })

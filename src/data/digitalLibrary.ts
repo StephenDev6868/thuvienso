@@ -3,7 +3,7 @@ import ebookCatalog from '@/data/digital-ebooks.json'
 import resourceCatalog from '@/data/digital-resources.json'
 import teacherBookCatalog from '@/data/teacher-books.json'
 import teacherBookCoverUrl from '@/assets/teacher-book-cover.svg'
-import { getLibraryAssetUrl } from '@/data/libraryAssetUrl'
+import { getLibraryAssetUrl, getPdfAssetUrl } from '@/data/libraryAssetUrl'
 import type {
   Book,
   DigitalLibraryCollection,
@@ -131,13 +131,13 @@ export const digitalTextbooks: Book[] = (catalog.books as CatalogBook[]).map((bo
   format: 'pdf',
   viewerType: 'pdf',
   relativePath: book.fileName,
-  pdfUrl: getLibraryAssetUrl(book.sourceFolder, book.fileName),
-  originalUrl: getLibraryAssetUrl(book.sourceFolder, book.fileName),
+  pdfUrl: getPdfAssetUrl(book.sourceFolder, book.fileName),
+  originalUrl: getPdfAssetUrl(book.sourceFolder, book.fileName),
   coverUrl: requireAsset(coverAssets, `../assets/book-covers/${book.coverFileName}`),
 }))
 
 export const digitalEbooks: Book[] = (ebookCatalog.items as CatalogEbook[]).map((book) => {
-  const originalUrl = getLibraryAssetUrl(book.sourceFolder, book.relativePath)
+  const originalUrl = getPdfAssetUrl(book.sourceFolder, book.relativePath)
   return {
     ...book,
     subject: book.subcategory || book.category,
@@ -157,7 +157,10 @@ export const digitalEbooks: Book[] = (ebookCatalog.items as CatalogEbook[]).map(
 
 export const digitalResources: Book[] = (resourceCatalog.documents as CatalogResource[]).map(
   (document) => {
-    const originalUrl = getLibraryAssetUrl(document.sourceFolder, document.relativePath)
+    const originalUrl =
+      document.viewerType === 'pdf'
+        ? getPdfAssetUrl(document.sourceFolder, document.relativePath)
+        : getLibraryAssetUrl(document.sourceFolder, document.relativePath)
     const common = {
       ...document,
       originalUrl,
