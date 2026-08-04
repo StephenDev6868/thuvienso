@@ -7,7 +7,12 @@ const route = useRoute()
 const items = [
   { label: 'Trang chủ', to: { name: 'home', hash: '#top' }, icon: Home, active: 'home' },
   { label: 'Sách nói', to: { name: 'audiobooks' }, icon: BookOpen, active: 'audiobooks' },
-  { label: 'Tủ sách 3D', to: { name: 'three-d-library' }, icon: LibraryBig, active: 'three-d-library' },
+  {
+    label: 'Tủ sách 3D',
+    to: { name: 'three-d-library' },
+    icon: LibraryBig,
+    active: 'three-d-library',
+  },
   { label: 'Video bài giảng', to: { name: 'video-lessons' }, icon: Heart, active: 'video-lessons' },
   { label: 'Cá nhân', to: { name: 'home', hash: '#featured-books' }, icon: UserRound },
 ]
@@ -15,8 +20,8 @@ const items = [
 
 <template>
   <nav
-    class="fixed inset-x-3 bottom-3 z-50 rounded-[26px] border border-red-100 bg-white/94 px-2 pb-2 pt-2 shadow-[0_18px_50px_-22px_rgba(24,32,51,.45)] backdrop-blur-xl md:hidden"
-    aria-label="Điều hướng chính trên mobile"
+    class="fixed inset-x-3 bottom-3 z-50 hidden rounded-[26px] border border-red-100 bg-white/94 px-2 pb-2 pt-2 shadow-[0_18px_50px_-22px_rgba(24,32,51,.45)] backdrop-blur-xl max-[1100px]:block"
+    aria-label="Điều hướng chính trên mobile và iPad"
   >
     <div class="grid grid-cols-5 items-end gap-1">
       <RouterLink
@@ -38,7 +43,10 @@ const items = [
         >
           <component :is="item.icon" :size="23" />
         </span>
-        <span v-else class="grid size-7 place-items-center rounded-xl transition group-hover:bg-red-50">
+        <span
+          v-else
+          class="grid size-7 place-items-center rounded-xl transition group-hover:bg-red-50"
+        >
           <component :is="item.icon" :size="20" />
         </span>
         <span class="whitespace-nowrap">{{ item.label }}</span>

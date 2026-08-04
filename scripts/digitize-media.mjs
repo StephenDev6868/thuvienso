@@ -34,6 +34,7 @@ const sources = {
   ebooks: findSourceFolder('Sách điện tử'),
   audio: findSourceFolder('Sách nói'),
   videos: findSourceFolder('video học tập'),
+  pronunciationVideos: findSourceFolder('HƯỚNG DẪN PHÁT ÂM MÔN TIẾNG VIỆT 1 SÁCH KẾT NỐI'),
 }
 
 function listFiles(directory, extension) {
@@ -73,6 +74,18 @@ function categoryFromPath(sourceDirectory, filePath) {
     category: parts[0]?.normalize('NFC') ?? 'Khác',
     subcategory: parts.length > 2 ? parts.slice(1, -1).join(' / ').normalize('NFC') : undefined,
   }
+}
+
+function categoryFromVideoSource(source, filePath) {
+  const relativePath = relative(source.directory, filePath)
+  const parts = relativePath.split(/[\\/]/)
+  if (source.category) {
+    return {
+      category: source.category,
+      subcategory: parts.length > 1 ? parts.slice(0, -1).join(' / ').normalize('NFC') : undefined,
+    }
+  }
+  return categoryFromPath(source.directory, filePath)
 }
 
 function extractGrade(value) {
@@ -317,18 +330,40 @@ const audioBooks = listFiles(audioSourceDirectory, '.mp3')
     }
   })
 
-const videoSourceDirectory = join(dataRoot, sources.videos)
-const videos = listFiles(videoSourceDirectory, '.mp4')
-  .sort((left, right) => left.localeCompare(right, 'vi'))
+const videoSources = [
+  {
+    sourceFolder: sources.videos,
+    directory: join(dataRoot, sources.videos),
+    subject: 'Tiếng Việt',
+    keywords: ['video học tập', 'bài giảng'],
+  },
+  {
+    sourceFolder: sources.pronunciationVideos,
+    directory: join(dataRoot, sources.pronunciationVideos),
+    category: 'Hướng dẫn phát âm Tiếng Việt 1',
+    subject: 'Tiếng Việt',
+    grade: 1,
+    keywords: ['hướng dẫn phát âm', 'phát âm', 'tiếng việt', 'lớp 1', 'kết nối tri thức'],
+  },
+]
+
+const videos = videoSources
+  .flatMap((source) =>
+    listFiles(source.directory, '.mp4')
+      .sort((left, right) => left.localeCompare(right, 'vi'))
+      .map((filePath) => ({ source, filePath })),
+  )
   .map((filePath, index) => {
-    const relativePath = relative(videoSourceDirectory, filePath).normalize('NFC')
-    const title = cleanTitle(basename(filePath).normalize('NFC'))
-    const { category, subcategory } = categoryFromPath(videoSourceDirectory, filePath)
-    const grade = extractGrade(`${relativePath} ${title}`)
+    const relativePath = relative(filePath.source.directory, filePath.filePath).normalize('NFC')
+    const title = cleanTitle(basename(filePath.filePath).normalize('NFC'))
+    const { category, subcategory } = categoryFromVideoSource(filePath.source, filePath.filePath)
+    const grade =
+      filePath.source.grade ??
+      extractGrade(`${filePath.source.sourceFolder} ${relativePath} ${title}`)
     const id = `video-${slugify(relativePath.replace(/\.mp4$/i, ''))}`
-    const durationSeconds = getMp4Duration(filePath)
+    const durationSeconds = getMp4Duration(filePath.filePath)
     const coverFileName = createVideoThumbnail(
-      filePath,
+      filePath.filePath,
       join(videoThumbnailDirectory, id),
       join(videoThumbnailDirectory, `${id}.svg`),
       title,
@@ -342,24 +377,23 @@ const videos = listFiles(videoSourceDirectory, '.mp4')
       ...(subcategory ? { subcategory } : {}),
       description: `Video học tập “${title}”${grade ? ` dành cho học sinh lớp ${grade}` : ''}.`,
       grade,
-      subject: 'Tiếng Việt',
+      subject: filePath.source.subject,
       lesson: Number(title.match(/bài\s*(\d+)/i)?.[1] ?? 0) || undefined,
       volume: Number(title.match(/tập\s*([12])/i)?.[1] ?? 0) || undefined,
       keywords: [
         title,
         category,
         subcategory,
-        'video học tập',
-        'bài giảng',
+        ...filePath.source.keywords,
         grade ? `lớp ${grade}` : undefined,
       ].filter(Boolean),
       accent: ['#50aa81', '#ef9f40', '#b47ac0', '#4ca0cc', '#9b755c', '#3d9a91'][index % 6],
       format: 'mp4',
-      sourceFolder: sources.videos.normalize('NFC'),
+      sourceFolder: filePath.source.sourceFolder.normalize('NFC'),
       relativePath,
-      fileName: basename(filePath).normalize('NFC'),
+      fileName: basename(filePath.filePath).normalize('NFC'),
       coverFileName,
-      fileSizeBytes: statSync(filePath).size,
+      fileSizeBytes: statSync(filePath.filePath).size,
       durationSeconds: Math.round(durationSeconds),
       duration: formatDuration(durationSeconds),
     }

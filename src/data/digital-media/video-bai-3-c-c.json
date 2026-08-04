@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "video-bai-3-c-c",
+    "title": "Bài 3 C c",
+    "category": "Hướng dẫn phát âm Tiếng Việt 1",
+    "description": "Video học tập “Bài 3 C c” dành cho học sinh lớp 1.",
+    "grade": 1,
+    "subject": "Tiếng Việt",
+    "lesson": 3,
+    "keywords": [
+      "Bài 3 C c",
+      "Hướng dẫn phát âm Tiếng Việt 1",
+      "hướng dẫn phát âm",
+      "phát âm",
+      "tiếng việt",
+      "lớp 1",
+      "kết nối tri thức",
+      "lớp 1"
+    ],
+    "accent": "#4ca0cc",
+    "format": "mp4",
+    "sourceFolder": "HƯỚNG DẪN PHÁT ÂM MÔN TIẾNG VIỆT 1 SÁCH KẾT NỐI",
+    "relativePath": "Bài 3 C c.mp4",
+    "fileName": "Bài 3 C c.mp4",
+    "coverFileName": "video-bai-3-c-c.png",
+    "fileSizeBytes": 23270442,
+    "durationSeconds": 92,
+    "duration": "01:32"
+  }
+}

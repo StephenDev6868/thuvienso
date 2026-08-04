@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "video-bai-2-b-b",
+    "title": "Bài 2 B b",
+    "category": "Hướng dẫn phát âm Tiếng Việt 1",
+    "description": "Video học tập “Bài 2 B b” dành cho học sinh lớp 1.",
+    "grade": 1,
+    "subject": "Tiếng Việt",
+    "lesson": 2,
+    "keywords": [
+      "Bài 2 B b",
+      "Hướng dẫn phát âm Tiếng Việt 1",
+      "hướng dẫn phát âm",
+      "phát âm",
+      "tiếng việt",
+      "lớp 1",
+      "kết nối tri thức",
+      "lớp 1"
+    ],
+    "accent": "#3d9a91",
+    "format": "mp4",
+    "sourceFolder": "HƯỚNG DẪN PHÁT ÂM MÔN TIẾNG VIỆT 1 SÁCH KẾT NỐI",
+    "relativePath": "Bài 2 B b.mp4",
+    "fileName": "Bài 2 B b.mp4",
+    "coverFileName": "video-bai-2-b-b.png",
+    "fileSizeBytes": 13778887,
+    "durationSeconds": 66,
+    "duration": "01:06"
+  }
+}

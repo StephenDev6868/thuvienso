@@ -176,8 +176,11 @@ function scoreMedia(
   if (title.includes(query) && query.length > 2) score += 90
   if (kind === 'audio' && (query.includes('sach noi') || query.includes('nghe'))) score += 45
   if (kind === 'video' && (query.includes('video') || query.includes('bai giang'))) score += 45
+  if (kind === 'video' && query.includes('phat am') && searchable.includes('phat am')) score += 80
   const grade = Number(query.match(/\blop\s*([1-5])\b/)?.[1] ?? 0) || undefined
   if (grade) score += item.grade === grade ? 65 : -50
+  const lesson = Number(query.match(/\bbai\s*(\d+)\b/)?.[1] ?? 0) || undefined
+  if (lesson && 'lesson' in item) score += item.lesson === lesson ? 45 : -10
   for (const token of new Set(tokens)) {
     if (title.split(' ').includes(token)) score += 16
     else if (searchable.includes(token)) score += 6

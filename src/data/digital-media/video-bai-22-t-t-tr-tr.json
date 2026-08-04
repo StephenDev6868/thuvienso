@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "video-bai-22-t-t-tr-tr",
+    "title": "Bài 22 T t Tr tr",
+    "category": "Hướng dẫn phát âm Tiếng Việt 1",
+    "description": "Video học tập “Bài 22 T t Tr tr” dành cho học sinh lớp 1.",
+    "grade": 1,
+    "subject": "Tiếng Việt",
+    "lesson": 22,
+    "keywords": [
+      "Bài 22 T t Tr tr",
+      "Hướng dẫn phát âm Tiếng Việt 1",
+      "hướng dẫn phát âm",
+      "phát âm",
+      "tiếng việt",
+      "lớp 1",
+      "kết nối tri thức",
+      "lớp 1"
+    ],
+    "accent": "#50aa81",
+    "format": "mp4",
+    "sourceFolder": "HƯỚNG DẪN PHÁT ÂM MÔN TIẾNG VIỆT 1 SÁCH KẾT NỐI",
+    "relativePath": "Bài 22 T t Tr tr.mp4",
+    "fileName": "Bài 22 T t Tr tr.mp4",
+    "coverFileName": "video-bai-22-t-t-tr-tr.png",
+    "fileSizeBytes": 73472132,
+    "durationSeconds": 560,
+    "duration": "09:20"
+  }
+}

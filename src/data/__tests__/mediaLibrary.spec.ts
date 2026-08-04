@@ -12,9 +12,9 @@ import {
 describe('digitized media library', () => {
   it('hydrates every audiobook and video asset', () => {
     expect(digitalAudiobooks).toHaveLength(63)
-    expect(digitalVideos).toHaveLength(9)
+    expect(digitalVideos).toHaveLength(25)
     expect(digitalYouTubeVideos).toHaveLength(49)
-    expect(allDigitalVideos).toHaveLength(58)
+    expect(allDigitalVideos).toHaveLength(74)
     expect(digitalAudiobooks.every((item) => item.mediaUrl && item.coverUrl)).toBe(true)
     expect(digitalVideos.every((item) => item.mediaUrl && item.coverUrl)).toBe(true)
   })
@@ -33,5 +33,6 @@ describe('digitized media library', () => {
   it('searches normalized Vietnamese media titles', () => {
     expect(searchAudiobooks('rua va tho')[0]?.title).toContain('Rùa và Thỏ')
     expect(searchVideos('cau be ham hoc lop 2')[0]?.title).toContain('Cậu bé ham học')
+    expect(searchVideos('phat am bai 1 chu a lop 1')[0]?.id).toBe('video-bai-1-a-a')
   })
 })

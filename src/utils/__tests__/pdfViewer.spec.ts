@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { getEmbeddedPdfViewerUrl, shouldUseNativePdfViewer } from '@/utils/pdfViewer'
+import { getOriginalPdfUrl, shouldUseNativePdfViewer } from '@/utils/pdfViewer'
 
 const mobileSafari = {
   appUrl: 'https://thuvienso.example/tu-sach-3d',
@@ -24,7 +24,7 @@ describe('PDF viewer selection', () => {
     ).toBe(false)
   })
 
-  it('uses the embedded basic viewer for cross-origin files on mobile', () => {
+  it('uses the basic in-app viewer for cross-origin files on mobile', () => {
     expect(
       shouldUseNativePdfViewer({
         ...mobileSafari,
@@ -43,16 +43,12 @@ describe('PDF viewer selection', () => {
     ).toBe(true)
   })
 
-  it('builds an encoded Google viewer URL for the original PDF', () => {
-    const viewerUrl = getEmbeddedPdfViewerUrl(
+  it('resolves the original PDF URL without moving it through a third-party viewer', () => {
+    const viewerUrl = getOriginalPdfUrl(
       'https://media.example/S%C3%A1ch%20l%E1%BB%9Bp%201.pdf',
       'https://thuvienso.example/tu-sach-3d',
     )
 
-    expect(viewerUrl).toContain('https://docs.google.com/viewerng/viewer?')
-    expect(new URL(viewerUrl).searchParams.get('embedded')).toBe('1')
-    expect(new URL(viewerUrl).searchParams.get('url')).toBe(
-      'https://media.example/S%C3%A1ch%20l%E1%BB%9Bp%201.pdf',
-    )
+    expect(viewerUrl).toBe('https://media.example/S%C3%A1ch%20l%E1%BB%9Bp%201.pdf')
   })
 })

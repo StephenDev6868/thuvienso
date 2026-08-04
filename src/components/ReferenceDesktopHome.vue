@@ -7,34 +7,20 @@ import {
   Grid2X2,
   Headphones,
   Heart,
-  Home,
-  LockKeyhole,
-  MessagesSquare,
   Play,
   QrCode,
-  Search,
-  Shield,
   Trophy,
-  UserRound,
 } from '@lucide/vue'
 import type { Component } from 'vue'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-import logoUrl from '../../logo.jpg'
 import HomeBookcaseCanvas from '@/components/HomeBookcaseCanvas.vue'
 import LibraryHeroSlider from '@/components/LibraryHeroSlider.vue'
 import { digitalResourceCollection } from '@/data/digitalLibrary'
 import { threeDBookCabinets } from '@/data/threeDLibrary'
 import { useAppStore } from '@/stores/app'
 import type { Book } from '@/types/library'
-
-interface NavItem {
-  label: string
-  icon: Component
-  action: () => void
-  active?: boolean
-}
 
 interface QuickItem {
   title: string
@@ -46,7 +32,6 @@ interface QuickItem {
 
 const appStore = useAppStore()
 const router = useRouter()
-const query = ref('')
 const activeGrade = ref<number | 'Tất cả'>('Tất cả')
 
 const textbookCabinet =
@@ -65,7 +50,7 @@ const stats = [
   {
     label: 'Video bài giảng',
     value: `${digitalResourceCollection.documentCount}+`,
-    icon: GraduationCap,  
+    icon: GraduationCap,
     color: '#315fd7',
   },
   { label: 'Video', value: '50+', icon: Play, color: '#ef4444' },
@@ -97,10 +82,6 @@ const activities = [
   },
 ]
 
-function goHome() {
-  void router.push({ name: 'home', hash: '#top' })
-}
-
 function goBooks(search = '') {
   appStore.searchBooks(search)
   void router.push({ name: 'home', hash: '#featured-books' })
@@ -108,10 +89,6 @@ function goBooks(search = '') {
 
 function goThreeD() {
   void router.push({ name: 'three-d-library' })
-}
-
-function submitSearch() {
-  goBooks(query.value)
 }
 
 function setGrade(grade: number | 'Tất cả') {
@@ -122,16 +99,6 @@ function setGrade(grade: number | 'Tất cả') {
 function openBook(book: Book) {
   appStore.openReader(book.id)
 }
-
-const navItems: NavItem[] = [
-  { label: 'Trang chủ', icon: Home, action: goHome, active: true },
-  { label: 'Kho sách', icon: BookOpen, action: () => goBooks() },
-  { label: 'Tủ sách 3D', icon: Shield, action: goThreeD },
-  { label: 'Sách nói', icon: Headphones, action: () => goBooks('truyện') },
-  { label: 'Video', icon: GraduationCap, action: () => goBooks('học liệu') },
-  { label: 'STEM', icon: Grid2X2, action: () => goBooks('stem') },
-  { label: 'Hoạt động', icon: Trophy, action: goThreeD },
-]
 
 const quickItems: QuickItem[] = [
   {
@@ -213,50 +180,6 @@ const bottomItems: QuickItem[] = [
 <template>
   <section class="coded-home">
     <div class="coded-home__shell">
-      <header class="coded-header" aria-label="Điều hướng chính">
-        <button type="button" class="brand" @click="goHome">
-          <img :src="logoUrl" alt="Logo Trường Tiểu học Bùi Thị Xuân" />
-          <span>
-            <strong>THƯ VIỆN SỐ</strong>
-            <small>TRƯỜNG TIỂU HỌC BÙI THỊ XUÂN</small>
-          </span>
-        </button>
-
-        <nav class="coded-nav">
-          <button
-            v-for="item in navItems"
-            :key="item.label"
-            type="button"
-            class="nav-tile"
-            :class="{ 'is-active': item.active }"
-            @click="item.action"
-          >
-            <component :is="item.icon" :size="22" />
-            <span>{{ item.label }}</span>
-          </button>
-        </nav>
-
-        <form class="coded-search" role="search" @submit.prevent="submitSearch">
-          <Search :size="18" />
-          <input v-model="query" type="search" placeholder="Tìm kiếm sách, chủ đề..." />
-          <button type="submit" aria-label="Tìm kiếm">
-            <Search :size="18" />
-          </button>
-        </form>
-
-        <button type="button" class="pill-action lock" @click="appStore.openSmartLock">
-          <LockKeyhole :size="17" />
-          Màn hình khóa
-        </button>
-        <button type="button" class="pill-action contact" @click="appStore.openUtilityModal('contact')">
-          <MessagesSquare :size="17" />
-          Liên hệ
-        </button>
-        <button type="button" class="avatar" aria-label="Cá nhân">
-          <UserRound :size="24" />
-        </button>
-      </header>
-
       <div class="top-grid">
         <LibraryHeroSlider class="desktop-hero-slider" />
 

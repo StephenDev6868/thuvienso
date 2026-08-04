@@ -116,10 +116,17 @@ describe('local library assistant', () => {
     expect(reply.playMediaId).toContain('cau-be-ham-hoc')
   })
 
+  it('opens a digitized pronunciation video from the chatbox', () => {
+    const reply = getLibraryAssistantReply('Mở video phát âm bài 1 chữ A lớp 1')
+
+    expect(reply.routeName).toBe('video-lessons')
+    expect(reply.playMediaId).toBe('video-bai-1-a-a')
+  })
+
   it('describes all three newly digitized catalogs', () => {
     expect(getLibraryAssistantReply('Kho sách điện tử có gì?').content).toContain('42 cuốn')
     expect(getLibraryAssistantReply('Kho sách nói có gì?').content).toContain('63 nội dung')
-    expect(getLibraryAssistantReply('Kho video bài giảng có gì?').content).toContain('58 video')
+    expect(getLibraryAssistantReply('Kho video bài giảng có gì?').content).toContain('74 video')
     expect(getLibraryAssistantReply('Kho video bài giảng có gì?').content).toContain(
       '49 video YouTube',
     )

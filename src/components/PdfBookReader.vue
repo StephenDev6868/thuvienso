@@ -24,7 +24,7 @@ import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import type { PdfLibraryItem } from '@/types/library'
-import { getEmbeddedPdfViewerUrl, shouldUseNativePdfViewer } from '@/utils/pdfViewer'
+import { getOriginalPdfUrl, shouldUseNativePdfViewer } from '@/utils/pdfViewer'
 
 GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
@@ -54,8 +54,8 @@ const soundEnabled = ref(true)
 const useNativePdfViewer = ref(false)
 const nativeViewerLoading = ref(false)
 const nativeViewerSlow = ref(false)
-const embeddedPdfViewerUrl = computed(() =>
-  getEmbeddedPdfViewerUrl(props.book.pdfUrl, globalThis.location.href),
+const originalPdfUrl = computed(() =>
+  getOriginalPdfUrl(props.book.pdfUrl, globalThis.location.href),
 )
 
 const pageNumbers = computed(() =>
@@ -506,12 +506,12 @@ onBeforeUnmount(() => {
         </div>
         <a
           v-if="useNativePdfViewer"
-          :href="embeddedPdfViewerUrl"
+          :href="originalPdfUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="focus-ring grid size-10 place-items-center rounded-xl bg-red-500 text-white transition hover:bg-red-600"
-          aria-label="Mở trình xem PDF toàn màn hình"
-          title="Mở trình xem PDF toàn màn hình"
+          aria-label="Mở file PDF gốc"
+          title="Mở file PDF gốc"
         >
           <ExternalLink :size="18" />
         </a>
@@ -605,7 +605,7 @@ onBeforeUnmount(() => {
 
         <div v-if="useNativePdfViewer" class="absolute inset-0 bg-slate-100">
           <iframe
-            :src="embeddedPdfViewerUrl"
+            :src="originalPdfUrl"
             :title="`Đọc ${book.title}`"
             class="native-pdf-frame h-full w-full border-0 bg-white"
             @load="handleNativeViewerLoaded"
@@ -613,24 +613,29 @@ onBeforeUnmount(() => {
 
           <div
             v-if="nativeViewerLoading"
-            class="absolute inset-0 z-20 grid place-items-center bg-[#111827] p-6 text-center"
+            class="absolute inset-0 z-20 grid place-items-center bg-[radial-gradient(circle_at_50%_25%,#334155_0%,#111827_68%)] p-6 text-center"
             aria-live="polite"
           >
-            <div>
-              <LoaderCircle :size="42" class="mx-auto animate-spin text-red-400" />
-              <p class="mt-5 font-bold">Đang mở trình xem PDF</p>
+            <div class="max-w-xs">
+              <img
+                :src="book.coverUrl"
+                :alt="`Bìa ${book.title}`"
+                class="mx-auto h-56 w-40 rounded-xl object-cover shadow-2xl ring-1 ring-white/15"
+              />
+              <LoaderCircle :size="34" class="mx-auto mt-6 animate-spin text-red-400" />
+              <p class="mt-5 font-bold">Đang mở file PDF gốc</p>
               <p class="mt-2 text-xs leading-5 text-white/45">
-                Chế độ đọc cơ bản dành cho điện thoại và iPad.
+                Hiển thị bìa trong lúc trình đọc PDF của thiết bị khởi tạo.
               </p>
               <a
                 v-if="nativeViewerSlow"
-                :href="embeddedPdfViewerUrl"
+                :href="originalPdfUrl"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="focus-ring mt-5 inline-flex items-center gap-2 rounded-xl bg-red-500 px-5 py-3 text-sm font-bold text-white"
               >
                 <ExternalLink :size="17" />
-                Mở trình xem toàn màn hình
+                Mở file gốc
               </a>
             </div>
           </div>
@@ -663,16 +668,16 @@ onBeforeUnmount(() => {
         class="relative z-30 flex min-h-16 items-center justify-center gap-3 border-t border-white/10 bg-[#111827]/96 px-3"
       >
         <span class="hidden text-xs text-white/50 sm:inline">
-          Trình xem PDF cơ bản dành cho mobile và iPad
+          Đang đọc bằng trình xem PDF gốc của thiết bị
         </span>
         <a
-          :href="embeddedPdfViewerUrl"
+          :href="originalPdfUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="focus-ring inline-flex items-center gap-2 rounded-xl bg-red-500 px-4 py-2.5 text-xs font-bold text-white"
         >
           <ExternalLink :size="16" />
-          Mở toàn màn hình
+          Mở file gốc
         </a>
       </footer>
 

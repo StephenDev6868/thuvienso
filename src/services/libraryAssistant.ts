@@ -42,6 +42,8 @@ export function getLibraryAssistantReply(message: string): LibraryAssistantReply
   const asksForVideos =
     normalized.includes('video') ||
     normalized.includes('bai giang') ||
+    normalized.includes('phat am') ||
+    normalized.includes('huong dan phat am') ||
     normalized.includes('phim hoc tap')
   const asksForEbooks = normalized.includes('sach dien tu') || normalized.includes('ebook')
   const asksForLifeSkills =

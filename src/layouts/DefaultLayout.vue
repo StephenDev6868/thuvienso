@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
-import { RouterView, useRoute } from 'vue-router'
+import { RouterView } from 'vue-router'
 
 import AiChatWidget from '@/components/AiChatWidget.vue'
 import AppHeader from '@/components/AppHeader.vue'
@@ -13,12 +13,11 @@ import { useAppStore } from '@/stores/app'
 const SmartLockScreen = defineAsyncComponent(() => import('@/components/SmartLockScreen.vue'))
 const UtilityQrModal = defineAsyncComponent(() => import('@/components/UtilityQrModal.vue'))
 const appStore = useAppStore()
-const route = useRoute()
 </script>
 
 <template>
-  <div class="min-h-screen pb-24 md:pb-0">
-    <AppHeader :class="{ 'xl:hidden': route.name === 'home' }" />
+  <div class="min-h-screen pb-24 min-[1101px]:pb-0">
+    <AppHeader />
     <RouterView />
     <AiChatWidget />
     <MobileBottomNav />

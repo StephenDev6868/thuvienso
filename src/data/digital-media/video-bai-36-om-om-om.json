@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "video-bai-36-om-om-om",
+    "title": "Bài 36 om ôm ơm",
+    "category": "Hướng dẫn phát âm Tiếng Việt 1",
+    "description": "Video học tập “Bài 36 om ôm ơm” dành cho học sinh lớp 1.",
+    "grade": 1,
+    "subject": "Tiếng Việt",
+    "lesson": 36,
+    "keywords": [
+      "Bài 36 om ôm ơm",
+      "Hướng dẫn phát âm Tiếng Việt 1",
+      "hướng dẫn phát âm",
+      "phát âm",
+      "tiếng việt",
+      "lớp 1",
+      "kết nối tri thức",
+      "lớp 1"
+    ],
+    "accent": "#9b755c",
+    "format": "mp4",
+    "sourceFolder": "HƯỚNG DẪN PHÁT ÂM MÔN TIẾNG VIỆT 1 SÁCH KẾT NỐI",
+    "relativePath": "Bài 36 om ôm ơm.mp4",
+    "fileName": "Bài 36 om ôm ơm.mp4",
+    "coverFileName": "video-bai-36-om-om-om.png",
+    "fileSizeBytes": 17332655,
+    "durationSeconds": 329,
+    "duration": "05:29"
+  }
+}

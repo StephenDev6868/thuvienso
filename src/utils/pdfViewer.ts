@@ -15,12 +15,6 @@ export function shouldUseNativePdfViewer(context: NativePdfViewerContext) {
   return isMobileUserAgent || isTouchMac || (isTouchDevice && context.viewportWidth <= 1_180)
 }
 
-export function getEmbeddedPdfViewerUrl(pdfUrl: string, appUrl: string) {
-  const absolutePdfUrl = new URL(pdfUrl, appUrl).href
-  const params = new URLSearchParams({
-    embedded: '1',
-    url: absolutePdfUrl,
-  })
-
-  return `https://docs.google.com/viewerng/viewer?${params.toString()}`
+export function getOriginalPdfUrl(pdfUrl: string, appUrl: string) {
+  return new URL(pdfUrl, appUrl).href
 }

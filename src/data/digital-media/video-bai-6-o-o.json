@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "video-bai-6-o-o",
+    "title": "Bài 6 O o",
+    "category": "Hướng dẫn phát âm Tiếng Việt 1",
+    "description": "Video học tập “Bài 6 O o” dành cho học sinh lớp 1.",
+    "grade": 1,
+    "subject": "Tiếng Việt",
+    "lesson": 6,
+    "keywords": [
+      "Bài 6 O o",
+      "Hướng dẫn phát âm Tiếng Việt 1",
+      "hướng dẫn phát âm",
+      "phát âm",
+      "tiếng việt",
+      "lớp 1",
+      "kết nối tri thức",
+      "lớp 1"
+    ],
+    "accent": "#4ca0cc",
+    "format": "mp4",
+    "sourceFolder": "HƯỚNG DẪN PHÁT ÂM MÔN TIẾNG VIỆT 1 SÁCH KẾT NỐI",
+    "relativePath": "Bài 6 O o.mp4",
+    "fileName": "Bài 6 O o.mp4",
+    "coverFileName": "video-bai-6-o-o.png",
+    "fileSizeBytes": 7349778,
+    "durationSeconds": 64,
+    "duration": "01:04"
+  }
+}

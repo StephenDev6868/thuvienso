@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "item": {
+    "id": "video-bai-4-e-e-e-e",
+    "title": "Bài 4 E e Ê ê",
+    "category": "Hướng dẫn phát âm Tiếng Việt 1",
+    "description": "Video học tập “Bài 4 E e Ê ê” dành cho học sinh lớp 1.",
+    "grade": 1,
+    "subject": "Tiếng Việt",
+    "lesson": 4,
+    "keywords": [
+      "Bài 4 E e Ê ê",
+      "Hướng dẫn phát âm Tiếng Việt 1",
+      "hướng dẫn phát âm",
+      "phát âm",
+      "tiếng việt",
+      "lớp 1",
+      "kết nối tri thức",
+      "lớp 1"
+    ],
+    "accent": "#50aa81",
+    "format": "mp4",
+    "sourceFolder": "HƯỚNG DẪN PHÁT ÂM MÔN TIẾNG VIỆT 1 SÁCH KẾT NỐI",
+    "relativePath": "Bài 4 E e Ê ê.mp4",
+    "fileName": "Bài 4 E e Ê ê.mp4",
+    "coverFileName": "video-bai-4-e-e-e-e.png",
+    "fileSizeBytes": 15531032,
+    "durationSeconds": 78,
+    "duration": "01:18"
+  }
+}
