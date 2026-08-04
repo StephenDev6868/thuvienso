@@ -1,10 +1,21 @@
 <script setup lang="ts">
-import { BrainCircuit, LibraryBig, QrCode, ShieldCheck, Sparkles, Unlock, Wifi } from '@lucide/vue'
+import {
+  ArrowRight,
+  BookOpen,
+  LibraryBig,
+  QrCode,
+  ShieldCheck,
+  Sparkles,
+  Unlock,
+  Wifi,
+} from '@lucide/vue'
 import QRCode from 'qrcode'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 
 import lockBgDesktopUrl from '@/assets/images/backgrounds/bg-desktop-clean.png'
 import lockBgMobileUrl from '@/assets/images/backgrounds/bg-mobile.png'
+import heroStudentsUrl from '@/assets/images/lock-hero-students.png'
+import schoolUrl from '@/assets/thu-vien-so-assets-exact-look/objects/object-school.svg'
 import logoUrl from '../../logo.jpg'
 import { digitalBooks } from '@/data/digitalLibrary'
 
@@ -18,7 +29,7 @@ const now = ref(new Date())
 const accessUrl = ref('')
 const qrError = ref('')
 const welcomeMessage =
-  'Chào mừng bạn đến với thư viện số của chúng tôi. Hãy quét mã QR hoặc nhấn vào Mở thư viện để cùng khám phá.'
+  'Chào mừng bạn đến với thư viện số. Hãy quét mã QR hoặc nhấn Mở thư viện để bắt đầu khám phá.'
 
 const formattedTime = computed(() =>
   new Intl.DateTimeFormat('vi-VN', {
@@ -180,10 +191,11 @@ onBeforeUnmount(() => {
   <Teleport to="body">
     <section
       ref="lockScreen"
-      class="smart-lock-screen fixed inset-0 z-[120] isolate flex min-h-dvh flex-col overflow-hidden text-white outline-none"
+      class="smart-lock-screen fixed inset-0 z-[120] isolate flex min-h-dvh flex-col overflow-hidden outline-none"
       :style="{
         '--lock-bg-desktop': `url(${lockBgDesktopUrl})`,
         '--lock-bg-mobile': `url(${lockBgMobileUrl})`,
+        '--hero-students': `url(${heroStudentsUrl})`,
       }"
       role="dialog"
       aria-modal="true"
@@ -191,164 +203,198 @@ onBeforeUnmount(() => {
       tabindex="-1"
     >
       <div class="lock-bg-layer pointer-events-none absolute inset-0" />
-      <div class="smart-grid-plane pointer-events-none absolute inset-0" />
-      <div class="smart-scan-beam pointer-events-none absolute inset-y-0 w-1/3" />
 
       <header
-        class="relative z-20 flex items-center justify-between gap-4 border-b border-white/45 bg-white/42 px-5 py-4 text-ink-950 shadow-[0_18px_60px_-45px_rgba(24,32,51,.45)] backdrop-blur-xl sm:px-8 lg:px-12"
+        class="lock-header relative z-20 flex items-center justify-between gap-4 px-5 sm:px-8 lg:px-12"
       >
-        <div class="flex min-w-0 items-center gap-3">
+        <div class="flex min-w-0 items-center gap-3.5">
           <span
-            class="grid size-[61.6px] shrink-0 place-items-center overflow-hidden rounded-[22px] border border-white/15 bg-white shadow-lg"
+            class="grid size-14 shrink-0 place-items-center overflow-hidden rounded-2xl bg-white"
           >
             <img :src="logoUrl" alt="" class="h-full w-full object-contain" />
           </span>
           <div class="min-w-0">
-            <p class="truncate text-sm font-black tracking-[0.06em]">
-              THƯ VIỆN SỐ TRƯỜNG TH BÙI THỊ XUÂN
+            <p class="truncate text-[13px] font-black tracking-[-0.01em] text-ink-950 sm:text-sm">
+              Thư viện số · Trường TH Bùi Thị Xuân
             </p>
             <p
-              class="mt-1 flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.16em] text-blue-700/65"
+              class="mt-1.5 flex items-center gap-1.5 text-[9px] font-extrabold uppercase tracking-[0.15em] text-blue-600"
             >
-              <Wifi :size="11" />
-              AI gateway online
+              <Wifi :size="11" /> Hệ thống đang trực tuyến
             </p>
           </div>
         </div>
 
-        <div class="hidden text-right md:block">
-          <p class="font-mono text-2xl font-light tracking-[0.08em]">{{ formattedTime }}</p>
-          <p class="mt-1 text-[10px] capitalize tracking-[0.08em] text-ink-800/55">
+        <div class="absolute left-1/2 hidden -translate-x-1/2 text-center md:block">
+          <p class="font-mono text-[27px] font-black leading-none tracking-[0.05em] text-ink-950">
+            {{ formattedTime }}
+          </p>
+          <p class="mt-2 text-[10px] font-semibold capitalize tracking-[0.04em] text-slate-500">
             {{ formattedDate }}
           </p>
         </div>
 
         <button
           type="button"
-          class="focus-ring group inline-flex h-11 shrink-0 items-center gap-2 rounded-full bg-red-500 px-3.5 text-xs font-bold text-white shadow-lg shadow-red-500/20 transition hover:-translate-y-0.5 hover:bg-red-600"
+          class="unlock-button focus-ring group inline-flex shrink-0 items-center gap-2 text-xs font-extrabold text-white transition hover:-translate-y-0.5"
           aria-label="Mở thư viện"
           @click="emit('close')"
         >
           <Unlock :size="16" />
           <span class="hidden sm:inline">Mở thư viện</span>
+          <ArrowRight
+            :size="15"
+            class="hidden transition-transform group-hover:translate-x-0.5 sm:block"
+          />
         </button>
       </header>
 
       <main
-        class="relative z-10 mx-auto grid w-full max-w-[1500px] flex-1 items-center gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[1fr_auto] lg:gap-16 lg:px-14 lg:py-12"
+        class="lock-main relative z-10 mx-auto grid w-full max-w-[1460px] flex-1 gap-5 px-4 py-5 sm:px-7 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-10 lg:px-12 lg:py-10"
       >
-        <div class="welcome-panel relative max-w-4xl">
-          <div class="ai-core-wrap pointer-events-none absolute -left-16 -top-28 opacity-40">
-            <span class="ai-core-ring ai-core-ring-one absolute inset-0 rounded-full" />
-            <span class="ai-core-ring ai-core-ring-two absolute inset-7 rounded-full" />
-            <span
-              class="ai-core relative grid size-52 place-items-center rounded-full border border-blue-300/20 bg-white/15 text-blue-600"
-            >
-              <BrainCircuit :size="96" :stroke-width="0.8" />
-            </span>
-          </div>
+        <section
+          class="welcome-panel relative overflow-hidden"
+          aria-label="Chào mừng đến thư viện số"
+        >
+          <span class="hero-sparkle hero-sparkle--one" aria-hidden="true">✦</span>
+          <span class="hero-sparkle hero-sparkle--two" aria-hidden="true">✦</span>
+          <span class="hero-paper-plane" aria-hidden="true">➤</span>
 
           <div
-            class="relative mb-6 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white/70 px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.18em] text-red-500 shadow-sm backdrop-blur-xl"
+            class="knowledge-badge relative inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.1em]"
           >
-            <Sparkles :size="14" />
-            Digital knowledge portal
+            <Sparkles :size="14" fill="currentColor" /> Không gian tri thức số
           </div>
 
           <h1
             id="smart-lock-title"
-            class="relative max-w-4xl text-[clamp(1.95rem,3.8vw,4.25rem)] font-black uppercase leading-[1.14] tracking-[-0.025em] text-ink-950 [text-wrap:balance]"
+            class="hero-title relative mt-5 max-w-[700px] font-black leading-[0.98] tracking-[-0.06em] [text-wrap:balance]"
           >
-            {{ welcomeMessage }}
+            <span class="hero-title-blue">Tri thức mở</span><br />
+            <span class="hero-title-coral">Chạm</span>
+            <span class="hero-title-ink">để khám phá!</span>
           </h1>
 
-          <div class="relative mt-9 flex flex-wrap gap-3">
-            <span
-              class="inline-flex items-center gap-2 rounded-xl border border-red-100 bg-white/72 px-4 py-3 text-xs font-bold text-ink-800 shadow-sm backdrop-blur-xl"
-            >
-              <LibraryBig :size="16" class="text-red-300" />
-              {{ digitalBooks.length }} tài liệu đã số hoá
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-xl border border-red-100 bg-white/72 px-4 py-3 text-xs font-bold text-ink-800 shadow-sm backdrop-blur-xl"
-            >
-              <ShieldCheck :size="16" class="text-emerald-300" />
-              Truy cập an toàn
-            </span>
-          </div>
-        </div>
+          <p
+            class="hero-copy relative mt-6 max-w-[480px] text-sm font-semibold leading-6 text-ink-800 sm:text-base"
+          >
+            Kho học liệu trực quan dành cho giáo viên và học sinh.<br />
+            Mở thư viện ngay trên màn hình này<br />
+            hoặc quét mã để tiếp tục trên điện thoại.
+          </p>
 
-        <aside
-          class="qr-panel relative mx-auto w-full max-w-sm overflow-hidden rounded-[30px] border border-white/80 bg-white/82 p-5 text-ink-950 shadow-[0_34px_100px_-45px_rgba(24,32,51,.45)] backdrop-blur-2xl sm:p-6 lg:w-[360px]"
-          aria-label="Mã QR truy cập thư viện"
-        >
-          <div class="storybook-3d storybook-3d--qr pointer-events-none relative" aria-hidden="true">
+          <div class="storybook-3d hero-book pointer-events-none absolute" aria-hidden="true">
             <div class="storybook-3d__shadow" />
             <div class="storybook-3d__scene">
               <div class="storybook-3d__book">
-                <span class="storybook-3d__cover storybook-3d__cover--left">
-                  <span class="storybook-3d__lines" />
-                </span>
-                <span class="storybook-3d__cover storybook-3d__cover--right">
-                  <span class="storybook-3d__star" />
-                  <span class="storybook-3d__title">Thư viện số</span>
-                </span>
                 <span class="storybook-3d__pages storybook-3d__pages--left" />
                 <span class="storybook-3d__pages storybook-3d__pages--right" />
+                <span class="storybook-3d__cover storybook-3d__cover--left"
+                  ><span class="storybook-3d__lines"
+                /></span>
+                <span class="storybook-3d__cover storybook-3d__cover--right"
+                  ><span class="storybook-3d__star" /><span class="storybook-3d__title"
+                    >Thư viện<br />số</span
+                  ></span
+                >
                 <span class="storybook-3d__spine" />
+                <span class="storybook-3d__bookmark" />
               </div>
             </div>
           </div>
 
-          <div class="relative flex items-center justify-between gap-3">
-            <div>
-              <p class="text-[10px] font-black uppercase tracking-[0.18em] text-red-500/75">
-                Scan to connect
-              </p>
-              <h2 class="mt-2 text-2xl font-black tracking-[-0.04em]">Khám phá nhiều hơn</h2>
+          <button
+            type="button"
+            class="hero-cta focus-ring group absolute z-10 inline-flex items-center gap-3 text-sm font-black text-white transition hover:-translate-y-1"
+            @click="emit('close')"
+          >
+            <BookOpen :size="19" /> Bắt đầu khám phá
+            <ArrowRight :size="17" class="transition-transform group-hover:translate-x-1" />
+          </button>
+
+          <div class="hero-stats absolute inset-x-0 bottom-0 z-10 grid grid-cols-2 gap-4">
+            <div class="hero-stat-card flex items-center gap-3">
+              <span class="hero-stat-icon hero-stat-icon--purple"><LibraryBig :size="22" /></span>
+              <span
+                ><strong class="block text-xs font-black sm:text-sm"
+                  >{{ digitalBooks.length }} tài liệu đã số hóa</strong
+                ><small class="mt-1 block text-[10px] font-semibold text-slate-500 sm:text-[11px]"
+                  >Sách, video, audio, bài giảng...</small
+                ></span
+              >
             </div>
-            <span
-              class="grid size-11 shrink-0 place-items-center rounded-2xl border border-red-100 bg-red-50 text-red-500"
-            >
-              <QrCode :size="22" />
-            </span>
+            <div class="hero-stat-card flex items-center gap-3">
+              <span class="hero-stat-icon hero-stat-icon--green"><ShieldCheck :size="24" /></span>
+              <span
+                ><strong class="block text-xs font-black sm:text-sm"
+                  >An toàn &amp; thân thiện</strong
+                ><small class="mt-1 block text-[10px] font-semibold text-slate-500 sm:text-[11px]"
+                  >Nội dung chọn lọc, phù hợp lứa tuổi</small
+                ></span
+              >
+            </div>
+          </div>
+        </section>
+
+        <aside
+          class="qr-panel relative mx-auto w-full max-w-[420px] overflow-hidden rounded-[38px] p-5 text-ink-950 sm:p-6"
+          aria-label="Mã QR truy cập thư viện"
+        >
+          <div class="connect-card relative flex items-center justify-between gap-4">
+            <span class="connect-ribbon absolute">Quét để kết nối</span>
+            <h2 class="text-[27px] font-black leading-[1.08] tracking-[-0.045em]">
+              Mang thư viện<br /><span>theo bạn</span>
+            </h2>
+            <div class="closed-book" aria-hidden="true">
+              <span class="closed-book__blue" /><span class="closed-book__red"
+                >THƯ<br />VIỆN<br />SỐ</span
+              >
+            </div>
           </div>
 
           <div
-            class="qr-frame relative mt-6 overflow-hidden rounded-[24px] bg-white p-3 shadow-2xl"
+            class="qr-frame relative mx-auto mt-5 grid aspect-square w-full max-w-[300px] place-items-center overflow-hidden rounded-[24px] bg-white p-3"
           >
             <canvas
               ref="qrCanvas"
-              class="mx-auto block h-auto w-full rounded-[14px]"
+              class="block aspect-square h-auto w-full rounded-[14px] object-contain"
               aria-label="Quét mã QR để truy cập thư viện số"
             />
-            <span class="qr-corner qr-corner-tl" />
-            <span class="qr-corner qr-corner-tr" />
-            <span class="qr-corner qr-corner-bl" />
-            <span class="qr-corner qr-corner-br" />
+            <span class="qr-corner qr-corner-tl" /><span class="qr-corner qr-corner-tr" /><span
+              class="qr-corner qr-corner-bl"
+            /><span class="qr-corner qr-corner-br" />
             <span class="qr-scan-line pointer-events-none absolute inset-x-4 h-px" />
           </div>
 
-          <p v-if="qrError" class="mt-4 text-center text-xs font-semibold text-red-300">
+          <p v-if="qrError" class="mt-3 text-center text-xs font-semibold text-red-500">
             {{ qrError }}
           </p>
-          <div v-else class="mt-4 flex items-center justify-center gap-2 text-center">
-            <span class="size-1.5 animate-pulse rounded-full bg-emerald-400" />
-            <p class="max-w-[260px] truncate font-mono text-[10px] text-ink-800/45">
+          <div
+            v-else
+            class="url-chip mx-auto mt-3 flex w-fit items-center justify-center gap-2 text-center"
+          >
+            <span class="size-1.5 animate-pulse rounded-full bg-emerald-500" />
+            <p class="max-w-[260px] truncate font-mono text-[10px] font-bold text-emerald-700/55">
               {{ displayUrl }}
             </p>
           </div>
-          <p class="mt-3 text-center text-[11px] leading-5 text-ink-800/55">
-            Dùng camera điện thoại để quét và truy cập hệ thống
-          </p>
+
+          <div
+            class="scan-help mx-auto mt-3 flex items-center justify-center gap-3 text-left text-xs font-semibold leading-4 text-ink-800"
+          >
+            <span class="scan-help__icon"><QrCode :size="22" /></span>
+            <span>Mở camera điện thoại<br />và hướng vào mã QR</span>
+          </div>
+          <img :src="schoolUrl" alt="" class="school-illustration pointer-events-none absolute" />
         </aside>
       </main>
 
       <footer
-        class="relative z-20 flex items-center justify-between border-t border-white/45 bg-white/36 px-5 py-3 text-[9px] font-bold uppercase tracking-[0.16em] text-ink-800/45 backdrop-blur-xl sm:px-8 lg:px-12"
+        class="lock-footer relative z-20 flex items-center justify-between px-5 text-[9px] font-extrabold uppercase tracking-[0.08em] text-ink-800/55 sm:px-8 lg:px-12"
       >
-        <span>TRƯỜNG TH BÙI THỊ XUÂN</span>
-        <span class="hidden sm:inline">ESC để quay lại thư viện</span>
+        <span class="hidden sm:inline" />
+        <span>© 2026 Trường TH Bùi Thị Xuân 🤍</span>
+        <span class="hidden text-emerald-600 sm:inline">● &nbsp; Nhấn ESC để đóng màn hình 🍃</span>
       </footer>
     </section>
   </Teleport>
@@ -357,10 +403,16 @@ onBeforeUnmount(() => {
 <style scoped>
 .smart-lock-screen {
   background:
-    linear-gradient(180deg, rgb(72 191 244 / 0.32), rgb(255 255 255 / 0.16) 42%),
+    linear-gradient(
+      120deg,
+      rgb(242 249 255 / 0.76),
+      rgb(255 255 255 / 0.18) 48%,
+      rgb(255 248 245 / 0.5)
+    ),
     var(--lock-bg-mobile) center center / cover no-repeat,
     linear-gradient(180deg, #48bff4 0%, #c8f1ff 42%, #ddf6a1 100%);
-  animation: smart-lock-enter 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  color: #182033;
+  animation: smart-lock-enter 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .smart-lock-screen::after {
@@ -368,87 +420,119 @@ onBeforeUnmount(() => {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgb(255 255 255 / 0.42), transparent 38%, rgb(255 255 255 / 0.2)),
-    linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(255 249 243 / 0.24));
+    linear-gradient(90deg, rgb(255 255 255 / 0.5), transparent 34%, rgb(255 255 255 / 0.12)),
+    linear-gradient(180deg, rgb(255 255 255 / 0.08), rgb(255 249 243 / 0.16));
   content: '';
 }
 
 .lock-bg-layer {
   background:
-    repeating-linear-gradient(90deg, transparent 0 34px, rgb(255 255 255 / 0.18) 35px 36px),
-    repeating-linear-gradient(0deg, transparent 0 34px, rgb(255 255 255 / 0.12) 35px 36px);
-  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
-  opacity: 0.32;
+    linear-gradient(rgb(255 255 255 / 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.16) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at 55% 50%, black, transparent 76%);
+  opacity: 0.42;
 }
 
-.smart-grid-plane {
-  inset: auto -18% -42%;
-  height: 44%;
-  background-image:
-    linear-gradient(rgb(223 33 51 / 0.14) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(49 95 215 / 0.13) 1px, transparent 1px);
-  background-size: 62px 62px;
-  mask-image: linear-gradient(to top, black 18%, transparent 86%);
-  perspective: 600px;
-  transform: perspective(520px) rotateX(58deg) scale(1.4);
-  transform-origin: center bottom;
-  animation: smart-grid-flow 18s linear infinite;
+.lock-orb {
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.65;
 }
 
-.smart-scan-beam {
-  left: -40%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgb(255 255 255 / 0.08),
-    rgb(255 255 255 / 0.3),
-    transparent
-  );
-  filter: blur(10px);
-  transform: skewX(-18deg);
-  animation: smart-beam-sweep 10s ease-in-out infinite;
+.lock-orb--one {
+  top: 18%;
+  right: 13%;
+  width: 24rem;
+  height: 24rem;
+  background: radial-gradient(circle, rgb(96 165 250 / 0.2), transparent 68%);
+  animation: orb-drift 9s ease-in-out infinite;
+}
+
+.lock-orb--two {
+  bottom: -9rem;
+  left: 20%;
+  width: 28rem;
+  height: 28rem;
+  background: radial-gradient(circle, rgb(255 255 255 / 0.62), transparent 68%);
+  animation: orb-drift 11s ease-in-out infinite reverse;
+}
+
+.lock-header {
+  min-height: 84px;
+  border-bottom: 1px solid rgb(255 255 255 / 0.68);
+  background: rgb(255 255 255 / 0.48);
+  box-shadow: 0 18px 55px -46px rgb(24 32 51 / 0.48);
+  backdrop-filter: blur(24px) saturate(135%);
+}
+
+.lock-footer {
+  min-height: 38px;
+  border-top: 1px solid rgb(255 255 255 / 0.58);
+  background: rgb(255 255 255 / 0.28);
+  backdrop-filter: blur(18px);
 }
 
 .welcome-panel {
-  border: 1px solid rgb(255 255 255 / 0.76);
-  border-radius: 34px;
-  background: linear-gradient(135deg, rgb(255 255 255 / 0.82), rgb(255 255 255 / 0.56));
-  box-shadow: 0 34px 100px -58px rgb(24 32 51 / 0.55);
-  padding: clamp(1.35rem, 3vw, 2.4rem);
-  backdrop-filter: blur(22px);
+  border: 1px solid rgb(255 255 255 / 0.82);
+  border-radius: 36px;
+  background: linear-gradient(135deg, rgb(255 255 255 / 0.88), rgb(255 255 255 / 0.64));
+  box-shadow:
+    0 36px 100px -58px rgb(24 32 51 / 0.55),
+    inset 0 1px 0 rgb(255 255 255 / 0.88);
+  padding: clamp(1.6rem, 3.7vw, 3.75rem);
+  backdrop-filter: blur(24px) saturate(130%);
+}
+
+.welcome-panel__glow {
+  background: radial-gradient(circle, rgb(96 165 250 / 0.17), transparent 67%);
+}
+
+.welcome-title-accent {
+  background: linear-gradient(110deg, #df2133 4%, #f0525f 48%, #315fd7 112%);
+  background-clip: text;
+  color: transparent;
+}
+
+.qr-panel {
+  border: 1px solid rgb(255 255 255 / 0.86);
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.94), rgb(248 251 255 / 0.8));
+  box-shadow:
+    0 36px 100px -52px rgb(24 32 51 / 0.62),
+    inset 0 1px 0 white;
+  backdrop-filter: blur(28px) saturate(135%);
+}
+
+.qr-panel::before {
+  position: absolute;
+  top: -9rem;
+  right: -7rem;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(223 33 51 / 0.08), transparent 68%);
+  content: '';
+  pointer-events: none;
 }
 
 .storybook-3d {
-  right: clamp(23rem, 31vw, 36rem);
-  bottom: clamp(3.2rem, 10vw, 7rem);
-  z-index: 1;
-  width: clamp(180px, 20vw, 310px);
-  height: clamp(130px, 15vw, 220px);
-  opacity: 0.9;
-  perspective: 900px;
-}
-
-.storybook-3d.storybook-3d--qr {
-  right: auto;
-  bottom: auto;
-  z-index: 1;
-  width: min(230px, 74%);
-  height: 150px;
-  margin: -0.25rem auto 0.85rem;
-  opacity: 1;
+  width: 142px;
+  height: 132px;
+  flex: 0 0 142px;
+  perspective: 950px;
 }
 
 .storybook-3d__scene {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
-  animation: storybook-float 5.8s ease-in-out infinite;
+  animation: storybook-float 5.4s ease-in-out infinite;
 }
 
 .storybook-3d__book {
   position: absolute;
-  inset: 14% 8% 18%;
-  transform: rotateX(62deg) rotateZ(-10deg);
+  inset: 4% 3% 10%;
+  transform: rotateX(-7deg) rotateY(-2deg) rotateZ(-1deg);
   transform-style: preserve-3d;
 }
 
@@ -459,95 +543,116 @@ onBeforeUnmount(() => {
   top: 0;
   height: 100%;
   transform-style: preserve-3d;
-  box-shadow: 0 22px 42px -34px rgb(24 32 51 / 0.65);
 }
 
 .storybook-3d__cover {
-  width: 48%;
-  border: 2px solid rgb(255 255 255 / 0.76);
+  z-index: 2;
+  width: 49%;
+  border: 1px solid rgb(255 255 255 / 0.72);
+  box-shadow: 0 18px 30px -20px rgb(24 32 51 / 0.7);
+  backface-visibility: hidden;
 }
 
 .storybook-3d__cover--left {
-  left: 3%;
-  border-radius: 18px 8px 8px 18px;
+  left: 1.5%;
+  border-radius: 12px 4px 4px 12px;
   background:
-    linear-gradient(120deg, rgb(255 255 255 / 0.5), transparent 28%),
-    linear-gradient(145deg, #4ca0cc, #315fd7 72%);
-  transform: rotateY(24deg);
+    linear-gradient(125deg, rgb(255 255 255 / 0.42), transparent 30%),
+    linear-gradient(145deg, #4c9ee8, #315fd7 74%);
+  transform: rotateY(18deg) translateZ(7px);
   transform-origin: right center;
-  animation: left-cover-breathe 4.6s ease-in-out infinite;
+  animation: left-cover-breathe 4.8s ease-in-out infinite;
 }
 
 .storybook-3d__cover--right {
-  right: 3%;
-  border-radius: 8px 18px 18px 8px;
+  right: 1.5%;
+  border-radius: 4px 12px 12px 4px;
   background:
-    linear-gradient(120deg, rgb(255 255 255 / 0.52), transparent 32%),
-    linear-gradient(145deg, #ff7b4a, #df2133 74%);
-  transform: rotateY(-24deg);
+    linear-gradient(125deg, rgb(255 255 255 / 0.45), transparent 30%),
+    linear-gradient(145deg, #ff625e, #df2133 72%);
+  transform: rotateY(-18deg) translateZ(7px);
   transform-origin: left center;
-  animation: right-cover-breathe 4.6s ease-in-out infinite;
+  animation: right-cover-breathe 4.8s ease-in-out infinite;
 }
 
 .storybook-3d__pages {
-  z-index: -1;
-  width: 43%;
-  border-radius: 14px 7px 7px 14px;
+  z-index: 1;
+  top: 3%;
+  height: 94%;
+  width: 46%;
+  border: 1px solid rgb(209 179 124 / 0.35);
   background:
-    repeating-linear-gradient(180deg, #fff9ec 0 7px, #ead8b7 8px 9px),
+    repeating-linear-gradient(180deg, #fff9ec 0 5px, #ead8b7 6px 7px),
     linear-gradient(90deg, #fffaf0, #f2d9a9);
 }
 
 .storybook-3d__pages--left {
-  left: 6%;
-  transform: translateZ(-15px) rotateY(20deg);
+  left: 4%;
+  border-radius: 10px 3px 3px 10px;
+  transform: translateZ(-2px) rotateY(15deg);
   transform-origin: right center;
 }
 
 .storybook-3d__pages--right {
-  right: 6%;
-  transform: translateZ(-15px) rotateY(-20deg);
+  right: 4%;
+  border-radius: 3px 10px 10px 3px;
+  transform: translateZ(-2px) rotateY(-15deg);
   transform-origin: left center;
 }
 
 .storybook-3d__spine {
-  left: 48%;
-  width: 4.8%;
+  z-index: 4;
+  left: 48.4%;
+  width: 3.4%;
   border-radius: 999px;
-  background: linear-gradient(180deg, #fff1f2, #fb7185 45%, #315fd7);
-  transform: translateZ(10px);
+  background: linear-gradient(180deg, #fff7ed, #ffc94a 45%, #d78720);
+  box-shadow: 0 0 9px rgb(24 32 51 / 0.22);
+  transform: translateZ(13px);
+}
+
+.storybook-3d__bookmark {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 51%;
+  width: 7px;
+  height: 80%;
+  background: linear-gradient(180deg, #ffc94a, #f59e0b);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+  transform: translateZ(15px) rotate(2deg);
 }
 
 .storybook-3d__shadow {
   position: absolute;
-  left: 18%;
-  right: 14%;
-  bottom: 2%;
-  height: 18%;
+  left: 13%;
+  right: 10%;
+  bottom: 0;
+  height: 12%;
   border-radius: 50%;
-  background: rgb(24 32 51 / 0.22);
-  filter: blur(18px);
-  animation: storybook-shadow 5.8s ease-in-out infinite;
+  background: rgb(24 32 51 / 0.28);
+  filter: blur(12px);
+  animation: storybook-shadow 5.4s ease-in-out infinite;
 }
 
 .storybook-3d__title {
   position: absolute;
   right: 12%;
-  bottom: 16%;
-  max-width: 74%;
+  bottom: 14%;
+  max-width: 76%;
   color: white;
-  font-size: clamp(0.62rem, 1.1vw, 0.95rem);
+  font-size: 0.56rem;
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.08;
+  letter-spacing: 0.01em;
   text-align: right;
   text-transform: uppercase;
 }
 
 .storybook-3d__star {
   position: absolute;
-  top: 20%;
+  top: 18%;
   left: 18%;
-  width: 22%;
+  width: 24%;
   aspect-ratio: 1;
   background: #ffc94a;
   clip-path: polygon(
@@ -562,58 +667,34 @@ onBeforeUnmount(() => {
     2% 35%,
     38% 34%
   );
-  filter: drop-shadow(0 6px 5px rgb(24 32 51 / 0.18));
+  filter: drop-shadow(0 4px 4px rgb(24 32 51 / 0.18));
 }
 
 .storybook-3d__lines {
   position: absolute;
-  inset: 22% 16% auto;
-  height: 44%;
-  border-radius: 12px;
+  inset: 25% 18% auto;
+  height: 42%;
+  border-radius: 8px;
   background: repeating-linear-gradient(
     180deg,
-    rgb(255 255 255 / 0.84) 0 7px,
-    transparent 8px 18px
+    rgb(255 255 255 / 0.86) 0 4px,
+    transparent 5px 12px
   );
-}
-
-.ai-core-wrap {
-  width: 13rem;
-  height: 13rem;
-}
-
-.ai-core {
-  box-shadow:
-    inset 0 0 45px rgb(62 111 244 / 0.08),
-    0 0 80px rgb(255 255 255 / 0.24);
-  animation: ai-core-float 5.5s ease-in-out infinite;
-}
-
-.ai-core-ring {
-  border: 1px dashed rgb(128 165 255 / 0.24);
-}
-
-.ai-core-ring-one {
-  animation: ai-ring-spin 16s linear infinite;
-}
-
-.ai-core-ring-two {
-  animation: ai-ring-spin 10s linear infinite reverse;
 }
 
 .qr-panel::after {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8);
   content: '';
   pointer-events: none;
 }
 
 .qr-frame {
   box-shadow:
-    0 24px 70px -28px rgb(0 0 0 / 0.8),
-    0 0 0 1px rgb(255 255 255 / 0.8);
+    0 22px 54px -30px rgb(24 32 51 / 0.62),
+    0 0 0 1px rgb(225 231 239 / 0.9);
 }
 
 .qr-corner {
@@ -655,13 +736,13 @@ onBeforeUnmount(() => {
   top: 1rem;
   background: linear-gradient(90deg, transparent, #3e6ff4, transparent);
   box-shadow: 0 0 12px rgb(62 111 244 / 0.65);
-  opacity: 0.28;
+  opacity: 0.25;
   animation: qr-scan 3.2s ease-in-out infinite;
 }
 
-@keyframes smart-grid-flow {
-  to {
-    background-position: 0 108px;
+@keyframes orb-drift {
+  50% {
+    transform: translate3d(1.5rem, -1.25rem, 0) scale(1.05);
   }
 }
 
@@ -676,24 +757,13 @@ onBeforeUnmount(() => {
   }
 }
 
-@keyframes smart-beam-sweep {
-  0%,
-  16% {
-    left: -45%;
-  }
-  72%,
-  100% {
-    left: 120%;
-  }
-}
-
 @keyframes storybook-float {
   0%,
   100% {
-    transform: translateY(0) rotate(-1.5deg);
+    transform: translateY(0) rotate(-1deg);
   }
   50% {
-    transform: translateY(-16px) rotate(2deg);
+    transform: translateY(-9px) rotate(1.2deg);
   }
 }
 
@@ -712,36 +782,20 @@ onBeforeUnmount(() => {
 @keyframes left-cover-breathe {
   0%,
   100% {
-    transform: rotateY(24deg);
+    transform: rotateY(18deg) translateZ(7px);
   }
   50% {
-    transform: rotateY(31deg);
+    transform: rotateY(24deg) translateZ(8px);
   }
 }
 
 @keyframes right-cover-breathe {
   0%,
   100% {
-    transform: rotateY(-24deg);
+    transform: rotateY(-18deg) translateZ(7px);
   }
   50% {
-    transform: rotateY(-31deg);
-  }
-}
-
-@keyframes ai-core-float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-  50% {
-    transform: translateY(-12px) rotate(2deg);
-  }
-}
-
-@keyframes ai-ring-spin {
-  to {
-    transform: rotate(360deg);
+    transform: rotateY(-24deg) translateZ(8px);
   }
 }
 
@@ -758,53 +812,610 @@ onBeforeUnmount(() => {
 @media (min-width: 768px) {
   .smart-lock-screen {
     background:
-      linear-gradient(180deg, rgb(72 191 244 / 0.24), rgb(255 255 255 / 0.12) 44%),
+      linear-gradient(
+        120deg,
+        rgb(242 249 255 / 0.78),
+        rgb(255 255 255 / 0.16) 48%,
+        rgb(255 248 245 / 0.48)
+      ),
       var(--lock-bg-desktop) center top / cover no-repeat,
       linear-gradient(180deg, #48bff4 0%, #c8f1ff 42%, #ddf6a1 100%);
   }
 }
 
-@media (max-width: 1100px) {
-  .storybook-3d {
-    right: 3%;
-    bottom: 18%;
-    width: clamp(150px, 26vw, 220px);
-    height: clamp(108px, 19vw, 160px);
-    opacity: 0.52;
+@media (max-width: 1023px) {
+  .lock-main {
+    align-content: start;
+    overflow-y: auto;
+  }
+
+  .qr-panel {
+    display: none;
   }
 }
 
 @media (max-width: 767px) {
+  .lock-header {
+    min-height: 76px;
+  }
+
   .welcome-panel {
-    padding: 1.15rem;
-    border-radius: 24px;
-  }
-
-  .ai-core-wrap {
-    display: none;
-  }
-
-  .storybook-3d {
-    right: -1.5rem;
-    bottom: 28%;
-    width: 150px;
-    height: 110px;
-    opacity: 0.42;
-  }
-
-  .storybook-3d.storybook-3d--qr {
-    right: auto;
-    bottom: auto;
-    width: min(170px, 68%);
-    height: 112px;
-    margin: -0.15rem auto 0.45rem;
-    opacity: 1;
+    padding: 1.35rem;
+    border-radius: 26px;
   }
 }
 
-@media (max-height: 760px) and (min-width: 1024px) {
+@media (max-height: 820px) and (min-width: 1024px) {
+  .lock-header {
+    min-height: 74px;
+  }
+
+  .lock-main {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .welcome-panel {
+    padding: 2rem 2.5rem;
+  }
+
   .qr-panel {
-    transform: scale(0.88);
+    padding: 1.15rem;
+  }
+
+  .qr-frame {
+    margin-top: 0.75rem;
+  }
+
+  .qr-frame canvas {
+    max-width: 210px;
+  }
+
+  .storybook-3d {
+    width: 116px;
+    height: 106px;
+    flex-basis: 116px;
+  }
+}
+
+/* Reference-matched playful lock screen */
+.smart-lock-screen {
+  background:
+    linear-gradient(180deg, rgb(193 232 255 / 0.18), rgb(255 255 255 / 0.02)),
+    var(--lock-bg-mobile) center / cover no-repeat,
+    #cbefff;
+}
+
+.smart-lock-screen::after {
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.08), transparent 42%);
+}
+
+.lock-bg-layer {
+  background: radial-gradient(circle at 50% 20%, rgb(255 255 255 / 0.3), transparent 52%);
+  opacity: 1;
+}
+
+.lock-header {
+  min-height: 110px;
+  border: 1px solid rgb(255 255 255 / 0.92);
+  border-radius: 0 0 10px 10px;
+  background: rgb(255 255 255 / 0.93);
+  box-shadow: 0 10px 30px -22px rgb(37 84 145 / 0.35);
+  backdrop-filter: blur(22px) saturate(135%);
+}
+
+.unlock-button {
+  height: 62px;
+  padding: 0 25px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0b5fea, #2378ff);
+  box-shadow: 0 16px 30px -14px rgb(25 105 241 / 0.65);
+}
+
+.lock-main {
+  min-height: 0;
+  align-items: stretch;
+}
+
+.welcome-panel {
+  min-height: 0;
+  border: 2px solid rgb(255 255 255 / 0.95);
+  border-radius: 42px 110px 36px 36px;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(239 249 255 / 0.94) 0%,
+      rgb(239 249 255 / 0.66) 39%,
+      transparent 62%
+    ),
+    var(--hero-students) center / cover no-repeat;
+  box-shadow:
+    0 28px 70px -38px rgb(38 91 146 / 0.42),
+    inset 0 0 0 1px rgb(255 255 255 / 0.5);
+  padding: clamp(2rem, 4vw, 3.6rem);
+  padding-bottom: 130px;
+  backdrop-filter: none;
+}
+
+.knowledge-badge {
+  z-index: 4;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffe78d, #ffc83d);
+  box-shadow: 0 12px 22px -14px rgb(192 125 15 / 0.65);
+  padding: 10px 17px;
+  color: #e36f21;
+}
+
+.hero-title {
+  z-index: 4;
+  font-size: clamp(2.5rem, 4.25vw, 4.65rem);
+  filter: drop-shadow(0 7px 0 rgb(255 255 255 / 0.92))
+    drop-shadow(0 10px 7px rgb(49 103 174 / 0.18));
+}
+
+.hero-title-blue {
+  background: linear-gradient(180deg, #68aeff, #2773e5 82%);
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.8);
+}
+
+.hero-title-coral {
+  margin-right: 0.12em;
+  background: linear-gradient(180deg, #ff794d, #f04420 82%);
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.8);
+}
+
+.hero-title-ink {
+  color: #142240;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.76);
+}
+
+.hero-copy {
+  z-index: 4;
+  letter-spacing: -0.015em;
+  text-shadow: 0 1px 4px rgb(255 255 255 / 0.95);
+}
+
+.hero-sparkle {
+  position: absolute;
+  z-index: 3;
+  color: white;
+  font-size: 2rem;
+  filter: drop-shadow(0 4px 4px rgb(80 131 186 / 0.18));
+  animation: sparkle-pulse 2.6s ease-in-out infinite;
+}
+
+.hero-sparkle--one {
+  top: 8%;
+  left: 58%;
+}
+
+.hero-sparkle--two {
+  top: 34%;
+  right: 5%;
+  font-size: 1.2rem;
+  animation-delay: -1.2s;
+}
+
+.hero-paper-plane {
+  position: absolute;
+  z-index: 3;
+  top: 29%;
+  left: 67%;
+  color: #ffc334;
+  font-size: 3rem;
+  text-shadow: 0 5px 8px rgb(194 119 3 / 0.18);
+  transform: rotate(-26deg);
+}
+
+.hero-book {
+  top: 5%;
+  right: 5%;
+  z-index: 5;
+  width: clamp(150px, 14vw, 205px);
+  height: clamp(135px, 13vw, 185px);
+  flex-basis: auto;
+}
+
+.hero-cta {
+  left: 50%;
+  bottom: 104px;
+  min-width: 292px;
+  height: 66px;
+  justify-content: center;
+  border: 2px solid rgb(255 255 255 / 0.72);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff4e78, #ff6f86);
+  box-shadow:
+    0 18px 35px -14px rgb(244 56 101 / 0.68),
+    inset 0 2px 0 rgb(255 255 255 / 0.3);
+  transform: translateX(-50%);
+}
+
+.hero-cta:hover {
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.hero-stats {
+  padding: 16px clamp(1rem, 5vw, 9rem) 22px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgb(255 241 222 / 0.78) 32%,
+    rgb(255 236 215 / 0.92)
+  );
+}
+
+.hero-stat-card {
+  min-height: 78px;
+  border: 1px solid rgb(255 255 255 / 0.86);
+  border-radius: 28px;
+  background: rgb(255 255 255 / 0.84);
+  box-shadow: 0 16px 32px -24px rgb(74 87 111 / 0.42);
+  padding: 12px 16px;
+  backdrop-filter: blur(12px);
+}
+
+.hero-stat-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border-radius: 15px;
+  color: white;
+}
+
+.hero-stat-icon--purple {
+  background: linear-gradient(145deg, #9d70ff, #6842e9);
+  box-shadow: 0 8px 16px -8px rgb(104 66 233 / 0.7);
+}
+
+.hero-stat-icon--green {
+  background: linear-gradient(145deg, #68e89c, #20b96c);
+  box-shadow: 0 8px 16px -8px rgb(32 185 108 / 0.7);
+}
+
+.qr-panel {
+  min-height: 0;
+  border: 2px solid rgb(255 255 255 / 0.96);
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.88), rgb(245 255 247 / 0.8));
+  box-shadow:
+    0 28px 70px -38px rgb(38 91 146 / 0.42),
+    inset 0 1px 0 white;
+  backdrop-filter: blur(22px) saturate(125%);
+}
+
+.qr-panel::before {
+  top: auto;
+  right: -15%;
+  bottom: -15%;
+  width: 130%;
+  height: 38%;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(180deg, rgb(205 249 188 / 0.4), rgb(118 211 88 / 0.55));
+}
+
+.connect-card {
+  min-height: 128px;
+  border-radius: 27px;
+  background: rgb(255 255 255 / 0.85);
+  box-shadow: 0 18px 40px -28px rgb(45 61 99 / 0.42);
+  padding: 35px 18px 16px;
+}
+
+.connect-card h2 span {
+  background: linear-gradient(90deg, #286bdc, #ff941b 70%);
+  background-clip: text;
+  color: transparent;
+}
+
+.connect-ribbon {
+  top: -10px;
+  left: -8px;
+  padding: 9px 20px;
+  border-radius: 7px 7px 4px 4px;
+  background: linear-gradient(180deg, #ff5b6d, #ee344d);
+  box-shadow: 0 8px 14px -8px rgb(213 35 65 / 0.72);
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transform: rotate(-4deg);
+}
+
+.closed-book {
+  position: relative;
+  width: 86px;
+  height: 90px;
+  flex: 0 0 86px;
+  filter: drop-shadow(0 10px 8px rgb(30 62 118 / 0.18));
+}
+
+.closed-book__blue,
+.closed-book__red {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.closed-book__blue {
+  left: 0;
+  width: 53%;
+  border-radius: 11px 2px 2px 11px;
+  background: linear-gradient(150deg, #569bea, #2464cc);
+}
+
+.closed-book__blue::after {
+  position: absolute;
+  top: 29%;
+  left: 18%;
+  width: 64%;
+  height: 24%;
+  border-top: 4px solid rgb(255 255 255 / 0.84);
+  border-bottom: 4px solid rgb(255 255 255 / 0.84);
+  content: '';
+  transform: skewY(-7deg);
+}
+
+.closed-book__red {
+  right: 0;
+  display: grid;
+  width: 49%;
+  place-items: center;
+  border-radius: 2px 11px 11px 2px;
+  background: linear-gradient(145deg, #ff5c4d, #e22532);
+  color: white;
+  font-size: 7px;
+  font-weight: 900;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.qr-frame {
+  aspect-ratio: 1 / 1;
+  box-shadow:
+    0 22px 45px -30px rgb(27 49 93 / 0.48),
+    0 0 0 1px rgb(227 233 242 / 0.85);
+}
+
+.qr-frame canvas {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.url-chip {
+  border-radius: 999px;
+  background: rgb(214 247 224 / 0.72);
+  padding: 7px 14px;
+}
+
+.scan-help {
+  width: fit-content;
+  min-width: 250px;
+  border-radius: 24px;
+  background: rgb(255 255 255 / 0.62);
+  padding: 10px 18px;
+  backdrop-filter: blur(10px);
+}
+
+.scan-help__icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #437de3, #2459bd);
+  color: white;
+}
+
+.school-illustration {
+  right: 50%;
+  bottom: 4px;
+  z-index: 2;
+  width: 82px;
+  max-height: 96px;
+  object-fit: contain;
+  transform: translateX(50%);
+  filter: drop-shadow(0 8px 8px rgb(72 113 94 / 0.18));
+}
+
+.lock-footer {
+  min-height: 59px;
+  border: 1px solid rgb(255 255 255 / 0.94);
+  border-radius: 12px 12px 0 0;
+  background: rgb(255 255 255 / 0.94);
+  backdrop-filter: blur(18px);
+}
+
+@keyframes sparkle-pulse {
+  50% {
+    opacity: 0.45;
+    transform: scale(0.72) rotate(20deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .smart-lock-screen {
+    background:
+      linear-gradient(180deg, rgb(193 232 255 / 0.12), rgb(255 255 255 / 0.02)),
+      var(--lock-bg-desktop) center top / cover no-repeat,
+      #cbefff;
+  }
+}
+
+@media (max-width: 1023px) {
+  .lock-main {
+    overflow-y: auto;
+  }
+
+  .welcome-panel {
+    min-height: 670px;
+    border-radius: 34px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.25rem);
+  }
+
+  .hero-book {
+    right: 3%;
+  }
+
+  .qr-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .lock-header {
+    min-height: 78px;
+  }
+
+  .unlock-button {
+    width: 46px;
+    height: 46px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .welcome-panel {
+    min-height: 650px;
+    padding: 1.35rem;
+    padding-bottom: 168px;
+    background:
+      linear-gradient(
+        180deg,
+        rgb(239 249 255 / 0.96),
+        rgb(239 249 255 / 0.52) 45%,
+        transparent 72%
+      ),
+      var(--hero-students) 58% center / cover no-repeat;
+  }
+
+  .hero-title {
+    font-size: clamp(2.35rem, 12vw, 3.5rem);
+  }
+
+  .hero-copy {
+    max-width: 90%;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .hero-book,
+  .hero-paper-plane {
+    display: none;
+  }
+
+  .hero-cta {
+    bottom: 139px;
+    min-width: 250px;
+    height: 56px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 10px 12px 12px;
+  }
+
+  .hero-stat-card {
+    min-height: 58px;
+    border-radius: 20px;
+    padding: 7px 12px;
+  }
+
+  .hero-stat-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .lock-footer {
+    min-height: 42px;
+    justify-content: center;
+  }
+}
+
+@media (max-height: 820px) and (min-width: 1024px) {
+  .lock-header {
+    min-height: 78px;
+  }
+
+  .lock-main {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .welcome-panel {
+    padding: 2rem 2.4rem 112px;
+  }
+
+  .hero-title {
+    margin-top: 0.85rem;
+    font-size: clamp(2.4rem, 4vw, 3.85rem);
+  }
+
+  .hero-copy {
+    margin-top: 1rem;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .hero-book {
+    width: 135px;
+    height: 125px;
+  }
+
+  .hero-cta {
+    bottom: 91px;
+    height: 56px;
+  }
+
+  .hero-stats {
+    padding-bottom: 12px;
+  }
+
+  .hero-stat-card {
+    min-height: 64px;
+  }
+
+  .qr-panel {
+    display: block;
+    padding: 14px;
+  }
+
+  .connect-card {
+    min-height: 105px;
+    padding-top: 26px;
+  }
+
+  .closed-book {
+    width: 66px;
+    height: 70px;
+    flex-basis: 66px;
+  }
+
+  .qr-frame {
+    width: min(210px, 100%);
+  }
+
+  .school-illustration {
+    display: none;
+  }
+
+  .lock-footer {
+    min-height: 42px;
   }
 }
 </style>
