@@ -194,24 +194,6 @@ onBeforeUnmount(() => {
       <div class="smart-grid-plane pointer-events-none absolute inset-0" />
       <div class="smart-scan-beam pointer-events-none absolute inset-y-0 w-1/3" />
 
-      <div class="storybook-3d pointer-events-none absolute" aria-hidden="true">
-        <div class="storybook-3d__shadow" />
-        <div class="storybook-3d__scene">
-          <div class="storybook-3d__book">
-            <span class="storybook-3d__cover storybook-3d__cover--left">
-              <span class="storybook-3d__lines" />
-            </span>
-            <span class="storybook-3d__cover storybook-3d__cover--right">
-              <span class="storybook-3d__star" />
-              <span class="storybook-3d__title">Thư viện số</span>
-            </span>
-            <span class="storybook-3d__pages storybook-3d__pages--left" />
-            <span class="storybook-3d__pages storybook-3d__pages--right" />
-            <span class="storybook-3d__spine" />
-          </div>
-        </div>
-      </div>
-
       <header
         class="relative z-20 flex items-center justify-between gap-4 border-b border-white/45 bg-white/42 px-5 py-4 text-ink-950 shadow-[0_18px_60px_-45px_rgba(24,32,51,.45)] backdrop-blur-xl sm:px-8 lg:px-12"
       >
@@ -300,6 +282,24 @@ onBeforeUnmount(() => {
           class="qr-panel relative mx-auto w-full max-w-sm overflow-hidden rounded-[30px] border border-white/80 bg-white/82 p-5 text-ink-950 shadow-[0_34px_100px_-45px_rgba(24,32,51,.45)] backdrop-blur-2xl sm:p-6 lg:w-[360px]"
           aria-label="Mã QR truy cập thư viện"
         >
+          <div class="storybook-3d storybook-3d--qr pointer-events-none relative" aria-hidden="true">
+            <div class="storybook-3d__shadow" />
+            <div class="storybook-3d__scene">
+              <div class="storybook-3d__book">
+                <span class="storybook-3d__cover storybook-3d__cover--left">
+                  <span class="storybook-3d__lines" />
+                </span>
+                <span class="storybook-3d__cover storybook-3d__cover--right">
+                  <span class="storybook-3d__star" />
+                  <span class="storybook-3d__title">Thư viện số</span>
+                </span>
+                <span class="storybook-3d__pages storybook-3d__pages--left" />
+                <span class="storybook-3d__pages storybook-3d__pages--right" />
+                <span class="storybook-3d__spine" />
+              </div>
+            </div>
+          </div>
+
           <div class="relative flex items-center justify-between gap-3">
             <div>
               <p class="text-[10px] font-black uppercase tracking-[0.18em] text-red-500/75">
@@ -426,6 +426,16 @@ onBeforeUnmount(() => {
   height: clamp(130px, 15vw, 220px);
   opacity: 0.9;
   perspective: 900px;
+}
+
+.storybook-3d.storybook-3d--qr {
+  right: auto;
+  bottom: auto;
+  z-index: 1;
+  width: min(230px, 74%);
+  height: 150px;
+  margin: -0.25rem auto 0.85rem;
+  opacity: 1;
 }
 
 .storybook-3d__scene {
@@ -780,6 +790,15 @@ onBeforeUnmount(() => {
     width: 150px;
     height: 110px;
     opacity: 0.42;
+  }
+
+  .storybook-3d.storybook-3d--qr {
+    right: auto;
+    bottom: auto;
+    width: min(170px, 68%);
+    height: 112px;
+    margin: -0.15rem auto 0.45rem;
+    opacity: 1;
   }
 }
 
