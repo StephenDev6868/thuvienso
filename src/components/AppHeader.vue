@@ -9,7 +9,6 @@ import {
   Menu,
   MessagesSquare,
   Search,
-  Trophy,
   UserRound,
   X,
 } from '@lucide/vue'
@@ -37,11 +36,19 @@ const headerQuery = ref('')
 const navigation: NavigationItem[] = [
   { label: 'Trang chủ', to: { name: 'home', hash: '#top' }, icon: Home, activeRoute: 'home' },
   { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' }, icon: BookOpen },
-  { label: 'Tủ sách 3D', to: { name: 'three-d-library' }, icon: GraduationCap, activeRoute: 'three-d-library' },
+  {
+    label: 'Tủ sách 3D',
+    to: { name: 'three-d-library' },
+    icon: GraduationCap,
+    activeRoute: 'three-d-library',
+  },
   { label: 'Sách nói', to: { name: 'audiobooks' }, icon: Headphones, activeRoute: 'audiobooks' },
-  { label: 'Video Bài giảng', to: { name: 'video-lessons' }, icon: GraduationCap, activeRoute: 'video-lessons' },
-  { label: 'STEM', to: { name: 'home', hash: '#home-3d-library' }, icon: Trophy },
-  { label: 'Hoạt động', to: { name: 'home', hash: '#home-3d-library' }, icon: Trophy },
+  {
+    label: 'Video Bài giảng',
+    to: { name: 'video-lessons' },
+    icon: GraduationCap,
+    activeRoute: 'video-lessons',
+  },
 ]
 
 function submitSearch() {
@@ -73,7 +80,9 @@ function submitSearch() {
           <strong class="block text-[15px] tracking-[-0.02em] text-ink-950 md:text-[18px]">
             THƯ VIỆN SỐ
           </strong>
-          <small class="mt-1.5 block text-[8px] font-extrabold tracking-[0.06em] text-red-500 md:text-[10px]">
+          <small
+            class="mt-1.5 block text-[8px] font-extrabold tracking-[0.06em] text-red-500 md:text-[10px]"
+          >
             TRƯỜNG TIỂU HỌC BÙI THỊ XUÂN
           </small>
         </span>
@@ -85,7 +94,9 @@ function submitSearch() {
           :key="item.label"
           :to="item.to"
           class="focus-ring grid min-w-15 place-items-center gap-1 rounded-2xl px-2 py-2 text-[10px] font-black transition hover:bg-red-50 hover:text-red-500 2xl:min-w-21 2xl:px-3 2xl:text-[11px]"
-          :class="route.name === item.activeRoute ? 'bg-red-50 text-red-500 shadow-sm' : 'text-ink-950'"
+          :class="
+            route.name === item.activeRoute ? 'bg-red-50 text-red-500 shadow-sm' : 'text-ink-950'
+          "
         >
           <component :is="item.icon" :size="22" />
           {{ item.label }}
@@ -145,7 +156,9 @@ function submitSearch() {
           <Bell :size="20" />
         </button>
 
-        <span class="hidden size-11 place-items-center rounded-full bg-[#fff2e8] text-ink-950 md:grid">
+        <span
+          class="hidden size-11 place-items-center rounded-full bg-[#fff2e8] text-ink-950 md:grid"
+        >
           <UserRound :size="21" />
         </span>
 
@@ -172,7 +185,10 @@ function submitSearch() {
         v-if="menuOpen"
         class="mx-3 mt-3 rounded-[24px] border border-red-100 bg-white p-4 shadow-card xl:hidden"
       >
-        <form class="mb-4 flex h-12 items-center rounded-xl bg-red-50 px-4" @submit.prevent="submitSearch">
+        <form
+          class="mb-4 flex h-12 items-center rounded-xl bg-red-50 px-4"
+          @submit.prevent="submitSearch"
+        >
           <Search :size="17" class="text-red-500" />
           <input
             v-model="headerQuery"

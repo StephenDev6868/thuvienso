@@ -83,6 +83,8 @@ let speechRecognition: SpeechRecognitionLike | undefined
 let voiceInputPrefix = ''
 let voiceHasTranscript = false
 let autoSubmitVoiceOnEnd = false
+let preferredSpeechVoice: SpeechSynthesisVoice | undefined
+let preferredEnglishSpeechVoice: SpeechSynthesisVoice | undefined
 
 function scrollToLatest() {
   void nextTick(() => {
@@ -92,18 +94,91 @@ function scrollToLatest() {
   })
 }
 
+function choosePreferredSpeechVoice(languagePrefix = 'vi') {
+  if (!('speechSynthesis' in globalThis)) return undefined
+
+  const voices = globalThis.speechSynthesis.getVoices()
+  if (!voices.length) return undefined
+
+  const normalizedLanguage = languagePrefix.toLowerCase()
+  const qualityHints = [
+    'google',
+    'premium',
+    'enhanced',
+    'natural',
+    'female',
+    'linh',
+    'hoai',
+    'samantha',
+    'ava',
+    'jenny',
+  ]
+  const matchingVoices = voices.filter((voice) =>
+    voice.lang.toLowerCase().startsWith(normalizedLanguage),
+  )
+  const candidates = matchingVoices.length ? matchingVoices : voices
+
+  return candidates
+    .map((voice) => {
+      const searchable = `${voice.name} ${voice.lang}`.toLowerCase()
+      const voiceLanguage = voice.lang.toLowerCase()
+      const score =
+        (voiceLanguage === `${normalizedLanguage}-${normalizedLanguage === 'vi' ? 'vn' : 'us'}`
+          ? 100
+          : 0) +
+        (voiceLanguage.startsWith(normalizedLanguage) ? 60 : 0) +
+        qualityHints.reduce((total, hint) => total + (searchable.includes(hint) ? 12 : 0), 0) +
+        (voice.localService ? 4 : 0)
+      return { voice, score }
+    })
+    .sort((left, right) => right.score - left.score)[0]?.voice
+}
+
+function refreshPreferredSpeechVoice() {
+  preferredSpeechVoice = choosePreferredSpeechVoice('vi')
+  preferredEnglishSpeechVoice = choosePreferredSpeechVoice('en')
+}
+
+function splitSpeechText(text: string) {
+  const englishTermPattern =
+    /\b(?:AI|API|STEM|STEAM|PDF|DOCX|PPTX|MP3|MP4|YouTube|Google|Chrome|Edge|English|Scratch|Robot(?:ics)?|video|audio|ebook)\b/gi
+  const segments: Array<{ text: string; lang: 'vi-VN' | 'en-US' }> = []
+  let cursor = 0
+
+  for (const match of text.matchAll(englishTermPattern)) {
+    const matchText = match[0] ?? ''
+    const matchIndex = match.index ?? 0
+    if (matchIndex > cursor) {
+      segments.push({ text: text.slice(cursor, matchIndex), lang: 'vi-VN' })
+    }
+    segments.push({ text: matchText, lang: 'en-US' })
+    cursor = matchIndex + matchText.length
+  }
+
+  if (cursor < text.length) segments.push({ text: text.slice(cursor), lang: 'vi-VN' })
+  return segments.filter((segment) => segment.text.trim())
+}
+
+function createSpeechUtterance(text: string, lang: 'vi-VN' | 'en-US') {
+  const utterance = new globalThis.SpeechSynthesisUtterance(text)
+  const voice = lang === 'en-US' ? preferredEnglishSpeechVoice : preferredSpeechVoice
+  utterance.lang = voice?.lang || lang
+  utterance.rate = lang === 'en-US' ? 1.09 : 1.16
+  utterance.pitch = lang === 'en-US' ? 1.09 : 1.16
+  utterance.volume = 0.95
+  if (voice) utterance.voice = voice
+  return utterance
+}
+
 function speak(text: string) {
   if (!soundEnabled.value || !('speechSynthesis' in globalThis)) return
 
+  preferredSpeechVoice ??= choosePreferredSpeechVoice('vi')
+  preferredEnglishSpeechVoice ??= choosePreferredSpeechVoice('en')
   globalThis.speechSynthesis.cancel()
-  const utterance = new globalThis.SpeechSynthesisUtterance(text)
-  utterance.lang = 'vi-VN'
-  utterance.rate = 0.95
-  const vietnameseVoice = globalThis.speechSynthesis
-    .getVoices()
-    .find((voice) => voice.lang.toLowerCase().startsWith('vi'))
-  if (vietnameseVoice) utterance.voice = vietnameseVoice
-  globalThis.speechSynthesis.speak(utterance)
+  splitSpeechText(text).forEach((segment) => {
+    globalThis.speechSynthesis.speak(createSpeechUtterance(segment.text, segment.lang))
+  })
 }
 
 function sendMessage(content = input.value) {
@@ -126,6 +201,7 @@ function sendMessage(content = input.value) {
     messages.value.push({ id: Date.now() + 1, role: 'assistant', content: reply.content })
     typing.value = false
     scrollToLatest()
+    speak(reply.content)
 
     if (reply.openBookId) {
       openBookTimer = globalThis.setTimeout(() => {
@@ -275,6 +351,10 @@ watch(
 
 onMounted(() => {
   setupSpeechRecognition()
+  refreshPreferredSpeechVoice()
+  if ('speechSynthesis' in globalThis) {
+    globalThis.speechSynthesis.addEventListener('voiceschanged', refreshPreferredSpeechVoice)
+  }
 
   launcherTimer = globalThis.setTimeout(() => {
     launcherVisible.value = true
@@ -293,7 +373,10 @@ onBeforeUnmount(() => {
   autoSubmitVoiceOnEnd = false
   speechRecognition?.abort()
   speechRecognition = undefined
-  if ('speechSynthesis' in globalThis) globalThis.speechSynthesis.cancel()
+  if ('speechSynthesis' in globalThis) {
+    globalThis.speechSynthesis.removeEventListener('voiceschanged', refreshPreferredSpeechVoice)
+    globalThis.speechSynthesis.cancel()
+  }
 })
 </script>
 

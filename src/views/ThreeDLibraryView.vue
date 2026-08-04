@@ -414,8 +414,7 @@ onBeforeUnmount(() => {
               Tủ sách <span class="three-d-title">3D</span>
             </h1>
             <p class="mt-4 max-w-3xl text-sm leading-7 text-slate-600 sm:text-base sm:leading-8">
-              {{ threeDLibraryBookCount }} tài liệu đã được sắp vào từng tủ, từng kệ theo lớp học và
-              mục đích sử dụng. Chọn một tủ, chạm vào gáy sách và bắt đầu đọc ngay.
+              Chọn một tủ, chạm vào gáy sách và bắt đầu đọc ngay.
             </p>
           </div>
 

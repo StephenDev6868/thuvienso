@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, ArrowRight, Pause, Play } from '@lucide/vue'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 
 import slide4Url from '@/assets/images/slide4.gif'
 import slide5Url from '@/assets/images/slide5.gif'
@@ -8,7 +9,7 @@ import slide6Url from '@/assets/images/slide6.gif'
 import slide7Url from '@/assets/images/slide7.gif'
 import { useAppStore } from '@/stores/app'
 
-type HeroAction = 'audio' | 'library'
+type HeroAction = 'audio' | 'chat' | 'guide' | 'library'
 
 interface HeroSlide {
   image: string
@@ -16,6 +17,12 @@ interface HeroSlide {
   buttonLabel: string
   action: HeroAction
   position: string
+  hotspot: {
+    left: string
+    top: string
+    width: string
+    height: string
+  }
 }
 
 const AUTOPLAY_DELAY = 6500
@@ -27,13 +34,15 @@ const slides: HeroSlide[] = [
     buttonLabel: 'Bắt đầu khám phá',
     action: 'library',
     position: 'center',
+    hotspot: { left: '4%', top: '49%', width: '39%', height: '27%' },
   },
   {
     image: slide5Url,
     alt: 'Trợ lý AI thư viện - hỏi nhanh, tìm đúng, học vui',
-    buttonLabel: 'Khám phá kho sách',
-    action: 'library',
+    buttonLabel: 'Trò chuyện với trợ lý AI',
+    action: 'chat',
     position: 'center',
+    hotspot: { left: '10%', top: '51%', width: '32%', height: '22%' },
   },
   {
     image: slide4Url,
@@ -41,17 +50,20 @@ const slides: HeroSlide[] = [
     buttonLabel: 'Nghe sách ngay',
     action: 'audio',
     position: 'center',
+    hotspot: { left: '14%', top: '64%', width: '26%', height: '18%' },
   },
   {
     image: slide7Url,
     alt: 'Giáo viên đồng hành, mở cánh cửa tri thức cùng em',
     buttonLabel: 'Xem hướng dẫn',
-    action: 'library',
+    action: 'guide',
     position: 'center',
+    hotspot: { left: '7%', top: '57%', width: '29%', height: '19%' },
   },
 ]
 
 const appStore = useAppStore()
+const router = useRouter()
 const activeIndex = ref(0)
 const progressKey = ref(0)
 const manuallyPaused = ref(false)
@@ -117,10 +129,23 @@ function handlePointerUp(event: PointerEvent) {
 }
 
 function runSlideAction(action: HeroAction) {
-  if (action === 'audio') appStore.searchBooks('truyện')
-  else appStore.searchBooks('')
+  if (action === 'audio') {
+    void router.push({ name: 'audiobooks' })
+    return
+  }
 
-  globalThis.document.querySelector('#featured-books')?.scrollIntoView({ behavior: 'smooth' })
+  if (action === 'chat') {
+    appStore.openChat()
+    return
+  }
+
+  if (action === 'guide') {
+    appStore.searchBooks('hướng dẫn')
+    void router.push({ name: 'home', hash: '#featured-books' })
+    return
+  }
+
+  void router.push({ name: 'three-d-library' })
 }
 
 watch(isPaused, (paused) => {
@@ -173,21 +198,35 @@ onBeforeUnmount(clearAutoplay)
         />
         <div class="hero-slide__wash" />
 
-        <!-- <button
+        <button
           type="button"
-          class="hero-slide__cta"
+          class="hero-slide__hotspot"
+          :style="{
+            left: activeSlide.hotspot.left,
+            top: activeSlide.hotspot.top,
+            width: activeSlide.hotspot.width,
+            height: activeSlide.hotspot.height,
+          }"
+          :aria-label="activeSlide.buttonLabel"
           @click="runSlideAction(activeSlide.action)"
-        >
-          {{ activeSlide.buttonLabel }}
-          <ArrowRight :size="17" />
-        </button> -->
+        />
       </article>
     </Transition>
 
-    <button type="button" class="hero-control hero-control--prev" aria-label="Slide trước" @click="previousSlide">
+    <button
+      type="button"
+      class="hero-control hero-control--prev"
+      aria-label="Slide trước"
+      @click="previousSlide"
+    >
       <ArrowLeft :size="18" />
     </button>
-    <button type="button" class="hero-control hero-control--next" aria-label="Slide tiếp theo" @click="nextSlide">
+    <button
+      type="button"
+      class="hero-control hero-control--next"
+      aria-label="Slide tiếp theo"
+      @click="nextSlide"
+    >
       <ArrowRight :size="18" />
     </button>
 
@@ -257,25 +296,18 @@ onBeforeUnmount(clearAutoplay)
     linear-gradient(180deg, rgb(255 255 255 / 0.03), rgb(255 255 255 / 0.16));
 }
 
-.hero-slide__cta {
+.hero-slide__hotspot {
   position: absolute;
-  left: clamp(28px, 8vw, 128px);
-  bottom: clamp(28px, 9vw, 44px);
   z-index: 3;
-  display: inline-flex;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
   border: 0;
   border-radius: 999px;
-  padding: 0 24px;
-  color: white;
-  background: linear-gradient(180deg, #ff6c7c, #e93245);
-  box-shadow: 0 14px 24px -16px rgb(223 33 51 / 0.8);
+  background: transparent;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 900;
+}
+
+.hero-slide__hotspot:focus-visible {
+  outline: 3px solid rgb(239 68 68 / 0.9);
+  outline-offset: 4px;
 }
 
 .hero-control,
@@ -392,14 +424,6 @@ onBeforeUnmount(clearAutoplay)
 
   .hero-slide__image {
     object-position: center;
-  }
-
-  .hero-slide__cta {
-    left: 28px;
-    bottom: 32px;
-    height: 44px;
-    padding: 0 20px;
-    font-size: 12px;
   }
 
   .hero-control {
