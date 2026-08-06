@@ -11,6 +11,7 @@ const groups = [
     links: [
       { label: 'Kho sách', to: { name: 'home', hash: '#featured-books' } },
       { label: 'Tủ sách 3D', to: { name: 'three-d-library' } },
+      { label: 'Bản đồ 3D', to: { name: 'vietnam-3d-map' } },
       { label: 'Sách nói', to: { name: 'home', hash: '#quick-access' } },
       { label: 'Học liệu STEM', to: { name: 'home', hash: '#stem-videos' } },
     ],

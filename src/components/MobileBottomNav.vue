@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BookOpen, Heart, Home, LibraryBig, UserRound } from '@lucide/vue'
+import { BookOpen, Heart, Home, LibraryBig, MapPinned } from '@lucide/vue'
 import { RouterLink, useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -13,8 +13,13 @@ const items = [
     icon: LibraryBig,
     active: 'three-d-library',
   },
-  { label: 'Video bài giảng', to: { name: 'video-lessons' }, icon: Heart, active: 'video-lessons' },
-  { label: 'Cá nhân', to: { name: 'home', hash: '#featured-books' }, icon: UserRound },
+  {
+    label: 'Bản đồ 3D',
+    to: { name: 'vietnam-3d-map' },
+    icon: MapPinned,
+    active: 'vietnam-3d-map',
+  },
+  { label: 'Video', to: { name: 'video-lessons' }, icon: Heart, active: 'video-lessons' },
 ]
 </script>
 

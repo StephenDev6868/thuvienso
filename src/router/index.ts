@@ -24,6 +24,12 @@ const router = createRouter({
           meta: { title: 'Tủ sách 3D' },
         },
         {
+          path: 'ban-do-3d',
+          name: 'vietnam-3d-map',
+          component: () => import('@/views/Vietnam3DMapView.vue'),
+          meta: { title: 'Bản đồ 3D Việt Nam' },
+        },
+        {
           path: 'sach-noi',
           name: 'audiobooks',
           component: () => import('@/views/MediaLibraryView.vue'),

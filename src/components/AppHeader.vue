@@ -6,6 +6,7 @@ import {
   Headphones,
   Home,
   LockKeyhole,
+  MapPinned,
   Menu,
   MessagesSquare,
   Search,
@@ -41,6 +42,12 @@ const navigation: NavigationItem[] = [
     to: { name: 'three-d-library' },
     icon: GraduationCap,
     activeRoute: 'three-d-library',
+  },
+  {
+    label: 'Bản đồ 3D',
+    to: { name: 'vietnam-3d-map' },
+    icon: MapPinned,
+    activeRoute: 'vietnam-3d-map',
   },
   { label: 'Sách nói', to: { name: 'audiobooks' }, icon: Headphones, activeRoute: 'audiobooks' },
   {
