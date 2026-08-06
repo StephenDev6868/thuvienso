@@ -20,7 +20,7 @@ const items = [
 
 <template>
   <nav
-    class="fixed inset-x-3 bottom-3 z-50 hidden rounded-[26px] border border-red-100 bg-white/94 px-2 pb-2 pt-2 shadow-[0_18px_50px_-22px_rgba(24,32,51,.45)] backdrop-blur-xl max-[1100px]:block"
+    class="mobile-bottom-nav fixed inset-x-3 z-50 rounded-[26px] border border-red-100 bg-white/94 px-2 pt-2 shadow-[0_18px_50px_-22px_rgba(24,32,51,.45)] backdrop-blur-xl"
     aria-label="Điều hướng chính trên mobile và iPad"
   >
     <div class="grid grid-cols-5 items-end gap-1">
@@ -54,3 +54,17 @@ const items = [
     </div>
   </nav>
 </template>
+
+<style scoped>
+.mobile-bottom-nav {
+  bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  display: none;
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 1279px), (hover: none) and (pointer: coarse) {
+  .mobile-bottom-nav {
+    display: block;
+  }
+}
+</style>

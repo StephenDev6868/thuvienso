@@ -16,7 +16,7 @@ const appStore = useAppStore()
 </script>
 
 <template>
-  <div class="min-h-screen pb-24 min-[1101px]:pb-0">
+  <div class="app-layout min-h-screen">
     <AppHeader />
     <RouterView />
     <AiChatWidget />
@@ -58,3 +58,15 @@ const appStore = useAppStore()
     />
   </div>
 </template>
+
+<style scoped>
+.app-layout {
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1280px) and (hover: hover) and (pointer: fine) {
+  .app-layout {
+    padding-bottom: 0;
+  }
+}
+</style>

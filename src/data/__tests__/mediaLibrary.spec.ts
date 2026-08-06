@@ -34,5 +34,7 @@ describe('digitized media library', () => {
     expect(searchAudiobooks('rua va tho')[0]?.title).toContain('Rùa và Thỏ')
     expect(searchVideos('cau be ham hoc lop 2')[0]?.title).toContain('Cậu bé ham học')
     expect(searchVideos('phat am bai 1 chu a lop 1')[0]?.id).toBe('video-bai-1-a-a')
+    expect(searchVideos('danh van chu a lop 1')[0]?.title).toBe('Đánh vần chữ A')
+    expect(searchVideos('danh van ph qu')[0]?.id).toBe('video-bai-26-ph-ph-qu-qu')
   })
 })

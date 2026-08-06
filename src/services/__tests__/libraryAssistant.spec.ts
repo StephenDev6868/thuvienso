@@ -121,6 +121,15 @@ describe('local library assistant', () => {
 
     expect(reply.routeName).toBe('video-lessons')
     expect(reply.playMediaId).toBe('video-bai-1-a-a')
+    expect(reply.content).toContain('Đánh vần chữ A')
+  })
+
+  it('opens a renamed spelling video from the chatbox', () => {
+    const reply = getLibraryAssistantReply('Mở video đánh vần Ph Qu')
+
+    expect(reply.routeName).toBe('video-lessons')
+    expect(reply.playMediaId).toBe('video-bai-26-ph-ph-qu-qu')
+    expect(reply.content).toContain('Đánh vần Ph Qu')
   })
 
   it('describes all three newly digitized catalogs', () => {
