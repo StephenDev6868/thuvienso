@@ -93,8 +93,8 @@ export const vietnamProvinceFeatures: VietnamProvinceFeature[] = [
     name: 'Đà Nẵng',
     region: 'Nam Trung Bộ',
     capital: 'Đà Nẵng',
-    x: 58,
-    y: 48,
+    x: 50.5,
+    y: 46.5,
     color: '#0ea5e9',
     history:
       'Thành phố trẻ năng động, gắn với thương cảng miền Trung và tuyến di sản Huế - Hội An - Mỹ Sơn.',
