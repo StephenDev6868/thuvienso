@@ -12,6 +12,7 @@ import {
   Trees,
   Trophy,
   Waves,
+  X,
 } from '@lucide/vue'
 import { computed, nextTick, ref, watch, type Component } from 'vue'
 
@@ -31,6 +32,7 @@ import vietnamFlagUrl from '@/assets/images/maps/vietnam-flag-wave-3d.png'
 import vietnamMapSvg from '@/assets/images/maps/vietnam-34-accurate-3d.svg?raw'
 
 const activePlace = ref<VietnamProvinceFeature>(vietnamProvinceFeatures[0]!)
+const provincePopupOpen = ref(false)
 const mapVectorRef = ref<HTMLElement | null>(null)
 const featuredHotspotIds = new Set(['ha-noi', 'ho-chi-minh', 'da-nang'])
 const hotspotPriorityLayers = new Map([
@@ -152,6 +154,11 @@ watch(
 
 function selectPlace(place: VietnamProvinceFeature) {
   activePlace.value = place
+  provincePopupOpen.value = true
+}
+
+function closeProvincePopup() {
+  provincePopupOpen.value = false
 }
 
 function mapX(place: VietnamProvinceFeature) {
@@ -439,6 +446,100 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
           >
             Ranh giới tham chiếu: Ahfosh, CC BY 4.0
           </a>
+
+          <div
+            v-if="provincePopupOpen"
+            class="province-popover-backdrop"
+            aria-hidden="true"
+            @click="closeProvincePopup"
+          />
+          <aside
+            v-if="provincePopupOpen"
+            class="province-popover"
+            aria-live="polite"
+            aria-label="Thông tin tỉnh, thành phố"
+          >
+            <button
+              type="button"
+              class="province-popover__close"
+              aria-label="Đóng thông tin tỉnh, thành phố"
+              @click="closeProvincePopup"
+            >
+              <X :size="20" />
+            </button>
+
+            <div class="province-badge" :style="{ '--badge-color': activePlace.color }">
+              <Sparkles :size="18" />
+              {{ activePlace.parentAdministrativeUnit ?? activePlace.region }}
+            </div>
+            <h2>{{ activePlace.name }}</h2>
+            <p class="province-highlight">{{ activePlace.highlight }}</p>
+
+            <div class="province-facts">
+              <article>
+                <strong>Lịch sử</strong>
+                <p>{{ activePlace.history }}</p>
+              </article>
+              <article>
+                <strong>Địa lý</strong>
+                <p>{{ activePlace.geography }}</p>
+                <a
+                  v-if="activePlace.officialSourceUrl"
+                  class="administrative-source"
+                  :href="activePlace.officialSourceUrl"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Xem nguồn hành chính
+                </a>
+              </article>
+              <article>
+                <strong>Du lịch</strong>
+                <div v-if="activeTourismDetails.length" class="real-tourism-gallery">
+                  <a
+                    v-for="spot in activeTourismDetails"
+                    :key="spot.name"
+                    class="real-tourism-card"
+                    :href="tourismSourceUrl(spot)"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      v-if="tourismImageUrl(spot)"
+                      :src="tourismImageUrl(spot)"
+                      :alt="spot.name"
+                      loading="lazy"
+                    />
+                    <span v-else class="tourism-image-loading" aria-hidden="true">
+                      <MapPinned :size="30" />
+                    </span>
+                    <span class="real-tourism-info">
+                      <em>{{ spot.category }}</em>
+                      <strong>{{ spot.name }}</strong>
+                      <small>{{ spot.description }}</small>
+                    </span>
+                  </a>
+                </div>
+                <div v-else class="tourism-gallery">
+                  <figure
+                    v-for="(spot, index) in activePlace.tourism"
+                    :key="spot"
+                    class="tourism-card"
+                    :style="tourismImageStyle(activePlace, spot, index)"
+                  >
+                    <span class="postcard-scene">
+                      <span class="scene-sun" />
+                      <span class="scene-hill scene-hill-a" />
+                      <span class="scene-hill scene-hill-b" />
+                      <span class="scene-water" />
+                      <component :is="spotIcon(spot)" :size="34" />
+                    </span>
+                    <figcaption>{{ spot }}</figcaption>
+                  </figure>
+                </div>
+              </article>
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -676,6 +777,7 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 
 .panel-heading h2,
 .province-panel h2,
+.province-popover h2,
 .featured-strip h2 {
   margin: 0;
   color: #1d2638;
@@ -1438,6 +1540,37 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   backdrop-filter: blur(6px);
 }
 
+.province-popover,
+.province-popover-backdrop {
+  display: none;
+}
+
+.province-popover__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: #eef7ff;
+  color: #1d4f7a;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgb(34 109 184 / 0.08);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.province-popover__close:hover,
+.province-popover__close:focus-visible {
+  background: #dcf0ff;
+  transform: scale(1.05);
+}
+
 @keyframes dragon-signal {
   0%,
   100% {
@@ -1622,7 +1755,8 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   font-weight: 1000;
 }
 
-.province-panel h2 {
+.province-panel h2,
+.province-popover h2 {
   margin-top: 16px;
   font-size: clamp(28px, 3vw, 40px);
   line-height: 1;
@@ -1864,6 +1998,17 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   }
 }
 
+@keyframes province-popover-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .featured-strip {
   max-width: 1240px;
   margin: 28px auto 0;
@@ -1992,7 +2137,58 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   }
 
   .province-panel {
-    position: static;
+    display: none;
+  }
+
+  .province-popover-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 62;
+    display: block;
+    background:
+      radial-gradient(circle at 70% 18%, rgb(255 255 255 / 0.2), transparent 28%),
+      linear-gradient(180deg, rgb(27 107 145 / 0.08), rgb(13 49 77 / 0.3));
+    backdrop-filter: blur(2px);
+  }
+
+  .province-popover {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 70;
+    display: block;
+    width: min(420px, calc(100% - 36px));
+    max-height: calc(100% - 36px);
+    overflow-y: auto;
+    border: 1px solid rgb(255 255 255 / 0.78);
+    border-radius: 26px;
+    background:
+      linear-gradient(145deg, rgb(255 255 255 / 0.98), rgb(242 250 255 / 0.94)),
+      white;
+    padding: 22px;
+    box-shadow:
+      0 34px 80px -36px rgb(13 49 77 / 0.72),
+      inset 0 1px 0 rgb(255 255 255 / 0.92);
+    backdrop-filter: blur(18px);
+    scrollbar-color: rgb(14 165 233 / 0.42) transparent;
+    scrollbar-width: thin;
+    animation: province-popover-in 240ms ease both;
+  }
+
+  .province-popover .province-badge {
+    max-width: calc(100% - 52px);
+  }
+
+  .province-popover .province-facts {
+    gap: 10px;
+  }
+
+  .province-popover .province-facts article {
+    background: rgb(247 251 255 / 0.92);
+  }
+
+  .province-popover .real-tourism-gallery {
+    max-height: 330px;
   }
 
   .featured-list {
@@ -2033,6 +2229,32 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   .map-canvas {
     min-height: 620px;
     border-radius: 28px;
+  }
+
+  .province-popover {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    top: auto;
+    width: auto;
+    max-height: min(78%, 620px);
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .province-popover h2 {
+    padding-right: 48px;
+    font-size: 32px;
+  }
+
+  .province-popover .real-tourism-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+    min-height: 104px;
+  }
+
+  .province-popover .real-tourism-card img,
+  .province-popover .tourism-image-loading {
+    min-height: 104px;
   }
 
   .dragon-bridge-effects {
