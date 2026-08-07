@@ -35,6 +35,14 @@ const activePlace = ref<VietnamProvinceFeature>(vietnamProvinceFeatures[0]!)
 const provincePopupOpen = ref(false)
 const mapVectorRef = ref<HTMLElement | null>(null)
 const featuredHotspotIds = new Set(['ha-noi', 'ho-chi-minh', 'da-nang'])
+const mobileMajorHotspotIds = new Set([
+  'ha-noi',
+  'ho-chi-minh',
+  'da-nang',
+  'hai-phong',
+  'can-tho',
+  'hue',
+])
 const hotspotPriorityLayers = new Map([
   ['ha-noi', 28],
   ['ho-chi-minh', 27],
@@ -238,6 +246,10 @@ function isFeaturedHotspot(place: VietnamProvinceFeature) {
   return featuredHotspotIds.has(place.id)
 }
 
+function isMobileMajorHotspot(place: VietnamProvinceFeature) {
+  return mobileMajorHotspotIds.has(place.id)
+}
+
 function spotKind(spot: string) {
   const normalized = spot.toLowerCase()
   if (
@@ -418,7 +430,11 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
             :key="place.id"
             type="button"
             class="map-hotspot"
-            :class="{ active: activePlace.id === place.id, featured: isFeaturedHotspot(place) }"
+            :class="{
+              active: activePlace.id === place.id,
+              featured: isFeaturedHotspot(place),
+              'mobile-major': isMobileMajorHotspot(place),
+            }"
             :style="mapPositionStyle(place, index)"
             :aria-label="`Khám phá ${place.name}`"
             @click="selectPlace(place)"
@@ -2285,6 +2301,10 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
     height: 38px;
   }
 
+  .map-hotspot:not(.mobile-major) {
+    display: none;
+  }
+
   .map-hotspot strong {
     max-width: none;
     padding: 4px 6px;
@@ -2338,6 +2358,10 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   .map-hotspot {
     width: 34px;
     height: 34px;
+  }
+
+  .map-hotspot:not(.mobile-major) {
+    display: none;
   }
 
   .map-hotspot span {
