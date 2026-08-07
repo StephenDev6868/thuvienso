@@ -132,6 +132,23 @@ describe('local library assistant', () => {
     expect(reply.content).toContain('Đánh vần Ph Qu')
   })
 
+  it('opens the exact spelling video requested from the chatbox', () => {
+    const cases = [
+      ['mở cho tôi video đánh vần chữ O', 'video-bai-6-o-o'],
+      ['mở cho tôi video đánh vần chữ Ô', 'video-bai-7-o-o'],
+      ['mở cho tôi video đánh vần chữ Ơ', 'video-bai-9-o-o'],
+      ['mở cho tôi đánh vần chữ A', 'video-bai-1-a-a'],
+      ['mở cho tôi video đánh vần ui ưi', 'video-bai-41-ui-ui'],
+    ] as const
+
+    for (const [message, id] of cases) {
+      const reply = getLibraryAssistantReply(message)
+
+      expect(reply.routeName).toBe('video-lessons')
+      expect(reply.playMediaId).toBe(id)
+    }
+  })
+
   it('describes all three newly digitized catalogs', () => {
     expect(getLibraryAssistantReply('Kho sách điện tử có gì?').content).toContain('42 cuốn')
     expect(getLibraryAssistantReply('Kho sách nói có gì?').content).toContain('63 nội dung')
