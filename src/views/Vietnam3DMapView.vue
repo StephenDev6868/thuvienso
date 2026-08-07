@@ -4,70 +4,231 @@ import {
   Building2,
   Castle,
   ChevronDown,
-  ChevronRight,
   Compass,
-  Flag,
   HelpCircle,
   Landmark,
   MapPinned,
-  Mountain,
-  Search,
   Sparkles,
   Trees,
   Trophy,
   Waves,
 } from '@lucide/vue'
-import { computed, ref, type Component } from 'vue'
+import { computed, nextTick, ref, watch, type Component } from 'vue'
 
 import {
   featuredVietnamMapPlaces,
-  vietnamMapRegions,
   vietnamProvinceFeatures,
-  type VietnamMapRegion,
   type VietnamProvinceFeature,
+  type VietnamTourismSpot,
 } from '@/data/vietnam3DMap'
-import vietnamMapStageUrl from '@/assets/images/maps/vietnam-3d-generated-map.png'
+import dragonBridgeUrl from '@/assets/images/maps/dragon-bridge-3d-v2.png'
+import hoanKiemTowerUrl from '@/assets/images/maps/hoan-kiem-tower-3d.png'
+import landmark81Url from '@/assets/images/maps/landmark-81-3d.png'
+import fishingVesselUrl from '@/assets/images/maps/vessel-fishing-3d.png'
+import sailVesselUrl from '@/assets/images/maps/vessel-sail-3d.png'
+import tourVesselUrl from '@/assets/images/maps/vessel-tour-3d.png'
+import vietnamFlagUrl from '@/assets/images/maps/vietnam-flag-wave-3d.png'
+import vietnamMapSvg from '@/assets/images/maps/vietnam-34-accurate-3d.svg?raw'
 
-const selectedRegion = ref<VietnamMapRegion>('Tất cả')
-const query = ref('')
 const activePlace = ref<VietnamProvinceFeature>(vietnamProvinceFeatures[0]!)
+const mapVectorRef = ref<HTMLElement | null>(null)
+const featuredHotspotIds = new Set(['ha-noi', 'ho-chi-minh', 'da-nang'])
+const hotspotPriorityLayers = new Map([
+  ['ha-noi', 28],
+  ['ho-chi-minh', 27],
+  ['da-nang', 26],
+  ['hai-phong', 25],
+  ['can-tho', 24],
+  ['hue', 23],
+  ['quang-ninh', 22],
+  ['khanh-hoa', 21],
+  ['dong-nai', 20],
+  ['bac-ninh', 19],
+])
+const oldMapWidth = 1101.8141
+const wideMapWidth = 1400
+const haNoiPlace = vietnamProvinceFeatures.find((place) => place.id === 'ha-noi')!
+const daNangPlace = vietnamProvinceFeatures.find((place) => place.id === 'da-nang')!
+const hoChiMinhPlace = vietnamProvinceFeatures.find((place) => place.id === 'ho-chi-minh')!
+const hoangSaPlace = vietnamProvinceFeatures.find((place) => place.id === 'hoang-sa')!
+const truongSaPlace = vietnamProvinceFeatures.find((place) => place.id === 'truong-sa')!
+const seaVessels = [
+  { id: 'fishing-north', src: fishingVesselUrl, x: 72, y: 24, width: 72, rotation: -7, delay: -0.6, flipped: false },
+  { id: 'sail-central', src: sailVesselUrl, x: 88, y: 37, width: 62, rotation: 4, delay: -1.9, flipped: false },
+  { id: 'tour-da-nang', src: tourVesselUrl, x: 89, y: 51, width: 76, rotation: -5, delay: -1.1, flipped: false },
+  { id: 'fishing-south', src: fishingVesselUrl, x: 92, y: 64, width: 58, rotation: 8, delay: -2.4, flipped: true },
+  { id: 'sail-south', src: sailVesselUrl, x: 76, y: 74, width: 54, rotation: -5, delay: -3.2, flipped: true },
+  { id: 'tour-gulf', src: tourVesselUrl, x: 34, y: 89, width: 64, rotation: 7, delay: -1.6, flipped: true },
+] as const
 
-const filteredPlaces = computed(() => {
-  const normalizedQuery = query.value.trim().toLowerCase()
-
-  return vietnamProvinceFeatures.filter((place) => {
-    const matchesRegion = selectedRegion.value === 'Tất cả' || place.region === selectedRegion.value
-    const matchesQuery =
-      !normalizedQuery ||
-      [place.name, place.region, place.capital, place.highlight].some((value) =>
-        value.toLowerCase().includes(normalizedQuery),
-      )
-
-    return matchesRegion && matchesQuery
-  })
-})
-
-const visiblePins = computed(() => {
-  const visibleIds = new Set(filteredPlaces.value.map((place) => place.id))
-  return vietnamProvinceFeatures.filter((place) => visibleIds.has(place.id))
-})
-
-const regionSummary = computed(() => {
-  if (selectedRegion.value === 'Tất cả') return 'Khám phá toàn quốc'
-  return `${filteredPlaces.value.length} tỉnh/thành thuộc ${selectedRegion.value}`
-})
+const provinceHotspots = computed(() =>
+  vietnamProvinceFeatures.filter((place) => place.kind !== 'archipelago'),
+)
 
 const activeTourismDetails = computed(() => activePlace.value.tourismDetails ?? [])
+const featuredSpotCards = computed(() =>
+  featuredVietnamMapPlaces.map((place) => ({
+    place,
+    spot: place.tourismDetails?.[0],
+  })),
+)
+const tourismMedia = ref<Record<string, { imageUrl: string; sourceUrl: string }>>({})
 
-function selectRegion(region: VietnamMapRegion) {
-  selectedRegion.value = region
-  const firstPlace = filteredPlaces.value[0]
-  if (firstPlace) activePlace.value = firstPlace
+function tourismMediaKey(placeId: string, spot: VietnamTourismSpot) {
+  return `${placeId}:${spot.name}`
 }
+
+function tourismImageUrl(spot: VietnamTourismSpot, placeId = activePlace.value.id) {
+  return spot.imageUrl ?? tourismMedia.value[tourismMediaKey(placeId, spot)]?.imageUrl ?? ''
+}
+
+function tourismSourceUrl(spot: VietnamTourismSpot, placeId = activePlace.value.id) {
+  return tourismMedia.value[tourismMediaKey(placeId, spot)]?.sourceUrl ?? spot.sourceUrl ?? '#'
+}
+
+async function resolveTourismMedia(placeId: string, spot: VietnamTourismSpot) {
+  const key = tourismMediaKey(placeId, spot)
+  if (spot.imageUrl || tourismMedia.value[key] || !spot.imageQuery) return
+
+  const params = new URLSearchParams({
+    action: 'query',
+    generator: 'search',
+    gsrsearch: `${spot.imageQuery} filetype:bitmap`,
+    gsrnamespace: '6',
+    gsrlimit: '1',
+    prop: 'imageinfo',
+    iiprop: 'url',
+    iiurlwidth: '640',
+    format: 'json',
+    origin: '*',
+  })
+
+  try {
+    const response = await fetch(`https://commons.wikimedia.org/w/api.php?${params}`)
+    if (!response.ok) return
+
+    const payload = (await response.json()) as {
+      query?: {
+        pages?: Record<
+          string,
+          {
+            imageinfo?: Array<{ thumburl?: string; url?: string; descriptionurl?: string }>
+          }
+        >
+      }
+    }
+    const page = Object.values(payload.query?.pages ?? {})[0]
+    const image = page?.imageinfo?.[0]
+    const imageUrl = image?.thumburl ?? image?.url
+    if (!imageUrl) return
+
+    tourismMedia.value[key] = {
+      imageUrl,
+      sourceUrl: image?.descriptionurl ?? spot.sourceUrl ?? imageUrl,
+    }
+  } catch {
+    // The source link remains available when Commons is temporarily unreachable.
+  }
+}
+
+watch(
+  activeTourismDetails,
+  (spots) => {
+    const placeId = activePlace.value.id
+    void Promise.all(spots.map((spot) => resolveTourismMedia(placeId, spot)))
+  },
+  { immediate: true },
+)
+
+watch(
+  featuredSpotCards,
+  (cards) => {
+    void Promise.all(
+      cards.flatMap(({ place, spot }) => (spot ? [resolveTourismMedia(place.id, spot)] : [])),
+    )
+  },
+  { immediate: true },
+)
 
 function selectPlace(place: VietnamProvinceFeature) {
   activePlace.value = place
-  selectedRegion.value = place.region
+}
+
+function mapX(place: VietnamProvinceFeature) {
+  if (place.kind === 'archipelago') return place.x
+  return (place.x * oldMapWidth) / wideMapWidth
+}
+
+function mapPositionStyle(place: VietnamProvinceFeature, index = 0) {
+  const labelOffsets = [
+    { x: -24, y: 0 },
+    { x: 24, y: -8 },
+    { x: 0, y: -18 },
+    { x: -38, y: -26 },
+    { x: 38, y: -12 },
+    { x: 0, y: -32 },
+  ]
+  const labelOffset = labelOffsets[index % labelOffsets.length]!
+
+  return {
+    left: `${mapX(place)}%`,
+    top: `${place.y}%`,
+    '--pin-color': place.color,
+    '--label-offset-x': `${labelOffset.x}px`,
+    '--label-offset-y': `${labelOffset.y}px`,
+    '--hotspot-layer': `${hotspotPriorityLayers.get(place.id) ?? 8}`,
+  }
+}
+
+function seaVesselStyle(vessel: (typeof seaVessels)[number]) {
+  return {
+    left: `${vessel.x}%`,
+    top: `${vessel.y}%`,
+    width: `${vessel.width}px`,
+    '--vessel-rotation': `${vessel.rotation}deg`,
+    '--vessel-delay': `${vessel.delay}s`,
+  }
+}
+
+function selectMapTarget(target: EventTarget | null) {
+  if (!(target instanceof Element)) return
+  const interactiveShape = target.closest<SVGElement>('[data-place-id]')
+  const placeId = interactiveShape?.dataset.placeId
+  const place = vietnamProvinceFeatures.find((item) => item.id === placeId)
+  if (place) selectPlace(place)
+}
+
+function handleMapClick(event: MouseEvent) {
+  selectMapTarget(event.target)
+}
+
+function handleMapKeydown(event: KeyboardEvent) {
+  if (event.key !== 'Enter' && event.key !== ' ') return
+  if (!(event.target instanceof Element) || !event.target.closest('[data-place-id]')) return
+  event.preventDefault()
+  selectMapTarget(event.target)
+}
+
+watch(
+  () => activePlace.value.id,
+  async (placeId) => {
+    await nextTick()
+    mapVectorRef.value?.querySelectorAll('.is-active').forEach((item) => {
+      item.classList.remove('is-active')
+    })
+    mapVectorRef.value?.querySelectorAll('.is-featured').forEach((item) => {
+      item.classList.remove('is-featured')
+    })
+    featuredHotspotIds.forEach((id) => {
+      mapVectorRef.value?.querySelector(`[data-place-id="${id}"]`)?.classList.add('is-featured')
+    })
+    mapVectorRef.value?.querySelector(`[data-place-id="${placeId}"]`)?.classList.add('is-active')
+  },
+  { immediate: true },
+)
+
+function isFeaturedHotspot(place: VietnamProvinceFeature) {
+  return featuredHotspotIds.has(place.id)
 }
 
 function spotKind(spot: string) {
@@ -142,7 +303,7 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
         </span>
         <h1>Khám phá Việt Nam</h1>
         <p>
-          Cùng tìm hiểu lịch sử, địa lý và những điểm đến đặc trưng trên khắp mọi miền đất nước.
+          Khám phá dữ liệu 34 tỉnh, thành phố cùng hai đặc khu Hoàng Sa và Trường Sa của Việt Nam.
         </p>
       </div>
 
@@ -163,64 +324,52 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
     </section>
 
     <section class="map-workspace">
-      <aside class="region-panel" aria-label="Chọn vùng miền">
-        <div class="panel-heading">
-          <span>
-            <MapPinned :size="20" />
-          </span>
-          <div>
-            <h2>Chọn vùng miền</h2>
-            <p>{{ regionSummary }}</p>
-          </div>
-        </div>
-
-        <label class="map-search" for="province-search">
-          <Search :size="18" />
-          <input
-            id="province-search"
-            v-model="query"
-            type="search"
-            placeholder="Tìm tỉnh, thành phố..."
-          />
-        </label>
-
-        <div class="region-list">
-          <button
-            v-for="region in vietnamMapRegions"
-            :key="region"
-            type="button"
-            :class="{ active: selectedRegion === region }"
-            @click="selectRegion(region)"
-          >
-            <span class="region-icon">
-              <Mountain v-if="region.includes('Bắc') || region.includes('Tây Nguyên')" :size="24" />
-              <Compass v-else-if="region === 'Tất cả'" :size="24" />
-              <Flag v-else :size="24" />
-            </span>
-            <span>
-              <strong>{{ region }}</strong>
-              <small>
-                {{
-                  region === 'Tất cả'
-                    ? 'Khám phá toàn quốc'
-                    : `${vietnamProvinceFeatures.filter((place) => place.region === region).length} điểm học`
-                }}
-              </small>
-            </span>
-            <ChevronRight :size="18" />
-          </button>
-        </div>
-      </aside>
-
       <section class="map-stage" aria-label="Bản đồ tương tác Việt Nam">
         <div class="map-canvas">
-          <img class="map-stage-image" :src="vietnamMapStageUrl" alt="Bản đồ 3D Việt Nam" />
+          <div
+            ref="mapVectorRef"
+            class="map-vector"
+            @click="handleMapClick"
+            @keydown="handleMapKeydown"
+            v-html="vietnamMapSvg"
+          />
+
+          <button
+            type="button"
+            class="city-landmark city-landmark--hanoi"
+            :class="{ active: activePlace.id === 'ha-noi' }"
+            :style="{ left: `${mapX(haNoiPlace)}%`, top: '16.2%' }"
+            aria-label="Khám phá Hà Nội"
+            @click="selectPlace(haNoiPlace)"
+          >
+            <img
+              class="city-landmark__image city-landmark__image--hanoi"
+              :src="hoanKiemTowerUrl"
+              alt=""
+            />
+          </button>
+
+          <button
+            type="button"
+            class="city-landmark city-landmark--hcm"
+            :class="{ active: activePlace.id === 'ho-chi-minh' }"
+            :style="{ left: `${mapX(hoChiMinhPlace)}%`, top: '82.2%' }"
+            aria-label="Khám phá TP. Hồ Chí Minh"
+            @click="selectPlace(hoChiMinhPlace)"
+          >
+            <img
+              class="city-landmark__image city-landmark__image--hcm"
+              :src="landmark81Url"
+              alt=""
+            />
+          </button>
 
           <div
             class="dragon-bridge-effects"
             :class="{ active: activePlace.id === 'da-nang' }"
-            aria-hidden="true"
+            :style="{ left: `${mapX(daNangPlace)}%`, top: '52.5%' }"
           >
+            <img class="dragon-bridge-landmark" :src="dragonBridgeUrl" alt="" />
             <span class="dragon-fire">
               <i class="fire-plume fire-plume--outer" />
               <i class="fire-plume fire-plume--middle" />
@@ -241,25 +390,62 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
           </div>
 
           <button
-            v-for="place in visiblePins"
+            v-for="island in [hoangSaPlace, truongSaPlace]"
+            :key="`${island.id}-flag`"
+            type="button"
+            class="island-flag"
+            :class="{ active: activePlace.id === island.id }"
+            :style="{ left: `${mapX(island)}%`, top: `${island.y}%` }"
+            :aria-label="`Khám phá ${island.name} của Việt Nam`"
+            @click="selectPlace(island)"
+          >
+            <span class="island-flag__pole" aria-hidden="true">
+              <i class="island-flag__finial" />
+            </span>
+            <img class="island-flag__cloth" :src="vietnamFlagUrl" alt="" />
+            <strong>{{ island.name }}</strong>
+          </button>
+
+          <button
+            v-for="(place, index) in provinceHotspots"
             :key="place.id"
             type="button"
             class="map-hotspot"
-            :class="{ active: activePlace.id === place.id }"
-            :style="{ left: `${place.x}%`, top: `${place.y}%`, '--pin-color': place.color }"
+            :class="{ active: activePlace.id === place.id, featured: isFeaturedHotspot(place) }"
+            :style="mapPositionStyle(place, index)"
             :aria-label="`Khám phá ${place.name}`"
             @click="selectPlace(place)"
           >
             <span />
             <strong>{{ place.name }}</strong>
           </button>
+
+          <span
+            v-for="vessel in seaVessels"
+            :key="vessel.id"
+            class="sea-vessel"
+            :class="{ 'is-flipped': vessel.flipped }"
+            :style="seaVesselStyle(vessel)"
+            aria-hidden="true"
+          >
+            <img :src="vessel.src" alt="" />
+          </span>
+
+          <a
+            class="map-attribution"
+            href="https://commons.wikimedia.org/wiki/File:Administrative_divisions_of_Vietnam.svg"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ranh giới tham chiếu: Ahfosh, CC BY 4.0
+          </a>
         </div>
       </section>
 
       <aside class="province-panel" aria-live="polite">
         <div class="province-badge" :style="{ '--badge-color': activePlace.color }">
           <Sparkles :size="18" />
-          {{ activePlace.region }}
+          {{ activePlace.parentAdministrativeUnit ?? activePlace.region }}
         </div>
         <h2>{{ activePlace.name }}</h2>
         <p class="province-highlight">{{ activePlace.highlight }}</p>
@@ -272,6 +458,15 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
           <article>
             <strong>Địa lý</strong>
             <p>{{ activePlace.geography }}</p>
+            <a
+              v-if="activePlace.officialSourceUrl"
+              class="administrative-source"
+              :href="activePlace.officialSourceUrl"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Xem nguồn hành chính
+            </a>
           </article>
           <article>
             <strong>Du lịch</strong>
@@ -280,11 +475,19 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
                 v-for="spot in activeTourismDetails"
                 :key="spot.name"
                 class="real-tourism-card"
-                :href="spot.sourceUrl"
+                :href="tourismSourceUrl(spot)"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img :src="spot.imageUrl" :alt="spot.name" loading="lazy" />
+                <img
+                  v-if="tourismImageUrl(spot)"
+                  :src="tourismImageUrl(spot)"
+                  :alt="spot.name"
+                  loading="lazy"
+                />
+                <span v-else class="tourism-image-loading" aria-hidden="true">
+                  <MapPinned :size="30" />
+                </span>
                 <span class="real-tourism-info">
                   <em>{{ spot.category }}</em>
                   <strong>{{ spot.name }}</strong>
@@ -327,17 +530,24 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 
       <div class="featured-list">
         <button
-          v-for="place in featuredVietnamMapPlaces"
+          v-for="{ place, spot } in featuredSpotCards"
           :key="place.id"
           type="button"
           :style="{ '--feature-color': place.color }"
           @click="selectPlace(place)"
         >
           <span class="feature-art">
-            <MapPinned :size="30" />
+            <img
+              v-if="spot && tourismImageUrl(spot, place.id)"
+              :src="tourismImageUrl(spot, place.id)"
+              :alt="spot.name"
+              loading="lazy"
+            />
+            <MapPinned v-else :size="30" />
           </span>
-          <strong>{{ place.name }}</strong>
-          <small>{{ place.highlight }}</small>
+          <span class="feature-place">{{ place.name }}</span>
+          <strong>{{ spot?.name ?? place.highlight }}</strong>
+          <small>{{ spot?.description ?? place.highlight }}</small>
         </button>
       </div>
     </section>
@@ -426,9 +636,9 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 
 .map-workspace {
   display: grid;
-  grid-template-columns: minmax(250px, 330px) minmax(420px, 1fr) minmax(270px, 360px);
+  grid-template-columns: minmax(620px, 1fr) minmax(300px, 380px);
   gap: clamp(16px, 2vw, 24px);
-  max-width: 1440px;
+  max-width: 1580px;
   margin: 0 auto;
   align-items: start;
 }
@@ -576,37 +786,184 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 .map-canvas {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 2 / 3;
-  min-height: 760px;
-  border-radius: 34px;
+  aspect-ratio: 1400 / 1985;
+  min-height: 860px;
+  border-radius: 28px;
   background: #5bd2f0;
-  box-shadow: 0 30px 80px -45px rgb(24 32 51 / 0.65);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.42),
+    inset 0 -42px 78px rgb(0 111 160 / 0.16),
+    0 30px 80px -45px rgb(24 32 51 / 0.65);
+  isolation: isolate;
 }
 
-.map-stage-image {
+.map-canvas::before,
+.map-canvas::after {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  content: '';
+}
+
+.map-canvas::before {
+  background:
+    radial-gradient(circle at 32% 22%, rgb(255 255 255 / 0.34), transparent 18%),
+    radial-gradient(circle at 78% 44%, rgb(255 255 255 / 0.18), transparent 22%),
+    linear-gradient(140deg, transparent 0 44%, rgb(255 255 255 / 0.16) 48%, transparent 52% 100%);
+  mix-blend-mode: screen;
+}
+
+.map-canvas::after {
+  background:
+    radial-gradient(ellipse at 36% 26%, rgb(20 84 76 / 0.14), transparent 26%),
+    radial-gradient(ellipse at 53% 58%, rgb(20 84 76 / 0.12), transparent 22%),
+    radial-gradient(ellipse at 47% 86%, rgb(20 84 76 / 0.12), transparent 24%);
+  filter: blur(9px);
+  opacity: 0.65;
+}
+
+.map-vector {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   user-select: none;
 }
 
-.dragon-bridge-effects {
+.map-vector :deep(svg) {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.map-vector :deep([data-place-id]) {
+  pointer-events: auto;
+}
+
+.map-vector :deep(.province-shape) {
+  paint-order: stroke fill;
+  transition:
+    filter 0.2s ease,
+    stroke-width 0.2s ease,
+    transform 0.2s ease;
+}
+
+.map-vector :deep(.province-shape.is-featured),
+.map-vector :deep(.archipelago.is-featured) {
+  filter: brightness(1.08) saturate(1.18) drop-shadow(0 7px 5px rgb(22 72 50 / 0.36));
+  stroke: #ffffff;
+  stroke-width: 3.6;
+}
+
+.map-vector :deep(.province-shape.is-active),
+.map-vector :deep(.archipelago.is-active) {
+  filter: brightness(1.16) saturate(1.25) drop-shadow(0 10px 7px rgb(22 72 50 / 0.46));
+  stroke: #ffffff;
+  stroke-width: 4.8;
+}
+
+.city-landmark {
   position: absolute;
-  z-index: 3;
-  left: 62.5%;
-  top: 45.8%;
-  width: 112px;
-  height: 74px;
+  z-index: 5;
+  display: grid;
+  width: 96px;
+  height: 86px;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transform: translate(-50%, -52%);
+}
+
+.city-landmark::before,
+.dragon-bridge-effects::after {
+  position: absolute;
+  right: 19px;
+  bottom: 2px;
+  left: 19px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgb(24 80 57 / 0.22);
+  filter: blur(4px);
+  content: '';
+}
+
+.landmark-label {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 10px);
+  z-index: 4;
+  min-width: max-content;
+  border-radius: 999px;
+  background: #2188e8;
+  padding: 8px 12px;
+  color: white;
+  font-size: 12px;
+  font-weight: 1000;
+  line-height: 1;
+  box-shadow: 0 14px 28px -18px rgb(20 92 180 / 0.76);
+  transform: translateX(-50%);
+}
+
+.city-landmark__image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 7px rgb(24 71 55 / 0.38));
+  pointer-events: none;
+}
+
+.city-landmark__image--hanoi {
+  width: 94px;
+  height: 94px;
+}
+
+.city-landmark__image--hcm {
+  width: 92px;
+  height: 116px;
+  transform: translateY(-13px);
+}
+
+.city-landmark--hcm .landmark-label {
+  bottom: calc(100% + 14px);
+}
+
+.city-landmark.active,
+.city-landmark:hover,
+.city-landmark:focus-visible {
+  animation: landmark-float 1.7s ease-in-out infinite;
+}
+
+.dragon-bridge-effects {
+  --dragon-mouth-x: 158px;
+  --dragon-mouth-y: 27px;
+
+  position: absolute;
+  z-index: 4;
+  width: 164px;
+  height: 78px;
   pointer-events: none;
   transform: translate(-50%, -50%);
 }
 
+.dragon-bridge-landmark {
+  position: absolute;
+  inset: 8px auto auto 0;
+  z-index: 2;
+  width: 164px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 9px 6px rgb(24 71 55 / 0.42));
+}
+
 .dragon-bridge-effects::before {
   position: absolute;
-  right: 22px;
-  top: 27px;
+  z-index: 1;
+  left: calc(var(--dragon-mouth-x) - 9px);
+  top: calc(var(--dragon-mouth-y) - 9px);
   width: 18px;
   height: 18px;
   border: 4px solid rgb(255 255 255 / 0.78);
@@ -619,8 +976,9 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 
 .dragon-fire {
   position: absolute;
-  left: 69px;
-  top: 25px;
+  z-index: 3;
+  left: var(--dragon-mouth-x);
+  top: var(--dragon-mouth-y);
   width: 116px;
   height: 92px;
   opacity: 0;
@@ -717,8 +1075,9 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 
 .dragon-water {
   position: absolute;
-  left: 69px;
-  top: 25px;
+  z-index: 3;
+  left: var(--dragon-mouth-x);
+  top: var(--dragon-mouth-y);
   width: 116px;
   height: 92px;
   opacity: 0;
@@ -814,14 +1173,156 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   filter: saturate(1.14);
 }
 
-.map-hotspot {
+.island-flag {
+  position: absolute;
+  z-index: 6;
+  width: 132px;
+  height: 124px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+  transform: translate(-50%, -100%);
+}
+
+.island-flag::after {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 24px;
+  height: 10px;
+  border: 3px solid rgb(255 255 255 / 0.88);
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow:
+    0 0 0 7px rgb(34 197 94 / 0.18),
+    0 8px 12px rgb(19 78 74 / 0.28);
+  content: '';
+  transform: translateX(-50%);
+}
+
+.island-flag__pole {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  z-index: 2;
+  width: 6px;
+  height: 96px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #83551f, #f7d57f 46%, #996221);
+  box-shadow: 2px 5px 7px rgb(24 71 55 / 0.28);
+  transform: translateX(-50%);
+}
+
+.island-flag__finial {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  border: 2px solid #9a6a19;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff8b0, #f4c430 48%, #b7791f);
+  transform: translateX(-50%);
+}
+
+.island-flag__cloth {
+  position: absolute;
+  left: calc(50% + 2px);
+  bottom: 53px;
+  z-index: 3;
+  display: block;
+  width: 94px;
+  max-width: none;
+  height: 63px;
+  object-fit: contain;
+  overflow: visible;
+  filter: drop-shadow(3px 7px 4px rgb(78 45 16 / 0.26));
+  transform-origin: 0 48%;
+  animation: vietnam-flag-wave 1.65s ease-in-out infinite;
+}
+
+.island-flag strong {
+  position: absolute;
+  left: 50%;
+  bottom: -23px;
+  z-index: 3;
+  min-width: max-content;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.94);
+  padding: 6px 9px;
+  color: #075985;
+  font-size: 10px;
+  font-weight: 1000;
+  line-height: 1;
+  box-shadow: 0 10px 20px -14px rgb(12 74 110 / 0.8);
+  transform: translateX(-50%);
+}
+
+.island-flag:hover::after,
+.island-flag:focus-visible::after,
+.island-flag.active::after {
+  animation: island-flag-pulse 1.7s ease-in-out infinite;
+}
+
+.island-flag:hover .island-flag__cloth,
+.island-flag:focus-visible .island-flag__cloth,
+.island-flag.active .island-flag__cloth {
+  animation-duration: 1.15s;
+  filter: drop-shadow(3px 8px 5px rgb(78 45 16 / 0.34)) saturate(1.12);
+}
+
+.sea-vessel {
+  --vessel-scale: 1;
+
   position: absolute;
   z-index: 2;
+  display: block;
+  pointer-events: none;
+  transform-origin: 50% 70%;
+  animation: sea-vessel-drift 4.2s ease-in-out var(--vessel-delay) infinite;
+  will-change: transform;
+}
+
+.sea-vessel::after {
+  position: absolute;
+  right: 10%;
+  bottom: 2%;
+  left: 10%;
+  z-index: -1;
+  height: 15%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgb(255 255 255 / 0.82) 0 18%,
+    rgb(148 225 255 / 0.42) 38%,
+    transparent 72%
+  );
+  filter: blur(1.5px);
+  content: '';
+  transform: translateY(45%) scaleX(1.15);
+}
+
+.sea-vessel img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  filter: drop-shadow(0 8px 5px rgb(17 94 89 / 0.34));
+}
+
+.sea-vessel.is-flipped img {
+  transform: scaleX(-1);
+}
+
+.map-hotspot {
+  position: absolute;
+  z-index: var(--hotspot-layer);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border: 0;
   border-radius: 999px;
   background: transparent;
@@ -834,15 +1335,16 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 }
 
 .map-hotspot span {
-  width: 16px;
-  height: 16px;
+  display: inline-flex;
+  width: 13px;
+  height: 13px;
   flex: 0 0 auto;
-  border: 4px solid rgb(255 255 255 / 0.92);
+  border: 3px solid rgb(255 255 255 / 0.96);
   border-radius: 999px;
   background: var(--pin-color);
-  opacity: 0;
+  opacity: 1;
   box-shadow:
-    0 0 0 6px color-mix(in srgb, var(--pin-color), transparent 78%),
+    0 0 0 5px color-mix(in srgb, var(--pin-color), transparent 78%),
     0 12px 20px rgb(24 32 51 / 0.16);
   transition:
     opacity 0.2s ease,
@@ -852,29 +1354,43 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 .map-hotspot strong {
   position: absolute;
   left: 50%;
-  bottom: calc(100% - 2px);
-  display: none;
-  min-width: max-content;
-  max-width: 136px;
-  border-radius: 999px;
-  background: #2188e8;
-  padding: 8px 12px;
-  color: white;
-  font-size: 12px;
+  bottom: calc(100% - 5px);
+  z-index: 1;
+  display: inline-flex;
+  min-width: 0;
+  max-width: none;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--pin-color), #ffffff 74%);
+  border-radius: 6px;
+  background: rgb(255 255 255 / 0.94);
+  padding: 4px 6px;
+  color: #10305e;
+  font-size: 8.5px;
   font-weight: 1000;
-  line-height: 1;
-  overflow-wrap: anywhere;
-  box-shadow: 0 14px 28px -18px rgb(20 92 180 / 0.76);
-  transform: translateX(-50%);
+  line-height: 1.12;
+  overflow-wrap: normal;
+  text-align: center;
+  text-shadow: none;
+  white-space: nowrap;
+  word-break: keep-all;
+  box-shadow:
+    0 8px 16px -12px rgb(15 53 92 / 0.72),
+    inset 3px 0 0 var(--pin-color);
+  pointer-events: none;
+  transform: translateX(calc(-50% + var(--label-offset-x)))
+    translateY(var(--label-offset-y));
 }
 
 .map-hotspot.active,
 .map-hotspot:hover,
 .map-hotspot:focus-visible {
+  z-index: 40;
   background: rgb(255 255 255 / 0.14);
   transform: translate(-50%, -50%) scale(1.08);
 }
 
+.map-hotspot.featured span,
 .map-hotspot.active span,
 .map-hotspot:hover span,
 .map-hotspot:focus-visible span,
@@ -885,6 +1401,43 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   opacity: 1;
 }
 
+.map-hotspot.featured span {
+  animation: hotspot-pulse 1.7s ease-in-out infinite;
+}
+
+.map-hotspot.featured strong {
+  display: inline-flex;
+  border-color: color-mix(in srgb, var(--pin-color), #ffffff 58%);
+  background: color-mix(in srgb, var(--pin-color), #ffffff 82%);
+}
+
+.map-hotspot.active strong,
+.map-hotspot:hover strong,
+.map-hotspot:focus-visible strong {
+  max-width: none;
+  padding: 5px 8px;
+  color: white;
+  background: color-mix(in srgb, var(--pin-color), #1d75d8 38%);
+  font-size: 10px;
+  text-shadow: 0 1px 2px rgb(10 53 92 / 0.32);
+  box-shadow: 0 12px 22px -12px rgb(20 92 180 / 0.9);
+}
+
+.map-attribution {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  z-index: 4;
+  border-radius: 6px;
+  background: rgb(255 255 255 / 0.82);
+  padding: 5px 7px;
+  color: #31556e;
+  font-size: 8px;
+  font-weight: 800;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+}
+
 @keyframes dragon-signal {
   0%,
   100% {
@@ -892,6 +1445,71 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   }
   50% {
     transform: scale(1.18);
+  }
+}
+
+@keyframes hotspot-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 6px color-mix(in srgb, var(--pin-color), transparent 78%),
+      0 12px 20px rgb(24 32 51 / 0.16);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 0 11px color-mix(in srgb, var(--pin-color), transparent 86%),
+      0 16px 26px rgb(24 32 51 / 0.24);
+    transform: scale(1.18);
+  }
+}
+
+@keyframes landmark-float {
+  0%,
+  100% {
+    transform: translate(-50%, -52%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -52%) translateY(-5px);
+  }
+}
+
+@keyframes vietnam-flag-wave {
+  0%,
+  100% {
+    transform: perspective(140px) rotateY(4deg) skewY(-1deg) scaleX(0.98);
+  }
+  35% {
+    transform: perspective(140px) rotateY(-11deg) skewY(2.5deg) scaleX(1.04);
+  }
+  68% {
+    transform: perspective(140px) rotateY(8deg) skewY(-2deg) scaleX(0.96);
+  }
+}
+
+@keyframes island-flag-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 7px rgb(34 197 94 / 0.18),
+      0 8px 12px rgb(19 78 74 / 0.28);
+  }
+  50% {
+    box-shadow:
+      0 0 0 13px rgb(34 197 94 / 0.08),
+      0 10px 18px rgb(19 78 74 / 0.34);
+  }
+}
+
+@keyframes sea-vessel-drift {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--vessel-rotation)) scale(var(--vessel-scale))
+      translate3d(-2px, 2px, 0);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(var(--vessel-rotation)) scale(var(--vessel-scale))
+      translate3d(3px, -4px, 0);
   }
 }
 
@@ -1093,6 +1711,25 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   background: #dff6ff;
 }
 
+.tourism-image-loading {
+  display: grid;
+  min-height: 112px;
+  place-items: center;
+  background:
+    radial-gradient(circle at 68% 24%, #ffe486 0 9%, transparent 10%),
+    linear-gradient(145deg, #bdeeff, #76d49b);
+  color: white;
+}
+
+.administrative-source {
+  display: inline-flex;
+  margin-top: 7px;
+  color: #0878bd;
+  font-size: 11px;
+  font-weight: 900;
+  text-underline-offset: 3px;
+}
+
 .real-tourism-info {
   min-width: 0;
   padding: 12px 12px 12px 0;
@@ -1279,9 +1916,11 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
 }
 
 .feature-art {
+  position: relative;
   display: grid;
   aspect-ratio: 1.55;
   place-items: center;
+  overflow: hidden;
   margin-bottom: 10px;
   border-radius: 14px;
   background:
@@ -1290,16 +1929,48 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   color: color-mix(in srgb, var(--feature-color), #172033 18%);
 }
 
+.feature-art::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 44%;
+  background: linear-gradient(180deg, transparent, rgb(12 31 57 / 0.42));
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+}
+
+.feature-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-art:has(img)::after {
+  opacity: 1;
+}
+
+.feature-place {
+  display: block;
+  margin-bottom: 4px;
+  color: color-mix(in srgb, var(--feature-color), #172033 16%);
+  font-size: 11px;
+  font-weight: 1000;
+  line-height: 1.2;
+}
+
 .featured-list strong,
 .featured-list small {
   display: block;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
 }
 
 .featured-list strong {
   color: #253149;
   font-size: 13px;
   font-weight: 1000;
+  line-height: 1.25;
 }
 
 .featured-list small {
@@ -1307,17 +1978,21 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   color: #64748b;
   font-size: 11px;
   font-weight: 800;
-  line-height: 1.35;
+  line-height: 1.4;
+  display: -webkit-box;
+  min-height: 46px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 @media (max-width: 1180px) {
   .map-workspace {
-    grid-template-columns: 300px minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .province-panel {
     position: static;
-    grid-column: 1 / -1;
   }
 
   .featured-list {
@@ -1350,21 +2025,9 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
     flex-direction: column;
   }
 
-  .region-panel,
   .map-stage,
   .province-panel {
     width: 100%;
-  }
-
-  .region-list {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: thin;
-  }
-
-  .region-list button {
-    min-width: 214px;
   }
 
   .map-canvas {
@@ -1376,14 +2039,34 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
     transform: translate(-50%, -50%) scale(0.82);
   }
 
+  .city-landmark__image--hanoi {
+    width: 78px;
+    height: 78px;
+  }
+
+  .city-landmark__image--hcm {
+    width: 76px;
+    height: 98px;
+  }
+
+  .island-flag {
+    transform: translate(-50%, -100%) scale(0.84);
+    transform-origin: 50% 100%;
+  }
+
+  .sea-vessel {
+    --vessel-scale: 0.82;
+  }
+
   .map-hotspot {
     width: 38px;
     height: 38px;
   }
 
   .map-hotspot strong {
-    max-width: 112px;
-    font-size: 10px;
+    max-width: none;
+    padding: 4px 6px;
+    font-size: 7.5px;
   }
 
   .tourism-gallery {
@@ -1412,6 +2095,24 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
     transform: translate(-50%, -50%) scale(0.66);
   }
 
+  .city-landmark__image--hanoi {
+    width: 66px;
+    height: 66px;
+  }
+
+  .city-landmark__image--hcm {
+    width: 64px;
+    height: 84px;
+  }
+
+  .island-flag {
+    transform: translate(-50%, -100%) scale(0.7);
+  }
+
+  .sea-vessel {
+    --vessel-scale: 0.66;
+  }
+
   .map-hotspot {
     width: 34px;
     height: 34px;
@@ -1424,13 +2125,23 @@ function tourismImageStyle(place: VietnamProvinceFeature, spot: string, index: n
   }
 
   .map-hotspot strong {
-    max-width: 92px;
-    padding: 7px 9px;
-    font-size: 9px;
+    max-width: none;
+    padding: 3px 5px;
+    font-size: 6.5px;
   }
 
   .tourism-gallery {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .city-landmark,
+  .island-flag::after,
+  .island-flag__cloth,
+  .sea-vessel,
+  .map-hotspot span {
+    animation: none !important;
   }
 }
 </style>
