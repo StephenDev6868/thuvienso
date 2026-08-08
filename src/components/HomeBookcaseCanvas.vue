@@ -616,20 +616,26 @@ button:focus-visible {
 .book-subject {
   position: absolute;
   z-index: 3;
-  top: 22%;
-  right: 10%;
-  left: 10%;
+  top: 15%;
+  right: 7%;
+  left: 7%;
+  display: -webkit-box;
   overflow: hidden;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.12);
+  padding: 2px 2px 3px;
   color: white;
-  font-size: clamp(5px, 0.47cqw, 8px);
+  font-size: clamp(7px, 0.62cqw, 11px);
   font-weight: 950;
-  line-height: 1;
+  line-height: 1.05;
   text-align: center;
-  text-overflow: ellipsis;
   text-shadow:
     0 1px 1px rgb(89 25 5 / 0.7),
-    0 0 3px rgb(89 25 5 / 0.35);
-  white-space: nowrap;
+    0 0 4px rgb(89 25 5 / 0.48);
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  box-shadow: inset 0 1px rgb(255 255 255 / 0.16);
 }
 
 .book-tooltip {
@@ -863,18 +869,23 @@ button:focus-visible {
   .mobile-book-subject {
     position: absolute;
     z-index: 3;
-    top: 17%;
-    right: 5%;
-    left: 5%;
+    top: 12%;
+    right: 4%;
+    left: 4%;
+    display: -webkit-box;
     overflow: hidden;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.12);
+    padding: 2px 1px;
     color: white;
-    font-size: clamp(5px, 1.7vw, 8px);
+    font-size: clamp(6.5px, 1.95vw, 9px);
     font-weight: 950;
-    line-height: 1;
+    line-height: 1.05;
     text-align: center;
-    text-overflow: ellipsis;
     text-shadow: 0 1px 2px rgb(78 27 6 / 0.65);
-    white-space: nowrap;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .mobile-book:active {
