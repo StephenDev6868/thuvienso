@@ -29,14 +29,6 @@
         {
           "key": "X-Frame-Options",
           "value": "SAMEORIGIN"
-        },
-        {
-          "key": "x-vercel-enable-rewrite-caching",
-          "value": "1"
-        },
-        {
-          "key": "CDN-Cache-Control",
-          "value": "public, max-age=86400, stale-while-revalidate=604800"
         }
       ]
     }
