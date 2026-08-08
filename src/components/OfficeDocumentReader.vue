@@ -14,6 +14,7 @@ const emit = defineEmits<{
 
 const loading = ref(true)
 const previewSlow = ref(false)
+const PREVIEW_SLOW_TIMEOUT = 120_000
 let previousBodyOverflow = ''
 let previewTimeout: ReturnType<typeof setTimeout> | undefined
 
@@ -36,7 +37,7 @@ onMounted(() => {
   globalThis.addEventListener('keydown', handleKeydown)
   previewTimeout = globalThis.setTimeout(() => {
     previewSlow.value = true
-  }, 10_000)
+  }, PREVIEW_SLOW_TIMEOUT)
 })
 
 onBeforeUnmount(() => {

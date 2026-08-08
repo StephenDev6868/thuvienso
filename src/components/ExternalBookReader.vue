@@ -14,6 +14,7 @@ const emit = defineEmits<{
 
 const loading = ref(true)
 const connectionSlow = ref(false)
+const CONNECTION_SLOW_TIMEOUT = 120_000
 let previousBodyOverflow = ''
 let connectionTimeout: ReturnType<typeof setTimeout> | undefined
 
@@ -32,7 +33,7 @@ onMounted(() => {
   globalThis.addEventListener('keydown', handleKeydown)
   connectionTimeout = globalThis.setTimeout(() => {
     connectionSlow.value = true
-  }, 10_000)
+  }, CONNECTION_SLOW_TIMEOUT)
 })
 
 onBeforeUnmount(() => {
