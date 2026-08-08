@@ -30,7 +30,7 @@ GlobalWorkerOptions.workerSrc = pdfWorkerUrl
 
 const PDF_RANGE_CHUNK_SIZE = 512 * 1024
 const PAGE_PRELOAD_AHEAD = 2
-const PDF_STALL_TIMEOUT = 20_000
+const PDF_STALL_TIMEOUT = 120_000
 const EMBEDDED_VIEWER_HINT_TIMEOUT = 10_000
 
 const props = defineProps<{
