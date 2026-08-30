@@ -41,6 +41,13 @@ const router = createRouter({
           component: () => import('@/views/MediaLibraryView.vue'),
           meta: { title: 'Video bài giảng' },
         },
+        {
+          path: 'thay-avatar-theo-chu-de',
+          alias: '/avatar-theo-chu-de',
+          name: 'themed-avatar',
+          component: () => import('@/views/ThemedAvatarView.vue'),
+          meta: { title: 'Thay avatar theo chủ đề' },
+        },
       ],
     },
     {

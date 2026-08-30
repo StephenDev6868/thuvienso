@@ -9,6 +9,7 @@ import {
   MapPinned,
   Menu,
   MessagesSquare,
+  Palette,
   Search,
   UserRound,
   X,
@@ -55,6 +56,12 @@ const navigation: NavigationItem[] = [
     to: { name: 'video-lessons' },
     icon: GraduationCap,
     activeRoute: 'video-lessons',
+  },
+  {
+    label: 'Thay avatar',
+    to: { name: 'themed-avatar' },
+    icon: Palette,
+    activeRoute: 'themed-avatar',
   },
 ]
 
