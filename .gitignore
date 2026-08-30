@@ -6,3 +6,11 @@ coverage
 .env
 .env.*
 !.env.example
+
+# Raw library sources stay local. The app uses generated catalogs and preview assets.
+src/data/**/*.pdf
+src/data/**/*.docx
+src/data/**/*.ppt
+src/data/**/*.pptx
+src/data/**/*.mp3
+src/data/**/*.mp4
