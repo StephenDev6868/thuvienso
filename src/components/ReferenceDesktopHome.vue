@@ -8,7 +8,6 @@ import {
   Headphones,
   Heart,
   Play,
-  QrCode,
   Trophy,
 } from '@lucide/vue'
 import type { Component } from 'vue'
@@ -128,13 +127,6 @@ const quickItems: QuickItem[] = [
     icon: Grid2X2,
     color: '#3f8fe5',
     action: goThreeD,
-  },
-  {
-    title: 'Đơn xin nghỉ phép',
-    subtitle: 'Quét QR để điền đơn',
-    icon: QrCode,
-    color: '#10a37f',
-    action: () => appStore.openUtilityModal('leave'),
   },
 ]
 

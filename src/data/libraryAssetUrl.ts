@@ -1,5 +1,5 @@
 const DEFAULT_LIBRARY_ASSET_BASE_URL =
-  'https://media.githubusercontent.com/media/StephenDev6868/thuvienso/main/src/data'
+  'https://media.githubusercontent.com/media/StephenDev6868/thuvienso/a408872a22ea245abe448733b1c621b83d1585c4/src/data'
 const PDF_PROXY_BASE_URL = '/books'
 
 function encodeAssetPath(path: string) {

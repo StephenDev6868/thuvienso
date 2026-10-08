@@ -19,7 +19,7 @@ import type { Component } from 'vue'
 import { ref } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 
-import logoUrl from '../../logo.jpg'
+import logoUrl from '@/assets/logo-bui-thi-xuan.png'
 import { useAppStore } from '@/stores/app'
 
 interface NavigationItem {
@@ -82,7 +82,7 @@ function submitSearch() {
         aria-label="Trang chủ Thư viện số"
       >
         <span
-          class="grid size-12 shrink-0 place-items-center overflow-hidden rounded-full border-2 border-red-100 bg-white shadow-sm md:size-14"
+          class="grid size-12 shrink-0 place-items-center overflow-hidden rounded-xl border-2 border-sky-100 bg-white shadow-sm md:size-14"
         >
           <img
             :src="logoUrl"
@@ -156,7 +156,7 @@ function submitSearch() {
           type="button"
           class="focus-ring hidden h-11 shrink-0 items-center gap-2 rounded-full bg-[#3f8fe5] px-3 text-xs font-black text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 md:inline-flex 2xl:px-4"
           aria-label="Liên hệ với nhà trường"
-          @click="appStore.openUtilityModal('contact')"
+          @click="appStore.openUtilityModal"
         >
           <MessagesSquare :size="16" />
           <span class="hidden 2xl:inline">Liên hệ</span>

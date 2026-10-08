@@ -15,8 +15,8 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import lockBgDesktopUrl from '@/assets/images/backgrounds/bg-desktop-clean.png'
 import lockBgMobileUrl from '@/assets/images/backgrounds/bg-mobile.png'
 import heroStudentsUrl from '@/assets/images/lock-hero-students.png'
+import logoUrl from '@/assets/logo-bui-thi-xuan.png'
 import schoolUrl from '@/assets/thu-vien-so-assets-exact-look/objects/object-school.svg'
-import logoUrl from '../../logo.jpg'
 import { digitalBooks } from '@/data/digitalLibrary'
 
 const emit = defineEmits<{
@@ -119,8 +119,10 @@ async function drawLogoOnQrCode(canvas: HTMLCanvasElement) {
   context.save()
   context.shadowColor = 'rgb(16 26 52 / 0.2)'
   context.shadowBlur = canvas.width * 0.025
+  const plateX = center - plateSize / 2
+  const plateRadius = canvas.width * 0.035
   context.beginPath()
-  context.arc(center, center, plateSize / 2, 0, Math.PI * 2)
+  context.roundRect(plateX, plateX, plateSize, plateSize, plateRadius)
   context.fillStyle = '#ffffff'
   context.fill()
   context.shadowColor = 'transparent'
@@ -128,9 +130,6 @@ async function drawLogoOnQrCode(canvas: HTMLCanvasElement) {
   context.strokeStyle = '#dce7ff'
   context.stroke()
 
-  context.beginPath()
-  context.arc(center, center, logoSize / 2, 0, Math.PI * 2)
-  context.clip()
   context.drawImage(logo, center - logoSize / 2, center - logoSize / 2, logoSize, logoSize)
   context.restore()
 }

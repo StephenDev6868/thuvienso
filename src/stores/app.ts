@@ -9,7 +9,7 @@ export const useAppStore = defineStore('app', () => {
   const registrationOpen = ref(false)
   const readerOpen = ref(false)
   const smartLockOpen = ref(false)
-  const utilityModal = ref<'leave' | 'contact' | null>(null)
+  const utilityModalOpen = ref(false)
   const selectedBookId = ref<string | null>(null)
   const pendingChatPrompt = ref('')
   const searchQuery = ref('')
@@ -75,13 +75,13 @@ export const useAppStore = defineStore('app', () => {
     smartLockOpen.value = false
   }
 
-  function openUtilityModal(kind: 'leave' | 'contact') {
+  function openUtilityModal() {
     menuOpen.value = false
-    utilityModal.value = kind
+    utilityModalOpen.value = true
   }
 
   function closeUtilityModal() {
-    utilityModal.value = null
+    utilityModalOpen.value = false
   }
 
   function searchBooks(query: string) {
@@ -94,7 +94,7 @@ export const useAppStore = defineStore('app', () => {
     registrationOpen,
     readerOpen,
     smartLockOpen,
-    utilityModal,
+    utilityModalOpen,
     selectedBookId,
     selectedBook,
     pendingChatPrompt,

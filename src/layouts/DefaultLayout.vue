@@ -22,12 +22,7 @@ const appStore = useAppStore()
     <AiChatWidget />
     <MobileBottomNav />
     <SmartLockScreen v-if="appStore.smartLockOpen" @close="appStore.closeSmartLock" />
-    <UtilityQrModal
-      v-if="appStore.utilityModal"
-      :key="appStore.utilityModal"
-      :kind="appStore.utilityModal"
-      @close="appStore.closeUtilityModal"
-    />
+    <UtilityQrModal v-if="appStore.utilityModalOpen" @close="appStore.closeUtilityModal" />
     <PdfBookReader
       v-if="
         appStore.readerOpen && appStore.selectedBook && appStore.selectedBook.viewerType === 'pdf'
