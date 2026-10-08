@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/books/:path*",
-      "destination": "https://media.githubusercontent.com/media/StephenDev6868/thuvienso/main/src/data/:path*"
+      "destination": "https://media.githubusercontent.com/media/StephenDev6868/thuvienso/e99b29d31f528f4718025eee9d3aeb5b07bc8ed2/src/data/:path*"
     },
     {
       "source": "/(.*)",
