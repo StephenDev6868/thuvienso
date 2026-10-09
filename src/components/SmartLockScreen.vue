@@ -28,8 +28,10 @@ const qrCanvas = ref<HTMLCanvasElement | null>(null)
 const now = ref(new Date())
 const accessUrl = ref('')
 const qrError = ref('')
+/* Tạm tắt phần đọc giọng nói giới thiệu tại màn hình mở khóa.
 const welcomeMessage =
   'Chào mừng bạn đến với thư viện số. Hãy quét mã QR hoặc nhấn Mở thư viện để bắt đầu khám phá.'
+*/
 
 const formattedTime = computed(() =>
   new Intl.DateTimeFormat('vi-VN', {
@@ -57,9 +59,12 @@ const displayUrl = computed(() => {
 })
 
 let clockTimer: ReturnType<typeof setInterval> | undefined
+/* Tạm tắt phần đọc giọng nói giới thiệu tại màn hình mở khóa.
 let speechTimer: ReturnType<typeof setInterval> | undefined
+*/
 let previousBodyOverflow = ''
 
+/* Tạm tắt phần đọc giọng nói giới thiệu tại màn hình mở khóa.
 function chooseVietnameseVoice() {
   if (!('speechSynthesis' in globalThis)) return undefined
 
@@ -97,6 +102,7 @@ function speakWelcomeMessage() {
   if (voice) utterance.voice = voice
   globalThis.speechSynthesis.speak(utterance)
 }
+*/
 
 function loadImage(source: string) {
   return new Promise<HTMLImageElement>((resolve, reject) => {
@@ -171,8 +177,8 @@ onMounted(() => {
   clockTimer = globalThis.setInterval(() => {
     now.value = new Date()
   }, 1_000)
-  speakWelcomeMessage()
-  speechTimer = globalThis.setInterval(speakWelcomeMessage, 10_000)
+  // speakWelcomeMessage()
+  // speechTimer = globalThis.setInterval(speakWelcomeMessage, 10_000)
   void createAccessQrCode()
   void nextTick(() => lockScreen.value?.focus())
 })
@@ -181,8 +187,8 @@ onBeforeUnmount(() => {
   globalThis.document.body.style.overflow = previousBodyOverflow
   globalThis.removeEventListener('keydown', handleKeydown)
   if (clockTimer) globalThis.clearInterval(clockTimer)
-  if (speechTimer) globalThis.clearInterval(speechTimer)
-  if ('speechSynthesis' in globalThis) globalThis.speechSynthesis.cancel()
+  // if (speechTimer) globalThis.clearInterval(speechTimer)
+  // if ('speechSynthesis' in globalThis) globalThis.speechSynthesis.cancel()
 })
 </script>
 
