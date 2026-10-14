@@ -2,6 +2,7 @@
 import {
   Bell,
   BookOpen,
+  Compass,
   GraduationCap,
   Headphones,
   Home,
@@ -62,6 +63,12 @@ const navigation: NavigationItem[] = [
     to: { name: 'themed-avatar' },
     icon: Palette,
     activeRoute: 'themed-avatar',
+  },
+  {
+    label: 'Khám phá Đà Nẵng',
+    to: { name: 'discover-da-nang' },
+    icon: Compass,
+    activeRoute: 'discover-da-nang',
   },
 ]
 

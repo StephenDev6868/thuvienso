@@ -48,6 +48,12 @@ const router = createRouter({
           component: () => import('@/views/ThemedAvatarView.vue'),
           meta: { title: 'Thay avatar theo chủ đề' },
         },
+        {
+          path: 'kham-pha-da-nang',
+          name: 'discover-da-nang',
+          component: () => import('@/views/DiscoverDaNangView.vue'),
+          meta: { title: 'Khám phá Đà Nẵng' },
+        },
       ],
     },
     {

@@ -1,0 +1,4834 @@
+{
+  "schemaVersion": "1.0.0",
+  "meta": {
+    "title": "Tư liệu lịch sử – địa lý – văn hóa – đặc sản Đà Nẵng sau sáp nhập",
+    "locale": "vi-VN",
+    "city": "Đà Nẵng",
+    "administrativeEffectiveDate": "2025-07-01",
+    "compiledAt": "2026-10-13",
+    "scope": "23 phường (cộng một số danh thắng ngoài phạm vi phường)",
+    "administrativeTotals": {
+      "wards": 23,
+      "communes": 70,
+      "specialZones": 1,
+      "total": 94
+    },
+    "dataUse": "Starter content cho Nuxt 3 / Vue 3, trang du lịch, bản đồ tương tác và thư viện số.",
+    "warning": "Nội dung là dữ liệu biên tập ban đầu. Các mục draft, địa chỉ/tọa độ, ảnh và bản quyền cần xác minh trước khi xuất bản chính thức.",
+    "coverage": {
+      "wardRecords": 23,
+      "placeRecords": 46,
+      "featuredPlaces": 15,
+      "sourceRecords": 20
+    }
+  },
+  "regions": [
+    {
+      "id": "da-nang-do-thi",
+      "name": "Đô thị Đà Nẵng cũ",
+      "description": "Không gian lõi đô thị, bán đảo Sơn Trà, núi Ngũ Hành Sơn, Hải Vân và các vùng ven đô phía tây."
+    },
+    {
+      "id": "tam-ky",
+      "name": "Khu vực Tam Kỳ",
+      "description": "Vùng đô thị phía nam, di sản cách mạng, sinh thái sông Đầm và văn hóa làng biển."
+    },
+    {
+      "id": "dien-ban",
+      "name": "Khu vực Điện Bàn",
+      "description": "Vùng di tích Champa, làng nghề và ẩm thực xứ Quảng."
+    },
+    {
+      "id": "hoi-an",
+      "name": "Khu vực Hội An",
+      "description": "Không gian thương cảng di sản, làng nghề, sông nước và du lịch cộng đồng."
+    }
+  ],
+  "wards": [
+    {
+      "id": "hai-chau",
+      "slug": "hai-chau",
+      "name": "Phường Hải Châu",
+      "shortName": "Hải Châu",
+      "sortOrder": 1,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Thanh Bình",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Thuận Phước",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Thạch Thang",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Phước Ninh",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hải Châu",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Trung tâm lịch sử và thương mại của đô thị Đà Nẵng, nơi lưu giữ dấu ấn phòng thủ cửa biển từ thế kỷ XIX.",
+      "geography": {
+        "description": "Đô thị ven sông Hàn và vịnh Đà Nẵng; gắn với các tuyến phố cổ trung tâm.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Trung tâm lịch sử và thương mại của đô thị Đà Nẵng, nơi lưu giữ dấu ấn phòng thủ cửa biển từ thế kỷ XIX.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Sinh hoạt đình làng, ký ức đô thị, giao thương chợ truyền thống",
+        "heritageHighlights": [
+          "Thành Điện Hải",
+          "Đình làng Hải Châu",
+          "Chợ Hàn"
+        ],
+        "festivals": [],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Bún chả cá",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        },
+        {
+          "name": "Bánh tráng cuốn thịt heo",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "thanh-dien-hai",
+        "dinh-hai-chau"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/hai-chau-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/hai-chau/cover.webp",
+          "alt": "Phường Hải Châu – Thành Điện Hải",
+          "searchQuery": "Thành Điện Hải Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Thành Điện Hải",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/hai-chau-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hai-chau/heritage.webp",
+            "alt": "Phường Hải Châu – Chợ Hàn",
+            "searchQuery": "Chợ Hàn Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Chợ Hàn",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/hai-chau-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hai-chau/specialty.webp",
+            "alt": "Phường Hải Châu – Bún chả cá",
+            "searchQuery": "Bún chả cá Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bún chả cá",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "hoa-cuong",
+      "slug": "hoa-cuong",
+      "name": "Phường Hòa Cường",
+      "shortName": "Hòa Cường",
+      "sortOrder": 2,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Bình Thuận",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Thuận Tây",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Cường Bắc",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Cường Nam",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Địa bàn cư trú và phát triển đô thị ở nam trung tâm, gắn với các đình làng và ký ức cộng đồng.",
+      "geography": {
+        "description": "Đô thị phía nam trung tâm, nhiều khu dân cư và công trình văn hóa.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Địa bàn cư trú và phát triển đô thị ở nam trung tâm, gắn với các đình làng và ký ức cộng đồng.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội đình Nại Nam, sinh hoạt cộng đồng làng xưa",
+        "heritageHighlights": [
+          "Đình Nại Nam",
+          "Bảo tàng Hồ Chí Minh – Chi nhánh Quân khu 5"
+        ],
+        "festivals": [
+          "Lễ hội đình Nại Nam"
+        ],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Bánh tráng cuốn thịt heo",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "dinh-nai-nam"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/hoa-cuong-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/hoa-cuong/cover.webp",
+          "alt": "Phường Hòa Cường – Đình Nại Nam",
+          "searchQuery": "Đình Nại Nam Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình Nại Nam",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/hoa-cuong-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoa-cuong/heritage.webp",
+            "alt": "Phường Hòa Cường – Bảo tàng Hồ Chí Minh – Chi nhánh Quân khu 5",
+            "searchQuery": "Bảo tàng Hồ Chí Minh – Chi nhánh Quân khu 5 Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bảo tàng Hồ Chí Minh – Chi nhánh Quân khu 5",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/hoa-cuong-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoa-cuong/specialty.webp",
+            "alt": "Phường Hòa Cường – Bánh tráng cuốn thịt heo",
+            "searchQuery": "Bánh tráng cuốn thịt heo Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bánh tráng cuốn thịt heo",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "thanh-khe",
+      "slug": "thanh-khe",
+      "name": "Phường Thanh Khê",
+      "shortName": "Thanh Khê",
+      "sortOrder": 3,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Xuân Hà",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Chính Gián",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Thạc Gián",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Thanh Khê Tây",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Thanh Khê Đông",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Khu dân cư lâu đời kết hợp không gian chợ đô thị và truyền thống văn hóa ngư dân ven biển.",
+      "geography": {
+        "description": "Đô thị phía tây lõi trung tâm, tiếp giáp ven biển phía bắc.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Khu dân cư lâu đời kết hợp không gian chợ đô thị và truyền thống văn hóa ngư dân ven biển.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội đình Thạc Gián, lễ hội cầu ngư",
+        "heritageHighlights": [
+          "Đình Thạc Gián",
+          "Chợ Cồn",
+          "Bờ biển Nguyễn Tất Thành"
+        ],
+        "festivals": [
+          "Lễ hội đình Thạc Gián",
+          "Lễ hội cầu ngư"
+        ],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Hải sản",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        },
+        {
+          "name": "Ẩm thực chợ Cồn",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "dinh-thac-gian"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/thanh-khe-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/thanh-khe/cover.webp",
+          "alt": "Phường Thanh Khê – Đình Thạc Gián",
+          "searchQuery": "Đình Thạc Gián Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình Thạc Gián",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/thanh-khe-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/thanh-khe/heritage.webp",
+            "alt": "Phường Thanh Khê – Bờ biển Nguyễn Tất Thành",
+            "searchQuery": "Bờ biển Nguyễn Tất Thành Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bờ biển Nguyễn Tất Thành",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/thanh-khe-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/thanh-khe/specialty.webp",
+            "alt": "Phường Thanh Khê – Hải sản",
+            "searchQuery": "Hải sản Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Hải sản",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "an-khe",
+      "slug": "an-khe",
+      "name": "Phường An Khê",
+      "shortName": "An Khê",
+      "sortOrder": 4,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Hòa An",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Phát",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "An Khê",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Địa bàn đô thị mở rộng, có những địa chỉ tưởng niệm và truyền thống làng xã của vùng phía tây thành phố.",
+      "geography": {
+        "description": "Không gian đô thị nội địa phía tây, kết nối Hòa Khánh và Cẩm Lệ.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Địa bàn đô thị mở rộng, có những địa chỉ tưởng niệm và truyền thống làng xã của vùng phía tây thành phố.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Tín ngưỡng tưởng niệm, phong tục làng truyền thống",
+        "heritageHighlights": [
+          "Nghĩa trủng Gò Đồ"
+        ],
+        "festivals": [],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Ẩm thực xứ Quảng",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "nghia-trung-go-do"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/an-khe-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/an-khe/cover.webp",
+          "alt": "Phường An Khê – Nghĩa trủng Gò Đồ",
+          "searchQuery": "Nghĩa trủng Gò Đồ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Nghĩa trủng Gò Đồ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/an-khe-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/an-khe/heritage.webp",
+            "alt": "Phường An Khê – Nghĩa trủng Gò Đồ",
+            "searchQuery": "Nghĩa trủng Gò Đồ Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Nghĩa trủng Gò Đồ",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/an-khe-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/an-khe/specialty.webp",
+            "alt": "Phường An Khê – Ẩm thực xứ Quảng",
+            "searchQuery": "Ẩm thực xứ Quảng Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Ẩm thực xứ Quảng",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "an-hai",
+      "slug": "an-hai",
+      "name": "Phường An Hải",
+      "shortName": "An Hải",
+      "sortOrder": 5,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Phước Mỹ",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "An Hải Bắc",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "An Hải Nam",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Không gian cửa ngõ du lịch biển phía đông sông Hàn với sự chuyển biến từ làng biển thành đô thị hiện đại.",
+      "geography": {
+        "description": "Bờ biển phía đông, vùng ven sông Hàn và khu du lịch biển Mỹ Khê.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Không gian cửa ngõ du lịch biển phía đông sông Hàn với sự chuyển biến từ làng biển thành đô thị hiện đại.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Văn hóa làng biển, ẩm thực và dịch vụ du lịch biển",
+        "heritageHighlights": [
+          "Bãi biển Mỹ Khê",
+          "Khu vực đầu phía đông cầu Rồng",
+          "Đền thờ Thoại Ngọc Hầu"
+        ],
+        "festivals": [],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Hải sản Đà Nẵng",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "bai-bien-my-khe"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/an-hai-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/an-hai/cover.webp",
+          "alt": "Phường An Hải – Bãi biển Mỹ Khê",
+          "searchQuery": "Bãi biển Mỹ Khê Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Bãi biển Mỹ Khê",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/an-hai-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/an-hai/heritage.webp",
+            "alt": "Phường An Hải – Đền thờ Thoại Ngọc Hầu",
+            "searchQuery": "Đền thờ Thoại Ngọc Hầu Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Đền thờ Thoại Ngọc Hầu",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/an-hai-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/an-hai/specialty.webp",
+            "alt": "Phường An Hải – Hải sản Đà Nẵng",
+            "searchQuery": "Hải sản Đà Nẵng Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Hải sản Đà Nẵng",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "son-tra",
+      "slug": "son-tra",
+      "name": "Phường Sơn Trà",
+      "shortName": "Sơn Trà",
+      "sortOrder": 6,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Thọ Quang",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Nại Hiên Đông",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Mân Thái",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Bán đảo đặc trưng với hệ sinh thái rừng ven biển và các cộng đồng ngư dân truyền thống.",
+      "geography": {
+        "description": "Bán đảo Sơn Trà, rừng tự nhiên, vịnh biển, cảng cá và làng chài.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Bán đảo đặc trưng với hệ sinh thái rừng ven biển và các cộng đồng ngư dân truyền thống.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ cầu ngư, văn hóa ngư nghiệp và thúng chai",
+        "heritageHighlights": [
+          "Bán đảo Sơn Trà",
+          "Chùa Linh Ứng Bãi Bụt",
+          "Làng chài Mân Thái",
+          "Cảng cá Thọ Quang"
+        ],
+        "festivals": [
+          "Lễ hội cầu ngư"
+        ],
+        "crafts": [
+          "Nghề đánh bắt và chế biến hải sản"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Hải sản Thọ Quang",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "ban-dao-son-tra",
+        "chua-linh-ung-son-tra",
+        "lang-chai-man-thai"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/son-tra-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/son-tra/cover.webp",
+          "alt": "Phường Sơn Trà – Bán đảo Sơn Trà",
+          "searchQuery": "Bán đảo Sơn Trà Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Bán đảo Sơn Trà",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/son-tra-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/son-tra/heritage.webp",
+            "alt": "Phường Sơn Trà – Cảng cá Thọ Quang",
+            "searchQuery": "Cảng cá Thọ Quang Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Cảng cá Thọ Quang",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/son-tra-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/son-tra/specialty.webp",
+            "alt": "Phường Sơn Trà – Hải sản Thọ Quang",
+            "searchQuery": "Hải sản Thọ Quang Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Hải sản Thọ Quang",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "ngu-hanh-son",
+      "slug": "ngu-hanh-son",
+      "name": "Phường Ngũ Hành Sơn",
+      "shortName": "Ngũ Hành Sơn",
+      "sortOrder": 7,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Mỹ An",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Khuê Mỹ",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Hải",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Quý",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Vùng danh thắng núi đá – hang động, chùa cổ và làng nghề chạm khắc đá nổi tiếng.",
+      "geography": {
+        "description": "Vùng ven biển phía đông nam với cụm núi Ngũ Hành Sơn.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Vùng danh thắng núi đá – hang động, chùa cổ và làng nghề chạm khắc đá nổi tiếng.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội Quán Thế Âm, nghề điêu khắc đá, tín ngưỡng Phật giáo",
+        "heritageHighlights": [
+          "Danh thắng Ngũ Hành Sơn",
+          "Làng đá mỹ nghệ Non Nước",
+          "Khu căn cứ cách mạng K20"
+        ],
+        "festivals": [
+          "Lễ hội Quán Thế Âm"
+        ],
+        "crafts": [
+          "Điêu khắc đá mỹ nghệ Non Nước"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Đá mỹ nghệ Non Nước",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Ẩm thực chay",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "ngu-hanh-son",
+        "lang-da-non-nuoc",
+        "k20"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/ngu-hanh-son-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/ngu-hanh-son/cover.webp",
+          "alt": "Phường Ngũ Hành Sơn – Danh thắng Ngũ Hành Sơn",
+          "searchQuery": "Danh thắng Ngũ Hành Sơn Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Danh thắng Ngũ Hành Sơn",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/ngu-hanh-son-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/ngu-hanh-son/heritage.webp",
+            "alt": "Phường Ngũ Hành Sơn – Khu căn cứ cách mạng K20",
+            "searchQuery": "Khu căn cứ cách mạng K20 Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Khu căn cứ cách mạng K20",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/ngu-hanh-son-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/ngu-hanh-son/specialty.webp",
+            "alt": "Phường Ngũ Hành Sơn – Đá mỹ nghệ Non Nước",
+            "searchQuery": "Đá mỹ nghệ Non Nước Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Đá mỹ nghệ Non Nước",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city",
+        "k20"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "hoa-khanh",
+      "slug": "hoa-khanh",
+      "name": "Phường Hòa Khánh",
+      "shortName": "Hòa Khánh",
+      "sortOrder": 8,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Hòa Khánh Nam",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Minh",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Sơn",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Vùng chuyển tiếp từ khu dân cư nội đô sang không gian làng xã truyền thống phía tây bắc.",
+      "geography": {
+        "description": "Đô thị công nghiệp – giáo dục kết hợp địa hình nông thôn vùng Hòa Sơn cũ.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Vùng chuyển tiếp từ khu dân cư nội đô sang không gian làng xã truyền thống phía tây bắc.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội đình làng, thờ tiền hiền và Thành hoàng",
+        "heritageHighlights": [
+          "Đình An Ngãi Đông"
+        ],
+        "festivals": [],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Món quê vùng Hòa Sơn",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "dinh-an-ngai-dong"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/hoa-khanh-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/hoa-khanh/cover.webp",
+          "alt": "Phường Hòa Khánh – Đình An Ngãi Đông",
+          "searchQuery": "Đình An Ngãi Đông Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình An Ngãi Đông",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/hoa-khanh-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoa-khanh/heritage.webp",
+            "alt": "Phường Hòa Khánh – Đình An Ngãi Đông",
+            "searchQuery": "Đình An Ngãi Đông Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Đình An Ngãi Đông",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/hoa-khanh-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoa-khanh/specialty.webp",
+            "alt": "Phường Hòa Khánh – Món quê vùng Hòa Sơn",
+            "searchQuery": "Món quê vùng Hòa Sơn Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Món quê vùng Hòa Sơn",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "hai-van",
+      "slug": "hai-van",
+      "name": "Phường Hải Vân",
+      "shortName": "Hải Vân",
+      "sortOrder": 9,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Hòa Hiệp Bắc",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Hiệp Nam",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Bắc",
+          "type": "xã",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Liên",
+          "type": "xã",
+          "coverage": "partial"
+        }
+      ],
+      "overview": "Địa bàn rộng, có cảnh quan đèo Hải Vân, sông Cu Đê và văn hóa làng biển Nam Ô.",
+      "geography": {
+        "description": "Núi đèo, cửa biển, ghềnh đá, sông Cu Đê và không gian sinh thái Hòa Bắc.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Địa bàn rộng, có cảnh quan đèo Hải Vân, sông Cu Đê và văn hóa làng biển Nam Ô.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Nghề làm nước mắm Nam Ô, lễ cầu ngư, văn hóa cư dân miền núi – ven biển",
+        "heritageHighlights": [
+          "Đèo Hải Vân",
+          "Hải Vân Quan",
+          "Làng cổ Nam Ô",
+          "Ghềnh Nam Ô",
+          "Sông Cu Đê"
+        ],
+        "festivals": [
+          "Lễ cầu ngư tại các làng chài"
+        ],
+        "crafts": [
+          "Sản xuất nước mắm Nam Ô"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Nước mắm Nam Ô",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Gỏi cá Nam Ô",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "hai-van-quan",
+        "lang-nam-o",
+        "song-cu-de"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/hai-van-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/hai-van/cover.webp",
+          "alt": "Phường Hải Vân – Đèo Hải Vân",
+          "searchQuery": "Đèo Hải Vân Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đèo Hải Vân",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/hai-van-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hai-van/heritage.webp",
+            "alt": "Phường Hải Vân – Sông Cu Đê",
+            "searchQuery": "Sông Cu Đê Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Sông Cu Đê",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/hai-van-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hai-van/specialty.webp",
+            "alt": "Phường Hải Vân – Nước mắm Nam Ô",
+            "searchQuery": "Nước mắm Nam Ô Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Nước mắm Nam Ô",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city",
+        "namo"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "lien-chieu",
+      "slug": "lien-chieu",
+      "name": "Phường Liên Chiểu",
+      "shortName": "Liên Chiểu",
+      "sortOrder": 10,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Hòa Khánh Bắc",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Liên",
+          "type": "xã",
+          "coverage": "remainder"
+        }
+      ],
+      "overview": "Vùng đô thị – công nghiệp phía tây bắc, gắn với lịch sử kháng chiến và làng xóm truyền thống.",
+      "geography": {
+        "description": "Không gian ven đô phía tây bắc, vùng Hòa Liên cũ.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Vùng đô thị – công nghiệp phía tây bắc, gắn với lịch sử kháng chiến và làng xóm truyền thống.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội đình làng Hưởng Phước và ký ức kháng chiến",
+        "heritageHighlights": [
+          "Căn cứ lõm cách mạng B1 Hồng Phước",
+          "Đình Hưởng Phước"
+        ],
+        "festivals": [],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Ẩm thực làng quê xứ Quảng",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "b1-hong-phuoc"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/lien-chieu-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/lien-chieu/cover.webp",
+          "alt": "Phường Liên Chiểu – Căn cứ lõm cách mạng B1 Hồng Phước",
+          "searchQuery": "Căn cứ lõm cách mạng B1 Hồng Phước Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Căn cứ lõm cách mạng B1 Hồng Phước",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/lien-chieu-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/lien-chieu/heritage.webp",
+            "alt": "Phường Liên Chiểu – Đình Hưởng Phước",
+            "searchQuery": "Đình Hưởng Phước Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Đình Hưởng Phước",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/lien-chieu-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/lien-chieu/specialty.webp",
+            "alt": "Phường Liên Chiểu – Ẩm thực làng quê xứ Quảng",
+            "searchQuery": "Ẩm thực làng quê xứ Quảng Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Ẩm thực làng quê xứ Quảng",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "cam-le",
+      "slug": "cam-le",
+      "name": "Phường Cẩm Lệ",
+      "shortName": "Cẩm Lệ",
+      "sortOrder": 11,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Hòa Thọ Tây",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Thọ Đông",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Khuê Trung",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Địa bàn di chỉ văn hóa Chăm Phong Lệ và làng nghề bánh khô mè, nơi gặp gỡ giữa ký ức làng cổ với đô thị hiện đại.",
+      "geography": {
+        "description": "Ven sông Cẩm Lệ, khu vực đô thị – công nghiệp phía nam.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": 14.05,
+        "population": 78837,
+        "referenceDate": "2025-07-01"
+      },
+      "history": {
+        "summary": "Địa bàn di chỉ văn hóa Chăm Phong Lệ và làng nghề bánh khô mè, nơi gặp gỡ giữa ký ức làng cổ với đô thị hiện đại.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội làng Khuê Trung, nghề bánh khô mè",
+        "heritageHighlights": [
+          "Di chỉ khảo cổ Chăm Phong Lệ",
+          "Nghĩa trủng Hòa Vang",
+          "Đình Khuê Trung"
+        ],
+        "festivals": [
+          "Lễ hội làng Khuê Trung"
+        ],
+        "crafts": [
+          "Sản xuất bánh khô mè"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Bánh khô mè Cẩm Lệ",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "phong-le",
+        "nghia-trung-hoa-vang"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/cam-le-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/cam-le/cover.webp",
+          "alt": "Phường Cẩm Lệ – Di chỉ khảo cổ Chăm Phong Lệ",
+          "searchQuery": "Di chỉ khảo cổ Chăm Phong Lệ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Di chỉ khảo cổ Chăm Phong Lệ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/cam-le-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/cam-le/heritage.webp",
+            "alt": "Phường Cẩm Lệ – Đình Khuê Trung",
+            "searchQuery": "Đình Khuê Trung Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Đình Khuê Trung",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/cam-le-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/cam-le/specialty.webp",
+            "alt": "Phường Cẩm Lệ – Bánh khô mè Cẩm Lệ",
+            "searchQuery": "Bánh khô mè Cẩm Lệ Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bánh khô mè Cẩm Lệ",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "camle"
+      ],
+      "editorialStatus": "reviewed"
+    },
+    {
+      "id": "hoa-xuan",
+      "slug": "hoa-xuan",
+      "name": "Phường Hòa Xuân",
+      "shortName": "Hòa Xuân",
+      "sortOrder": 12,
+      "regionId": "da-nang-do-thi",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Hòa Xuân",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Châu",
+          "type": "xã",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Phước",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Vùng đô thị mới có lõi di sản đình làng, dấu tích cư trú và nghi thức nông nghiệp truyền thống.",
+      "geography": {
+        "description": "Đô thị phía nam nằm trong hệ thống sông, các làng cũ vùng Hòa Châu – Hòa Phước.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Vùng đô thị mới có lõi di sản đình làng, dấu tích cư trú và nghi thức nông nghiệp truyền thống.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội Mục đồng Phong Lệ, thờ tiền hiền và các lệ làng",
+        "heritageHighlights": [
+          "Đình Phong Lệ",
+          "Đình Quá Giáng",
+          "Nhà thờ chư phái tộc Quá Giáng",
+          "Đình Trung Lương"
+        ],
+        "festivals": [
+          "Lễ hội Mục đồng Phong Lệ"
+        ],
+        "crafts": [
+          "Sản xuất bánh khô mè tại vùng Quang Châu"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Bánh khô mè Quang Châu",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "dinh-phong-le",
+        "nha-tho-qua-giang"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/hoa-xuan-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/hoa-xuan/cover.webp",
+          "alt": "Phường Hòa Xuân – Đình Phong Lệ",
+          "searchQuery": "Đình Phong Lệ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình Phong Lệ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/hoa-xuan-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoa-xuan/heritage.webp",
+            "alt": "Phường Hòa Xuân – Đình Trung Lương",
+            "searchQuery": "Đình Trung Lương Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Đình Trung Lương",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/hoa-xuan-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoa-xuan/specialty.webp",
+            "alt": "Phường Hòa Xuân – Bánh khô mè Quang Châu",
+            "searchQuery": "Bánh khô mè Quang Châu Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bánh khô mè Quang Châu",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "da-nang-do-thi",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "hoaxuan"
+      ],
+      "editorialStatus": "reviewed"
+    },
+    {
+      "id": "tam-ky",
+      "slug": "tam-ky",
+      "name": "Phường Tam Kỳ",
+      "shortName": "Tam Kỳ",
+      "sortOrder": 13,
+      "regionId": "tam-ky",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "An Mỹ",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "An Xuân",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Trường Xuân",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Trung tâm đô thị Tam Kỳ trước đây, gắn với lịch sử hình thành phủ lỵ và đời sống văn hóa Quảng Nam.",
+      "geography": {
+        "description": "Đô thị vùng đồng bằng phía nam thành phố Đà Nẵng mới.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Trung tâm đô thị Tam Kỳ trước đây, gắn với lịch sử hình thành phủ lỵ và đời sống văn hóa Quảng Nam.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Văn hóa đô thị Tam Kỳ, sinh hoạt văn nghệ và giáo dục truyền thống",
+        "heritageHighlights": [
+          "Di tích Phủ đường Tam Kỳ",
+          "Hồ Nguyễn Du"
+        ],
+        "festivals": [],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Cơm gà Tam Kỳ",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        },
+        {
+          "name": "Mì Quảng",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "phu-duong-tam-ky"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/tam-ky-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/tam-ky/cover.webp",
+          "alt": "Phường Tam Kỳ – Di tích Phủ đường Tam Kỳ",
+          "searchQuery": "Di tích Phủ đường Tam Kỳ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Di tích Phủ đường Tam Kỳ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/tam-ky-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/tam-ky/heritage.webp",
+            "alt": "Phường Tam Kỳ – Hồ Nguyễn Du",
+            "searchQuery": "Hồ Nguyễn Du Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Hồ Nguyễn Du",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/tam-ky-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/tam-ky/specialty.webp",
+            "alt": "Phường Tam Kỳ – Cơm gà Tam Kỳ",
+            "searchQuery": "Cơm gà Tam Kỳ Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Cơm gà Tam Kỳ",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "tam-ky",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "quang-phu",
+      "slug": "quang-phu",
+      "name": "Phường Quảng Phú",
+      "shortName": "Quảng Phú",
+      "sortOrder": 14,
+      "regionId": "tam-ky",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "An Phú",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Tam Thanh",
+          "type": "xã",
+          "coverage": "entire"
+        },
+        {
+          "name": "Tam Phú",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Phường ven biển nổi bật với tượng đài tri ân, làng bích họa và cộng đồng ngư dân Tam Thanh.",
+      "geography": {
+        "description": "Bờ biển Tam Thanh, đầm sông ven biển và đồng bằng.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": 36.21,
+        "population": null,
+        "referenceDate": "2025-07-01"
+      },
+      "history": {
+        "summary": "Phường ven biển nổi bật với tượng đài tri ân, làng bích họa và cộng đồng ngư dân Tam Thanh.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Văn hóa làng chài, các hoạt động mỹ thuật cộng đồng",
+        "heritageHighlights": [
+          "Tượng đài Mẹ Việt Nam anh hùng",
+          "Làng bích họa Tam Thanh",
+          "Biển Tam Thanh",
+          "Bãi Sậy – Sông Đầm"
+        ],
+        "festivals": [
+          "Sinh hoạt lễ hội văn hóa làng biển Tam Thanh"
+        ],
+        "crafts": [
+          "Sản xuất nước mắm truyền thống"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Nước mắm vùng Tam Thanh",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Chả cá nhồng",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "tuong-dai-me-vnah",
+        "lang-bich-hoa-tam-thanh",
+        "bien-tam-thanh"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/quang-phu-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/quang-phu/cover.webp",
+          "alt": "Phường Quảng Phú – Tượng đài Mẹ Việt Nam anh hùng",
+          "searchQuery": "Tượng đài Mẹ Việt Nam anh hùng Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Tượng đài Mẹ Việt Nam anh hùng",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/quang-phu-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/quang-phu/heritage.webp",
+            "alt": "Phường Quảng Phú – Bãi Sậy – Sông Đầm",
+            "searchQuery": "Bãi Sậy – Sông Đầm Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bãi Sậy – Sông Đầm",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/quang-phu-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/quang-phu/specialty.webp",
+            "alt": "Phường Quảng Phú – Nước mắm vùng Tam Thanh",
+            "searchQuery": "Nước mắm vùng Tam Thanh Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Nước mắm vùng Tam Thanh",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "tam-ky",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "quangphu",
+        "quangphu_product"
+      ],
+      "editorialStatus": "reviewed"
+    },
+    {
+      "id": "huong-tra",
+      "slug": "huong-tra",
+      "name": "Phường Hương Trà",
+      "shortName": "Hương Trà",
+      "sortOrder": 15,
+      "regionId": "tam-ky",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "An Sơn",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Hương",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Tam Ngọc",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Không gian du lịch làng sinh thái gắn với sắc hoa sưa và đời sống ven sông Tam Kỳ.",
+      "geography": {
+        "description": "Sông Tam Kỳ, làng xóm sinh thái và khu dân cư đô thị.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Không gian du lịch làng sinh thái gắn với sắc hoa sưa và đời sống ven sông Tam Kỳ.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội đình làng Hương Trà, lễ hội Sắc sưa",
+        "heritageHighlights": [
+          "Làng sinh thái Hương Trà",
+          "Đình làng Hương Trà",
+          "Không gian hoa sưa Hương Trà"
+        ],
+        "festivals": [
+          "Lễ hội đình làng Hương Trà",
+          "Lễ hội Sắc sưa Hương Trà"
+        ],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Bánh dân gian xứ Quảng",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        },
+        {
+          "name": "Trái cây vườn địa phương",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "lang-hoa-sua-huong-tra",
+        "dinh-huong-tra"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/huong-tra-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/huong-tra/cover.webp",
+          "alt": "Phường Hương Trà – Làng sinh thái Hương Trà",
+          "searchQuery": "Làng sinh thái Hương Trà Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng sinh thái Hương Trà",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/huong-tra-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/huong-tra/heritage.webp",
+            "alt": "Phường Hương Trà – Không gian hoa sưa Hương Trà",
+            "searchQuery": "Không gian hoa sưa Hương Trà Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Không gian hoa sưa Hương Trà",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/huong-tra-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/huong-tra/specialty.webp",
+            "alt": "Phường Hương Trà – Bánh dân gian xứ Quảng",
+            "searchQuery": "Bánh dân gian xứ Quảng Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bánh dân gian xứ Quảng",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "tam-ky",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "huongtra"
+      ],
+      "editorialStatus": "reviewed"
+    },
+    {
+      "id": "ban-thach",
+      "slug": "ban-thach",
+      "name": "Phường Bàn Thạch",
+      "shortName": "Bàn Thạch",
+      "sortOrder": 16,
+      "regionId": "tam-ky",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Tân Thạnh",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Hòa Thuận",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Tam Thăng",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Vùng đất cách mạng ghi dấu hệ thống địa đạo Kỳ Anh, đình làng và sinh thái Bãi Sậy – Sông Đầm.",
+      "geography": {
+        "description": "Không gian đồng bằng, đầm nước, ruộng cói và các làng ven sông.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": 34.77,
+        "population": 36800,
+        "referenceDate": "2025-07-01"
+      },
+      "history": {
+        "summary": "Vùng đất cách mạng ghi dấu hệ thống địa đạo Kỳ Anh, đình làng và sinh thái Bãi Sậy – Sông Đầm.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội Địa đạo Kỳ Anh – Sông Đầm, hô hát bài chòi, nghề dệt chiếu Thạch Tân",
+        "heritageHighlights": [
+          "Địa đạo Kỳ Anh",
+          "Văn Thánh – Khổng Miếu",
+          "Bãi Sậy – Sông Đầm",
+          "Đình Thạch Tân"
+        ],
+        "festivals": [
+          "Lễ hội Văn hóa – Du lịch Địa đạo Kỳ Anh – Bãi Sậy Sông Đầm"
+        ],
+        "crafts": [
+          "Dệt chiếu cói Thạch Tân"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Chiếu cói Thạch Tân",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Món quê Tam Kỳ",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "dia-dao-ky-anh",
+        "bai-say-song-dam",
+        "van-thanh-khong-mieu"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/ban-thach-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/ban-thach/cover.webp",
+          "alt": "Phường Bàn Thạch – Địa đạo Kỳ Anh",
+          "searchQuery": "Địa đạo Kỳ Anh Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Địa đạo Kỳ Anh",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/ban-thach-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/ban-thach/heritage.webp",
+            "alt": "Phường Bàn Thạch – Đình Thạch Tân",
+            "searchQuery": "Đình Thạch Tân Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Đình Thạch Tân",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/ban-thach-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/ban-thach/specialty.webp",
+            "alt": "Phường Bàn Thạch – Chiếu cói Thạch Tân",
+            "searchQuery": "Chiếu cói Thạch Tân Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Chiếu cói Thạch Tân",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "tam-ky",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "banthach",
+        "banthach_festival"
+      ],
+      "editorialStatus": "reviewed"
+    },
+    {
+      "id": "dien-ban",
+      "slug": "dien-ban",
+      "name": "Phường Điện Bàn",
+      "shortName": "Điện Bàn",
+      "sortOrder": 17,
+      "regionId": "dien-ban",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Điện Phương",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Minh",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Vĩnh Điện",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Trung tâm vùng nghề truyền thống và ẩm thực xứ Quảng, nơi có dấu tích dinh trấn Thanh Chiêm.",
+      "geography": {
+        "description": "Đô thị Vĩnh Điện và vùng đồng bằng ven sông Thu Bồn.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Trung tâm vùng nghề truyền thống và ẩm thực xứ Quảng, nơi có dấu tích dinh trấn Thanh Chiêm.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Nghề đúc đồng, nghề thủ công và văn hóa ẩm thực làng quê",
+        "heritageHighlights": [
+          "Làng đúc đồng Phước Kiều",
+          "Dấu tích Dinh trấn Thanh Chiêm",
+          "Làng Đông Khương"
+        ],
+        "festivals": [],
+        "crafts": [
+          "Đúc đồng Phước Kiều"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Bê thui Cầu Mống",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Mì Quảng Phú Chiêm",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Đồ đồng Phước Kiều",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "lang-duc-dong-phuoc-kieu",
+        "dinh-tran-thanh-chiem"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/dien-ban-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/dien-ban/cover.webp",
+          "alt": "Phường Điện Bàn – Làng đúc đồng Phước Kiều",
+          "searchQuery": "Làng đúc đồng Phước Kiều Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng đúc đồng Phước Kiều",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/dien-ban-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/dien-ban/heritage.webp",
+            "alt": "Phường Điện Bàn – Làng Đông Khương",
+            "searchQuery": "Làng Đông Khương Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Làng Đông Khương",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/dien-ban-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/dien-ban/specialty.webp",
+            "alt": "Phường Điện Bàn – Bê thui Cầu Mống",
+            "searchQuery": "Bê thui Cầu Mống Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bê thui Cầu Mống",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "dien-ban",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "dienban"
+      ],
+      "editorialStatus": "reviewed"
+    },
+    {
+      "id": "dien-ban-dong",
+      "slug": "dien-ban-dong",
+      "name": "Phường Điện Bàn Đông",
+      "shortName": "Điện Bàn Đông",
+      "sortOrder": 18,
+      "regionId": "dien-ban",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Điện Nam Đông",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Nam Trung",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Dương",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Ngọc",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Nam Bắc",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Địa bàn ven biển phía đông Điện Bàn, có các làng chài và văn hóa ngư nghiệp.",
+      "geography": {
+        "description": "Bờ biển Hà My, khu dân cư ven biển và đô thị mới.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Địa bàn ven biển phía đông Điện Bàn, có các làng chài và văn hóa ngư nghiệp.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Lễ hội cầu ngư, phong tục ngư dân, nghề đánh bắt biển",
+        "heritageHighlights": [
+          "Bãi biển Hà My"
+        ],
+        "festivals": [
+          "Lễ hội cầu ngư"
+        ],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Hải sản Hà My",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "bien-ha-my"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/dien-ban-dong-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/dien-ban-dong/cover.webp",
+          "alt": "Phường Điện Bàn Đông – Bãi biển Hà My",
+          "searchQuery": "Bãi biển Hà My Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Bãi biển Hà My",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/dien-ban-dong-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/dien-ban-dong/heritage.webp",
+            "alt": "Phường Điện Bàn Đông – Bãi biển Hà My",
+            "searchQuery": "Bãi biển Hà My Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Bãi biển Hà My",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/dien-ban-dong-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/dien-ban-dong/specialty.webp",
+            "alt": "Phường Điện Bàn Đông – Hải sản Hà My",
+            "searchQuery": "Hải sản Hà My Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Hải sản Hà My",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "dien-ban",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "an-thang",
+      "slug": "an-thang",
+      "name": "Phường An Thắng",
+      "shortName": "An Thắng",
+      "sortOrder": 19,
+      "regionId": "dien-ban",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Điện An",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Thắng Nam",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Thắng Trung",
+          "type": "phường",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Địa bàn đồng bằng Điện Bàn có tháp Bằng An, dấu tích văn hóa Champa và di tích lịch sử hiện đại.",
+      "geography": {
+        "description": "Không gian đồng bằng ven đô, kết nối các tuyến giao thông Điện Bàn.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Địa bàn đồng bằng Điện Bàn có tháp Bằng An, dấu tích văn hóa Champa và di tích lịch sử hiện đại.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Tưởng niệm lịch sử, bảo tồn dấu tích kiến trúc Chăm",
+        "heritageHighlights": [
+          "Tháp Chăm Bằng An",
+          "Nhà lưu niệm Mẹ Việt Nam anh hùng Nguyễn Thị Thứ"
+        ],
+        "festivals": [],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Mì Quảng",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        },
+        {
+          "name": "Bánh tráng quê",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "thap-bang-an"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/an-thang-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/an-thang/cover.webp",
+          "alt": "Phường An Thắng – Tháp Chăm Bằng An",
+          "searchQuery": "Tháp Chăm Bằng An Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Tháp Chăm Bằng An",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/an-thang-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/an-thang/heritage.webp",
+            "alt": "Phường An Thắng – Nhà lưu niệm Mẹ Việt Nam anh hùng Nguyễn Thị Thứ",
+            "searchQuery": "Nhà lưu niệm Mẹ Việt Nam anh hùng Nguyễn Thị Thứ Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Nhà lưu niệm Mẹ Việt Nam anh hùng Nguyễn Thị Thứ",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/an-thang-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/an-thang/specialty.webp",
+            "alt": "Phường An Thắng – Mì Quảng",
+            "searchQuery": "Mì Quảng Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Mì Quảng",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "dien-ban",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "dien-ban-bac",
+      "slug": "dien-ban-bac",
+      "name": "Phường Điện Bàn Bắc",
+      "shortName": "Điện Bàn Bắc",
+      "sortOrder": 20,
+      "regionId": "dien-ban",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Điện Thắng Bắc",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Hòa",
+          "type": "xã",
+          "coverage": "entire"
+        },
+        {
+          "name": "Điện Tiến",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Khu vực phía bắc Điện Bàn nổi bật với đồi Bồ Bồ và truyền thống đấu tranh cách mạng.",
+      "geography": {
+        "description": "Đồi thông và không gian đồng bằng, làng xã Điện Tiến – Điện Hòa.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Khu vực phía bắc Điện Bàn nổi bật với đồi Bồ Bồ và truyền thống đấu tranh cách mạng.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Giáo dục truyền thống cách mạng, sinh hoạt làng quê",
+        "heritageHighlights": [
+          "Đồi Bồ Bồ",
+          "Tượng đài chiến thắng Bồ Bồ"
+        ],
+        "festivals": [],
+        "crafts": []
+      },
+      "specialties": [
+        {
+          "name": "Nông sản đồng bằng Điện Bàn",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        }
+      ],
+      "placeIds": [
+        "doi-bo-bo"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/dien-ban-bac-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/dien-ban-bac/cover.webp",
+          "alt": "Phường Điện Bàn Bắc – Đồi Bồ Bồ",
+          "searchQuery": "Đồi Bồ Bồ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đồi Bồ Bồ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/dien-ban-bac-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/dien-ban-bac/heritage.webp",
+            "alt": "Phường Điện Bàn Bắc – Tượng đài chiến thắng Bồ Bồ",
+            "searchQuery": "Tượng đài chiến thắng Bồ Bồ Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Tượng đài chiến thắng Bồ Bồ",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/dien-ban-bac-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/dien-ban-bac/specialty.webp",
+            "alt": "Phường Điện Bàn Bắc – Nông sản đồng bằng Điện Bàn",
+            "searchQuery": "Nông sản đồng bằng Điện Bàn Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Nông sản đồng bằng Điện Bàn",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "dien-ban",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "danang_city",
+        "dienbanbac"
+      ],
+      "editorialStatus": "draft"
+    },
+    {
+      "id": "hoi-an",
+      "slug": "hoi-an",
+      "name": "Phường Hội An",
+      "shortName": "Hội An",
+      "sortOrder": 21,
+      "regionId": "hoi-an",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Minh An",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Cẩm Phô",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Sơn Phong",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Cẩm Nam",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Cẩm Kim",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Trung tâm di sản phố cổ Hội An, thương cảng lịch sử giao thoa văn hóa Việt – Hoa – Nhật.",
+      "geography": {
+        "description": "Phố cổ ven sông Hoài và các làng nghề vùng Cẩm Kim.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Trung tâm di sản phố cổ Hội An, thương cảng lịch sử giao thoa văn hóa Việt – Hoa – Nhật.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Đêm phố cổ, nghề mộc Kim Bồng, lễ hội đèn lồng và sinh hoạt các hội quán",
+        "heritageHighlights": [
+          "Phố cổ Hội An",
+          "Chùa Cầu",
+          "Làng mộc Kim Bồng",
+          "Các hội quán cổ"
+        ],
+        "festivals": [
+          "Đêm phố cổ Hội An"
+        ],
+        "crafts": [
+          "Mộc Kim Bồng"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Cao lầu",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Bánh bao bánh vạc",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Chè bắp Cẩm Nam",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "pho-co-hoi-an",
+        "chua-cau",
+        "lang-moc-kim-bong"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/hoi-an-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/hoi-an/cover.webp",
+          "alt": "Phường Hội An – Phố cổ Hội An",
+          "searchQuery": "Phố cổ Hội An Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Phố cổ Hội An",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/hoi-an-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoi-an/heritage.webp",
+            "alt": "Phường Hội An – Các hội quán cổ",
+            "searchQuery": "Các hội quán cổ Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Các hội quán cổ",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/hoi-an-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoi-an/specialty.webp",
+            "alt": "Phường Hội An – Cao lầu",
+            "searchQuery": "Cao lầu Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Cao lầu",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "hoi-an",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "unesco_hoian",
+        "hoian_heritage"
+      ],
+      "editorialStatus": "reviewed"
+    },
+    {
+      "id": "hoi-an-dong",
+      "slug": "hoi-an-dong",
+      "name": "Phường Hội An Đông",
+      "shortName": "Hội An Đông",
+      "sortOrder": 22,
+      "regionId": "hoi-an",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Cẩm Châu",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Cửa Đại",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Cẩm Thanh",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Không gian cửa sông và rừng dừa nước, nơi cộng đồng cư dân duy trì nghề sông nước và thuyền thúng.",
+      "geography": {
+        "description": "Cửa Đại, rừng dừa Bảy Mẫu và hệ thống lạch, kênh ven sông.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Không gian cửa sông và rừng dừa nước, nơi cộng đồng cư dân duy trì nghề sông nước và thuyền thúng.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Nghề đan tre dừa, hát bả trạo, bài chòi và trải nghiệm thúng chai",
+        "heritageHighlights": [
+          "Rừng dừa Bảy Mẫu",
+          "Biển Cửa Đại"
+        ],
+        "festivals": [
+          "Diễn xướng bả trạo",
+          "Hô hát bài chòi"
+        ],
+        "crafts": [
+          "Đan tre dừa Cẩm Thanh",
+          "Làm thúng chai"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Hải sản Cửa Đại",
+          "association": "regional",
+          "notes": "Phổ biến tại địa phương hoặc vùng rộng hơn; không khẳng định nguồn gốc riêng của phường."
+        },
+        {
+          "name": "Sản phẩm tre dừa Cẩm Thanh",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "rung-dua-bay-mau",
+        "bien-cua-dai"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/hoi-an-dong-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/hoi-an-dong/cover.webp",
+          "alt": "Phường Hội An Đông – Rừng dừa Bảy Mẫu",
+          "searchQuery": "Rừng dừa Bảy Mẫu Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Rừng dừa Bảy Mẫu",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/hoi-an-dong-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoi-an-dong/heritage.webp",
+            "alt": "Phường Hội An Đông – Biển Cửa Đại",
+            "searchQuery": "Biển Cửa Đại Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Biển Cửa Đại",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/hoi-an-dong-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoi-an-dong/specialty.webp",
+            "alt": "Phường Hội An Đông – Hải sản Cửa Đại",
+            "searchQuery": "Hải sản Cửa Đại Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Hải sản Cửa Đại",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "hoi-an",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "hoiandong"
+      ],
+      "editorialStatus": "reviewed"
+    },
+    {
+      "id": "hoi-an-tay",
+      "slug": "hoi-an-tay",
+      "name": "Phường Hội An Tây",
+      "shortName": "Hội An Tây",
+      "sortOrder": 23,
+      "regionId": "hoi-an",
+      "establishedOperationalDate": "2025-07-01",
+      "formerUnits": [
+        {
+          "name": "Thanh Hà",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Tân An",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Cẩm An",
+          "type": "phường",
+          "coverage": "entire"
+        },
+        {
+          "name": "Cẩm Hà",
+          "type": "xã",
+          "coverage": "entire"
+        }
+      ],
+      "overview": "Không gian làng nghề truyền thống gắn với gốm Thanh Hà, rau Trà Quế, cây quật cảnh và biển An Bàng.",
+      "geography": {
+        "description": "Làng nông nghiệp ven đô, sông Cổ Cò và bờ biển An Bàng.",
+        "center": {
+          "lat": null,
+          "lng": null
+        },
+        "boundaryGeoJson": null
+      },
+      "statistics": {
+        "areaKm2": null,
+        "population": null,
+        "referenceDate": null
+      },
+      "history": {
+        "summary": "Không gian làng nghề truyền thống gắn với gốm Thanh Hà, rau Trà Quế, cây quật cảnh và biển An Bàng.",
+        "timeLine": []
+      },
+      "culture": {
+        "summary": "Giỗ Tổ nghề gốm Thanh Hà, lễ hội Cầu bông Trà Quế, trồng cây quật cảnh",
+        "heritageHighlights": [
+          "Làng gốm Thanh Hà",
+          "Làng rau Trà Quế",
+          "Biển An Bàng"
+        ],
+        "festivals": [
+          "Giỗ Tổ nghề gốm Thanh Hà",
+          "Lễ hội Cầu bông Trà Quế"
+        ],
+        "crafts": [
+          "Làm gốm Thanh Hà",
+          "Trồng rau Trà Quế",
+          "Trồng cây quật cảnh"
+        ]
+      },
+      "specialties": [
+        {
+          "name": "Rau Trà Quế",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Gốm Thanh Hà",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        },
+        {
+          "name": "Quật cảnh Cẩm Hà",
+          "association": "local",
+          "notes": "Gắn với sản phẩm/làng nghề tại địa bàn."
+        }
+      ],
+      "placeIds": [
+        "lang-gom-thanh-ha",
+        "lang-rau-tra-que",
+        "bien-an-bang"
+      ],
+      "media": {
+        "cover": {
+          "id": "wards/hoi-an-tay-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/wards/hoi-an-tay/cover.webp",
+          "alt": "Phường Hội An Tây – Làng gốm Thanh Hà",
+          "searchQuery": "Làng gốm Thanh Hà Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng gốm Thanh Hà",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        },
+        "gallery": [
+          {
+            "id": "wards/hoi-an-tay-heritage",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoi-an-tay/heritage.webp",
+            "alt": "Phường Hội An Tây – Biển An Bàng",
+            "searchQuery": "Biển An Bàng Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Biển An Bàng",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          },
+          {
+            "id": "wards/hoi-an-tay-specialty",
+            "src": null,
+            "expectedLocalPath": "/images/da-nang/wards/hoi-an-tay/specialty.webp",
+            "alt": "Phường Hội An Tây – Rau Trà Quế",
+            "searchQuery": "Rau Trà Quế Đà Nẵng Việt Nam ảnh tư liệu",
+            "caption": "Rau Trà Quế",
+            "credit": null,
+            "license": null,
+            "sourceUrl": null,
+            "status": "pending_asset"
+          }
+        ]
+      },
+      "tags": [
+        "hoi-an",
+        "lịch sử",
+        "văn hóa",
+        "đặc sản"
+      ],
+      "sources": [
+        "law1659",
+        "hoiantay"
+      ],
+      "editorialStatus": "reviewed"
+    }
+  ],
+  "places": [
+    {
+      "id": "thanh-dien-hai",
+      "name": "Thành Điện Hải",
+      "slug": "thanh-dien-hai",
+      "rank": 1,
+      "category": "history",
+      "wardId": "hai-chau",
+      "otherAdministrativeUnit": null,
+      "summary": "Pháo đài cổ triều Nguyễn, gắn với cuộc kháng chiến chống liên quân Pháp – Tây Ban Nha năm 1858.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/thanh-dien-hai-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/thanh-dien-hai/cover.webp",
+          "alt": "Thành Điện Hải – Thành Điện Hải",
+          "searchQuery": "Thành Điện Hải Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Thành Điện Hải",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "dinh-hai-chau",
+      "name": "Đình làng Hải Châu",
+      "slug": "dinh-hai-chau",
+      "rank": 2,
+      "category": "culture",
+      "wardId": "hai-chau",
+      "otherAdministrativeUnit": null,
+      "summary": "Đình làng tiêu biểu của cộng đồng cư dân lâu đời ở trung tâm Đà Nẵng.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/dinh-hai-chau-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/dinh-hai-chau/cover.webp",
+          "alt": "Đình làng Hải Châu – Đình làng Hải Châu",
+          "searchQuery": "Đình làng Hải Châu Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình làng Hải Châu",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "dinh-nai-nam",
+      "name": "Đình Nại Nam",
+      "slug": "dinh-nai-nam",
+      "rank": 3,
+      "category": "culture",
+      "wardId": "hoa-cuong",
+      "otherAdministrativeUnit": null,
+      "summary": "Không gian tín ngưỡng và sinh hoạt lễ hội đình làng Nại Nam.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/dinh-nai-nam-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/dinh-nai-nam/cover.webp",
+          "alt": "Đình Nại Nam – Đình Nại Nam",
+          "searchQuery": "Đình Nại Nam Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình Nại Nam",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "dinh-thac-gian",
+      "name": "Đình Thạc Gián",
+      "slug": "dinh-thac-gian",
+      "rank": 4,
+      "category": "culture",
+      "wardId": "thanh-khe",
+      "otherAdministrativeUnit": null,
+      "summary": "Đình cổ gắn với lịch sử hình thành và lễ hội cộng đồng làng Thạc Gián.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/dinh-thac-gian-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/dinh-thac-gian/cover.webp",
+          "alt": "Đình Thạc Gián – Đình Thạc Gián",
+          "searchQuery": "Đình Thạc Gián Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình Thạc Gián",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "nghia-trung-go-do",
+      "name": "Nghĩa trủng Gò Đồ",
+      "slug": "nghia-trung-go-do",
+      "rank": 5,
+      "category": "history",
+      "wardId": "an-khe",
+      "otherAdministrativeUnit": null,
+      "summary": "Địa điểm tưởng niệm trong không gian văn hóa – lịch sử phía tây đô thị Đà Nẵng.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/nghia-trung-go-do-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/nghia-trung-go-do/cover.webp",
+          "alt": "Nghĩa trủng Gò Đồ – Nghĩa trủng Gò Đồ",
+          "searchQuery": "Nghĩa trủng Gò Đồ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Nghĩa trủng Gò Đồ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "bai-bien-my-khe",
+      "name": "Bãi biển Mỹ Khê",
+      "slug": "bai-bien-my-khe",
+      "rank": 6,
+      "category": "nature",
+      "wardId": "an-hai",
+      "otherAdministrativeUnit": null,
+      "summary": "Một trong những bãi biển tiêu biểu của đô thị Đà Nẵng, gần dải đô thị phía đông sông Hàn.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/bai-bien-my-khe-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/bai-bien-my-khe/cover.webp",
+          "alt": "Bãi biển Mỹ Khê – Bãi biển Mỹ Khê",
+          "searchQuery": "Bãi biển Mỹ Khê Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Bãi biển Mỹ Khê",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "ban-dao-son-tra",
+      "name": "Bán đảo Sơn Trà",
+      "slug": "ban-dao-son-tra",
+      "rank": 7,
+      "category": "nature",
+      "wardId": "son-tra",
+      "otherAdministrativeUnit": null,
+      "summary": "Không gian núi rừng bán đảo, hệ sinh thái ven biển và các điểm quan sát cảnh quan.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/ban-dao-son-tra-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/ban-dao-son-tra/cover.webp",
+          "alt": "Bán đảo Sơn Trà – Bán đảo Sơn Trà",
+          "searchQuery": "Bán đảo Sơn Trà Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Bán đảo Sơn Trà",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "chua-linh-ung-son-tra",
+      "name": "Chùa Linh Ứng Bãi Bụt",
+      "slug": "chua-linh-ung-son-tra",
+      "rank": 8,
+      "category": "religious",
+      "wardId": "son-tra",
+      "otherAdministrativeUnit": null,
+      "summary": "Ngôi chùa nổi tiếng trên bán đảo Sơn Trà, gắn với du lịch văn hóa – tâm linh.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/chua-linh-ung-son-tra-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/chua-linh-ung-son-tra/cover.webp",
+          "alt": "Chùa Linh Ứng Bãi Bụt – Chùa Linh Ứng Bãi Bụt",
+          "searchQuery": "Chùa Linh Ứng Bãi Bụt Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Chùa Linh Ứng Bãi Bụt",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "lang-chai-man-thai",
+      "name": "Làng chài Mân Thái",
+      "slug": "lang-chai-man-thai",
+      "rank": 9,
+      "category": "culture",
+      "wardId": "son-tra",
+      "otherAdministrativeUnit": null,
+      "summary": "Không gian cư trú và lao động nghề biển truyền thống.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-chai-man-thai-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-chai-man-thai/cover.webp",
+          "alt": "Làng chài Mân Thái – Làng chài Mân Thái",
+          "searchQuery": "Làng chài Mân Thái Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng chài Mân Thái",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "ngu-hanh-son",
+      "name": "Danh thắng Ngũ Hành Sơn",
+      "slug": "ngu-hanh-son",
+      "rank": 10,
+      "category": "nature",
+      "wardId": "ngu-hanh-son",
+      "otherAdministrativeUnit": null,
+      "summary": "Quần thể núi đá, hang động, chùa cổ và ma nhai.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/ngu-hanh-son-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/ngu-hanh-son/cover.webp",
+          "alt": "Danh thắng Ngũ Hành Sơn – Danh thắng Ngũ Hành Sơn",
+          "searchQuery": "Danh thắng Ngũ Hành Sơn Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Danh thắng Ngũ Hành Sơn",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "lang-da-non-nuoc",
+      "name": "Làng đá mỹ nghệ Non Nước",
+      "slug": "lang-da-non-nuoc",
+      "rank": 11,
+      "category": "craft",
+      "wardId": "ngu-hanh-son",
+      "otherAdministrativeUnit": null,
+      "summary": "Làng nghề điêu khắc đá truyền thống gắn với danh thắng Ngũ Hành Sơn.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-da-non-nuoc-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-da-non-nuoc/cover.webp",
+          "alt": "Làng đá mỹ nghệ Non Nước – Làng đá mỹ nghệ Non Nước",
+          "searchQuery": "Làng đá mỹ nghệ Non Nước Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng đá mỹ nghệ Non Nước",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "k20",
+      "name": "Khu căn cứ cách mạng K20",
+      "slug": "k20",
+      "rank": 12,
+      "category": "history",
+      "wardId": "ngu-hanh-son",
+      "otherAdministrativeUnit": null,
+      "summary": "Di tích lịch sử cách mạng gắn với phong trào kháng chiến ở Khuê Mỹ.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/k20-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/k20/cover.webp",
+          "alt": "Khu căn cứ cách mạng K20 – Khu căn cứ cách mạng K20",
+          "searchQuery": "Khu căn cứ cách mạng K20 Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Khu căn cứ cách mạng K20",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city",
+        "k20"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "dinh-an-ngai-dong",
+      "name": "Đình An Ngãi Đông",
+      "slug": "dinh-an-ngai-dong",
+      "rank": 13,
+      "category": "culture",
+      "wardId": "hoa-khanh",
+      "otherAdministrativeUnit": null,
+      "summary": "Dấu tích đình làng trên địa bàn Hòa Khánh.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/dinh-an-ngai-dong-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/dinh-an-ngai-dong/cover.webp",
+          "alt": "Đình An Ngãi Đông – Đình An Ngãi Đông",
+          "searchQuery": "Đình An Ngãi Đông Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình An Ngãi Đông",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "hai-van-quan",
+      "name": "Hải Vân Quan",
+      "slug": "hai-van-quan",
+      "rank": 14,
+      "category": "history",
+      "wardId": "hai-van",
+      "otherAdministrativeUnit": null,
+      "summary": "Công trình cửa ải trên đỉnh đèo Hải Vân, ở khu vực giáp ranh Đà Nẵng – Huế.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/hai-van-quan-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/hai-van-quan/cover.webp",
+          "alt": "Hải Vân Quan – Hải Vân Quan",
+          "searchQuery": "Hải Vân Quan Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Hải Vân Quan",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "lang-nam-o",
+      "name": "Làng nghề nước mắm Nam Ô",
+      "slug": "lang-nam-o",
+      "rank": 15,
+      "category": "craft",
+      "wardId": "hai-van",
+      "otherAdministrativeUnit": null,
+      "summary": "Làng nghề làm nước mắm truyền thống, gắn với nghề đánh bắt ven vịnh Đà Nẵng.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-nam-o-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-nam-o/cover.webp",
+          "alt": "Làng nghề nước mắm Nam Ô – Làng nghề nước mắm Nam Ô",
+          "searchQuery": "Làng nghề nước mắm Nam Ô Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng nghề nước mắm Nam Ô",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city",
+        "namo"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "song-cu-de",
+      "name": "Sông Cu Đê",
+      "slug": "song-cu-de",
+      "rank": 16,
+      "category": "nature",
+      "wardId": "hai-van",
+      "otherAdministrativeUnit": null,
+      "summary": "Không gian sông và cảnh quan núi rừng Hòa Bắc.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/song-cu-de-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/song-cu-de/cover.webp",
+          "alt": "Sông Cu Đê – Sông Cu Đê",
+          "searchQuery": "Sông Cu Đê Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Sông Cu Đê",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "b1-hong-phuoc",
+      "name": "Căn cứ lõm B1 Hồng Phước",
+      "slug": "b1-hong-phuoc",
+      "rank": 17,
+      "category": "history",
+      "wardId": "lien-chieu",
+      "otherAdministrativeUnit": null,
+      "summary": "Di tích cách mạng gắn với hoạt động kháng chiến tại vùng Hòa Khánh.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/b1-hong-phuoc-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/b1-hong-phuoc/cover.webp",
+          "alt": "Căn cứ lõm B1 Hồng Phước – Căn cứ lõm B1 Hồng Phước",
+          "searchQuery": "Căn cứ lõm B1 Hồng Phước Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Căn cứ lõm B1 Hồng Phước",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "phong-le",
+      "name": "Di chỉ Chăm Phong Lệ",
+      "slug": "phong-le",
+      "rank": 18,
+      "category": "archaeology",
+      "wardId": "cam-le",
+      "otherAdministrativeUnit": null,
+      "summary": "Di chỉ kiến trúc tôn giáo Champa thế kỷ IX–X, được công nhận di tích cấp quốc gia.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/phong-le-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/phong-le/cover.webp",
+          "alt": "Di chỉ Chăm Phong Lệ – Di chỉ Chăm Phong Lệ",
+          "searchQuery": "Di chỉ Chăm Phong Lệ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Di chỉ Chăm Phong Lệ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "camle"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "nghia-trung-hoa-vang",
+      "name": "Nghĩa trủng Hòa Vang",
+      "slug": "nghia-trung-hoa-vang",
+      "rank": 19,
+      "category": "history",
+      "wardId": "cam-le",
+      "otherAdministrativeUnit": null,
+      "summary": "Di tích tưởng niệm các nghĩa sĩ trong cuộc kháng chiến chống thực dân Pháp ở Đà Nẵng.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/nghia-trung-hoa-vang-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/nghia-trung-hoa-vang/cover.webp",
+          "alt": "Nghĩa trủng Hòa Vang – Nghĩa trủng Hòa Vang",
+          "searchQuery": "Nghĩa trủng Hòa Vang Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Nghĩa trủng Hòa Vang",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "camle"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "dinh-phong-le",
+      "name": "Đình Phong Lệ",
+      "slug": "dinh-phong-le",
+      "rank": 20,
+      "category": "culture",
+      "wardId": "hoa-xuan",
+      "otherAdministrativeUnit": null,
+      "summary": "Đình làng gắn với lễ hội Mục đồng Phong Lệ.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/dinh-phong-le-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/dinh-phong-le/cover.webp",
+          "alt": "Đình Phong Lệ – Đình Phong Lệ",
+          "searchQuery": "Đình Phong Lệ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình Phong Lệ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "hoaxuan"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "nha-tho-qua-giang",
+      "name": "Nhà thờ chư phái tộc Quá Giáng",
+      "slug": "nha-tho-qua-giang",
+      "rank": 21,
+      "category": "history",
+      "wardId": "hoa-xuan",
+      "otherAdministrativeUnit": null,
+      "summary": "Di tích được xếp hạng cấp quốc gia, gắn với lịch sử dòng họ và làng quê.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/nha-tho-qua-giang-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/nha-tho-qua-giang/cover.webp",
+          "alt": "Nhà thờ chư phái tộc Quá Giáng – Nhà thờ chư phái tộc Quá Giáng",
+          "searchQuery": "Nhà thờ chư phái tộc Quá Giáng Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Nhà thờ chư phái tộc Quá Giáng",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "hoaxuan"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "phu-duong-tam-ky",
+      "name": "Phủ đường Tam Kỳ",
+      "slug": "phu-duong-tam-ky",
+      "rank": 22,
+      "category": "history",
+      "wardId": "tam-ky",
+      "otherAdministrativeUnit": null,
+      "summary": "Di tích gợi lại quá trình hình thành phủ lỵ Tam Kỳ.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/phu-duong-tam-ky-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/phu-duong-tam-ky/cover.webp",
+          "alt": "Phủ đường Tam Kỳ – Phủ đường Tam Kỳ",
+          "searchQuery": "Phủ đường Tam Kỳ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Phủ đường Tam Kỳ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "tuong-dai-me-vnah",
+      "name": "Tượng đài Mẹ Việt Nam anh hùng",
+      "slug": "tuong-dai-me-vnah",
+      "rank": 23,
+      "category": "memorial",
+      "wardId": "quang-phu",
+      "otherAdministrativeUnit": null,
+      "summary": "Công trình tưởng niệm quy mô lớn, tri ân các Bà mẹ Việt Nam anh hùng.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/tuong-dai-me-vnah-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/tuong-dai-me-vnah/cover.webp",
+          "alt": "Tượng đài Mẹ Việt Nam anh hùng – Tượng đài Mẹ Việt Nam anh hùng",
+          "searchQuery": "Tượng đài Mẹ Việt Nam anh hùng Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Tượng đài Mẹ Việt Nam anh hùng",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "quangphu"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "lang-bich-hoa-tam-thanh",
+      "name": "Làng bích họa Tam Thanh",
+      "slug": "lang-bich-hoa-tam-thanh",
+      "rank": 24,
+      "category": "culture",
+      "wardId": "quang-phu",
+      "otherAdministrativeUnit": null,
+      "summary": "Không gian mỹ thuật cộng đồng được triển khai tại làng biển Tam Thanh.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-bich-hoa-tam-thanh-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-bich-hoa-tam-thanh/cover.webp",
+          "alt": "Làng bích họa Tam Thanh – Làng bích họa Tam Thanh",
+          "searchQuery": "Làng bích họa Tam Thanh Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng bích họa Tam Thanh",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "quangphu"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "bien-tam-thanh",
+      "name": "Biển Tam Thanh",
+      "slug": "bien-tam-thanh",
+      "rank": 25,
+      "category": "nature",
+      "wardId": "quang-phu",
+      "otherAdministrativeUnit": null,
+      "summary": "Bãi biển và làng chài với sinh kế đánh bắt truyền thống.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/bien-tam-thanh-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/bien-tam-thanh/cover.webp",
+          "alt": "Biển Tam Thanh – Biển Tam Thanh",
+          "searchQuery": "Biển Tam Thanh Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Biển Tam Thanh",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "quangphu"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "lang-hoa-sua-huong-tra",
+      "name": "Làng hoa sưa Hương Trà",
+      "slug": "lang-hoa-sua-huong-tra",
+      "rank": 26,
+      "category": "nature",
+      "wardId": "huong-tra",
+      "otherAdministrativeUnit": null,
+      "summary": "Không gian hoa sưa và sinh thái ven sông Tam Kỳ, nơi diễn ra hoạt động văn hóa cộng đồng.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-hoa-sua-huong-tra-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-hoa-sua-huong-tra/cover.webp",
+          "alt": "Làng hoa sưa Hương Trà – Làng hoa sưa Hương Trà",
+          "searchQuery": "Làng hoa sưa Hương Trà Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng hoa sưa Hương Trà",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "huongtra"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "dinh-huong-tra",
+      "name": "Đình làng Hương Trà",
+      "slug": "dinh-huong-tra",
+      "rank": 27,
+      "category": "culture",
+      "wardId": "huong-tra",
+      "otherAdministrativeUnit": null,
+      "summary": "Trung tâm tín ngưỡng của cộng đồng làng ven sông.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/dinh-huong-tra-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/dinh-huong-tra/cover.webp",
+          "alt": "Đình làng Hương Trà – Đình làng Hương Trà",
+          "searchQuery": "Đình làng Hương Trà Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đình làng Hương Trà",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "huongtra"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "dia-dao-ky-anh",
+      "name": "Địa đạo Kỳ Anh",
+      "slug": "dia-dao-ky-anh",
+      "rank": 28,
+      "category": "history",
+      "wardId": "ban-thach",
+      "otherAdministrativeUnit": null,
+      "summary": "Hệ thống địa đạo kháng chiến gắn với cộng đồng Thạch Tân – Tam Thăng cũ.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/dia-dao-ky-anh-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/dia-dao-ky-anh/cover.webp",
+          "alt": "Địa đạo Kỳ Anh – Địa đạo Kỳ Anh",
+          "searchQuery": "Địa đạo Kỳ Anh Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Địa đạo Kỳ Anh",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "banthach",
+        "banthach_festival"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "bai-say-song-dam",
+      "name": "Bãi Sậy – Sông Đầm",
+      "slug": "bai-say-song-dam",
+      "rank": 29,
+      "category": "nature",
+      "wardId": "ban-thach",
+      "otherAdministrativeUnit": null,
+      "summary": "Không gian sinh thái sông Đầm, nơi có hoạt động trải nghiệm và lễ hội địa phương.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/bai-say-song-dam-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/bai-say-song-dam/cover.webp",
+          "alt": "Bãi Sậy – Sông Đầm – Bãi Sậy – Sông Đầm",
+          "searchQuery": "Bãi Sậy – Sông Đầm Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Bãi Sậy – Sông Đầm",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "banthach_festival"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "van-thanh-khong-mieu",
+      "name": "Văn Thánh – Khổng Miếu",
+      "slug": "van-thanh-khong-mieu",
+      "rank": 30,
+      "category": "history",
+      "wardId": "ban-thach",
+      "otherAdministrativeUnit": null,
+      "summary": "Di tích văn hóa, giáo dục Nho học trên địa bàn phường Bàn Thạch.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/van-thanh-khong-mieu-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/van-thanh-khong-mieu/cover.webp",
+          "alt": "Văn Thánh – Khổng Miếu – Văn Thánh – Khổng Miếu",
+          "searchQuery": "Văn Thánh – Khổng Miếu Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Văn Thánh – Khổng Miếu",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "banthach"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "lang-duc-dong-phuoc-kieu",
+      "name": "Làng đúc đồng Phước Kiều",
+      "slug": "lang-duc-dong-phuoc-kieu",
+      "rank": 31,
+      "category": "craft",
+      "wardId": "dien-ban",
+      "otherAdministrativeUnit": null,
+      "summary": "Làng nghề chế tác sản phẩm đồng, nhạc khí và đồ thờ truyền thống.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-duc-dong-phuoc-kieu-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-duc-dong-phuoc-kieu/cover.webp",
+          "alt": "Làng đúc đồng Phước Kiều – Làng đúc đồng Phước Kiều",
+          "searchQuery": "Làng đúc đồng Phước Kiều Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng đúc đồng Phước Kiều",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "dienban"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "dinh-tran-thanh-chiem",
+      "name": "Dấu tích Dinh trấn Thanh Chiêm",
+      "slug": "dinh-tran-thanh-chiem",
+      "rank": 32,
+      "category": "history",
+      "wardId": "dien-ban",
+      "otherAdministrativeUnit": null,
+      "summary": "Di tích gắn với lịch sử quản lý vùng đất Quảng Nam thời chúa Nguyễn.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/dinh-tran-thanh-chiem-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/dinh-tran-thanh-chiem/cover.webp",
+          "alt": "Dấu tích Dinh trấn Thanh Chiêm – Dấu tích Dinh trấn Thanh Chiêm",
+          "searchQuery": "Dấu tích Dinh trấn Thanh Chiêm Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Dấu tích Dinh trấn Thanh Chiêm",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "dienban"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "bien-ha-my",
+      "name": "Bãi biển Hà My",
+      "slug": "bien-ha-my",
+      "rank": 33,
+      "category": "nature",
+      "wardId": "dien-ban-dong",
+      "otherAdministrativeUnit": null,
+      "summary": "Cảnh quan biển và làng chài phía đông Điện Bàn.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/bien-ha-my-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/bien-ha-my/cover.webp",
+          "alt": "Bãi biển Hà My – Bãi biển Hà My",
+          "searchQuery": "Bãi biển Hà My Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Bãi biển Hà My",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "thap-bang-an",
+      "name": "Tháp Chăm Bằng An",
+      "slug": "thap-bang-an",
+      "rank": 34,
+      "category": "archaeology",
+      "wardId": "an-thang",
+      "otherAdministrativeUnit": null,
+      "summary": "Tháp Chăm nổi bật với thân tháp có hình bát giác.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/thap-bang-an-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/thap-bang-an/cover.webp",
+          "alt": "Tháp Chăm Bằng An – Tháp Chăm Bằng An",
+          "searchQuery": "Tháp Chăm Bằng An Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Tháp Chăm Bằng An",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "doi-bo-bo",
+      "name": "Đồi Bồ Bồ",
+      "slug": "doi-bo-bo",
+      "rank": 35,
+      "category": "history",
+      "wardId": "dien-ban-bac",
+      "otherAdministrativeUnit": null,
+      "summary": "Địa điểm lịch sử gắn với chiến thắng Bồ Bồ, đồng thời có cảnh quan đồi thông.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/doi-bo-bo-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/doi-bo-bo/cover.webp",
+          "alt": "Đồi Bồ Bồ – Đồi Bồ Bồ",
+          "searchQuery": "Đồi Bồ Bồ Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Đồi Bồ Bồ",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city",
+        "dienbanbac"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "pho-co-hoi-an",
+      "name": "Phố cổ Hội An",
+      "slug": "pho-co-hoi-an",
+      "rank": 36,
+      "category": "world_heritage",
+      "wardId": "hoi-an",
+      "otherAdministrativeUnit": null,
+      "summary": "Di sản thế giới UNESCO, thương cảng châu Á cổ với kiến trúc đa văn hóa.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": true,
+        "inscriptionYear": 1999
+      },
+      "media": {
+        "cover": {
+          "id": "places/pho-co-hoi-an-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/pho-co-hoi-an/cover.webp",
+          "alt": "Phố cổ Hội An – Phố cổ Hội An",
+          "searchQuery": "Phố cổ Hội An Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Phố cổ Hội An",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "unesco_hoian"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "chua-cau",
+      "name": "Chùa Cầu",
+      "slug": "chua-cau",
+      "rank": 37,
+      "category": "history",
+      "wardId": "hoi-an",
+      "otherAdministrativeUnit": null,
+      "summary": "Công trình kiến trúc biểu tượng tại trung tâm phố cổ Hội An.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/chua-cau-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/chua-cau/cover.webp",
+          "alt": "Chùa Cầu – Chùa Cầu",
+          "searchQuery": "Chùa Cầu Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Chùa Cầu",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "unesco_hoian"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "lang-moc-kim-bong",
+      "name": "Làng mộc Kim Bồng",
+      "slug": "lang-moc-kim-bong",
+      "rank": 38,
+      "category": "craft",
+      "wardId": "hoi-an",
+      "otherAdministrativeUnit": null,
+      "summary": "Làng nghề mộc truyền thống ở Cẩm Kim cũ.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-moc-kim-bong-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-moc-kim-bong/cover.webp",
+          "alt": "Làng mộc Kim Bồng – Làng mộc Kim Bồng",
+          "searchQuery": "Làng mộc Kim Bồng Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng mộc Kim Bồng",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "hoian_heritage"
+      ],
+      "factStatus": "editorial_review"
+    },
+    {
+      "id": "rung-dua-bay-mau",
+      "name": "Rừng dừa Bảy Mẫu Cẩm Thanh",
+      "slug": "rung-dua-bay-mau",
+      "rank": 39,
+      "category": "nature",
+      "wardId": "hoi-an-dong",
+      "otherAdministrativeUnit": null,
+      "summary": "Hệ sinh thái dừa nước với văn hóa thuyền thúng và sinh hoạt nghề sông nước.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/rung-dua-bay-mau-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/rung-dua-bay-mau/cover.webp",
+          "alt": "Rừng dừa Bảy Mẫu Cẩm Thanh – Rừng dừa Bảy Mẫu Cẩm Thanh",
+          "searchQuery": "Rừng dừa Bảy Mẫu Cẩm Thanh Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Rừng dừa Bảy Mẫu Cẩm Thanh",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "hoiandong"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "bien-cua-dai",
+      "name": "Biển Cửa Đại",
+      "slug": "bien-cua-dai",
+      "rank": 40,
+      "category": "nature",
+      "wardId": "hoi-an-dong",
+      "otherAdministrativeUnit": null,
+      "summary": "Cửa biển và sinh kế cộng đồng ngư dân Hội An.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/bien-cua-dai-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/bien-cua-dai/cover.webp",
+          "alt": "Biển Cửa Đại – Biển Cửa Đại",
+          "searchQuery": "Biển Cửa Đại Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Biển Cửa Đại",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "hoiandong"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "lang-gom-thanh-ha",
+      "name": "Làng gốm Thanh Hà",
+      "slug": "lang-gom-thanh-ha",
+      "rank": 41,
+      "category": "craft",
+      "wardId": "hoi-an-tay",
+      "otherAdministrativeUnit": null,
+      "summary": "Làng nghề gốm truyền thống, duy trì kỹ thuật thủ công và lễ giỗ tổ nghề.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-gom-thanh-ha-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-gom-thanh-ha/cover.webp",
+          "alt": "Làng gốm Thanh Hà – Làng gốm Thanh Hà",
+          "searchQuery": "Làng gốm Thanh Hà Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng gốm Thanh Hà",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "hoiantay"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "lang-rau-tra-que",
+      "name": "Làng rau Trà Quế",
+      "slug": "lang-rau-tra-que",
+      "rank": 42,
+      "category": "craft",
+      "wardId": "hoi-an-tay",
+      "otherAdministrativeUnit": null,
+      "summary": "Làng nghề trồng rau thơm với các phương thức canh tác truyền thống.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/lang-rau-tra-que-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/lang-rau-tra-que/cover.webp",
+          "alt": "Làng rau Trà Quế – Làng rau Trà Quế",
+          "searchQuery": "Làng rau Trà Quế Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Làng rau Trà Quế",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "hoiantay"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "bien-an-bang",
+      "name": "Biển An Bàng",
+      "slug": "bien-an-bang",
+      "rank": 43,
+      "category": "nature",
+      "wardId": "hoi-an-tay",
+      "otherAdministrativeUnit": null,
+      "summary": "Bãi biển thuộc khu vực Cẩm An cũ, nổi tiếng với cảnh quan và hoạt động du lịch.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/bien-an-bang-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/bien-an-bang/cover.webp",
+          "alt": "Biển An Bàng – Biển An Bàng",
+          "searchQuery": "Biển An Bàng Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Biển An Bàng",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "hoiantay"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "thanh-dia-my-son",
+      "name": "Thánh địa Mỹ Sơn",
+      "slug": "thanh-dia-my-son",
+      "rank": 44,
+      "category": "world_heritage",
+      "wardId": null,
+      "otherAdministrativeUnit": "Xã Thu Bồn",
+      "summary": "Di sản thế giới UNESCO, quần thể đền tháp của nền văn hóa Champa.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": true,
+        "inscriptionYear": 1999
+      },
+      "media": {
+        "cover": {
+          "id": "places/thanh-dia-my-son-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/thanh-dia-my-son/cover.webp",
+          "alt": "Thánh địa Mỹ Sơn – Thánh địa Mỹ Sơn",
+          "searchQuery": "Thánh địa Mỹ Sơn Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Thánh địa Mỹ Sơn",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "unesco_myson",
+        "thubon"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "ba-na-hills",
+      "name": "Bà Nà Hills",
+      "slug": "ba-na-hills",
+      "rank": 45,
+      "category": "nature",
+      "wardId": null,
+      "otherAdministrativeUnit": "Xã Bà Nà",
+      "summary": "Khu vực núi cao và du lịch nghỉ dưỡng với cảnh quan rừng núi, Cầu Vàng.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/ba-na-hills-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/ba-na-hills/cover.webp",
+          "alt": "Bà Nà Hills – Bà Nà Hills",
+          "searchQuery": "Bà Nà Hills Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Bà Nà Hills",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "bana"
+      ],
+      "factStatus": "checked"
+    },
+    {
+      "id": "cu-lao-cham",
+      "name": "Cù Lao Chàm",
+      "slug": "cu-lao-cham",
+      "rank": 46,
+      "category": "nature",
+      "wardId": null,
+      "otherAdministrativeUnit": "Xã Tân Hiệp",
+      "summary": "Quần đảo ngoài khơi Hội An, gắn với đa dạng sinh học biển và đời sống ngư dân.",
+      "address": null,
+      "location": {
+        "lat": null,
+        "lng": null,
+        "verification": "not_geocoded"
+      },
+      "unesco": {
+        "listed": false,
+        "inscriptionYear": null
+      },
+      "media": {
+        "cover": {
+          "id": "places/cu-lao-cham-cover",
+          "src": null,
+          "expectedLocalPath": "/images/da-nang/places/cu-lao-cham/cover.webp",
+          "alt": "Cù Lao Chàm – Cù Lao Chàm",
+          "searchQuery": "Cù Lao Chàm Đà Nẵng Việt Nam ảnh tư liệu",
+          "caption": "Cù Lao Chàm",
+          "credit": null,
+          "license": null,
+          "sourceUrl": null,
+          "status": "pending_asset"
+        }
+      },
+      "sources": [
+        "danang_city"
+      ],
+      "factStatus": "editorial_review"
+    }
+  ],
+  "sources": {
+    "law1659": {
+      "title": "Nghị quyết 1659/NQ-UBTVQH15 về sắp xếp đơn vị hành chính cấp xã Đà Nẵng năm 2025",
+      "publisher": "Cổng thông tin Chính phủ",
+      "url": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-1659-nq-ubtvqh15-sap-xep-cac-dvhc-cap-xa-cua-thanh-pho-da-nang-nam-2025-119250616202714604.htm",
+      "type": "legal"
+    },
+    "camle": {
+      "title": "Tình hình kinh tế - văn hóa phường Cẩm Lệ",
+      "publisher": "UBND phường Cẩm Lệ",
+      "url": "https://camle.danang.gov.vn/vi/w/tinh-hinh-kinh-te-van-hoa",
+      "type": "official"
+    },
+    "hoaxuan": {
+      "title": "Giới thiệu phường Hòa Xuân",
+      "publisher": "UBND phường Hòa Xuân",
+      "url": "https://hoaxuan.danang.gov.vn/gioi-thieu/",
+      "type": "official"
+    },
+    "quangphu": {
+      "title": "Giới thiệu chung phường Quảng Phú",
+      "publisher": "UBND phường Quảng Phú",
+      "url": "https://quangphu.danang.gov.vn/gioi-thieu-chung",
+      "type": "official"
+    },
+    "quangphu_product": {
+      "title": "Sản phẩm đặc trưng và văn hóa Quảng Phú",
+      "publisher": "UBND phường Quảng Phú",
+      "url": "https://quangphu.danang.gov.vn/chinh-tri/dai-hoi-dai-bieu-dang-bo-phuong-quang-phu-lan-thu-i-nhiem-ky-2025-2030-thanh-cong-tot-dep-311887",
+      "type": "official"
+    },
+    "banthach": {
+      "title": "Thông tin giới thiệu phường Bàn Thạch",
+      "publisher": "UBND phường Bàn Thạch",
+      "url": "https://banthach.danang.gov.vn/thong-tin-gioi-thieu-phuong-ban-thach",
+      "type": "official"
+    },
+    "banthach_festival": {
+      "title": "Lễ hội Văn hóa - Du lịch Địa đạo Kỳ Anh – Bãi Sậy Sông Đầm 2026",
+      "publisher": "UBND phường Bàn Thạch",
+      "url": "https://banthach.danang.gov.vn/van-hoa-xa-hoi/le-hoi-van-hoa-du-lich-dia-dao-ky-anh-bai-say-song-dam-nam-2026-344137",
+      "type": "official"
+    },
+    "huongtra": {
+      "title": "Lễ hội đình làng Hương Trà 2026",
+      "publisher": "UBND phường Hương Trà",
+      "url": "https://huongtra.danang.gov.vn/chi-tiet-tin/group/119/nid/4510/le-hoi-dinh-lang-huong-tra-2-26--du-xuan-cham-ve-nguyen-ban-ben-dong-song-tam-ky",
+      "type": "official"
+    },
+    "dienban": {
+      "title": "Vận hội mới cho phường Điện Bàn phát triển",
+      "publisher": "UBND phường Điện Bàn",
+      "url": "https://dienban.danang.gov.vn/chi-tiet-tin/group/113/nid/4273/van-hoi-moi-cho-phuong-dien-ban-phat-trien",
+      "type": "official"
+    },
+    "hoiantay": {
+      "title": "Văn hóa – Du lịch phường Hội An Tây",
+      "publisher": "UBND phường Hội An Tây",
+      "url": "https://hoiantay.danang.gov.vn/van-hoa-du-lich",
+      "type": "official"
+    },
+    "hoiandong": {
+      "title": "Khảo sát xây dựng tuyến tham quan mới tại rừng dừa Bảy Mẫu",
+      "publisher": "UBND phường Hội An Đông",
+      "url": "https://hoiandong.danang.gov.vn/kinh-te-van-hoa-xa-hoi-y-te-giao-duc/phuong-hoi-an-dong-khao-sat-xay-dung-tuyen-tham-quan-moi-tai-rung-dua-bay-mau-huong-den-trai-ngh-334492",
+      "type": "official"
+    },
+    "unesco_hoian": {
+      "title": "Hoi An Ancient Town",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/948",
+      "type": "heritage"
+    },
+    "unesco_myson": {
+      "title": "My Son Sanctuary",
+      "publisher": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/949",
+      "type": "heritage"
+    },
+    "bana": {
+      "title": "Giới thiệu xã Bà Nà",
+      "publisher": "UBND xã Bà Nà",
+      "url": "https://bana.danang.gov.vn/gioi-thieu",
+      "type": "official"
+    },
+    "thubon": {
+      "title": "Giới thiệu xã Thu Bồn",
+      "publisher": "UBND xã Thu Bồn",
+      "url": "https://duyxuyen.danang.gov.vn/vi/web/xa-thu-bon/gioi-thieu",
+      "type": "official"
+    },
+    "danang_city": {
+      "title": "Cổng thông tin điện tử Đà Nẵng",
+      "publisher": "UBND thành phố Đà Nẵng",
+      "url": "https://danang.gov.vn",
+      "type": "portal"
+    },
+    "hoian_heritage": {
+      "title": "Di sản văn hóa Hội An",
+      "publisher": "Trung tâm Bảo tồn Di sản Văn hóa Thế giới Hội An",
+      "url": "https://hoianworldheritage.org.vn",
+      "type": "portal"
+    },
+    "namo": {
+      "title": "Làng nghề nước mắm Nam Ô",
+      "publisher": "Cổng thông tin thành phố Đà Nẵng",
+      "url": "https://hoavang.danang.gov.vn/vi/web/dng-old/w/l%C3%A0ng-ngh%E1%BB%81-n%C6%B0%E1%BB%9Bc-m%E1%BA%AFm-nam-%C3%94",
+      "type": "official"
+    },
+    "k20": {
+      "title": "Khu căn cứ cách mạng K20 tại phường Ngũ Hành Sơn",
+      "publisher": "Cổng thông tin Đảng bộ UBND thành phố",
+      "url": "https://dangboubndtp.danang.gov.vn/chi-tiet-tin/group/162/nid/1175/chi-bo-phong-ton-giao-to-chuc-sinh-hoat-chuyen-de-quy-iii-2-26-ket-hop-hoat-dong-ve-nguon-tai-khu-can-cu-cach-mang-k2--phuong-ngu-hanh-son-thanh-pho-da-nang",
+      "type": "official"
+    },
+    "dienbanbac": {
+      "title": "Kỷ niệm chiến thắng Bồ Bồ – Điện Bàn Bắc",
+      "publisher": "UBND phường Điện Bàn Bắc",
+      "url": "https://dienbanbac.danang.gov.vn/chi-tiet-tin/group/110/nid/5605/dien-ban-bac-tri-an-va-tu-hao-72-nam-chien-thang-bo-bo--dien-bien-phu-tren-chien-truong-quang-nam--da-nang",
+      "type": "official"
+    }
+  },
+  "mediaPolicy": {
+    "srcNullMeans": "Ảnh chưa được cung cấp; UI phải hiển thị placeholder thay vì cố tải đường dẫn không tồn tại.",
+    "expectedLocalPath": "Đường dẫn đề xuất để lưu ảnh sau khi bạn tự thu thập ảnh có quyền sử dụng.",
+    "searchQuery": "Từ khóa tìm ảnh tham khảo, KHÔNG phải liên kết ảnh có giấy phép.",
+    "licenseRule": "Chỉ đặt src khi đã có nguồn, tác giả và giấy phép cho phép sử dụng; không tự động hotlink ảnh báo chí.",
+    "allowedStatuses": [
+      "pending_asset",
+      "ready",
+      "restricted",
+      "needs_review"
+    ]
+  },
+  "integration": {
+    "nuxtPath": "assets/data/da-nang-content.json",
+    "publicImagesPath": "public/images/da-nang",
+    "exampleImport": "import content from \"~/assets/data/da-nang-content.json\";",
+    "exampleWardLookup": "const ward = content.wards.find((item) => item.slug === route.params.slug);",
+    "examplePlacesForWard": "const places = content.places.filter((place) => place.wardId === ward?.id);",
+    "exampleSafeImage": "const imageUrl = ward?.media?.cover?.src ?? null; // Khi null, render CSS gradient/placeholder component.",
+    "searchFields": [
+      "shortName",
+      "overview",
+      "culture.heritageHighlights",
+      "specialties.name"
+    ],
+    "sortHint": "wards.sortOrder hoặc regions theo thứ tự có sẵn",
+    "notes": [
+      "wardId=null là địa danh thuộc xã/đặc khu ngoài 23 phường.",
+      "Nguồn hành chính được xác nhận; những diễn giải văn hóa có trạng thái editorialStatus riêng.",
+      "Không suy đoán tọa độ và chưa thêm polygon địa giới; dùng GeoJSON nguồn chính thức trước khi vẽ bản đồ."
+    ],
+    "exampleFeaturedPlaces": "const featuredPlaces = content.featuredPlaceIds.map((id) => content.places.find((place) => place.id === id)).filter(Boolean);"
+  },
+  "featuredPlaceIds": [
+    "thanh-dien-hai",
+    "ngu-hanh-son",
+    "hai-van-quan",
+    "ban-dao-son-tra",
+    "bai-bien-my-khe",
+    "ba-na-hills",
+    "pho-co-hoi-an",
+    "thanh-dia-my-son",
+    "rung-dua-bay-mau",
+    "cu-lao-cham",
+    "tuong-dai-me-vnah",
+    "dia-dao-ky-anh",
+    "lang-bich-hoa-tam-thanh",
+    "thap-bang-an",
+    "doi-bo-bo"
+  ]
+}
