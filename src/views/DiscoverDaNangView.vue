@@ -41,8 +41,17 @@ interface FeedPost {
   imageAuthor: string
   imageLicense: string
   imageExact: boolean
+  gallery: FeedImage[]
   highlights: string[]
   postType: 'place' | 'ward'
+}
+
+interface FeedImage {
+  imageUrl: string
+  sourceUrl: string
+  sourceName: string
+  caption: string
+  period: string
 }
 
 const categories: { label: Category; icon: Component }[] = [
@@ -66,6 +75,7 @@ interface SourcedImage {
   license: string
   caption: string
   exact: boolean
+  gallery?: FeedImage[]
 }
 
 const imageCatalog = daNangImages as Record<string, SourcedImage>
@@ -96,6 +106,7 @@ const placePosts: FeedPost[] = daNangContent.places.map((place, index) => {
     imageAuthor: image.author,
     imageLicense: image.license,
     imageExact: image.exact,
+    gallery: image.gallery ?? [],
     highlights: [place.unesco.listed ? 'UNESCO' : '', place.category.replace('_', ' ')].filter(
       Boolean,
     ),
@@ -130,12 +141,18 @@ const wardPosts: FeedPost[] = daNangContent.wards.map((ward, index) => {
     imageAuthor: image.author,
     imageLicense: image.license,
     imageExact: image.exact,
+    gallery: image.gallery ?? [],
     highlights: (isFoodPost ? specialtyNames : culture).slice(0, 3),
     postType: 'ward',
   }
 })
 
+const pinnedPostIds = ['place-dinh-lang-hoa-my']
 const posts = [...placePosts, ...wardPosts].sort((first, second) => {
+  const pinnedDifference =
+    Number(pinnedPostIds.includes(second.id)) - Number(pinnedPostIds.includes(first.id))
+  if (pinnedDifference !== 0) return pinnedDifference
+
   const firstFeatured = daNangContent.featuredPlaceIds.includes(first.id.replace('place-', ''))
   const secondFeatured = daNangContent.featuredPlaceIds.includes(second.id.replace('place-', ''))
   return Number(secondFeatured) - Number(firstFeatured)
@@ -324,7 +341,27 @@ function toggleLiked(id: string) {
               <span v-for="highlight in post.highlights" :key="highlight"># {{ highlight }}</span>
             </div>
           </div>
-          <div class="post-media">
+          <div v-if="post.gallery.length" class="post-gallery">
+            <a
+              v-for="(galleryImage, imageIndex) in post.gallery"
+              :key="galleryImage.imageUrl"
+              :href="galleryImage.sourceUrl"
+              class="gallery-tile"
+              :class="{ 'gallery-main': imageIndex === 0 }"
+              target="_blank"
+              rel="noreferrer"
+              :title="`${galleryImage.caption} · ${galleryImage.sourceName}`"
+            >
+              <img :src="galleryImage.imageUrl" :alt="galleryImage.caption" loading="lazy" />
+              <span class="gallery-period">{{ galleryImage.period }}</span>
+              <span class="gallery-source">{{ galleryImage.sourceName }}</span>
+              <strong v-if="imageIndex === 0">{{ galleryImage.caption }}</strong>
+              <span v-if="imageIndex === 0" class="gallery-count">
+                {{ post.gallery.length }} ảnh thực tế
+              </span>
+            </a>
+          </div>
+          <div v-else class="post-media">
             <img :src="post.image" :alt="post.imageCaption" loading="lazy" />
             <div class="image-credit">
               <span>
@@ -984,6 +1021,86 @@ function toggleLiked(id: string) {
   height: 300px;
   background: #dcecf1;
 }
+.post-gallery {
+  display: grid;
+  height: 340px;
+  grid-template-columns: 1.55fr 1fr 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 3px;
+  overflow: hidden;
+  background: #dcecf1;
+}
+.gallery-tile {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: #283a45;
+}
+.gallery-tile::after {
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, rgba(7, 18, 27, 0.78));
+  content: '';
+  pointer-events: none;
+}
+.gallery-main {
+  grid-row: 1 / 3;
+}
+.gallery-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.gallery-tile:hover img {
+  transform: scale(1.035);
+}
+.gallery-period,
+.gallery-source,
+.gallery-tile strong,
+.gallery-count {
+  position: absolute;
+  z-index: 2;
+}
+.gallery-period {
+  top: 9px;
+  left: 9px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(9, 24, 35, 0.68);
+  font-size: 8px;
+  font-weight: 850;
+  backdrop-filter: blur(7px);
+}
+.gallery-source {
+  right: 8px;
+  bottom: 8px;
+  max-width: calc(100% - 16px);
+  overflow: hidden;
+  font-size: 8px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gallery-tile strong {
+  right: 12px;
+  bottom: 37px;
+  left: 12px;
+  font-size: 13px;
+  line-height: 1.3;
+}
+.gallery-count {
+  bottom: 11px;
+  left: 12px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 8px;
+  font-weight: 850;
+  backdrop-filter: blur(7px);
+}
 .post-media::after {
   position: absolute;
   inset: 55% 0 0;
@@ -1186,6 +1303,13 @@ function toggleLiked(id: string) {
   }
   .post-media {
     height: 235px;
+  }
+  .post-gallery {
+    height: 280px;
+    grid-template-columns: 1.35fr 1fr 1fr;
+  }
+  .gallery-source {
+    display: none;
   }
   .post-copy h2 {
     font-size: 20px;

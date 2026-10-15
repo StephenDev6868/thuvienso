@@ -81,6 +81,26 @@ sources['place-phu-duong-tam-ky'] = {
     'https://commons.wikimedia.org/wiki/File:%C4%90%C6%B0%E1%BB%9Dng_ph%E1%BB%91_%E1%BB%9F_Tam_K%E1%BB%B3,_Qu%E1%BA%A3ng_Nam.JPG',
   title: 'Không gian đô thị Tam Kỳ',
 }
+sources['place-dinh-lang-hoa-my'] = {
+  imageUrl: 'https://api.sovaba.travel/uploads/dinh_lang_hoa_myjpg_4c4af927e8.jpg',
+  sourceUrl:
+    'https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang',
+  author: 'Sovaba Travel',
+  license: 'Xem điều khoản tại nguồn',
+  licenseUrl:
+    'https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang',
+  title: 'Mặt tiền Đình làng Hòa Mỹ hiện nay',
+}
+sources['place-hoa-my-historical'] = {
+  imageUrl:
+    'https://commons.wikimedia.org/wiki/Special:FilePath/Walter%20Leamy%2C%20Jr.%20Distributes%20Gum%20to%20Children%2C%2013%20October%201968%20%2829259231621%29.jpg?width=1200',
+  sourceUrl:
+    'https://commons.wikimedia.org/wiki/File:Walter_Leamy,_Jr._Distributes_Gum_to_Children,_13_October_1968_(29259231621).jpg',
+  author: 'USMC Archives',
+  license: 'CC BY 2.0',
+  licenseUrl: 'https://creativecommons.org/licenses/by/2.0',
+  title: 'Tư liệu làng Hòa Mỹ, năm 1968',
+}
 
 const fallback = {
   'dinh-nai-nam': 'place-phong-le',
@@ -104,6 +124,52 @@ const fallback = {
   'lang-gom-thanh-ha': 'place-pho-co-hoi-an',
 }
 
+const galleries = {
+  'place-dinh-lang-hoa-my': [
+    {
+      imageUrl: 'https://api.sovaba.travel/uploads/dinh_lang_hoa_myjpg_4c4af927e8.jpg',
+      sourceUrl:
+        'https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang',
+      sourceName: 'Sovaba Travel',
+      caption: 'Mặt tiền Đình làng Hòa Mỹ hiện nay',
+      period: 'Hiện nay',
+    },
+    {
+      imageUrl:
+        'https://bqn.1cdn.vn/2024/11/23/baodanang.vn-dataimages-202411-original-_images1757424_1.gif',
+      sourceUrl: 'https://baodanang.vn/dua-tuong-den-gan-hon-voi-cong-chung-3237106.html',
+      sourceName: 'Báo Đà Nẵng',
+      caption: 'Biểu diễn tuồng tại Đình làng Hòa Mỹ',
+      period: '11/2024',
+    },
+    {
+      imageUrl: 'https://api.sovaba.travel/uploads/khai_hoi_dinh_lang_hoa_my_1dd08c1b61.jpg',
+      sourceUrl:
+        'https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang',
+      sourceName: 'Sovaba Travel',
+      caption: 'Nghi thức đánh trống khai hội Đình làng Hòa Mỹ',
+      period: 'Lễ hội',
+    },
+    {
+      imageUrl: 'https://api.sovaba.travel/uploads/phan_hoi_bai_choi_15e79d2613.jpg',
+      sourceUrl:
+        'https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang',
+      sourceName: 'Sovaba Travel',
+      caption: 'Hoạt động bài chòi trong phần hội',
+      period: 'Lễ hội',
+    },
+    {
+      imageUrl:
+        'https://commons.wikimedia.org/wiki/Special:FilePath/Walter%20Leamy%2C%20Jr.%20Distributes%20Gum%20to%20Children%2C%2013%20October%201968%20%2829259231621%29.jpg?width=1200',
+      sourceUrl:
+        'https://commons.wikimedia.org/wiki/File:Walter_Leamy,_Jr._Distributes_Gum_to_Children,_13_October_1968_(29259231621).jpg',
+      sourceName: 'USMC Archives',
+      caption: 'Tư liệu làng Hòa Mỹ năm 1968',
+      period: '1968',
+    },
+  ],
+}
+
 const records = {}
 for (const place of content.places) {
   const targetId = `place-${place.id}`
@@ -116,6 +182,7 @@ for (const place of content.places) {
         ? place.name
         : `Ảnh đại diện khu vực ${content.wards.find((ward) => ward.id === place.wardId)?.shortName || 'Đà Nẵng'}`,
     exact: sourceId === targetId,
+    ...(galleries[targetId] ? { gallery: galleries[targetId] } : {}),
   }
 }
 
@@ -130,6 +197,7 @@ for (const ward of content.wards) {
   const sourceId = ownSourceId || regionFallbacks[ward.regionId]
   records[`ward-${ward.id}`] = {
     ...(records[sourceId] || sources['place-thanh-dien-hai']),
+    gallery: undefined,
     caption: `Không gian ${ward.shortName}`,
     exact: Boolean(ownSourceId),
   }

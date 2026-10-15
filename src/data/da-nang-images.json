@@ -119,6 +119,53 @@
     "caption": "Ảnh đại diện khu vực Ngũ Hành Sơn",
     "exact": false
   },
+  "place-dinh-lang-hoa-my": {
+    "imageUrl": "https://api.sovaba.travel/uploads/dinh_lang_hoa_myjpg_4c4af927e8.jpg",
+    "sourceUrl": "https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang",
+    "author": "Sovaba Travel",
+    "license": "Xem điều khoản tại nguồn",
+    "licenseUrl": "https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang",
+    "title": "Mặt tiền Đình làng Hòa Mỹ hiện nay",
+    "caption": "Đình làng Hòa Mỹ",
+    "exact": true,
+    "gallery": [
+      {
+        "imageUrl": "https://api.sovaba.travel/uploads/dinh_lang_hoa_myjpg_4c4af927e8.jpg",
+        "sourceUrl": "https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang",
+        "sourceName": "Sovaba Travel",
+        "caption": "Mặt tiền Đình làng Hòa Mỹ hiện nay",
+        "period": "Hiện nay"
+      },
+      {
+        "imageUrl": "https://bqn.1cdn.vn/2024/11/23/baodanang.vn-dataimages-202411-original-_images1757424_1.gif",
+        "sourceUrl": "https://baodanang.vn/dua-tuong-den-gan-hon-voi-cong-chung-3237106.html",
+        "sourceName": "Báo Đà Nẵng",
+        "caption": "Biểu diễn tuồng tại Đình làng Hòa Mỹ",
+        "period": "11/2024"
+      },
+      {
+        "imageUrl": "https://api.sovaba.travel/uploads/khai_hoi_dinh_lang_hoa_my_1dd08c1b61.jpg",
+        "sourceUrl": "https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang",
+        "sourceName": "Sovaba Travel",
+        "caption": "Nghi thức đánh trống khai hội Đình làng Hòa Mỹ",
+        "period": "Lễ hội"
+      },
+      {
+        "imageUrl": "https://api.sovaba.travel/uploads/phan_hoi_bai_choi_15e79d2613.jpg",
+        "sourceUrl": "https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang",
+        "sourceName": "Sovaba Travel",
+        "caption": "Hoạt động bài chòi trong phần hội",
+        "period": "Lễ hội"
+      },
+      {
+        "imageUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Walter%20Leamy%2C%20Jr.%20Distributes%20Gum%20to%20Children%2C%2013%20October%201968%20%2829259231621%29.jpg?width=1200",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Walter_Leamy,_Jr._Distributes_Gum_to_Children,_13_October_1968_(29259231621).jpg",
+        "sourceName": "USMC Archives",
+        "caption": "Tư liệu làng Hòa Mỹ năm 1968",
+        "period": "1968"
+      }
+    ]
+  },
   "place-dinh-an-ngai-dong": {
     "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Fortress_on_top_of_the_Hai_Van_Pass_-_H%E1%BA%A3i_V%C3%A2n_Quan_%282024%29_-_img_26.jpg/1280px-Fortress_on_top_of_the_Hai_Van_Pass_-_H%E1%BA%A3i_V%C3%A2n_Quan_%282024%29_-_img_26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fortress_on_top_of_the_Hai_Van_Pass_-_H%E1%BA%A3i_V%C3%A2n_Quan_(2024)_-_img_26.jpg",
@@ -530,14 +577,14 @@
     "exact": true
   },
   "ward-hoa-khanh": {
-    "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Dien_Hai_Citadel_Moat_1.jpg/1280px-Dien_Hai_Citadel_Moat_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dien_Hai_Citadel_Moat_1.jpg",
-    "author": "Botminh24",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "title": "Dien Hai Citadel Moat 1.jpg",
+    "imageUrl": "https://api.sovaba.travel/uploads/dinh_lang_hoa_myjpg_4c4af927e8.jpg",
+    "sourceUrl": "https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang",
+    "author": "Sovaba Travel",
+    "license": "Xem điều khoản tại nguồn",
+    "licenseUrl": "https://sovaba.travel/blog/bai-viet-le-hoi-lang-hoa-my-net-dep-van-hoa-truyen-thong-giua-pho-thi-da-nang",
+    "title": "Mặt tiền Đình làng Hòa Mỹ hiện nay",
     "caption": "Không gian Hòa Khánh",
-    "exact": false
+    "exact": true
   },
   "ward-hai-van": {
     "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Fortress_on_top_of_the_Hai_Van_Pass_-_H%E1%BA%A3i_V%C3%A2n_Quan_%282024%29_-_img_26.jpg/1280px-Fortress_on_top_of_the_Hai_Van_Pass_-_H%E1%BA%A3i_V%C3%A2n_Quan_%282024%29_-_img_26.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
