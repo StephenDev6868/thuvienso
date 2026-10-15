@@ -14,12 +14,16 @@ import {
   searchAudiobooks,
   searchVideos,
 } from '@/data/mediaLibrary'
+import { getDaNangAssistantReply } from '@/services/daNangAssistant'
 
 export interface LibraryAssistantReply {
   content: string
   openBookId?: string
-  routeName?: 'audiobooks' | 'video-lessons'
+  routeName?: 'audiobooks' | 'video-lessons' | 'discover-da-nang'
   playMediaId?: string
+  routeQuery?: Record<string, string>
+  actionLabel?: string
+  autoNavigate?: boolean
 }
 
 const availableLibraryGrades = Array.from(
@@ -28,6 +32,9 @@ const availableLibraryGrades = Array.from(
 const availableLibraryGradeLabel = availableLibraryGrades.join(', ')
 
 export function getLibraryAssistantReply(message: string): LibraryAssistantReply {
+  const daNangReply = getDaNangAssistantReply(message)
+  if (daNangReply) return daNangReply
+
   const normalized = normalizeBookText(message)
   const matches = searchDigitalBooks(message)
   const audiobookMatches = searchAudiobooks(message)

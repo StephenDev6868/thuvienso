@@ -100,4 +100,7 @@ export interface ChatMessage {
   id: number
   role: 'assistant' | 'user'
   content: string
+  actionLabel?: string
+  actionRouteName?: string
+  actionQuery?: Record<string, string>
 }

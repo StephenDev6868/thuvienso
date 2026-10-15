@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Bot, Mic, Send, Sparkles, Volume2, VolumeX, X } from '@lucide/vue'
+import { ArrowRight, Bot, MapPin, Mic, Send, Sparkles, Volume2, VolumeX, X } from '@lucide/vue'
 import { storeToRefs } from 'pinia'
-import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import avatarBotUrl from '../../avatar_bot.gif'
@@ -58,14 +58,23 @@ const listening = ref(false)
 const speechError = ref('')
 const messagesContainer = ref<HTMLElement | null>(null)
 
-const suggestions = [
-  'Kho sách điện tử có gì?',
-  'Nghe sách nói Rùa và Thỏ',
-  'Mở video Cậu bé ham học lớp 2',
-  'Mở sách điện tử Ếch ngồi đáy giếng',
-]
+const suggestions = computed(() =>
+  route.name === 'discover-da-nang'
+    ? [
+        'Đình làng Hòa Mỹ có gì?',
+        'Phường Hòa Khánh có gì?',
+        'Đà Nẵng có những lễ hội nào?',
+        'Gợi ý địa danh nổi bật ở Đà Nẵng',
+      ]
+    : [
+        'Khám phá Đà Nẵng có gì?',
+        'Đình làng Hòa Mỹ có gì?',
+        'Kho sách điện tử có gì?',
+        'Mở video Cậu bé ham học lớp 2',
+      ],
+)
 
-const greeting = 'Xin chào! Tôi có thể giúp được gì cho bạn?'
+const greeting = 'Xin chào! Tôi có thể giúp bạn tìm học liệu và khám phá Đà Nẵng.'
 
 const messages = ref<ChatMessage[]>([
   {
@@ -198,7 +207,14 @@ function sendMessage(content = input.value) {
 
   replyTimer = globalThis.setTimeout(() => {
     const reply = getLibraryAssistantReply(value)
-    messages.value.push({ id: Date.now() + 1, role: 'assistant', content: reply.content })
+    messages.value.push({
+      id: Date.now() + 1,
+      role: 'assistant',
+      content: reply.content,
+      actionLabel: reply.actionLabel,
+      actionRouteName: reply.routeName,
+      actionQuery: reply.routeQuery,
+    })
     typing.value = false
     scrollToLatest()
     speak(reply.content)
@@ -207,16 +223,22 @@ function sendMessage(content = input.value) {
       openBookTimer = globalThis.setTimeout(() => {
         appStore.openReader(reply.openBookId!)
       }, 650)
-    } else if (reply.routeName) {
+    } else if (reply.routeName && reply.autoNavigate !== false) {
       openBookTimer = globalThis.setTimeout(() => {
         void router.push({
           name: reply.routeName,
-          query: reply.playMediaId ? { play: reply.playMediaId } : undefined,
+          query: reply.routeQuery ?? (reply.playMediaId ? { play: reply.playMediaId } : undefined),
         })
         appStore.closeChat()
       }, 650)
     }
   }, 720)
+}
+
+function openMessageAction(message: ChatMessage) {
+  if (!message.actionRouteName) return
+  void router.push({ name: message.actionRouteName, query: message.actionQuery })
+  appStore.closeChat()
 }
 
 function toggleSound() {
@@ -530,15 +552,27 @@ onBeforeUnmount(() => {
               class="flex"
               :class="message.role === 'user' ? 'justify-end' : 'justify-start'"
             >
-              <div
-                class="max-w-[86%] whitespace-pre-line rounded-2xl px-4 py-3 text-sm leading-6"
-                :class="
-                  message.role === 'user'
-                    ? 'rounded-br-md bg-red-500 text-white'
-                    : 'animate-greeting rounded-bl-md border border-black/5 bg-white text-ink-950 shadow-sm'
-                "
-              >
-                {{ message.content }}
+              <div class="flex max-w-[86%] flex-col items-start gap-2">
+                <div
+                  class="w-full whitespace-pre-line rounded-2xl px-4 py-3 text-sm leading-6"
+                  :class="
+                    message.role === 'user'
+                      ? 'rounded-br-md bg-red-500 text-white'
+                      : 'animate-greeting rounded-bl-md border border-black/5 bg-white text-ink-950 shadow-sm'
+                  "
+                >
+                  {{ message.content }}
+                </div>
+                <button
+                  v-if="message.role === 'assistant' && message.actionLabel"
+                  type="button"
+                  class="focus-ring inline-flex items-center gap-2 rounded-xl border border-red-100 bg-white px-3 py-2 text-xs font-bold text-red-600 shadow-sm transition hover:border-red-300 hover:bg-red-50"
+                  @click="openMessageAction(message)"
+                >
+                  <MapPin :size="14" />
+                  {{ message.actionLabel }}
+                  <ArrowRight :size="13" />
+                </button>
               </div>
             </div>
             <div v-if="typing" class="flex">
@@ -632,7 +666,9 @@ onBeforeUnmount(() => {
             v-model="input"
             rows="1"
             class="max-h-24 min-h-11 flex-1 resize-none rounded-xl bg-slate-50 px-4 py-3 text-sm outline-none focus:bg-red-50"
-            :placeholder="listening ? 'Đang nhận dạng giọng nói...' : 'Hỏi về sách, STEM...'"
+            :placeholder="
+              listening ? 'Đang nhận dạng giọng nói...' : 'Hỏi về sách hoặc Khám phá Đà Nẵng...'
+            "
             @keydown.enter.exact.prevent="sendMessage()"
           />
           <button

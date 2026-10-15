@@ -18,6 +18,7 @@ import {
 } from '@lucide/vue'
 import type { Component } from 'vue'
 import { computed, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 import dragonBridgeUrl from '@/assets/images/maps/dragon-bridge-3d-v2.png'
 import tourVesselUrl from '@/assets/images/maps/vessel-tour-3d.png'
@@ -63,7 +64,8 @@ const categories: { label: Category; icon: Component }[] = [
 ]
 const activeCategory = ref<Category>('Tất cả')
 const activeRegion = ref('all')
-const query = ref('')
+const route = useRoute()
+const query = ref(typeof route.query.q === 'string' ? route.query.q : '')
 const savedPosts = ref<string[]>([])
 const likedPosts = ref<string[]>([])
 const visibleCount = ref(8)
@@ -182,6 +184,12 @@ const displayedPosts = computed(() => filteredPosts.value.slice(0, visibleCount.
 watch([activeCategory, activeRegion, query], () => {
   visibleCount.value = 8
 })
+watch(
+  () => route.query.q,
+  (routeQuery) => {
+    query.value = typeof routeQuery === 'string' ? routeQuery : ''
+  },
+)
 
 function selectRegion(regionId: string) {
   activeRegion.value = activeRegion.value === regionId ? 'all' : regionId
